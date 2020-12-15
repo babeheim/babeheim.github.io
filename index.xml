@@ -29,9 +29,10 @@ Here we track specific opening variants as traits that change in frequency over 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/publications/</guid>
-      <description>Here&amp;rsquo;s my CV as a YAML
-  - PDF link
-  - Data and/or code available
+      <description>my papers and preprints
+my full CV is here
+  - PDF
+  - data / code
   - citation (bibtex)
 Working Papers  Beheim, B., et al. Treatment of missing data determines conclusions regarding moralizing gods in review, Nature Matters Arising   Minocher, R., Atmaca, S., Bavero, C., McElreath, R., &amp;amp; Beheim, B. Reproducibility improves exponentially over 63 years of social learning research in review, eLife   Tran, N.</description>
     </item>
