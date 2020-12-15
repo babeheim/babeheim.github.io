@@ -10,40 +10,40 @@
     <lastBuildDate>Thu, 19 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="babeheim.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Missing data, moralizing gods, and the siren song of Aeiea</title>
-      <link>babeheim.github.io/missing-data-moralizing-gods-and-the-siren-song-of-aeiea/</link>
+      <link>babeheim.github.io/blog/2019-09-19-song-of-aeiea/</link>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>babeheim.github.io/missing-data-moralizing-gods-and-the-siren-song-of-aeiea/</guid>
+      <guid>babeheim.github.io/blog/2019-09-19-song-of-aeiea/</guid>
       <description>Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.
 This is a mistake, I think, because missingness is a ubiquitous problem, as are ad hoc solutions like the following entirely hypothetical methods section:</description>
     </item>
     
     <item>
       <title>Postdoctoral research position on economic decision-making in subsistence societies</title>
-      <link>babeheim.github.io/postdoctoral-research-position-on-economic-decision-making-in-subsistence-societies/</link>
+      <link>babeheim.github.io/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</link>
       <pubDate>Thu, 29 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>babeheim.github.io/postdoctoral-research-position-on-economic-decision-making-in-subsistence-societies/</guid>
+      <guid>babeheim.github.io/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</guid>
       <description>I am currently recruiting a post-doctoral researcher for the department. The application period will close on 20 April 2018; description of the position is available below and as a pdf here.
 The Max Planck Institute for Evolutionary Anthropology unites scientists in the natural sciences and humanities to investigate the history of humankind from an interdisciplinary perspective, with the help of comparative analyses of genes, cultures, cognitive abilities, languages and social systems of past and present human populations as well as those of primates closely related to human beings.</description>
     </item>
     
     <item>
       <title>PhD student position on the transmission dynamics of signaling behavior</title>
-      <link>babeheim.github.io/phd-student-position-on-the-transmission-dynamics-of-signaling-behavior/</link>
+      <link>babeheim.github.io/blog/2017-11-06-mpi-eva-signaling-phd-call/</link>
       <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>babeheim.github.io/phd-student-position-on-the-transmission-dynamics-of-signaling-behavior/</guid>
+      <guid>babeheim.github.io/blog/2017-11-06-mpi-eva-signaling-phd-call/</guid>
       <description>I am currently recruiting a doctoral student for the department. The application period will close on 1 December 2017; description of the position is available below and as a pdf here.
 The Department of Human Behavior, Ecology and Culture at the Max Planck Institute in Leipzig is seeking qualified applicants for a fully funded three-year doctoral project on the transmission dynamics of aesthetic display behavior, including the design and implementation of field research studying the social transmission and individual learning of artistic signaling among South Asian agriculturalists.</description>
     </item>
     
     <item>
       <title>Text Mining the Human Behavioral Ecology Bibliography</title>
-      <link>babeheim.github.io/text-mining-the-human-behavioral-ecology-bibliography/</link>
+      <link>babeheim.github.io/blog/2017-06-15-text-mining-the-hbeb/</link>
       <pubDate>Thu, 15 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>babeheim.github.io/text-mining-the-human-behavioral-ecology-bibliography/</guid>
+      <guid>babeheim.github.io/blog/2017-06-15-text-mining-the-hbeb/</guid>
       <description>Thanks to Kermyt Anderson, the Human Behavioral Ecology Bibliography (HBEB) has recently gone online. Eleanor Power has taken this text file and parsed it into a bibtex file, and from there it can be turned into an Endnote library or other bibliographic database format.
 After a long hiatus, the Human Behavioral Ecology Bibliography is back online, now as an editable google doc. #HBEBhttps://t.co/tpVPE5jHQf
 &amp;mdash; Kermyt Anderson (@KermytAnderson) June 13, 2017  BibTex version of the HBE Bibliography is done and available for you to use and augment!</description>
@@ -51,40 +51,40 @@ After a long hiatus, the Human Behavioral Ecology Bibliography is back online, n
     
     <item>
       <title>Generating Ties to Explore Social Network Connectivity</title>
-      <link>babeheim.github.io/generating-ties-to-explore-social-network-connectivity/</link>
+      <link>babeheim.github.io/blog/2017-06-02-modeling-network-tie-counts/</link>
       <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>babeheim.github.io/generating-ties-to-explore-social-network-connectivity/</guid>
+      <guid>babeheim.github.io/blog/2017-06-02-modeling-network-tie-counts/</guid>
       <description>A colleague doing a social network analysis posed the following problem:1
  In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&amp;rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&amp;rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&amp;hellip;</description>
     </item>
     
     <item>
       <title>Capturing Hierarchical Data in Plain Text</title>
-      <link>babeheim.github.io/capturing-hierarchical-data-in-plain-text/</link>
+      <link>babeheim.github.io/blog/2017-02-12-hierarchical-data-in-plain-text/</link>
       <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>babeheim.github.io/capturing-hierarchical-data-in-plain-text/</guid>
+      <guid>babeheim.github.io/blog/2017-02-12-hierarchical-data-in-plain-text/</guid>
       <description>A practical method of entering structured data into a computer is to type it directly into a text file. Simply fire up your favorite CSV editor1, sit down with your source material and start typing. Unlike boutique database software, this method can be used immediately and with minimal training. In fact, I know several researchers who skip paper forms altogether and do it during their field interviews.
 Plaintext data entry works great, unless the data are hierarchical.</description>
     </item>
     
     <item>
       <title>PhD position sought for MPI-EVA</title>
-      <link>babeheim.github.io/phd-position-sought-for-mpi-eva/</link>
+      <link>babeheim.github.io/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</link>
       <pubDate>Fri, 03 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>babeheim.github.io/phd-position-sought-for-mpi-eva/</guid>
+      <guid>babeheim.github.io/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</guid>
       <description>I am currently recruiting a doctoral student for the department. The application period will close on 1 March 2017; description of the position is available below and as a pdf here.
 The Department of Human Behavior, Ecology and Culture at the Max Planck Institute in Leipzig is seeking qualified applicants for a three-year doctoral project on the topic of the reproducibility and refinement of quantitative scientific methods in evolutionary anthropology.</description>
     </item>
     
     <item>
       <title>Reproducible Research As Our New Default</title>
-      <link>babeheim.github.io/reproducible-research-as-our-new-default/</link>
+      <link>babeheim.github.io/blog/2016-05-20-reproducible-research-new-default/</link>
       <pubDate>Fri, 20 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>babeheim.github.io/reproducible-research-as-our-new-default/</guid>
+      <guid>babeheim.github.io/blog/2016-05-20-reproducible-research-new-default/</guid>
       <description>the following article was adapted for the Evolutionary Anthropology Society newsletter for Summer 2016
 The last decade has been a sobering one for science, marked by increasingly frank conversations about &amp;lsquo;the idea that something has gone fundamentally wrong with one of our greatest human creations&amp;rsquo;, to quote Richard Horton, editor-in-chief of The Lancet. He continues,
  Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.</description>

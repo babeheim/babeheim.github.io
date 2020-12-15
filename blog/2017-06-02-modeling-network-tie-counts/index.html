@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="babeheim.github.io/images/favicon.png" />
+<title>Generating Ties to Explore Social Network Connectivity | Bret Alexander Beheim</title>
+<meta name="title" content="Generating Ties to Explore Social Network Connectivity" />
+<meta name="description" content="A colleague doing a social network analysis posed the following problem:1
+ In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;" />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Generating Ties to Explore Social Network Connectivity" />
+<meta property="og:description" content="A colleague doing a social network analysis posed the following problem:1
+ In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="babeheim.github.io/blog/2017-06-02-modeling-network-tie-counts/" />
+<meta property="og:image" content="babeheim.github.io/images/share.png"/>
+<meta property="article:published_time" content="2017-06-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-06-02T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="babeheim.github.io/images/share.png"/>
+
+<meta name="twitter:title" content="Generating Ties to Explore Social Network Connectivity"/>
+<meta name="twitter:description" content="A colleague doing a social network analysis posed the following problem:1
+ In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;"/>
+
+
+
+<meta itemprop="name" content="Generating Ties to Explore Social Network Connectivity">
+<meta itemprop="description" content="A colleague doing a social network analysis posed the following problem:1
+ In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;">
+<meta itemprop="datePublished" content="2017-06-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-06-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1014">
+<meta itemprop="image" content="babeheim.github.io/images/share.png"/>
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 90%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<style>
+  .inline-svg {
+    display: inline-block;
+    height: 1.0rem;
+    width: 1.0rem;
+    top: 0.15rem;
+    position: relative;
+    fill: #636363;
+  }
+  .inline-svg:hover {
+    fill: #bdbdbd;
+    height: 1.0rem;
+    width: 1.0rem;
+  }
+  .inline-svg#pdf {
+    fill: #de2d26;
+  }
+  .inline-svg#pdf:hover {
+    fill: #fc9272;
+  }
+  .inline-svg#data {
+    fill: #1c9099;
+  }
+  .inline-svg#data:hover {
+    fill: #a6bddb;
+  }
+</style>
+</head>
+
+<body>
+  <header><a href="/babeheim.github.io/" class="title">
+  <h2>Bret Alexander Beheim</h2>
+</a>
+<nav><a href="/babeheim.github.io/">About</a>
+
+<a href="babeheim.github.io/research/">Research</a>
+
+<a href="babeheim.github.io/publications/">Publications</a>
+
+<a href="babeheim.github.io/people/">People</a>
+
+<a href="babeheim.github.io/software/">Software</a>
+
+<a href="babeheim.github.io/teaching/">Teaching</a>
+
+
+<a href="/babeheim.github.io/blog">Notes</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Generating Ties to Explore Social Network Connectivity</h1>
+<p>
+  <i>
+    <time datetime='2017-06-02' pubdate>
+      02 Jun, 2017
+    </time>
+  </i>
+</p>
+
+<content>
+  <p>A colleague doing a social network analysis posed the following problem:<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<blockquote>
+<p>In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;</p>
+</blockquote>
+<p>While the question is asking about proportions, in my experience, it is better to use counts, if you can. Only counts can properly take sample sizes into consideration.</p>
+<p>However, it is not accurate to just change question to, &ldquo;Do women in the sample have a greater number of coethnic friends than men?&rdquo; It could be that women might have a higher number, on average, because women have more friends in general. The spirit of the original question requires we condition the analysis on the total number of friends first, or, &ldquo;Do men have more/fewer minority friends, <em>for a given number of friends</em>, than women?&rdquo;</p>
+<p>To feel confident we&rsquo;re on the right track statistically, we will use a valuable trick. I will generate real-looking data from a stochastic process that embodies my assumptions about the real data, analyze it, and confirm that I can recover signals I inject into the data with my statistical methods.</p>
+<p>Here our generating process will be as follows: for our sample of people, we specify how many friends each will have. Then, of those friends, we will choose how many will be co-ethnics, and incorporate the original question by adding sex of the respondant as a factor in this process.</p>
+<p>In the real data, I am told, there are about 250 interviews, and everyone names at least 1 friend, roughly symmetrical about a mean of 15, with a standard deviation of 5. Coding this into an <a href="https://cran.r-project.org/">R</a> notebook, we have:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">  set.seed(<span style="color:#00f">1234</span>)
+  n_sample &lt;- <span style="color:#00f">250</span>
+  n_friends &lt;- round( rnorm(n_sample, <span style="color:#00f">15</span>, <span style="color:#00f">5</span>) )
+  n_friends[n_friends &lt; <span style="color:#00f">1</span>] &lt;- <span style="color:#00f">1</span> <span style="color:#080;font-style:italic"># hack so everyone has some friends</span>
+  n_friends &lt;- as.integer(n_friends)
+</code></pre></div><p>The distribution here is, to some extent, outside the scope of the question. We do not need to worry about whether, for example, men or women have more friends <em>in general</em>, so long as our methods condition on the number of friends for each person.</p>
+<p>Now we have a vector of 250 values, each representing the number of friends for that interview. Next we must determine how many of those are minority-group friends. We can do this by imaging each of the friends in the count is a &lsquo;trial&rsquo;, and is either a coethnic or not with some fixed probability. In other words, the process is Bernoulli.</p>
+<p>We choose a baseline number of minority friends at about 10%, which on the logit scale is about -2.2 log odds units.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>To generate this, I will treat each friend as a Bernoulli trial, and they will be a minority with probability <code>prob_minority_friend</code>, a value which differs for male and female interviewees. As R code:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">  female &lt;- rbinom(n_sample, <span style="color:#00f">1</span>, <span style="color:#00f">0.5</span>)
+  a &lt;- (<span style="color:#00f">-2.2</span>)
+  b &lt;- (<span style="color:#00f">-0.25</span>)
+
+  logistic &lt;- function(x) exp(x) / (<span style="color:#00f">1</span> + exp(x))
+  prob_minority_friend &lt;- logistic( a + b*female )
+  n_minority_friends &lt;- rbinom( n_sample, n_friends, prob_minority_friend )
+</code></pre></div><p>We have set a log-odds difference of 0.25 between women and men, so the odds ratio is 0.78, and the data should show men to have more minority friends than women, conditional on any number of friends. If we can correctly recover that, we have a stats model we can take to the real data.</p>
+<p>One value of simulating data ourselves is that it encourages us to see the real data in a new light. The way we coded this focuses not on the percentage of coethnics among men and women, but rather, the probability. It is a subtle difference from the original question about percentages, which cannot properly account for variation in the total number of friends.</p>
+<p>The process model has, in fact, already specified the statistical model, save for the priors on the parameters. We will do this by a Binomial regression model with a logit link. Using <a href="http://www.xcelab.net/rm">Richard McElreath</a>&rsquo;s <code>map</code> model syntax, this would be:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">  d &lt;- data.frame( n_friends, n_minority_friends, female )
+  d$n_friends &lt;- as.integer(d$n_friends) <span style="color:#080;font-style:italic"># necessary for dbinom</span>
+
+  library(rethinking) <span style="color:#080;font-style:italic"># available at xcelab.net/rm/software</span>
+
+  model1 &lt;- alist(
+    n_minority_friends ~ dbinom(n_friends, p),
+    logit(p) &lt;- a + b*female,
+    a ~ dnorm(<span style="color:#00f">0</span>, <span style="color:#00f">1</span>),
+    b ~ dnorm(<span style="color:#00f">0</span>, <span style="color:#00f">1</span>)
+  )
+
+  fit1 &lt;- map(model1, data=d)
+</code></pre></div><p>Summarizing the model fits using <code>precis</code>, we have:</p>
+<pre><code>##    Mean StdDev  5.5% 94.5%
+## a -2.22   0.08 -2.35 -2.09
+## b -0.20   0.11 -0.39 -0.02
+</code></pre><p>The model has successfully recovered the signal, estimating the parameter to be about -0.2 with a standard error of 0.11, clearly distinct from a zero effect. This is good evidence women have a higher percentage of coethnic ties than men do.</p>
+<p>On the probability scale, for females it is a chance of 0.08, give or take 0.01, while for males, 0.10, also give or take 0.01.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> Granted a difference this small might not matter much in the grand scheme of things, but it is valuable to be able to say what it is.</p>
+<p>Of course, with real data there are innumerable ways this result could be due to confounding, so a proper analysis would include more predictor variables, and also allow for individual variability through varying effect intercepts.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> We can also use this approach to perform a <em>power analysis</em>, by varying the <code>n_sample</code> values and the strength of the true <code>b</code> parameter, and seeing how that affects our output.</p>
+<p>Still, this kind of validation analysis has wide applicability, and I try to use it whenever I can to check my understanding.</p>
+<h2 id="endnotes">Endnotes</h2>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>modified slightly for clarity <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Confirm that <code>logistic(-2.2) = 0.10</code>, where <code>logistic(x) = exp(x)/(1 + exp(x))</code>. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Confirm <code>logistic(a)</code> and <code>logistic(a + b)</code> from the <code>map</code> parameter estimates. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Varying effects require we replace <code>map</code> with <code>map2stan</code>, so we can run a true MCMC analysis. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>powered by <a href="https://gohugo.io">Hugo</a> with the <a href="https://github.com/janraasch/hugo-bearblog/">hugo-bearblog</a> theme
+</footer>
+
+    
+</body>
+
+</html>
