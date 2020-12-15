@@ -15,6 +15,7 @@
       
       <guid>/research/</guid>
       <description>precis organized by topic, publication list here
+code for most figures is also on my github page
 https://scholar.google.com/citations?user=V6Ea-MkAAAAJ&amp;amp;hl=en
 1. Dynamics of Cultural Diversity Understanding cultural change over time is the central focus for the field of cultural evolution. In 2014, I contributed a large-scale quantitative analysis of the East Asian board game of Go.
 
@@ -30,7 +31,7 @@ Here we track specific opening variants as traits that change in frequency over 
       <guid>/publications/</guid>
       <description>Here&amp;rsquo;s my CV as a YAML
   - PDF link
-  - Data and/or code availabile
+  - Data and/or code available
   - citation (bibtex)
 Working Papers  Beheim, B., et al. Treatment of missing data determines conclusions regarding moralizing gods in review, Nature Matters Arising   Minocher, R., Atmaca, S., Bavero, C., McElreath, R., &amp;amp; Beheim, B. Reproducibility improves exponentially over 63 years of social learning research in review, eLife   Tran, N.</description>
     </item>
