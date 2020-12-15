@@ -3,73 +3,73 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>babeheim.github.io/research/</loc>
+    <loc>/research/</loc>
   </url>
   
   <url>
-    <loc>babeheim.github.io/publications/</loc>
+    <loc>/publications/</loc>
   </url>
   
   <url>
-    <loc>babeheim.github.io/people/</loc>
+    <loc>/people/</loc>
   </url>
   
   <url>
-    <loc>babeheim.github.io/software/</loc>
+    <loc>/software/</loc>
   </url>
   
   <url>
-    <loc>babeheim.github.io/teaching/</loc>
+    <loc>/teaching/</loc>
   </url>
   
   <url>
-    <loc>babeheim.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2019-09-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>babeheim.github.io/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2019-09-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>babeheim.github.io/blog/2019-09-19-song-of-aeiea/</loc>
+    <loc>/blog/2019-09-19-song-of-aeiea/</loc>
     <lastmod>2019-09-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>babeheim.github.io/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</loc>
+    <loc>/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</loc>
     <lastmod>2018-03-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>babeheim.github.io/blog/2017-11-06-mpi-eva-signaling-phd-call/</loc>
+    <loc>/blog/2017-11-06-mpi-eva-signaling-phd-call/</loc>
     <lastmod>2017-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>babeheim.github.io/blog/2017-06-15-text-mining-the-hbeb/</loc>
+    <loc>/blog/2017-06-15-text-mining-the-hbeb/</loc>
     <lastmod>2017-06-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>babeheim.github.io/blog/2017-06-02-modeling-network-tie-counts/</loc>
+    <loc>/blog/2017-06-02-modeling-network-tie-counts/</loc>
     <lastmod>2017-06-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>babeheim.github.io/blog/2017-02-12-hierarchical-data-in-plain-text/</loc>
+    <loc>/blog/2017-02-12-hierarchical-data-in-plain-text/</loc>
     <lastmod>2017-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>babeheim.github.io/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</loc>
+    <loc>/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</loc>
     <lastmod>2017-02-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>babeheim.github.io/blog/2016-05-20-reproducible-research-new-default/</loc>
+    <loc>/blog/2016-05-20-reproducible-research-new-default/</loc>
     <lastmod>2016-05-20T00:00:00+00:00</lastmod>
   </url>
   

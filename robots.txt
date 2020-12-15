@@ -1,2 +1,2 @@
 User-Agent: *
-Sitemap: babeheim.github.io/sitemap.xml
+Sitemap: sitemap.xml
