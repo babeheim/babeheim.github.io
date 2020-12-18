@@ -46,6 +46,7 @@ working papers:
   title      : "Treatment of missing data determines conclusions regarding moralizing gods"
   preprint   : https://doi.org/10.31234/osf.io/jwa2n
   status     : In review, *Nature Matters Arising*
+  materials  : https://github.com/babeheim/moralizing-gods-reanalysis
 - authors    : Riana Minocher, Bret Beheim
   title      : Evolutionary dynamics of bilingualism in an indigenous South American population
   status     : in prep
@@ -293,6 +294,7 @@ publications:
   volume     : Vol. 326, Issue 5953, pp. 682-688
   publisher  : American Association for the Advancement of Science
   doi        : https://doi.org/10.1126/science.1178336
+  materials  : https://github.com/babeheim/wealth-transmission
   role       : data analysis
 
 theses supervised:
