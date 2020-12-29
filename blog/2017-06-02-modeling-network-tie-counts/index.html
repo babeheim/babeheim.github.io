@@ -48,13 +48,27 @@
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
+
+  html, body, h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  p, .sidebar, ol, ul, dl {
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.05em;
+    margin-bottom: 1.0em;
+  }
+
   body {
     font-family: Verdana, sans-serif;
     margin: auto;
     padding: 20px;
     max-width: 720px;
     text-align: left;
-    background-color: #fff;
+    background-color: #ffffff;
     word-wrap: break-word;
     overflow-wrap: break-word;
     line-height: 1.5;
@@ -208,6 +222,8 @@
     }
   }
 
+ 
+
 </style>
 
 
@@ -352,6 +368,7 @@
 <p>Of course, with real data there are innumerable ways this result could be due to confounding, so a proper analysis would include more predictor variables, and also allow for individual variability through varying effect intercepts.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> We can also use this approach to perform a <em>power analysis</em>, by varying the <code>n_sample</code> values and the strength of the true <code>b</code> parameter, and seeing how that affects our output.</p>
 <p>Still, this kind of validation analysis has wide applicability, and I try to use it whenever I can to check my understanding.</p>
 <h2 id="endnotes">Endnotes</h2>
+<hr>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

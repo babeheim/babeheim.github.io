@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Bret Beheim.</copyright>
-    <lastBuildDate>Thu, 19 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Is Tetris Biased?</title>
+      <link>/blog/2020-12-29-is-tetris-biased/</link>
+      <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2020-12-29-is-tetris-biased/</guid>
+      <description>My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&amp;rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.</description>
+    </item>
+    
     <item>
       <title>Missing data, moralizing gods, and the siren song of Aeiea</title>
       <link>/blog/2019-09-19-song-of-aeiea/</link>
@@ -45,8 +54,9 @@ The Department of Human Behavior, Ecology and Culture at the Max Planck Institut
       
       <guid>/blog/2017-06-15-text-mining-the-hbeb/</guid>
       <description>Thanks to Kermyt Anderson, the Human Behavioral Ecology Bibliography (HBEB) has recently gone online. Eleanor Power has taken this text file and parsed it into a bibtex file, and from there it can be turned into an Endnote library or other bibliographic database format.
-After a long hiatus, the Human Behavioral Ecology Bibliography is back online, now as an editable google doc. #HBEBhttps://t.co/tpVPE5jHQf
-&amp;mdash; Kermyt Anderson (@KermytAnderson) June 13, 2017  BibTex version of the HBE Bibliography is done and available for you to use and augment!</description>
+{{ tweet 874664941076328448 }}
+{{ tweet 875261184114442240 }}
+I&amp;rsquo;m curious to know more about HBEB&amp;rsquo;s use as a dataset in its own right, and since I&amp;rsquo;ve been doing similar work with our field data here at MPI-EVA&amp;rsquo;s new Department of Human Behavior, Ecology and Culture, I figured I could turn the lens on us at the same time as showcase the methods to interested parties.</description>
     </item>
     
     <item>
