@@ -8,12 +8,12 @@
 <link rel="shortcut icon" href="images/favicon.png" />
 <title>Fitting Markov Models to Tetris Data in Stan | Bret Alexander Beheim</title>
 <meta name="title" content="Fitting Markov Models to Tetris Data in Stan" />
-<meta name="description" content="Here we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language." />
+<meta name="description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language." />
 <meta name="keywords" content="" />
 
 
 <meta property="og:title" content="Fitting Markov Models to Tetris Data in Stan" />
-<meta property="og:description" content="Here we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language." />
+<meta property="og:description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/2021-01-02-stan-markov-tetris/" />
 <meta property="og:image" content="https://babeheim.com/assets/tetris-cover.jpg" />
@@ -26,16 +26,16 @@
 <meta name="twitter:image" content="https://babeheim.com/assets/tetris-cover.jpg"/>
 
 <meta name="twitter:title" content="Fitting Markov Models to Tetris Data in Stan"/>
-<meta name="twitter:description" content="Here we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language."/>
+<meta name="twitter:description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language."/>
 <meta name="twitter:site" content="@babeheim"/>
 
 
 
 <meta itemprop="name" content="Fitting Markov Models to Tetris Data in Stan">
-<meta itemprop="description" content="Here we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language.">
+<meta itemprop="description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language.">
 <meta itemprop="datePublished" content="2021-01-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1840">
+<meta itemprop="wordCount" content="1829">
 <meta itemprop="image" content="https://babeheim.com/assets/tetris-cover.jpg">
 
 
@@ -348,7 +348,7 @@ model {
 </code></pre></div><p>The <code>theta</code> object now has another dimension - rather than 7 vectors, we now need 7 $\times$ 7 vectors for 49 states in the system. We can pass the data into this model as above, giving estimates for all 343 parameters to compare against the predicted values:</p>
 <p><img src="/assets/model2_estimates_vs_sim_gameboy.png" alt=""><br>
 <em>Figure 4. Second-order Markov parameter estimates from Gameboy data (n = 692, means only). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
-<p>Compared to the NES results, this is not very satisfying. Some effects were accurately predicted, but others are totally unclear, or clearly inaccurate. With 343 parameters and only 692 data points, there just isn&rsquo;t enough data to resolve everything clearly, so we do not know if the simulation model is really accurate to the data.</p>
+<p>Compared to the NES results, this is not very satisfying. With 343 parameters and only 692 data points, some effects were accurately predicted, but others are totally unclear, or clearly inaccurate. We still do not know if the simulation really matches real data.</p>
 <p>What to do? One solution is just to collect <em>more data</em>, which would bring our estimates into sharper focus. But more data takes time and energy to prepare (which I have been told is not in the family time budget). There is a simpler way, though.</p>
 <h2 id="signals">Measuring Signals of Bias</h2>
 <p>Our <a href="/blog/2020-12-29-is-tetris-biased/#markov-and-tetris">simulation</a> of the Gameboy&rsquo;s transition matrix shows a number of symmetries we can use. In 12 of the 49 Markov states, each one starting with an O, S or T, three outcomes of the seven are substantially favored with a 27% chance each, or, a +38% bias towards picking a &lsquo;favorite&rsquo; piece<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. This simple yes-or-no event is a signal of the Gameboy&rsquo;s behavior and we only need a simple Binomial model with one parameter to describe it (rather than the monstrous, 343-parameter, second-order Markov model above).</p>
@@ -367,13 +367,13 @@ $$</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">p_mean &lt;- (x + <span style="color:#00f">3</span>) / (n + <span style="color:#00f">7</span>) <span style="color:#080;font-style:italic"># prior on p is Beta(3, 4)</span>
 gamma_mean &lt;- p_mean - <span style="color:#00f">3</span>/<span style="color:#00f">7</span>
 gamma_sd &lt;- sqrt(gamma_mean * (<span style="color:#00f">1</span> - gamma_mean) / (n + <span style="color:#00f">7</span> + <span style="color:#00f">1</span>))
-</code></pre></div><p>In the real Gameboy data we collected, the chain visits these twelve special states $n$ = 188 times, and a &ldquo;favorite&rdquo; piece was chosen $x$ = 156 times. Updating our signal model with this data, we find $\gamma$ = 0.387($\pm$ 0.028), in nearly-exact agreement with the predictions from the simulation<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+</code></pre></div><p>In the real Gameboy data we collected, the chain visits these twelve special states $n$ = 188 times, and a &ldquo;favorite&rdquo; piece was chosen $x$ = 156 times. Updating our signal model with this data, we find $\gamma$ = 0.387($\pm$ 0.028), in almost exact agreement with the predictions from the simulation<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 <p>Model symmetries let us test our predictions with only 692 observations, but we didn&rsquo;t even need this much data. If we plot the expected $x$ for any $n$ under each hypothesis, and compare to the observed data in each chain, the two algorithms quickly diverge:</p>
 <p><img src="/assets/cumulative_signals.png" alt=""><br>
 <em>Figure 5. Counts of $x$ and $n$ for each round of Tetris played, the 95% confidence intervals each algorithm, and the expected value under Uniform sampling.</em></p>
 <p>After only about 120 draws (so an special-state $n$ between 30 and 40), the behavior of the two algorithms is clearly different, and we know which is which.</p>
 <h1 id="conclusions">Conclusions</h1>
-<p>From the above, it looks like the Tetris randomizer algorithms we tried are right. The NES model, with its 49 parameters, was pretty easy to test using a real Markov model. But when real data is expensive to collect, or the model becomes too complex, it&rsquo;s better to forgo the full model and instead find special signals - like our parameter $\gamma$ - to test our predictions.</p>
+<p>From the above, it looks like the Tetris randomizer algorithms we tried are right. The NES algorithm, with its 49 parameters, was pretty easy to test using a real Markov model. But when real data is expensive to collect, or the model becomes too complex, it&rsquo;s better to forgo the full model and instead find special signals - like our parameter $\gamma$ - to test our predictions.</p>
 <p><em>all data and code for this project is available <a href="https://github.com/babeheim/tetris1989-markov">here</a></em></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
