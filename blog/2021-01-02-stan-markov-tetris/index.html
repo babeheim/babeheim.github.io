@@ -16,14 +16,14 @@
 <meta property="og:description" content="Text about this post" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/2021-01-02-stan-markov-tetris/" />
-<meta property="og:image" content="assets/tetris-cover.jpg" />
+<meta property="og:image" content="/assets/tetris-cover.jpg" />
 <meta property="article:published_time" content="2021-01-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-01-02T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
 
 
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="assets/tetris-cover.jpg"/>
+<meta name="twitter:image" content="/assets/tetris-cover.jpg"/>
 
 <meta name="twitter:title" content="Fitting Markov Models to Tetris Data in Stan"/>
 <meta name="twitter:description" content="Text about this post"/>
@@ -35,7 +35,7 @@
 <meta itemprop="datePublished" content="2021-01-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-02T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1840">
-<meta itemprop="image" content="assets/tetris-cover.jpg">
+<meta itemprop="image" content="/assets/tetris-cover.jpg">
 
 
 
@@ -374,8 +374,6 @@ gamma_sd &lt;- sqrt(gamma_mean * (<span style="color:#00f">1</span> - gamma_mean
 <h1 id="conclusions">Conclusions</h1>
 <p>From the above, it looks like the Tetris randomizer algorithms we tried are right. The NES model, with its 49 parameters, was pretty easy to test using a real Markov model. But when real data is expensive to collect, or the model becomes too complex, it&rsquo;s better to forgo the full model and instead find special signals - like our parameter $\gamma$ - to test our predictions.</p>
 <p><em>all data and code for this project is available <a href="https://github.com/babeheim/tetris1989-markov">here</a></em></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
