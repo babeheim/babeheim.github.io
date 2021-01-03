@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Bret Beheim.</copyright>
-    <lastBuildDate>Sun, 27 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fitting Markov Models to Tetris Data in Stan</title>
+      <link>/blog/2021-01-02-stan-markov-tetris/</link>
+      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2021-01-02-stan-markov-tetris/</guid>
+      <description>In my last post, I simulated millions draws from two versions of the piece randomizer inside Tetris. The 1989 algorithm for NES Tetris can be described as a first-order Markov process, biased against repeat pieces, while the Gameboy algorithm is a more complex, second-order process with some seriously strange biases. At least, that&amp;rsquo;s what the simulation says. Here we use real Tetris data to find out if these simulation models are accurate, using the Stan language to fit simple multistate Markov models.</description>
+    </item>
+    
     <item>
       <title>Is Tetris Biased?</title>
       <link>/blog/2020-12-29-is-tetris-biased/</link>

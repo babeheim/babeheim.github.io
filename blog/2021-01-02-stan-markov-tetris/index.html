@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="images/favicon.png" />
+<title>Fitting Markov Models to Tetris Data in Stan | Bret Alexander Beheim</title>
+<meta name="title" content="Fitting Markov Models to Tetris Data in Stan" />
+<meta name="description" content="Text about this post" />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Fitting Markov Models to Tetris Data in Stan" />
+<meta property="og:description" content="Text about this post" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/2021-01-02-stan-markov-tetris/" />
+<meta property="og:image" content="assets/tetris-cover.jpg" />
+<meta property="article:published_time" content="2021-01-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-02T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="assets/tetris-cover.jpg"/>
+
+<meta name="twitter:title" content="Fitting Markov Models to Tetris Data in Stan"/>
+<meta name="twitter:description" content="Text about this post"/>
+
+
+
+<meta itemprop="name" content="Fitting Markov Models to Tetris Data in Stan">
+<meta itemprop="description" content="Text about this post">
+<meta itemprop="datePublished" content="2021-01-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-01-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1840">
+<meta itemprop="image" content="assets/tetris-cover.jpg">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+
+  html, body, h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  p, .sidebar, ol, ul, dl {
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.05em;
+    margin-bottom: 1.0em;
+  }
+
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 90%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+</style>
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<style>
+  .twitter-tweet-rendered {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .inline-svg {
+    display: inline-block;
+    height: 1.0rem;
+    width: 1.0rem;
+    top: 0.15rem;
+    position: relative;
+    fill: #636363;
+  }
+  .inline-svg:hover {
+    fill: #bdbdbd;
+    height: 1.0rem;
+    width: 1.0rem;
+  }
+  .inline-svg#pdf {
+    fill: #de2d26;
+  }
+  .inline-svg#pdf:hover {
+    fill: #fc9272;
+  }
+  .inline-svg#data {
+    fill: #1c9099;
+  }
+  .inline-svg#data:hover {
+    fill: #a6bddb;
+  }
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Bret Alexander Beheim</h2>
+</a>
+<nav><a href="/">About</a>
+
+<a href="/research/">Research</a>
+
+<a href="/publications/">Publications</a>
+
+<a href="/people/">People</a>
+
+<a href="/software/">Software</a>
+
+<a href="/teaching/">Teaching</a>
+
+
+<a href="/blog">Notes</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Fitting Markov Models to Tetris Data in Stan</h1>
+<p>
+  <i>
+    <time datetime='2021-01-02' pubdate>
+      02 Jan, 2021
+    </time>
+  </i>
+</p>
+
+<content>
+  <p><img src="/assets/tetrisnes.gif" alt=""></p>
+<p>In my <a href="/blog/2020-12-29-is-tetris-biased/">last post</a>, I simulated millions draws from two versions of the piece randomizer inside Tetris. The 1989 algorithm for NES Tetris can be described as a first-order Markov process, biased against repeat pieces, while the Gameboy algorithm is a more complex, second-order process with some <a href="/blog/2020-12-29-is-tetris-biased/#markov-and-tetris">seriously strange biases</a>. At least, that&rsquo;s what the simulation says. Here we use real Tetris data to find out if these simulation models are accurate, using the Stan language to fit simple multistate Markov models.</p>
+<h2 id="the-data">The Data</h2>
+<p>My daughters and I recorded several hundred real Tetris sequences, from both the official 1989 NES edition and the 1989 Gameboy edition.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> After three rounds, we had these 579 draws from the NES:</p>
+<pre><code>ZJLTSJTZJILJISJOTLTTJTISZOZSLTIJTZIZSSJSLZSLJTIOIOIJLOSOLJLOTZTIZSJIZSZJOLOZTSZJOJOTTOLOJSTOLTOSTILZISTLZLZITJIOJOTJLOTLOTOILJTZOTLSJZLOSTJSZLTOTLLZLOZOSTITSLOLIOSOOTOTIZTZOLISOTJIOLSOLZJLZTJOITJZZTISSLSJTISTSISZJJOSOLZTLOSLJIZOSLTL|SSIOZLTISISIOLIJSLZIJISSIZSLTSSILTJZSOZIOTOZOISTJILIJIZLJTJOLJZOIZOIOSOZSLSZJJIOJZTLTSJOSTTOTIOTLJLSOTSLSOOZIJOJOTOTLZJLZTOZITILISTILZZJSTJIJTSTSOZSLOIIOJISLZLIJOLOSZISOSO|ITOSTISSLISISZOILOOJLJSJZOZILTJZTIZOISOJSJZZIJIZLIZSOLZIJSIZOJOJSILJOLTZISLZIOOZLIZTIJLIZSOSSZIZTJIJZSJZJSZOTZOIJZZZTIZSIJILITLILZOZTJSOJZTZSIIIOJOJJLTZLTZTIOILZZTSITZTJLSJZTIL
+</code></pre><p>Each of the seven Tetris pieces is represented by a letter, with the three rounds separated by &ldquo;|&rdquo;. We also played four rounds on the Gameboy, with 692 draws as follows:</p>
+<pre><code>SOITISIITZSOTJSSTTSJZOJZOJTJLZJZZOOSOTTOTZOZTLSJOLSSOTSJILTJLSTIOJSLTLJSSSOZSJTIOISSOJJSLOTOLSOZZSIJOOSLOJSOOZOTLOTJSLTZSJTOSSSO|ITLOTSTLISTJSIJOZISOZLTJSSLOJTLSZ|SIOJZZOISZOOZTTJLTISLISILTTJSZOOTOJTOSJIOTLSJTISJZJTZOLSZOJTOJTOJOJSZTIJZOJZSTLOLTLOSTLJJIOSZJZJITSOSJISZ|IJJSIOOZSLOTTJTIJTOISJOIOLZSTSJTSOJJOOZJSLLJOSISOLTIOSJOJJOIOZZTTJLIZOOSSIJITJOSOITLJJZSTIJSOIZJIOSJTIJTSTTTJLTLIJLIITLOIITLJTLOZSLTLSOOSSSZTSOIZLIZLTL|TJSJOLTIJOLZIOJZOLZLOSZTLJIZZIITTOSIOOSZTIOITZJISOOJZTJILJJZLLTISJJZTIOJZLLTSOJZOOZSOSOOZJOLZOLTTSSIOJOZTOITISOLTOJZTIOTLJZJJIZITOZSTOLZLTSIJJTOJTLLOOSJTSTZLISJIIOOZLOJZIITIIOJZLTILJSZOZZJZILTLJISJOIOOSLOTSOZIOLZITLJOOTILJOTIOZSIIZOTJOTOSOLTJOTOTZSOITISSITOILSIZTTLJJSOOTOLTO
+</code></pre><p>To fit statistical models to this data, we use the <code>rstan</code> package in R, and write out version of the Markov models from last time in the Stan language. The simplest model does not take history into account, and just estimates the frequency at which each piece appears in the sample:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#080;font-style:italic">// save as &#34;categorical.stan&#34;
+</span><span style="color:#080;font-style:italic"></span>data {
+  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; K; <span style="color:#080;font-style:italic">// number of unique outcomes (here, 7)
+</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; T; <span style="color:#080;font-style:italic">// number of outcomes observed
+</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">0</span>&gt; y[T]; <span style="color:#080;font-style:italic">// vector of outcome data, as integers
+</span><span style="color:#080;font-style:italic"></span>  vector&lt;lower = <span style="color:#00f">0</span>&gt;[K] alpha; <span style="color:#080;font-style:italic">// prior on outcomes
+</span><span style="color:#080;font-style:italic"></span>}
+parameters {
+  simplex[K] theta; <span style="color:#080;font-style:italic">// outcome probabilities
+</span><span style="color:#080;font-style:italic"></span>}
+model {
+  theta ~ dirichlet(alpha);
+  <span style="color:#000080;font-weight:bold">for</span> (i in <span style="color:#00f">1</span>:T) y[i] ~ categorical(theta);
+}
+</code></pre></div><p>Because these are Bayesian models, we must name our &lsquo;prior&rsquo; probability for each outcome before showing the data to the model. This is the <code>alpha</code> vector, which we&rsquo;ll set to provide equal, but reasonably uncertain, chances to each outcome. Stan will then update this prior using the data, returning &lsquo;posterior&rsquo; estimates of the probability of each outcome, according to <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes' theorem</a>. In R, we can do this with:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">dat_list &lt;- list(
+  y = y,   <span style="color:#080;font-style:italic"># vector of draws, as integers</span>
+  K = length(unique(y)), <span style="color:#080;font-style:italic"># number of unique outcomes, here 7</span>
+  N = length(y),   <span style="color:#080;font-style:italic"># total number of observations</span>
+  alpha = c(<span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>) 
+  <span style="color:#080;font-style:italic"># Dirichlet prior for each outcome, ~0.14 +/- 0.12</span>
+)
+m0 &lt;- stan(file = <span style="color:#00f">&#34;./stan/categorical.stan&#34;</span>, data = dat_list)
+</code></pre></div><p>The <code>stan</code> function returns posterior estimates of each parameter, standing for the marginal probability each of the seven pieces occurs. We can directly compare these estimates to the predictions from our R simulations from last time, to test if they match. Here I&rsquo;ve presented this as a plot, with the predicted probabilities from the simulation on the x-axis (exact values), and the matching estimates from the Stan model on the y-axis (means, and 89% density intervals).</p>
+<p><img src="/assets/model0_estimates_vs_sim_gameboy.png" alt=""><br>
+<em>Figure 1. Categorical parameter estimates from Gameboy data (n = 692, means and 89% HPDI). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
+<p><img src="/assets/model0_estimates_vs_sim_nes.png" alt=""><br>
+<em>Figure 2. Categorical parameter estimates from NES data (n = 579, means and 89% HPDI). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
+<p>As we expected, the Gameboy algorithm is hard on Z and L, and favors T and especially O, which appears in 19% of actual draws. But this isn&rsquo;t really good evidence that either algorithm is accurate, since most estimates are not distinct from the horizontal line-of-evenness at 1/7th. Only the L-piece in the Gameboy is a clear match with the simulation. The other estimates could have come from the algorithm, but they could be from something else too. We need to go deeper&hellip;</p>
+<h2 id="markov">Fitting the Markov models</h2>
+<p>To estimate proper Markov models, and maybe get clearer results, we adapt the Stan model above to see the past states in the chain.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">data {
+  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; K; <span style="color:#080;font-style:italic">// number of unique outcomes (here, 7)
+</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; T; <span style="color:#080;font-style:italic">// length of the chain
+</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>, upper = K&gt; y[T]; <span style="color:#080;font-style:italic">// Markov chain data
+</span><span style="color:#080;font-style:italic"></span>  vector&lt;lower = <span style="color:#00f">0</span>&gt;[K] theta_prior[K]; <span style="color:#080;font-style:italic">// prior on transitions
+</span><span style="color:#080;font-style:italic"></span>}
+parameters {
+  simplex[K] theta[K]; <span style="color:#080;font-style:italic">// transition probabilities
+</span><span style="color:#080;font-style:italic"></span>}
+model {
+  <span style="color:#000080;font-weight:bold">for</span> (k in <span style="color:#00f">1</span>:K){
+    theta[k] ~ dirichlet(theta_prior[k]);
+  }
+  <span style="color:#000080;font-weight:bold">for</span> (t in <span style="color:#00f">2</span>:T) y[t] ~ categorical(theta[y[t - <span style="color:#00f">1</span>]]);
+}
+</code></pre></div><p>Our <code>theta</code> changes from a vector holding seven probabilities into seven vectors, one for each state we could be in at time <code>t - 1</code>. This is the transition matrix, now with 49 parameters instead of 7. We give each vector in <code>theta</code> its own Dirchlet prior as before, and update the model using the <code>stan</code> function in R.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> The estimates of each of the 49 posterior estimates is comparable to the 49 frequencies from the limiting distribution of the Markov chain:</p>
+<p><img src="/assets/model1_estimates_vs_sim_nes.png" alt=""><br>
+<em>Figure 3. Markov parameter estimates from NES data (n = 579, means and 89% HPDI). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
+<p>As predicted, the real data shows a strong bias against two-in-a-row outcomes (the bottom left estimates). This is strong evidence that the NES algorithm we wrote is an accurate reflection of what we see in the &lsquo;real world&rsquo; of gameplay on the NES, e.g. at the <a href="https://thectwc.com/">Classic Tetris World Championships</a>.</p>
+<p>To prepare the Markov model for the Gameboy data, we must allow it to see the <em>last two</em> draws as follows:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">data {
+  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; K; <span style="color:#080;font-style:italic">// number of unique outcomes (here, 7)
+</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; T; <span style="color:#080;font-style:italic">// length of the chain
+</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>, upper = K&gt; y[T]; <span style="color:#080;font-style:italic">// markovian data vector
+</span><span style="color:#080;font-style:italic"></span>  simplex[K] theta_prior[K, K]; <span style="color:#080;font-style:italic">// prior on transitions
+</span><span style="color:#080;font-style:italic"></span>}
+parameters {
+  simplex[K] theta[K, K]; <span style="color:#080;font-style:italic">// transition probabilities
+</span><span style="color:#080;font-style:italic"></span>}
+model {
+  <span style="color:#000080;font-weight:bold">for</span> (k in <span style="color:#00f">1</span>:K){
+    <span style="color:#000080;font-weight:bold">for</span>(j in <span style="color:#00f">1</span>:K){
+      theta[k][j] ~ dirichlet(theta_prior[k][j]);
+    }
+  }
+  <span style="color:#000080;font-weight:bold">for</span> (t in <span style="color:#00f">3</span>:T) y[t] ~ categorical(theta[y[t - <span style="color:#00f">2</span>]][y[t - <span style="color:#00f">1</span>]]);
+}
+</code></pre></div><p>The <code>theta</code> object now has another dimension - rather than 7 vectors, we now need 7 $\times$ 7 vectors for 49 states in the system. We can pass the data into this model as above, giving estimates for all 343 parameters to compare against the predicted values:</p>
+<p><img src="/assets/model2_estimates_vs_sim_gameboy.png" alt=""><br>
+<em>Figure 4. Second-order Markov parameter estimates from Gameboy data (n = 692, means only). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
+<p>Compared to the NES results, this is not very satisfying. Some effects were accurately predicted, but others are totally unclear, or clearly inaccurate. With 343 parameters and only 692 data points, there just isn&rsquo;t enough data to resolve everything clearly, so we do not know if the simulation model is really accurate to the data.</p>
+<p>What to do? One solution is just to collect <em>more data</em>, which would bring our estimates into sharper focus. But more data takes time and energy to prepare (which I have been told is not in the family time budget). There is a simpler way, though.</p>
+<h2 id="signals">Measuring Signals of Bias</h2>
+<p>Our <a href="/blog/2020-12-29-is-tetris-biased/#markov-and-tetris">simulation</a> of the Gameboy&rsquo;s transition matrix shows a number of symmetries we can use. In 12 of the 49 Markov states, each one starting with an O, S or T, three outcomes of the seven are substantially favored with a 27% chance each, or, a +38% bias towards picking a &lsquo;favorite&rsquo; piece<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. This simple yes-or-no event is a signal of the Gameboy&rsquo;s behavior and we only need a simple Binomial model with one parameter to describe it (rather than the monstrous, 343-parameter, second-order Markov model above).</p>
+<p>Specifically, if the chain visits one of those 12 special states $n$ times, and in those visits a &ldquo;favorite&rdquo; outcome is picked $x$ times, then we&rsquo;ll say $x$ follows a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial distribution</a> with parameters $n$ and $\gamma$,</p>
+<p>$$
+X \sim \mathrm{Binomial}(n, p)
+$$
+$$
+p = 3/7 + \gamma
+$$</p>
+<p>We write it this way, so that the $\gamma$ parameter is the signal of bias - it is exactly 0 with random sampling, but about 0.348 in the Gameboy algorithm. If we set a  Beta prior on $p$, we don&rsquo;t even need to use Stan - the <a href="https://en.wikipedia.org/wiki/Conjugate_prior#Example">Beta-Binomial conjugacy</a> means that the posterior distribution on the Binomial probability is also Beta distributed,</p>
+<p>$$
+p \sim \mathrm{Beta}(x + a, (n - x) + b)
+$$</p>
+<p>where $a$ and $b$ define a prior for what $p$ could be (with three favored outcomes of seven, let&rsquo;s say $a$ = 3 and $b$ = 4). This means we can find the mean and variance of the bias signal as:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">p_mean &lt;- (x + <span style="color:#00f">3</span>) / (n + <span style="color:#00f">7</span>) <span style="color:#080;font-style:italic"># prior on p is Beta(3, 4)</span>
+gamma_mean &lt;- p_mean - <span style="color:#00f">3</span>/<span style="color:#00f">7</span>
+gamma_sd &lt;- sqrt(gamma_mean * (<span style="color:#00f">1</span> - gamma_mean) / (n + <span style="color:#00f">7</span> + <span style="color:#00f">1</span>))
+</code></pre></div><p>In the real Gameboy data we collected, the chain visits these twelve special states $n$ = 188 times, and a &ldquo;favorite&rdquo; piece was chosen $x$ = 156 times. Updating our signal model with this data, we find $\gamma$ = 0.387($\pm$ 0.028), in nearly-exact agreement with the predictions from the simulation<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>Model symmetries let us test our predictions with only 692 observations, but we didn&rsquo;t even need this much data. If we plot the expected $x$ for any $n$ under each hypothesis, and compare to the observed data in each chain, the two algorithms quickly diverge:</p>
+<p><img src="/assets/cumulative_signals.png" alt=""><br>
+<em>Figure 5. Counts of $x$ and $n$ for each round of Tetris played, the 95% confidence intervals each algorithm, and the expected value under Uniform sampling.</em></p>
+<p>After only about 120 draws (so an special-state $n$ between 30 and 40), the behavior of the two algorithms is clearly different, and we know which is which.</p>
+<h1 id="conclusions">Conclusions</h1>
+<p>From the above, it looks like the Tetris randomizer algorithms we tried are right. The NES model, with its 49 parameters, was pretty easy to test using a real Markov model. But when real data is expensive to collect, or the model becomes too complex, it&rsquo;s better to forgo the full model and instead find special signals - like our parameter $\gamma$ - to test our predictions.</p>
+<p><em>all data and code for this project is available <a href="https://github.com/babeheim/tetris1989-markov">here</a></em></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>One member of our data team played a round of Tetris for as long as they could, while another recorded each piece as it appeared. The NES games were played on an emulator, while the Gameboy games were played on both an emulator and the original hardware. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>The model given here fits a single Markov chain, but in the real data, we have several chains because there are several rounds played. This difference does not change our results but is technically correct - the best kind of correct. Both versions of the Markov model are given in the <a href="https://github.com/babeheim/tetris1989-markov">full script and data</a>. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Under even chances, there&rsquo;s a 3/7 or 42.9% chance of any of three pieces being picked. In the Gameboy simulation we see the three favorite pieces chosen 81.3% of the time, or a bias of +38.4%. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>In contrast, the NES chains visit these states 131 times but only select the Gameboy&rsquo;s favorite three outcomes 61 times. This means our estimate of $\gamma$ is about 0.035 ($\pm$ 0.042), very close to the simulation $\gamma$ of 0.062. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>powered by <a href="https://gohugo.io">Hugo</a> with the <a href="https://github.com/janraasch/hugo-bearblog/">hugo-bearblog</a> theme
+</footer>
+
+    
+</body>
+
+</html>

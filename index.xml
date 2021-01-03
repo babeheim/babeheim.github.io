@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Bret Beheim.</copyright>
-    <lastBuildDate>Sun, 27 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research</title>
       <link>/research/</link>
@@ -71,6 +71,15 @@ I currently teach Reproducible Workflows for Scientific Computing, a short cours
 demonstration of the Poisson scatter theorem
 I&amp;rsquo;ve previously taught the following courses:
  Introduction to Probability, short course for my lab group at MPI-EVA, taught 2020 using Joe Blitzstein&amp;rsquo;s materials The Human Life Course (UNM ANTH 160), taught 2013, 2014, 2015 - syllabus pdf Research Computing in Evolutionary Anthropology (UNM ANTH 560), taught 2014, 2015 - syllabus pdf Workshop on Statistical Rethinking, taught in 2015 Evolution and Human Nature (UCD ANT 50), taught 2011, 2015 - syllabus pdf Applied Research Methods (UCD ESP 178), taught 2011, 2012, 2015 - syllabus pdf Cultural Ecology (UCD ANT 102), taught 2010, 2015 - syllabus pdf   </description>
+    </item>
+    
+    <item>
+      <title>Fitting Markov Models to Tetris Data in Stan</title>
+      <link>/blog/2021-01-02-stan-markov-tetris/</link>
+      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2021-01-02-stan-markov-tetris/</guid>
+      <description>In my last post, I simulated millions draws from two versions of the piece randomizer inside Tetris. The 1989 algorithm for NES Tetris can be described as a first-order Markov process, biased against repeat pieces, while the Gameboy algorithm is a more complex, second-order process with some seriously strange biases. At least, that&amp;rsquo;s what the simulation says. Here we use real Tetris data to find out if these simulation models are accurate, using the Stan language to fit simple multistate Markov models.</description>
     </item>
     
     <item>
