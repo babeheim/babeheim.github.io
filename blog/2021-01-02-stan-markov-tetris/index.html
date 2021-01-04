@@ -35,7 +35,7 @@
 <meta itemprop="description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language.">
 <meta itemprop="datePublished" content="2021-01-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1829">
+<meta itemprop="wordCount" content="1830">
 <meta itemprop="image" content="https://babeheim.com/assets/tetris-cover.jpg">
 
 
@@ -351,7 +351,7 @@ model {
 <p>Compared to the NES results, this is not very satisfying. With 343 parameters and only 692 data points, some effects were accurately predicted, but others are totally unclear, or clearly inaccurate. We still do not know if the simulation really matches real data.</p>
 <p>What to do? One solution is just to collect <em>more data</em>, which would bring our estimates into sharper focus. But more data takes time and energy to prepare (which I have been told is not in the family time budget). There is a simpler way, though.</p>
 <h2 id="signals">Measuring Signals of Bias</h2>
-<p>Our <a href="/blog/2020-12-29-is-tetris-biased/#markov-and-tetris">simulation</a> of the Gameboy&rsquo;s transition matrix shows a number of symmetries we can use. In 12 of the 49 Markov states, each one starting with an O, S or T, three outcomes of the seven are substantially favored with a 27% chance each, or, a +38% bias towards picking a &lsquo;favorite&rsquo; piece<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. This simple yes-or-no event is a signal of the Gameboy&rsquo;s behavior and we only need a simple Binomial model with one parameter to describe it (rather than the monstrous, 343-parameter, second-order Markov model above).</p>
+<p>Our <a href="/blog/2020-12-29-is-tetris-biased/#markov-and-tetris">simulation</a> of the Gameboy&rsquo;s transition matrix shows a number of symmetries we can use. In 12 of the 49 Markov states, each one starting with an O, S or T, three outcomes of the seven are substantially favored with a 27% chance each, or, a +38% bias towards picking a &lsquo;favorite&rsquo; piece<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. This simple yes-or-no event is a signal of the Gameboy&rsquo;s unique behavior and we only need a simple Binomial model with one parameter to describe it (rather than the monstrous, 343-parameter, second-order Markov model above).</p>
 <p>Specifically, if the chain visits one of those 12 special states $n$ times, and in those visits a &ldquo;favorite&rdquo; outcome is picked $x$ times, then we&rsquo;ll say $x$ follows a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial distribution</a> with parameters $n$ and $\gamma$,</p>
 <p>$$
 X \sim \mathrm{Binomial}(n, p)
