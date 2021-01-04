@@ -366,7 +366,7 @@ $$</p>
 <p>where $a$ and $b$ define a prior for what $p$ could be (with three favored outcomes of seven, let&rsquo;s say $a$ = 3 and $b$ = 4). This means we can find the mean and variance of the bias signal as:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">p_mean &lt;- (x + <span style="color:#00f">3</span>) / (n + <span style="color:#00f">7</span>) <span style="color:#080;font-style:italic"># prior on p is Beta(3, 4)</span>
 gamma_mean &lt;- p_mean - <span style="color:#00f">3</span>/<span style="color:#00f">7</span>
-gamma_sd &lt;- sqrt(gamma_mean * (<span style="color:#00f">1</span> - gamma_mean) / (n + <span style="color:#00f">7</span> + <span style="color:#00f">1</span>))
+gamma_sd &lt;- sqrt(p_mean * (<span style="color:#00f">1</span> - p_mean) / (n + <span style="color:#00f">7</span> + <span style="color:#00f">1</span>))
 </code></pre></div><p>In the real Gameboy data we collected, the chain visits these twelve special states $n$ = 188 times, and a &ldquo;favorite&rdquo; piece was chosen $x$ = 156 times. Updating our signal model with this data, we find $\gamma$ = 0.387($\pm$ 0.028), in almost exact agreement with the predictions from the simulation<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 <p>Model symmetries let us test our predictions with only 692 observations, but we didn&rsquo;t even need this much data. If we plot the expected $x$ for any $n$ under each hypothesis, and compare to the observed data in each chain, the two algorithms quickly diverge:</p>
 <p><img src="/assets/cumulative_signals.png" alt=""><br>
