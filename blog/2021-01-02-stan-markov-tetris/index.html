@@ -35,7 +35,7 @@
 <meta itemprop="description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language.">
 <meta itemprop="datePublished" content="2021-01-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-01-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1830">
+<meta itemprop="wordCount" content="1829">
 <meta itemprop="image" content="https://babeheim.com/assets/tetris-cover.jpg">
 
 
@@ -349,7 +349,7 @@ model {
 <p><img src="/assets/model2_estimates_vs_sim_gameboy.png" alt=""><br>
 <em>Figure 4. Second-order Markov parameter estimates from Gameboy data (n = 692, means only). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
 <p>Compared to the NES results, this is not very satisfying. With 343 parameters and only 692 data points, some effects were accurately predicted, but others are totally unclear, or clearly inaccurate. We still do not know if the simulation really matches real data.</p>
-<p>What to do? One solution is just to collect <em>more data</em>, which would bring our estimates into sharper focus. But more data takes time and energy to prepare (which I have been told is not in the family time budget). There is a simpler way, though.</p>
+<p>What to do? One solution is just to collect <em>more data</em>, which would bring our estimates into sharper focus. But more data takes time and energy to prepare (which I have been told is not in the family budget). There is a simpler way, though.</p>
 <h2 id="signals">Measuring Signals of Bias</h2>
 <p>Our <a href="/blog/2020-12-29-is-tetris-biased/#markov-and-tetris">simulation</a> of the Gameboy&rsquo;s transition matrix shows a number of symmetries we can use. In 12 of the 49 Markov states, each one starting with an O, S or T, three outcomes of the seven are substantially favored with a 27% chance each, or, a +38% bias towards picking a &lsquo;favorite&rsquo; piece<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. This simple yes-or-no event is a signal of the Gameboy&rsquo;s unique behavior and we only need a simple Binomial model with one parameter to describe it (rather than the monstrous, 343-parameter, second-order Markov model above).</p>
 <p>Specifically, if the chain visits one of those 12 special states $n$ times, and in those visits a &ldquo;favorite&rdquo; outcome is picked $x$ times, then we&rsquo;ll say $x$ follows a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial distribution</a> with parameters $n$ and $\gamma$,</p>
@@ -373,7 +373,7 @@ gamma_sd &lt;- sqrt(p_mean * (<span style="color:#00f">1</span> - p_mean) / (n +
 <em>Figure 5. Counts of $x$ and $n$ for each round of Tetris played, the 95% confidence intervals each algorithm, and the expected value under Uniform sampling.</em></p>
 <p>After only about 120 draws (so an special-state $n$ between 30 and 40), the behavior of the two algorithms is clearly different, and we know which is which.</p>
 <h1 id="conclusions">Conclusions</h1>
-<p>From the above, it looks like the Tetris randomizer algorithms we tried are right. The NES algorithm, with its 49 parameters, was pretty easy to test using a real Markov model. But when real data is expensive to collect, or the model becomes too complex, it&rsquo;s better to forgo the full model and instead find special signals - like our parameter $\gamma$ - to test our predictions.</p>
+<p>From the above, it looks like the Tetris randomizer algorithms we tried are right. The NES algorithm, with its 49 parameters, was pretty easy to test using the multistate Markov model. But when real data is expensive to collect, or the model becomes too complex, it&rsquo;s better to forgo the full model and instead find special signals - like our parameter $\gamma$ - to test our predictions.</p>
 <p><em>all data and code for this project is available <a href="https://github.com/babeheim/tetris1989-markov">here</a></em></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
