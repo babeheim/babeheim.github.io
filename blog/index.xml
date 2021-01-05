@@ -57,6 +57,16 @@ The Department of Human Behavior, Ecology and Culture at the Max Planck Institut
     </item>
     
     <item>
+      <title>My git-iversary</title>
+      <link>/blog/2017-08-20-year-of-git/</link>
+      <pubDate>Sun, 20 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2017-08-20-year-of-git/</guid>
+      <description>This week marks one year since I started using git in my research projects. It has been a major shift, but I&amp;rsquo;ve come to love the workflow, and see practical benefits for pretty much every kind of writing.
+Version history done right People must exist who never keep track of the history of their work. They start a file and just keep editing it, and the current version is always the best one.</description>
+    </item>
+    
+    <item>
       <title>Text Mining the Human Behavioral Ecology Bibliography</title>
       <link>/blog/2017-06-15-text-mining-the-hbeb/</link>
       <pubDate>Thu, 15 Jun 2017 00:00:00 +0000</pubDate>
