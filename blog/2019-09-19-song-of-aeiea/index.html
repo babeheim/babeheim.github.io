@@ -39,7 +39,7 @@ This is a mistake, I think, because missingness is a ubiquitous problem, as are 
 This is a mistake, I think, because missingness is a ubiquitous problem, as are ad hoc solutions like the following entirely hypothetical methods section:">
 <meta itemprop="datePublished" content="2019-09-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2019-09-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1889">
+<meta itemprop="wordCount" content="1890">
 <meta itemprop="image" content="images/bret-head.jpg"/>
 
 
@@ -288,7 +288,7 @@ This is a mistake, I think, because missingness is a ubiquitous problem, as are 
 <p>So much data is missing about supernatural morality across time because such beliefs naturally require <em>written evidence</em>. This is probably an insurmountable problem, but in an analysis they describe as <a href="http://seshatdatabank.info/nature-paper-on-moralizing-gods/">&ldquo;far beyond the state of the art&rdquo;</a>, the Seshat team developed a workaround: assume AEIEA, and recode all missing values to &ldquo;not known present&rdquo;.</p>
 <p><img src="/assets/missing_to_0.png" alt=""></p>
 <p><em>Figure 3. The &lsquo;moralizing gods&rsquo; outcome variable as it was used in the statistical analyses of Whitehouse, et al. (2019)</em></p>
-<p>Voila! The missing values have been reasoned into data points. This fateful assumption was never described in the published manuscript, but <a href="https://osf.io/preprints/socarxiv/xjryt/">in a later defense</a>, the authors explain that their analysis &ldquo;made no distinction between societies whose beliefs in moralizing gods were coded &lsquo;unknown&rsquo; and those coded as &lsquo;absent&rsquo; - for our purposes, the important distinction was whether or not there was direct evidence for the presence of such beliefs.&quot;<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Since most of the <em>actual</em> data comes from large, literate populations, and moralizing gods are present everywhere in this sample, their key findings immediately result from applying AEIEA.</p>
+<p>Voila! The missing values have been reasoned into data points. This fateful assumption was never described in the published manuscript, <del>but <a href="https://osf.io/preprints/socarxiv/xjryt/">in a later defense</a></del>, <del>the authors explain that their analysis &ldquo;made no distinction between societies whose beliefs in moralizing gods were coded &lsquo;unknown&rsquo; and those coded as &lsquo;absent&rsquo; - for our purposes</del>, <del>the important distinction was whether or not there was direct evidence for the presence of such beliefs.&quot;</del><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Since most of the <em>actual</em> data comes from large, literate populations, and moralizing gods are present everywhere in this sample, their key findings immediately result from applying AEIEA.</p>
 <p>This seems like statistical malpractice, but is it really that bad? Data imputation, e.g. using the <code>mice</code> package in R, also fills in missing values. And, the coding &ldquo;not known to be present&rdquo; really does cover both &ldquo;unknown&rdquo; and &ldquo;known to be absent&rdquo; logically. So what&rsquo;s wrong?</p>
 <p>To see the AEIEA fallacy, imagine that each data point in Figure 2 represents a pill that is either deadly poison, 🔴, or life-saving medicine, ⭕. You were only able to test 39% of the pills in the sample, finding almost all poison 🔴, while the remainder are untested, $\times$. I don&rsquo;t think anyone - including the authors of the moralizing gods paper - would be happy to relabel the untested pills &ldquo;not known to be poison&rdquo; and eat them.</p>
 <p>This demonstrates how the AEIEA assumption is invalid, but specific examples are inadequate to combat such a seductive fallacy. AEIEA is something like a cognitive attractor, with its seemingly-correct reasoning and almost magical ability to &lsquo;solve&rsquo; missingness problems. Also, under certain circumstances, it actually is valid. So, it&rsquo;s not enough to quote proverbs at people; we need to explain <em>why</em> AEIEA is a fallacy.</p>
@@ -330,9 +330,6 @@ $$</p>
 </li>
 <li>
 <p>Beheim, B., <em>et al.</em> (2019). Corrected analyses show that moralizing gods precede complex societies but serious data concerns remain. <a href="https://doi.org/10.31234/osf.io/jwa2n">https://doi.org/10.31234/osf.io/jwa2n</a></p>
-</li>
-<li>
-<p>Savage, P. E., <em>et al.</em> (2019). Reply to Beheim et al.: Reanalyses confirm robustness of original analyses. <a href="https://doi.org/10.31235/osf.io/xjryt">https://doi.org/10.31235/osf.io/xjryt</a></p>
 </li>
 <li>
 <p>Sagan, C. (1996) <em>The Demon-Haunted World: Science as a Candle in the Dark</em>. Ballentine Books, New York.</p>
@@ -396,7 +393,7 @@ dev.off()
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Savage, <em>et al</em>. (2019), page 2. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Update Feb. 2021: the preprint this quotation comes from has <a href="https://doi.org/10.31235/osf.io/xjryt">since been taken down</a>, so I am striking this quote until additional information is available. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>The chance that the observation occurs, $d$, but is mis-coded from the true state, $x$ or $!x$, is important but distinct from the missing data problem. We here assume that either the phenomenon recorded accurately or is unknown. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
