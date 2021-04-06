@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="images/favicon.png" />
+<title>Indoor rowing &amp; data science with R | Bret Alexander Beheim</title>
+<meta name="title" content="Indoor rowing &amp; data science with R" />
+<meta name="description" content="exploring the data from my Concept2 rowing ergometer" />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Indoor rowing &amp; data science with R" />
+<meta property="og:description" content="exploring the data from my Concept2 rowing ergometer" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/2021-04-05-ergometer-data-science/" />
+<meta property="og:image" content="https://babeheim.com/assets/flywheel-exploded.png" />
+<meta property="article:published_time" content="2021-04-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-05T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://babeheim.com/assets/flywheel-exploded.png"/>
+
+<meta name="twitter:title" content="Indoor rowing &amp; data science with R"/>
+<meta name="twitter:description" content="exploring the data from my Concept2 rowing ergometer"/>
+<meta name="twitter:site" content="@babeheim"/>
+
+
+
+<meta itemprop="name" content="Indoor rowing &amp; data science with R">
+<meta itemprop="description" content="exploring the data from my Concept2 rowing ergometer">
+<meta itemprop="datePublished" content="2021-04-05T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-04-05T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1050">
+<meta itemprop="image" content="https://babeheim.com/assets/flywheel-exploded.png">
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+
+  html, body, h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  p, .sidebar, ol, ul, dl {
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.05em;
+    margin-bottom: 1.0em;
+  }
+
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 90%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+</style>
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<style>
+  .twitter-tweet-rendered {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .inline-svg {
+    display: inline-block;
+    height: 1.0rem;
+    width: 1.0rem;
+    top: 0.15rem;
+    position: relative;
+    fill: #636363;
+  }
+  .inline-svg:hover {
+    fill: #bdbdbd;
+    height: 1.0rem;
+    width: 1.0rem;
+  }
+  .inline-svg#pdf {
+    fill: #de2d26;
+  }
+  .inline-svg#pdf:hover {
+    fill: #fc9272;
+  }
+  .inline-svg#data {
+    fill: #1c9099;
+  }
+  .inline-svg#data:hover {
+    fill: #a6bddb;
+  }
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Bret Alexander Beheim</h2>
+</a>
+<nav><a href="/">About</a>
+
+<a href="/research/">Research</a>
+
+<a href="/publications/">Publications</a>
+
+<a href="/people/">People</a>
+
+<a href="/software/">Software</a>
+
+<a href="/teaching/">Teaching</a>
+
+
+<a href="/blog">Notes</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Indoor rowing &amp; data science with R</h1>
+<p>
+  <i>
+    <time datetime='2021-04-05' pubdate>
+      05 Apr, 2021
+    </time>
+  </i>
+</p>
+
+<content>
+  <p><img src="/assets/model-d.png" alt=""><br>
+<em>Figure 1: Concept2 Model D ergometer</em></p>
+<p>Since 2014, I&rsquo;ve been using a Concept2 indoor rowing machine. I&rsquo;m not a very strong rower, but I enjoy tracking my progress from the great data stored by the PM5 on-board computer. Parsing the raw data is a bit tricky, so I wrote an R package, <a href="https://github.com/babeheim/c2ergometer">c2ergometer</a>, to painlessly manage a database, and developed some data visualizations using the R language to track my rowing performance. Here, I&rsquo;ll show some of my favorites.</p>
+<h2 id="rowing-speed-power-and-energy">Rowing Speed, Power, and Energy</h2>
+<p>During a row, the Concept2 Performance Monitor saves running averages for preset observation intervals called splits. Rowers care most about the <em>split time</em>, the time to travel 500 meters; the lower the split time, the faster the rower. The <em>total distance</em> traveled in a particular row is also critical, with 2-kilometer events the standard racing distance. Together, these numbers give a good basis for comparing rows, and rowers.</p>
+<p><img src="/assets/distance_split.png" alt=""><br>
+<em>Figure 2: workout distances and split times, with energy isoclines</em></p>
+<p>In Figure 2, I&rsquo;ve plotted some of my workouts distances against their average split times. Each workout is a line, curving up and down as my speed changes, and ending in a colored dot (I shaded the colors by Wattage, see below). The fixed-distance rows all end at the same point on the x-axis, but faster rows have lower y-axis values. For the 30-minute rows, the distance rowed varies along a curve, depending on how fast I was going.</p>
+<p>This graph highlights the pattern of my personal bests for each event. My fastest 500m sprints take about 100 seconds (1:40). For the 2000m event, I&rsquo;ve finished with a split time under 2 minutes for 2000m sometimes, but I&rsquo;ve never done this for 5K or higher. As the distance increases, I also get slower.</p>
+<p>There&rsquo;s one more piece of information I&rsquo;ve added to this graph, shown by the dashed blue lines. These represent lines of constant <em>mechanical energy</em>, measured in Watt-hours. Since the PM5 Performance Monitor can track the power added to the rower&rsquo;s flywheel, we can find the average power for a known workout distance and average velocity.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> These lines also allow us to compare how much energy each row demands. For example, my personal best 30-minute row (point A) generated about 75 Watt-hours over about 7,000 meters, which is still less energy than a slow, casual 10,000 meter row (point B).</p>
+<h2 id="stroke-power-separation">Stroke-Power Separation</h2>
+<p>Velocity is the key measure of performance in rowing, but not the only one. Another key metric from the Performance Monitor is the <em>stroke rate</em>, in rowing strokes per minute, which can help us understand a bit about a rower&rsquo;s strength, endurance and approach to a race.</p>
+<p><img src="/assets/stroke-form-diagram.png" alt=""><br>
+<em>Figure 3: Proper stroke form illustration from the Concept2 manual</em></p>
+<p>Watch this rower doing a 2K test:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Ju_FDZDy9Zs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Compare with this rower, also doing a 2K test:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/AJdzDykb_M0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Both athletes row the same distance, and they finish within a few seconds of each other. Yet their SPM is quite different - the first rows at 39 strokes per minute, finishing with a time of 7:11.7, while the second was going at 32 strokes per minute, yet finished about 7 seconds faster. Why?</p>
+<p>The second rower goes through the stroke cycle slower, but is pulling harder, and so doing <em>more work per stroke</em>. This is related to the rower&rsquo;s power output (and so the speed) by</p>
+<p>$$
+\frac{\mathrm{work}}{\mathrm{stroke}} \times \frac{\mathrm{strokes}}{\mathrm{time}} = \mathrm{power}.
+$$</p>
+<p>Since power and stroke rate are supplied by the PM5, we can calculate the work-per-stroke using this formula, which leads to my second visualization:</p>
+<p><img src="/assets/power_2000.png" alt=""><br>
+<em>Figure 4: stroke-power decomposition for my rows (orange) and the two rows from the above footage</em></p>
+<p>The curved lines trace constant split times, in increments to 10 seconds. That is, any point along the &ldquo;2:00&rdquo; line shows the exact combination of stroke rate and work-per-stroke that results in a 2:00 split time. We can see Rower 2&rsquo;s got the lowest split time,  Comparing my own rows, I can&rsquo;t really row as fast as Rower 1 at 39 SPM, and I can&rsquo;t pull as hard as Rower 2, who creates about 500 joules per stroke, so I&rsquo;m unlikely to enter the sub-1:50 club anytime soon.</p>
+<h2 id="cardiovascular-efficiency">Cardiovascular Efficiency</h2>
+<p>The Performance Monitor also has the ability to connect to heart rate monitors, and for each split stores my average heart rate in beats per minute. Plotting my heart rate against the split time, I see the following relationship:</p>
+<p><img src="/assets/heart_rate_pace.png" alt=""><br>
+<em>Figure 5: my split times and average heart rates, with linear regression line</em></p>
+<p>There&rsquo;s a pretty solid linear relationship here: the faster I go, the higher my heart rate, with each increase in 10 seconds requires about 8 BPM, up to my max heart rate in the high 170s.</p>
+<p>This isn&rsquo;t quite the whole story, though. Like the above with work-per-stroke, I&rsquo;ve found it useful to separate power into heart rate and work-per-heartbeat, and graph that:</p>
+<p><img src="/assets/heart_rate_work.png" alt=""><br>
+<em>Figure 7: power decomposition by heart rate for 2000m (blue), 5000m (orange), and 30-minute (red) rows, with trend lines</em></p>
+<p>On short rows (blue dots), a higher heart rate means more speed. But on long 30-minute rows (red dots), even with a high heart rate, I&rsquo;m not going much faster. Why is this? My guess is fatigue. To put it another way, as I get tired, my heart rate goes up even as I hold a steady pace. I suppose that one metric for physical endurance, then, is the extent to which this slope stays nice and steep on longer rows.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>Besides getting you tremendously fit, one of the appeals of this sport is all this good data, and how much you can learn from studying it. Rowing ergometers are low-impact and mechanically very simple, so I expect (and hope) I can keep tracking my data into the indefinite future.</p>
+<h2 id="references">References</h2>
+<p>The <a href="https://www.concept2.com/indoor-rowers/concept2-rowerg">Concept2 Model D</a> is the professional standard indoor rower.</p>
+<p>My favorite videos on proper rowing form:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=VE663Kg0c00">https://www.youtube.com/watch?v=VE663Kg0c00</a></li>
+<li><a href="https://www.youtube.com/watch?v=zQ82RYIFLN8">https://www.youtube.com/watch?v=zQ82RYIFLN8</a></li>
+<li><a href="https://www.youtube.com/watch?v=QPvYrfyGHi8">https://www.youtube.com/watch?v=QPvYrfyGHi8</a></li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>The Performance Monitor tracks the average power, $p$, supplied to the flywheel in Watts, related to rower velocity by $p = (2.8) (500/s)^3 $, where $s$ is the split time in seconds, and 2.8 is a constant used by the computer. Since power is simply energy per unit time, we can also calculate the mechanical energy added by the rower to the flywheel by multiplying by the total row time. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>powered by <a href="https://gohugo.io">Hugo</a> with the <a href="https://github.com/janraasch/hugo-bearblog/">hugo-bearblog</a> theme
+</footer>
+
+    
+</body>
+
+</html>
