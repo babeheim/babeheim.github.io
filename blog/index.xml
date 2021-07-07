@@ -42,8 +42,8 @@ Since 2014, I&amp;rsquo;ve been using a Concept2 indoor rowing machine. I&amp;rs
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/blog/2019-09-19-song-of-aeiea/</guid>
-      <description>Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.
-This is a mistake, I think, because missingness is a ubiquitous problem, as are ad hoc solutions like the following entirely hypothetical methods section:</description>
+      <description>Update 2021-07-07: I&amp;rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
+Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.</description>
     </item>
     
     <item>

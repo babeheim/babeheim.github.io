@@ -8,39 +8,39 @@
 <link rel="shortcut icon" href="images/favicon.png" />
 <title>Missing data, moralizing gods, and the siren song of Aeiea | Bret Alexander Beheim</title>
 <meta name="title" content="Missing data, moralizing gods, and the siren song of Aeiea" />
-<meta name="description" content="Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.
-This is a mistake, I think, because missingness is a ubiquitous problem, as are ad hoc solutions like the following entirely hypothetical methods section:" />
+<meta name="description" content="Update 2021-07-07: I&rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
+Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses." />
 <meta name="keywords" content="" />
 
 
 <meta property="og:title" content="Missing data, moralizing gods, and the siren song of Aeiea" />
-<meta property="og:description" content="Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.
-This is a mistake, I think, because missingness is a ubiquitous problem, as are ad hoc solutions like the following entirely hypothetical methods section:" />
+<meta property="og:description" content="Update 2021-07-07: I&rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
+Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/blog/2019-09-19-song-of-aeiea/" />
-<meta property="og:image" content="images/bret-head.jpg"/>
+<meta property="og:image" content="https://babeheim.com/assets/venus.jpg" />
 <meta property="article:published_time" content="2019-09-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-19T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
 
 
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="images/bret-head.jpg"/>
+<meta name="twitter:image" content="https://babeheim.com/assets/venus.jpg"/>
 
 <meta name="twitter:title" content="Missing data, moralizing gods, and the siren song of Aeiea"/>
-<meta name="twitter:description" content="Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.
-This is a mistake, I think, because missingness is a ubiquitous problem, as are ad hoc solutions like the following entirely hypothetical methods section:"/>
+<meta name="twitter:description" content="Update 2021-07-07: I&rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
+Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses."/>
 <meta name="twitter:site" content="@babeheim"/>
 
 
 
 <meta itemprop="name" content="Missing data, moralizing gods, and the siren song of Aeiea">
-<meta itemprop="description" content="Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.
-This is a mistake, I think, because missingness is a ubiquitous problem, as are ad hoc solutions like the following entirely hypothetical methods section:">
+<meta itemprop="description" content="Update 2021-07-07: I&rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
+Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.">
 <meta itemprop="datePublished" content="2019-09-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2019-09-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1890">
-<meta itemprop="image" content="images/bret-head.jpg"/>
+<meta itemprop="wordCount" content="1843">
+<meta itemprop="image" content="https://babeheim.com/assets/venus.jpg">
 
 
 
@@ -273,7 +273,8 @@ This is a mistake, I think, because missingness is a ubiquitous problem, as are 
 </p>
 
 <content>
-  <p>Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.</p>
+  <p><em>Update 2021-07-07: I&rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been <a href="https://www.nature.com/articles/s41586-021-03656-3">retracted</a> by the authors.</em></p>
+<p>Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.</p>
 <p>This is a mistake, I think, because missingness is a ubiquitous problem, as are <em>ad hoc</em> solutions like the following entirely hypothetical methods section:</p>
 <blockquote>
 <p>Our study has presence/absence data for some phenomenon, but some of the data points are missing. Since we are really just interested in whether the phenomenon is present, we redefine both &ldquo;phenomenon absent&rdquo; and &ldquo;data unknown&rdquo; to &ldquo;phenomenon <em>not known</em> to be present&rdquo;, solving the missing data problem.</p>
@@ -288,16 +289,16 @@ This is a mistake, I think, because missingness is a ubiquitous problem, as are 
 <p>So much data is missing about supernatural morality across time because such beliefs naturally require <em>written evidence</em>. This is probably an insurmountable problem, but in an analysis they describe as <a href="http://seshatdatabank.info/nature-paper-on-moralizing-gods/">&ldquo;far beyond the state of the art&rdquo;</a>, the Seshat team developed a workaround: assume AEIEA, and recode all missing values to &ldquo;not known present&rdquo;.</p>
 <p><img src="/assets/missing_to_0.png" alt=""></p>
 <p><em>Figure 3. The &lsquo;moralizing gods&rsquo; outcome variable as it was used in the statistical analyses of Whitehouse, et al. (2019)</em></p>
-<p>Voila! The missing values have been reasoned into data points. This fateful assumption was never described in the published manuscript, <del>but <a href="https://osf.io/preprints/socarxiv/xjryt/">in a later defense</a></del>, <del>the authors explain that their analysis &ldquo;made no distinction between societies whose beliefs in moralizing gods were coded &lsquo;unknown&rsquo; and those coded as &lsquo;absent&rsquo; - for our purposes</del>, <del>the important distinction was whether or not there was direct evidence for the presence of such beliefs.&quot;</del><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Since most of the <em>actual</em> data comes from large, literate populations, and moralizing gods are present everywhere in this sample, their key findings immediately result from applying AEIEA.</p>
+<p>Voila! The missing values have been reasoned into data points. This fateful assumption was never described in the published manuscript, and since most of the <em>actual</em> data comes from large, literate populations, and moralizing gods are present everywhere in this sample, their key findings immediately result from applying AEIEA.</p>
 <p>This seems like statistical malpractice, but is it really that bad? Data imputation, e.g. using the <code>mice</code> package in R, also fills in missing values. And, the coding &ldquo;not known to be present&rdquo; really does cover both &ldquo;unknown&rdquo; and &ldquo;known to be absent&rdquo; logically. So what&rsquo;s wrong?</p>
 <p>To see the AEIEA fallacy, imagine that each data point in Figure 2 represents a pill that is either deadly poison, 🔴, or life-saving medicine, ⭕. You were only able to test 39% of the pills in the sample, finding almost all poison 🔴, while the remainder are untested, $\times$. I don&rsquo;t think anyone - including the authors of the moralizing gods paper - would be happy to relabel the untested pills &ldquo;not known to be poison&rdquo; and eat them.</p>
 <p>This demonstrates how the AEIEA assumption is invalid, but specific examples are inadequate to combat such a seductive fallacy. AEIEA is something like a cognitive attractor, with its seemingly-correct reasoning and almost magical ability to &lsquo;solve&rsquo; missingness problems. Also, under certain circumstances, it actually is valid. So, it&rsquo;s not enough to quote proverbs at people; we need to explain <em>why</em> AEIEA is a fallacy.</p>
-<p>For any particular observation of the phenomenon of interest, let&rsquo;s distinguish two events. First, we define whether the phenomenon really is present in the study system, $x$, or absent, $!x$. Separately, we can also define the event that outcome data is known in our dataset, $d$, or is unknown, $!d$. Our goal is then to estimate the true rate of occurrence across observations, the probability $p(x)$, given that $p(d) &gt; 0$ and some information is incomplete.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>For any particular observation of the phenomenon of interest, let&rsquo;s distinguish two events. First, we define whether the phenomenon really is present in the study system, $x$, or absent, $!x$. Separately, we can also define the event that outcome data is known in our dataset, $d$, or is unknown, $!d$. Our goal is then to estimate the true rate of occurrence across observations, the probability $p(x)$, given that $p(d) &gt; 0$ and some information is incomplete.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>Expressed in the language of probability theory, the AEIEA assumption is</p>
 <p>$$
 p(x\vert !d) = 0.
 $$</p>
-<p>Read literally, this says that conditioning on the outcome being unknown in our dataset, $p(\cdot \vert !d)$, conveys the same information about the phenomenon as learning the phenomenon was actually absent, i.e. $p(x\vert !x) = 0$.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> Plugging the AEIEA assumption into the law of total probability,</p>
+<p>Read literally, this says that conditioning on the outcome being unknown in our dataset, $p(\cdot \vert !d)$, conveys the same information about the phenomenon as learning the phenomenon was actually absent, i.e. $p(x\vert !x) = 0$.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> Plugging the AEIEA assumption into the law of total probability,</p>
 <p>$$
 p(x) = p(x\vert d) p(d) + p(x\vert !d) p(!d),
 $$</p>
@@ -305,7 +306,7 @@ $$</p>
 <p>$$
 p(x\vert d) = p(x) / p(d).
 $$</p>
-<p>Under AEIEA, the data we observe is thus <em>dependent with</em> the missingness distribution, since $p(x\vert d) &gt; p(x)$.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> If we apply Bayes' rule to the left-hand side of the previous equation, we have</p>
+<p>Under AEIEA, the data we observe is thus <em>dependent with</em> the missingness distribution, since $p(x\vert d) &gt; p(x)$.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> If we apply Bayes' rule to the left-hand side of the previous equation, we have</p>
 <p>$$
 p(d\vert x) p(x) / p(d) = p(x) / p(d),
 $$</p>
@@ -314,22 +315,22 @@ $$</p>
 p(d\vert x) = 1.
 $$</p>
 <p>We have proven something that, at least to me, was not immediately obvious: assuming AEIEA also assumes that if the phenomenon is actually present, it <em>must</em> have been recorded as such in our dataset. Or, equivalently, it <em>cannot</em> become missing data.</p>
-<p>Thus, AEIEA is an extreme assumption about the relationship between $x$ and $d$ because it requires strong claims about the nature of missingness.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> If even a few poison pills are in the untested group in the example above, assuming AEIEA would be deadly.</p>
+<p>Thus, AEIEA is an extreme assumption about the relationship between $x$ and $d$ because it requires strong claims about the nature of missingness.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> If even a few poison pills are in the untested group in the example above, assuming AEIEA would be deadly.</p>
 <p>This is not to say that AEIEA is always wrong, however. AEIEA really does work when, for example, the study system only has a finite number of &ldquo;hits&rdquo;, and you&rsquo;ve already found them all. This is true in simple games like Minesweeper, Blackjack or Battleship. Here, we have a clear theory (the game rules) about the relationship between $x$ and $d$ which explains why the data cannot ever become missing when the phenomenon is present.</p>
 <p><img src="/assets/battleship.jpg" alt=""></p>
 <p><em>Figure 4. In Battleship, if you know where all the enemy ships are, absence of data on a cell is equivalent to knowing it is empty - AEIEA is valid.</em></p>
 <p>Determining the validity of AEIEA is thus a scientific problem, not a statistical one, and the probabilistic conditions above help us understand what the scientific theory has to show. In the case of the unknown moralizing gods data all becoming absences, we&rsquo;d need relatively fantastical theories about data preservation for AEIEA to work. If a <a href="http://seshatdatabank.info/data/polities/tairona-CoTairo">South American jaguar figurine</a> or <a href="http://seshatdatabank.info/data/polities/big-island-of-hawaii-Hawaii2">Hawaiian ancestral family god</a> was ever imbued with moralistic authority, then we must explain how those events <em>have to</em> survive into the historical records of today in order to conclude a lack of evidence actually means it never happened. Since such theories are not forthcoming in real datasets of religion, AEIEA is a fallacy.</p>
 <p>This all may seem obvious, but the siren song of AEIEA is powerful and can easily lure unwary, but otherwise meticulous, researchers. For this reason, the astronomer and science popularizer Carl Sagan included AEIEA as part of his &ldquo;<a href="http://www.inf.fu-berlin.de/lehre/pmo/eng/Sagan-Baloney.pdf">baloney detection kit</a>&rdquo; of the common tools charlatans and cranks use to promote pseudoscience. Sagan even satirized AEIEA&rsquo;s misuse in the study of human morality extended to a galactic scale, writing,</p>
 <blockquote>
-<p>There may be seventy kazillion other worlds, but not one is known to have the moral advancement of the Earth, so we&rsquo;re still central to the Universe.<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
+<p>There may be seventy kazillion other worlds, but not one is known to have the moral advancement of the Earth, so we&rsquo;re still central to the Universe.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
 </blockquote>
 <p>References:</p>
 <ul>
 <li>
-<p>Whitehouse, H., <em>et al.</em> (2019). Complex societies precede moralizing gods throughout world history. Nature, 568(7751), 226. <a href="https://doi.org/10.1038/s41586-019-1043-4">https://doi.org/10.1038/s41586-019-1043-4</a></p>
+<p>Whitehouse, H., <em>et al.</em> (2019). Complex societies precede moralizing gods throughout world history. Nature, 568(7751), 226. DOI: <a href="https://doi.org/10.1038/s41586-019-1043-4">10.1038/s41586-019-1043-4</a></p>
 </li>
 <li>
-<p>Beheim, B., <em>et al.</em> (2019). Corrected analyses show that moralizing gods precede complex societies but serious data concerns remain. <a href="https://doi.org/10.31234/osf.io/jwa2n">https://doi.org/10.31234/osf.io/jwa2n</a></p>
+<p>Beheim, B., <em>et al.</em> (2021). Treatment of missing data determines conclusions regarding moralizing gods. Nature, 595, pp.E29–E34. DOI: <a href="https://doi.org/10.1038/s41586-021-03655-4">10.1038/s41586-021-03655-4</a></p>
 </li>
 <li>
 <p>Sagan, C. (1996) <em>The Demon-Haunted World: Science as a Candle in the Dark</em>. Ballentine Books, New York.</p>
@@ -393,22 +394,19 @@ dev.off()
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Update Feb. 2021: the preprint this quotation comes from has <a href="https://doi.org/10.31235/osf.io/xjryt">since been taken down</a>, so I am striking this quote until additional information is available. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>The chance that the observation occurs, $d$, but is mis-coded from the true state, $x$ or $!x$, is important but distinct from the missing data problem. We here assume that either the phenomenon recorded accurately or is unknown. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>The chance that the observation occurs, $d$, but is mis-coded from the true state, $x$ or $!x$, is important but distinct from the missing data problem. We here assume that either the phenomenon recorded accurately or is unknown. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>This can get very confusing, as $p(x\vert !d)$ is the probability of $x$ given that the outcome is unknown in our data, while $p(x)$ is the probability of $x$ not knowing whether the outcome is known or unknown in our data. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>This can get very confusing, as $p(x\vert !d)$ is the probability of $x$ given that the outcome is unknown in our data, while $p(x)$ is the probability of $x$ not knowing whether the outcome is known or unknown in our data. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Not all is lost though, since under AEIEA we can approximate $p(x)$ with the product of two quantities we can observe: $p(x\vert d) p(d)$. Further, if $p(x\vert d) \approx 1$ as in the moralizing gods dataset, then $p(x) \approx p(d).$ Given these assumptions about $p(x\vert d)$ and $p(x\vert !d)$, we don&rsquo;t actually need to look at the presence/absence data! We simply need to know if any data was observed, and that approximates our target $p(x)$ extremely well. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Not all is lost though, since under AEIEA we can approximate $p(x)$ with the product of two quantities we can observe: $p(x\vert d) p(d)$. Further, if $p(x\vert d) \approx 1$ as in the moralizing gods dataset, then $p(x) \approx p(d).$ Given these assumptions about $p(x\vert d)$ and $p(x\vert !d)$, we don&rsquo;t actually need to look at the presence/absence data! We simply need to know if any data was observed, and that approximates our target $p(x)$ extremely well. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>The assumption used by Whitehouse, <em>et al.</em> (2019) is in fact the strongest possible version of the AEIEA fallacy, because $!d$ conveys complete information about $x$. A generalized AEIEA assumption is that $p(x\vert !d) &lt; p(x)$, so conditioning on $d$ gives only partial information about the phenomenon&rsquo;s occurrence. By the same logic as above, this implies that $p(d\vert x) &gt; p(d)$, so the weak form of AEIEA assumes that conditioning on the phenomenon&rsquo;s presence somehow increases the chances the data was recorded. In other words, similar theoretical requirements exist in the general AEIEA case as in the strongest version. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>The assumption used by Whitehouse, <em>et al.</em> (2019) is in fact the strongest possible version of the AEIEA fallacy, because $!d$ conveys complete information about $x$. A generalized AEIEA assumption is that $p(x\vert !d) &lt; p(x)$, so conditioning on $d$ gives only partial information about the phenomenon&rsquo;s occurrence. By the same logic as above, this implies that $p(d\vert x) &gt; p(d)$, so the weak form of AEIEA assumes that conditioning on the phenomenon&rsquo;s presence somehow increases the chances the data was recorded. In other words, similar theoretical requirements exist in the general AEIEA case as in the strongest version. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:6" role="doc-endnote">
-<p>Sagan (1996), p.213 <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Sagan (1996), p.213 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
