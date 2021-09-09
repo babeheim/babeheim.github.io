@@ -17,10 +17,10 @@ Missing data is probably the most under-trained topic in data analysis. Methods 
 <meta property="og:description" content="Update 2021-07-07: I&rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
 Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/2019-09-19-song-of-aeiea/" />
-<meta property="og:image" content="https://babeheim.com/assets/venus.jpg" />
+<meta property="og:url" content="/blog/2019-09-19-song-of-aeiea/" /><meta property="og:image" content="https://babeheim.com/assets/venus.jpg" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2019-09-19T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-19T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+
 
 
 
@@ -36,16 +36,10 @@ Missing data is probably the most under-trained topic in data analysis. Methods 
 
 <meta itemprop="name" content="Missing data, moralizing gods, and the siren song of Aeiea">
 <meta itemprop="description" content="Update 2021-07-07: I&rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
-Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.">
-<meta itemprop="datePublished" content="2019-09-19T00:00:00+00:00" />
+Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses."><meta itemprop="datePublished" content="2019-09-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2019-09-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1843">
-<meta itemprop="image" content="https://babeheim.com/assets/venus.jpg">
-
-
-
+<meta itemprop="wordCount" content="1838"><meta itemprop="image" content="https://babeheim.com/assets/venus.jpg">
 <meta itemprop="keywords" content="" />
-
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -337,7 +331,7 @@ $$</p>
 </li>
 </ul>
 <p>R scripts for Figures 2 and 3:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(rethinking)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(rethinking)
 
 <span style="color:#080;font-style:italic"># data from step 06_prep_regression_data</span>
 <span style="color:#080;font-style:italic"># at https://github.com/babeheim/moralizing-gods-reanalysis</span>
@@ -394,19 +388,19 @@ dev.off()
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>The chance that the observation occurs, $d$, but is mis-coded from the true state, $x$ or $!x$, is important but distinct from the missing data problem. We here assume that either the phenomenon recorded accurately or is unknown. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>The chance that the observation occurs, $d$, but is mis-coded from the true state, $x$ or $!x$, is important but distinct from the missing data problem. We here assume that either the phenomenon recorded accurately or is unknown.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>This can get very confusing, as $p(x\vert !d)$ is the probability of $x$ given that the outcome is unknown in our data, while $p(x)$ is the probability of $x$ not knowing whether the outcome is known or unknown in our data. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>This can get very confusing, as $p(x\vert !d)$ is the probability of $x$ given that the outcome is unknown in our data, while $p(x)$ is the probability of $x$ not knowing whether the outcome is known or unknown in our data.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>Not all is lost though, since under AEIEA we can approximate $p(x)$ with the product of two quantities we can observe: $p(x\vert d) p(d)$. Further, if $p(x\vert d) \approx 1$ as in the moralizing gods dataset, then $p(x) \approx p(d).$ Given these assumptions about $p(x\vert d)$ and $p(x\vert !d)$, we don&rsquo;t actually need to look at the presence/absence data! We simply need to know if any data was observed, and that approximates our target $p(x)$ extremely well. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Not all is lost though, since under AEIEA we can approximate $p(x)$ with the product of two quantities we can observe: $p(x\vert d) p(d)$. Further, if $p(x\vert d) \approx 1$ as in the moralizing gods dataset, then $p(x) \approx p(d).$ Given these assumptions about $p(x\vert d)$ and $p(x\vert !d)$, we don&rsquo;t actually need to look at the presence/absence data! We simply need to know if any data was observed, and that approximates our target $p(x)$ extremely well.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>The assumption used by Whitehouse, <em>et al.</em> (2019) is in fact the strongest possible version of the AEIEA fallacy, because $!d$ conveys complete information about $x$. A generalized AEIEA assumption is that $p(x\vert !d) &lt; p(x)$, so conditioning on $d$ gives only partial information about the phenomenon&rsquo;s occurrence. By the same logic as above, this implies that $p(d\vert x) &gt; p(d)$, so the weak form of AEIEA assumes that conditioning on the phenomenon&rsquo;s presence somehow increases the chances the data was recorded. In other words, similar theoretical requirements exist in the general AEIEA case as in the strongest version. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>The assumption used by Whitehouse, <em>et al.</em> (2019) is in fact the strongest possible version of the AEIEA fallacy, because $!d$ conveys complete information about $x$. A generalized AEIEA assumption is that $p(x\vert !d) &lt; p(x)$, so conditioning on $d$ gives only partial information about the phenomenon&rsquo;s occurrence. By the same logic as above, this implies that $p(d\vert x) &gt; p(d)$, so the weak form of AEIEA assumes that conditioning on the phenomenon&rsquo;s presence somehow increases the chances the data was recorded. In other words, similar theoretical requirements exist in the general AEIEA case as in the strongest version.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>Sagan (1996), p.213 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Sagan (1996), p.213&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
