@@ -21,10 +21,10 @@ I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own ri
 {{ tweet 875261184114442240 }}
 I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own right, and since I&rsquo;ve been doing similar work with our field data here at MPI-EVA&rsquo;s new Department of Human Behavior, Ecology and Culture, I figured I could turn the lens on us at the same time as showcase the methods to interested parties." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/2017-06-15-text-mining-the-hbeb/" /><meta property="og:image" content="images/bret-head.jpg"/><meta property="article:section" content="blog" />
+<meta property="og:url" content="/blog/2017-06-15-text-mining-the-hbeb/" />
+<meta property="og:image" content="images/bret-head.jpg"/>
 <meta property="article:published_time" content="2017-06-15T00:00:00+00:00" />
 <meta property="article:modified_time" content="2017-06-15T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
-
 
 
 
@@ -44,10 +44,16 @@ I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own ri
 <meta itemprop="description" content="Thanks to Kermyt Anderson, the Human Behavioral Ecology Bibliography (HBEB) has recently gone online. Eleanor Power has taken this text file and parsed it into a bibtex file, and from there it can be turned into an Endnote library or other bibliographic database format.
 {{ tweet 874664941076328448 }}
 {{ tweet 875261184114442240 }}
-I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own right, and since I&rsquo;ve been doing similar work with our field data here at MPI-EVA&rsquo;s new Department of Human Behavior, Ecology and Culture, I figured I could turn the lens on us at the same time as showcase the methods to interested parties."><meta itemprop="datePublished" content="2017-06-15T00:00:00+00:00" />
+I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own right, and since I&rsquo;ve been doing similar work with our field data here at MPI-EVA&rsquo;s new Department of Human Behavior, Ecology and Culture, I figured I could turn the lens on us at the same time as showcase the methods to interested parties.">
+<meta itemprop="datePublished" content="2017-06-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2017-06-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1854"><meta itemprop="image" content="images/bret-head.jpg"/>
+<meta itemprop="wordCount" content="1855">
+<meta itemprop="image" content="images/bret-head.jpg"/>
+
+
+
 <meta itemprop="keywords" content="" />
+
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -282,21 +288,21 @@ I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own ri
 <p>Since this dataset will likely grow over time, having everything in one R script also means it can be re-used automatically as HBEB grows. So here goes:</p>
 <h1 id="initial-processing">Initial Processing</h1>
 <p>First, we need a tool that can parse *.bib files and load them into an R environment in a format we can manipulate. A Google search reveals a solution: the <code>ReadBib</code> function in package <code>RefManageR</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    hbeb_data &lt;- ReadBib(<span style="color:#00f">&#34;./data/Human Behavioral Ecology Bibliography.bib&#34;</span>, 
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    hbeb_data &lt;- ReadBib(<span style="color:#00f">&#34;./data/Human Behavioral Ecology Bibliography.bib&#34;</span>, 
         check=<span style="color:#000080;font-weight:bold">FALSE</span>)
-</code></pre></div><pre tabindex="0"><code>## Unrecognized macro in Reyes-Garc{\'\i}a, Victoria
-</code></pre><pre tabindex="0"><code>## Unrecognized macro in Manuel J. Mac{\'\i}a
-</code></pre><pre tabindex="0"><code>## Unrecognized macro in Mart{\'\i} Orta-Mart{\'\i}nez
-</code></pre><pre tabindex="0"><code>## Unrecognized macro in V. Reyes-Garc{\'\i}a
-</code></pre><pre tabindex="0"><code>## Unrecognized macro in Victoria Reyes-Garc{\'\i}a
-</code></pre><pre tabindex="0"><code>## Unrecognized macro in Martha Fr{\'\i}as-Armenta
+</code></pre></div><pre><code>## Unrecognized macro in Reyes-Garc{\'\i}a, Victoria
+</code></pre><pre><code>## Unrecognized macro in Manuel J. Mac{\'\i}a
+</code></pre><pre><code>## Unrecognized macro in Mart{\'\i} Orta-Mart{\'\i}nez
+</code></pre><pre><code>## Unrecognized macro in V. Reyes-Garc{\'\i}a
+</code></pre><pre><code>## Unrecognized macro in Victoria Reyes-Garc{\'\i}a
+</code></pre><pre><code>## Unrecognized macro in Martha Fr{\'\i}as-Armenta
 </code></pre><p>As ReadBib loads the file into R, it displays some messages about inconsistencies in the bib syntax. We can reroute those messages to write to a file by using <code>sink</code> calls to inspect later at our leisure.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    zz &lt;- file(<span style="color:#00f">&#34;./data/messages.txt&#34;</span>, open = <span style="color:#00f">&#34;wt&#34;</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    zz &lt;- file(<span style="color:#00f">&#34;./data/messages.txt&#34;</span>, open = <span style="color:#00f">&#34;wt&#34;</span>)
     sink(file=zz, type=<span style="color:#00f">&#34;message&#34;</span>)
     hbeb_data &lt;- ReadBib(<span style="color:#00f">&#34;./data/Human Behavioral Ecology Bibliography.bib&#34;</span>, check=<span style="color:#000080;font-weight:bold">FALSE</span>)
     sink()
 </code></pre></div><p>Having loaded the data, I need to turn it into one or more data frames to be able to do anything with it. I&rsquo;m not familar with the <code>BibEntry</code> class the data is now in, but it inherits the same behavior as basic R lists. I&rsquo;m going to apply some list methods I use in my [YAML to JSON to CSV pipeline]({% post_url 2017-02-12-hierarchical-data-in-plain-text %}) for processing field interviews.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    nullToNA &lt;- function(x) {
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    nullToNA &lt;- function(x) {
         x[sapply(x, is.null)] &lt;- <span style="color:#000080;font-weight:bold">NA</span>
         return(x)
     }
@@ -318,12 +324,12 @@ I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own ri
     for(i in <span style="color:#00f">1</span>:ncol(hbeb_df)) hbeb_df[,i] &lt;- as.character(hbeb_df[,i])
 </code></pre></div><p>To describe what the code block above is doing, the <code>unlist</code> function corrals the variables into simple vectors and the <code>data.frame</code> function column-binds them into a data frame. I wrote a new function, <code>nullToNA</code> so missing values are not dropped during this operation.</p>
 <p>The result is a data frame with 1255 rows (the same length as the <code>hbeb_data</code> list) and the 11 columns we defined above. Each entry contains data associated with that citation: the year, the title, the DOI, etc., with the exception of the authors. That part is complicated because it lends itself to a [hierarchical data model]({% post_url 2017-02-12-hierarchical-data-in-plain-text %}), so I will save it for last.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    barplot(table(hbeb_df$year), main=<span style="color:#00f">&#34;count by year of publication&#34;</span>, 
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    barplot(table(hbeb_df$year), main=<span style="color:#00f">&#34;count by year of publication&#34;</span>, 
         border=<span style="color:#000080;font-weight:bold">NA</span>, col=barplot_color)
 
     abline(h=seq(<span style="color:#00f">0</span>, <span style="color:#00f">100</span>, by=<span style="color:#00f">20</span>), lty=<span style="color:#00f">2</span>, col=col_alpha(<span style="color:#00f">&#34;gray&#34;</span>, <span style="color:#00f">0.6</span>))
 </code></pre></div><p><!-- raw HTML omitted --></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    type_tab &lt;- prop.table(table(hbeb_df$type))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    type_tab &lt;- prop.table(table(hbeb_df$type))
     type_tab &lt;- floor(<span style="color:#00f">100</span>*type_tab)
 </code></pre></div><p>Of the 1255 publications in HBEB, 82 percent are articles, 15 percent are chapters in edited volumes, and 1 percent are books. Looking at the number of entries in HBEB through time, there&rsquo;s clearly fewer pubs since 2005, steadily declining up to the present.</p>
 <p>Such questions are feasible, now that the data are in a usable (for me) format.</p>
@@ -341,7 +347,7 @@ and even</li>
 </ul>
 <p>There&rsquo;s probably a more elegant approach to data cleaning, but in situations like this, I just renaming the entries like so:</p>
 <p>Let&rsquo;s make a backup copy, then apply the <code>gsub</code> command to eliminate strange characters.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    hbeb_df$journal_og &lt;- hbeb_df$journal
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    hbeb_df$journal_og &lt;- hbeb_df$journal
     hbeb_df$journal &lt;- iconv(hbeb_df$journal, to = <span style="color:#00f">&#34;utf-8&#34;</span>)
     hbeb_df$journal &lt;- gsub(<span style="color:#00f">&#34;\\{&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, hbeb_df$journal)
     hbeb_df$journal &lt;- gsub(<span style="color:#00f">&#34;\\}&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, hbeb_df$journal)
@@ -349,7 +355,7 @@ and even</li>
     hbeb_df$journal &lt;- gsub(<span style="color:#00f">&#34;\\\\&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, hbeb_df$journal)
     hbeb_df$journal &lt;- gsub(<span style="color:#00f">&#34;/&#39;&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, hbeb_df$journal)
 </code></pre></div><p>Now for the renaming:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    old_names &lt;- c(<span style="color:#00f">&#34;Proceedings of the Royal Society B: Biological Science&#34;</span>, 
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    old_names &lt;- c(<span style="color:#00f">&#34;Proceedings of the Royal Society B: Biological Science&#34;</span>, 
         <span style="color:#00f">&#34;Proceedings of the Royal Society B: Biological Sciences&#34;</span>,
         <span style="color:#00f">&#34;Proceedings of the Royal Society Biology&#34;</span>,
         <span style="color:#00f">&#34;Proceedings of the Royal Society of London: Biological Sciences&#34;</span>,
@@ -369,7 +375,7 @@ and even</li>
 </ul>
 <p>We fix this one by standardizing capitalization. I&rsquo;ll use a function called <code>cw</code> which I got <a href="https://github.com/ropensci/wellknown/blob/master/R/zzz.R">here</a>.</p>
 <p>With the journal names at least somewhat cleaned of duplicates, we can count 165 unique journals listed. We can see the most popular ten as a horizontal barplot:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    par(mar=c(<span style="color:#00f">5.1</span>, <span style="color:#00f">20</span>, <span style="color:#00f">4.1</span>, <span style="color:#00f">2.1</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    par(mar=c(<span style="color:#00f">5.1</span>, <span style="color:#00f">20</span>, <span style="color:#00f">4.1</span>, <span style="color:#00f">2.1</span>))
 
     top_ten_journals &lt;- rev(sort(table(as.character(hbeb_df$journal[hbeb_df$type==<span style="color:#00f">&#34;Article&#34;</span>]))))[1:<span style="color:#00f">10</span>]
 
@@ -381,7 +387,7 @@ and even</li>
 The most popular journal in the database is Human Nature (165 publications), followed by Evolution And Human Behavior (160 publications) and Current Anthropology (76 publications). In total, these ten journals account for 63 percent of all articles in HBEB.</p>
 <h1 id="identifying-keywords-in-titles">Identifying keywords in titles</h1>
 <p>I&rsquo;ve always wanted to make a word cloud, and the title of each citation can be mined for common words. I&rsquo;m going to use the packages and methods outlined <a href="https://www.r-bloggers.com/building-wordclouds-in-r/">here</a>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    <span style="color:#080;font-style:italic"># load needed libraries</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    <span style="color:#080;font-style:italic"># load needed libraries</span>
     library(tm)
     library(SnowballC)
 
@@ -404,7 +410,7 @@ The most popular journal in the database is Human Nature (165 publications), fol
         <span style="color:#00f">&#39;human&#39;</span>, <span style="color:#00f">&#39;evolution&#39;</span>, stopwords(<span style="color:#00f">&#39;english&#39;</span>)))
     d_cor &lt;- Corpus(VectorSource(d_cor))
 </code></pre></div><p>Note that I took out the words &ldquo;the&rdquo;, &ldquo;evolution&rdquo;, &ldquo;evolutionary&rdquo; and &ldquo;human&rdquo;, since those are the most common and least informative. Now we make a wordcloud with the <code>wordcloud</code> function in the <code>wordcloud</code> library. Wordcloud.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    <span style="color:#080;font-style:italic"># plot</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    <span style="color:#080;font-style:italic"># plot</span>
     library(wordcloud)
     library(RColorBrewer)
 
@@ -416,8 +422,8 @@ The most popular journal in the database is Human Nature (165 publications), fol
 <p>The author data introduces a common complication in behavioral databases. That is, the author data are not easy to fit in a flat file configuration, because each citation has a variable number of authors. You might be tempted to simply glom them onto the <code>hbeb_df</code> table as <code>author_given_name_1</code>, <code>author_family_name_1</code>, <code>author_given_name_2</code>, <code>author_family_name_2</code>, etc., but <strong>this is a terrible idea and you should stop doing it.</strong> Comes from a tradition of manipulating data tables by hand, wanting to be able to see the entries in a wide format.</p>
 <p>We will see there is one citation with 23 authors; creating dozens or hundreds of mostly-empty columns is madness. Rather, we <strong>make the data relational</strong>, by creating an authors subtable linked to the main table by the citation key. Most importantly this is how we actually want to use the data in analyses.</p>
 <p>By inspection:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    str(hbeb_data[[1]]$author)
-</code></pre></div><pre tabindex="0"><code>## Class 'person'  hidden list of 1
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    str(hbeb_data[[1]]$author)
+</code></pre></div><pre><code>## Class 'person'  hidden list of 1
 ##  $ :List of 5
 ##   ..$ given  : chr [1:2] &quot;Kermyt&quot; &quot;G.&quot;
 ##   ..$ family : chr &quot;Anderson&quot;
@@ -425,7 +431,7 @@ The most popular journal in the database is Human Nature (165 publications), fol
 ##   ..$ email  : NULL
 ##   ..$ comment: NULL
 </code></pre><p>The <code>person</code> class in RefManageR is essentially a list with five fixed slots. The following extraction code is quick and dirty but should serve. I begin by initializing a new data frame, which will grow <em>vertically</em>, one row added for each author in each citation. To keep things sane, I&rsquo;ll add the citation key of the paper in the rows of each author of that paper.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    authors &lt;- data.frame( citation_key = character(<span style="color:#00f">0</span>), 
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    authors &lt;- data.frame( citation_key = character(<span style="color:#00f">0</span>), 
         given_name = character(<span style="color:#00f">0</span>), family_name = character(<span style="color:#00f">0</span>) )
 
     for(i in <span style="color:#00f">1</span>:length(hbeb_data)){
@@ -444,7 +450,7 @@ The most popular journal in the database is Human Nature (165 publications), fol
 
     for(i in <span style="color:#00f">1</span>:ncol(authors)) authors[,i] &lt;- as.character(authors[,i])
 </code></pre></div><p>Now we have a long-oriented table with 2942 author-citation entries, and (unlike a wide table) we can elegantly calculate useful statistics from this relational data structure. First, a let&rsquo;s count up how many coauthors on each citation:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    hbeb_df$author_count &lt;- table(authors$citation_key)[hbeb_df$key]
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    hbeb_df$author_count &lt;- table(authors$citation_key)[hbeb_df$key]
 
     par(mar=c(<span style="color:#00f">5.1</span>, <span style="color:#00f">4.1</span>, <span style="color:#00f">4.1</span>, <span style="color:#00f">2.1</span>))
     par(mfrow=c(<span style="color:#00f">2</span>,<span style="color:#00f">2</span>))
@@ -468,19 +474,19 @@ The most popular journal in the database is Human Nature (165 publications), fol
 </code></pre></div><p><!-- raw HTML omitted -->
 Can we also count the number of unique authors, and count up how many times they each appear? Currently no; we have two tables, one-row-per-pub and one-row-per-pub-author. What we really want is a third table, one-row-per-author.</p>
 <p>Before that, though, we must solve a common problem. Consider the following entry for Peter J. Richerson:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    unique(authors[authors$family_name==<span style="color:#00f">&#34;Richerson&#34;</span>, c(<span style="color:#00f">&#34;given_name&#34;</span>, <span style="color:#00f">&#34;family_name&#34;</span>)])
-</code></pre></div><pre tabindex="0"><code>##      given_name family_name
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    unique(authors[authors$family_name==<span style="color:#00f">&#34;Richerson&#34;</span>, c(<span style="color:#00f">&#34;given_name&#34;</span>, <span style="color:#00f">&#34;family_name&#34;</span>)])
+</code></pre></div><pre><code>##      given_name family_name
 ## 39     Peter J.   Richerson
 ## 603       Peter   Richerson
 ## 2099      P. J.   Richerson
 ## 2468         P.   Richerson
 </code></pre><p>The given names are non-standardized! So people appear under multiple versions of their names.</p>
 <p>I&rsquo;m going to try a quick match using the first letter of <code>given_name</code>. This can be dangerous, since it will collide two people with the same last name and the same first initial, but (hopefully) it works for now.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    authors$author_key &lt;- paste(
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    authors$author_key &lt;- paste(
         substr(authors$given_name, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>), authors$family_name
     )
 </code></pre></div><p>The author_key variable will allow us to create a unique table of authors, and count up how many times each appears.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    author_pk &lt;- unique(authors$author_key)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    author_pk &lt;- unique(authors$author_key)
     count &lt;- as.numeric(table(authors$author_key)[author_pk])
     given_name &lt;- authors$given_name[match(author_pk, authors$author_key)]
     family_name &lt;- authors$family_name[match(author_pk, authors$author_key)]
@@ -495,7 +501,7 @@ Can we also count the number of unique authors, and count up how many times they
         )
     }
 </code></pre></div><p>And we have our answer: there are (approximately) 1137 unique authors in the HBEB. Like with the journals, we can calculate how many times each author appears in the database. Below I display a sorted count of the top forty authors in HBEB, by the number of publications listed.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    par(mar=c(<span style="color:#00f">5.1</span>, <span style="color:#00f">10</span>, <span style="color:#00f">4.1</span>, <span style="color:#00f">2.1</span>))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">    par(mar=c(<span style="color:#00f">5.1</span>, <span style="color:#00f">10</span>, <span style="color:#00f">4.1</span>, <span style="color:#00f">2.1</span>))
 
     o &lt;- rev(order(author_register$count))
     author_register &lt;- author_register[o,]
@@ -512,7 +518,7 @@ So there you go. If you have suggestions, write to me and I can incorporate them
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>We can also spot errors, e.g. the same book appears twice under <code>CronkLeech2013</code> and <code>CronkLeech2012</code>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>We can also spot errors, e.g. the same book appears twice under <code>CronkLeech2013</code> and <code>CronkLeech2012</code>. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

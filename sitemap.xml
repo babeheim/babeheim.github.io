@@ -1,57 +1,95 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>/research/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/publications/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/people/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/software/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/teaching/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2021-04-05-ergometer-data-science/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2021-01-02-stan-markov-tetris/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2020-12-29-is-tetris-biased/</loc>
     <lastmod>2020-12-27T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2019-09-19-song-of-aeiea/</loc>
     <lastmod>2019-09-19T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</loc>
     <lastmod>2018-03-29T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2017-11-06-mpi-eva-signaling-phd-call/</loc>
     <lastmod>2017-11-06T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2017-08-20-year-of-git/</loc>
     <lastmod>2017-08-20T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2017-06-15-text-mining-the-hbeb/</loc>
     <lastmod>2017-06-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2017-06-02-modeling-network-tie-counts/</loc>
     <lastmod>2017-06-02T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2017-02-12-hierarchical-data-in-plain-text/</loc>
     <lastmod>2017-02-12T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</loc>
     <lastmod>2017-02-03T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/blog/2016-05-20-reproducible-research-new-default/</loc>
     <lastmod>2016-05-20T00:00:00+00:00</lastmod>
   </url>
+  
 </urlset>
