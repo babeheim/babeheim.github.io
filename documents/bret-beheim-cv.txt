@@ -42,18 +42,10 @@ education:
   notes          : with distinction in the major (History); Phi Beta Kappa
 
 working papers:
-- authors    : Angela R Garcia, Caleb E Finch, Margy Gatz, Thomas Kraft, Daniel Cummings, Jonathan Stieglitz, Mia Charifson, Daniel Eid Rodriguez, Kenneth Buetow, Bret Beheim, Hooman Allayee, Greg Thomas and the HORUS team, Michael Gurven, Hillard Kaplan, Benjamin C Trumble
-  title      : "APOE4 is associated with elevated blood lipids and lower levels of innate immune biomarkers in a tropical Amerindian subsistence population"
-  status     : in press, *eLife*
-- authors    : Riana Minocher, Silke Atmaca, Claudia Bavero, Richard McElreath, Bret Beheim
-  title      : "Estimating the reproducibility of social learning research published between 1955 and 2018"
-  preprint   : 10.31234/osf.io/4nzc7
-  materials  : https://github.com/rianaminocher/reproducibility-analysis
-  status     : in press, Royal Society Open Science
-- authors    : Tran, N.H., Kucharský, S., Waring, T., Atmaca, S., Beheim, B.
-  title      : "Limited scope for group coordination for stylistic variations in kolam art"
-  status     : in review, Frontiers in Psychology
-  materials  : https://github.com/nhtran93/kolam_coordination)
+- authors    : Bret Beheim
+  title      : A linked mixture model of coronary atherosclerosis
+  preprint   : https://doi.org/10.1101/2021.09.13.21263547
+  materials  : https://github.com/babeheim/linked-calcium-growth
 - authors    : N.-Han Tran, Bret A. Beheim
   title      : "Differential skill aquisition by age in two knowledge-intensive strategy games"
   status     : in prep
@@ -81,30 +73,30 @@ publications:
 
 # 2021
 
-- authors    : Christopher J. Rowan, Michael A. Escander, Edmond Seabright, Daniel Eid Rodriguez, Edhitt Cortez Linares, Raul Quispe Gutierrez, Juan Copajira Adrian, Daniel Cummings, Bret Beheim, Kirsten Tolstrup, Abinash Achrekar, Thomas Kraft, David E. Michalik, Michael I Miyamoto, Adel H. Allam, L. Samuel Wann, Jagat Narula, Benjamin C. Trumble, Jonathan Stieglitz, Randall C. Thompson, Gregory S. Thomas, Hillard S. Kaplan, Michael D. Gurven
-  title      : "Very low prevalence and incidence of atrial fibrillation among Bolivian forager-farmers"
-  year       : 2021
-  journal    : Annals of Global Health
-  volume     : 87(1)
-  doi        : http://doi.org/10.5334/aogh.3252
-  materials  : https://github.com/babeheim/tsimane-afib-public
-  publisher  : Ubiquity Press
-- authors    : Adrian V. Jaeggi, Aaron D. Blackwell, Christopher von Rueden, Benjamin C. Trumble, Jonathan Stieglitz, Angela R. Garcia, Thomas S. Kraft, Bret Beheim, Paul Hooper, Hillard Kaplan, Michael Gurven
-  title      : "Relative wealth and inequality associate with health in a small-scale subsistence society"
+- authors    : Riana Minocher, Silke Atmaca, Claudia Bavero, Richard McElreath, Bret Beheim
+  title      : "Estimating the reproducibility of social learning research published between 1955 and 2018"
+  preprint   : https://doi.org/10.31234/osf.io/4nzc7
+  doi        : https://doi.org/10.1098/rsos.210450
+  journal    : Royal Society Open Science
+  volume     : 8:210450
+  materials  : https://github.com/rianaminocher/reproducibility-analysis
+  publisher  : The Royal Society Publishing
+- authors    : Angela R Garcia, Caleb E Finch, Margy Gatz, Thomas Kraft, Daniel Cummings, Jonathan Stieglitz, Mia Charifson, Daniel Eid Rodriguez, Kenneth Buetow, Bret Beheim, Hooman Allayee, Greg Thomas and the HORUS team, Michael Gurven, Hillard Kaplan, Benjamin C Trumble
+  title      : "APOE4 is associated with elevated blood lipids and lower levels of innate immune biomarkers in a tropical Amerindian subsistence population"
   year       : 2021
   journal    : eLife
-  volume     : 10:e59437
-  doi        : https://doi.org/10.7554/eLife.59437
-  materials  : https://github.com/adblackwell/wealthinequality
+  volume     : 10:e68231
   publisher  : eLife Sciences Publications Ltd.
-- authors    : N.-Han Tran, Timothy Waring, Silke Atmaca, Bret A. Beheim
-  title      : "Entropy trade-offs in artistic design: A case study of Tamil *kolam*"
+  doi        : https://doi.org/0.7554/eLife.682311
+  materials  : https://doi.org/10.5061/dryad.pg4f4qrpt
+- authors    : N.-Han Tran, Simon Kucharský, Timothy Waring, Silke Atmaca, Bret Beheim
+  title      : "Limited scope for group coordination for stylistic variations in kolam art"
   year       : 2021
-  journal    : Evolutionary Human Sciences
-  volume     : 3(E23)
-  doi        : http://doi.org/10.1017/ehs.2021.14
-  materials  : https://github.com/nhtran93/kolam_signaling
-  publisher  : Cambridge University Press
+  journal    : Frontiers in Psychology
+  volume     : 12:4770
+  doi        : https://doi.org/10.3389/fpsyg.2021.742577
+  materials  : https://github.com/nhtran93/kolam_coordination
+  publisher  : Frontiers
 - authors    : Bret Beheim, Quentin Atkinson, Joseph Bulbulia, Will M. Gervais, Russell Gray, Joseph Henrich, Martin Lang, M. Willis Monroe, Michael Muthukrishna, Ara Norenzayan, Benjamin Grant Purzycki, Azim Shariff, Edward Slingerland, Rachel Spicer, Aiyana K. Willard
   title      : "Treatment of missing data determined conclusions regarding moralizing gods"
   preprint   : https://doi.org/10.31234/osf.io/jwa2n
@@ -114,6 +106,30 @@ publications:
   volume     : 595
   doi        : https://doi.org/10.1038/s41586-021-03655-4
   publisher  : Springer Nature
+- authors    : Adrian V. Jaeggi, Aaron D. Blackwell, Christopher von Rueden, Benjamin C. Trumble, Jonathan Stieglitz, Angela R. Garcia, Thomas S. Kraft, Bret Beheim, Paul Hooper, Hillard Kaplan, Michael Gurven
+  title      : "Relative wealth and inequality associate with health in a small-scale subsistence society"
+  year       : 2021
+  journal    : eLife
+  volume     : 10:e59437
+  doi        : https://doi.org/10.7554/eLife.59437
+  materials  : https://github.com/adblackwell/wealthinequality
+  publisher  : eLife Sciences Publications Ltd.
+- authors    : Christopher J. Rowan, Michael A. Escander, Edmond Seabright, Daniel Eid Rodriguez, Edhitt Cortez Linares, Raul Quispe Gutierrez, Juan Copajira Adrian, Daniel Cummings, Bret Beheim, Kirsten Tolstrup, Abinash Achrekar, Thomas Kraft, David E. Michalik, Michael I Miyamoto, Adel H. Allam, L. Samuel Wann, Jagat Narula, Benjamin C. Trumble, Jonathan Stieglitz, Randall C. Thompson, Gregory S. Thomas, Hillard S. Kaplan, Michael D. Gurven
+  title      : "Very low prevalence and incidence of atrial fibrillation among Bolivian forager-farmers"
+  year       : 2021
+  journal    : Annals of Global Health
+  volume     : 87(1)
+  doi        : http://doi.org/10.5334/aogh.3252
+  materials  : https://github.com/babeheim/tsimane-afib-public
+  publisher  : Ubiquity Press
+- authors    : N.-Han Tran, Timothy Waring, Silke Atmaca, Bret A. Beheim
+  title      : "Entropy trade-offs in artistic design: A case study of Tamil *kolam*"
+  year       : 2021
+  journal    : Evolutionary Human Sciences
+  volume     : 3(E23)
+  doi        : http://doi.org/10.1017/ehs.2021.14
+  materials  : https://github.com/nhtran93/kolam_signaling
+  publisher  : Cambridge University Press
 
 # 2020
 
@@ -361,30 +377,30 @@ grants, fellowships, awards:
 - Phi Beta Kappa Honors Society. 2004
 
 presentations:
-- "The Adaptive Logic of False Beliefs", Human Behavior and Evolution Society Meeting, 2019-04-26
-- "Improving Reproducibility in Evolutionary Anthropology", Santa Fe Institute ENDOW workshop, 2020-02-06
-- "Open Science in the Field", Open Science and Reproducibility workshop, Interacting Minds Centre, Aarhus University, 2019-03-13
-- "Milk consumption is globally widespread and increasing - Time to rewrite the textbooks?" Cultural Evolution Society Meeting, 2018
-- "Japanese Milk Consumption - Asymptomatic Lactose Intolerance Following a Recent Cultural Diffusion." Human Behavior and Evolution Society Meeting, 2018
-- "Atherosclerosis as a Culturally-Transmitted Disease among Acculturating Horticulturalists". European Human Behavior and Evolution Association Meeting, 2018-04-07
-- "What evolutionary mechanisms drive cultural change?" Poster presented at the European Human Behavior and Evolution Association Meeting, 2017
-- "Beyond conformity in cultural diffusion - Knowledge, opportunity and motivation" Cultural Evolution Society Meeting. 2017
-- "Advances in studying cultural diffusions", Department of Behavioral Sciences, Hokkaido University. 2017
-- "Transparency and reproducibility in observational research - lessons from anthropology", Yale's Day of Data, co-presented with Dr. Melanie Martin, 2016
-- "Anthropological Research as Software Development" Yale Department of Anthropology, 2016
-- "Social diffusion of gasoline motors in the Bolivian Amazon", American Anthropological Association Conference, 2016
-- "Estimating Heritability of Reaction Norms Dynamics of Wealth Inequality and Family Structure", Santa Fe Institute, 2015
-- "Cultural Evolution in Games of Chess and Go". American Anthropological Association Meeting. 2015
-- "Left Ventricular Systolic and Diastolic Dysfunction is an Uncommon Finding in a Pre-Industrial Society with High Inflammation and Low Atherosclerotic Risk Factors". American Heart Association Meeting. 2015
-- "What evolutionary processes drive cultural change?", Evolutionary Demography Society Meeting. 2014
-- "Slow cardiovascular aging and rare infarcts among Tsimane forager-horticulturalists". American Association of Physical Anthropologists Meeting. 2014
-- "Evolutionary dynamics in the Game of Go". Institute for Pure and Applied Mathematics, University of California at Los Angeles. 2013
-- "Strategic Social Learning and Evolutionary Arms Races in the Game of Go" Santa Fe Institute, Santa Fe, New Mexico, 2012
-- "Inferring General Mechanisms of Cultural Evolution in Observational Settings" Dissertation Exit Seminar, UC Davis, Davis, California, 2012
-- "Evolutionary Decomposition and the Dynamics of Inequality". Santa Fe Institute, Santa Fe, New Mexico, 2012
-- "Developing Measures of Cultural Variation and Dynamics in Hokkaido, Japan". Radcliffe Institute, Harvard University, Cambridge, Massachusetts, 2011
-- "Inheritance and Ecology - Canoe Evolution in Fiji and Polynesia". 3UC Evolutionary Anthropology Conference. 2009
-- "Japan’s Cultural Inoculation - The Radiation and Retreat of Firearms and Christianity". Human Behavior and Evolution Society Meeting. 2008
+- The Adaptive Logic of False Beliefs, Human Behavior and Evolution Society Meeting, 2019-04-26
+- Improving Reproducibility in Evolutionary Anthropology, Santa Fe Institute ENDOW workshop, 2020-02-06
+- Open Science in the Field, Open Science and Reproducibility workshop, Interacting Minds Centre, Aarhus University, 2019-03-13
+- Milk consumption is globally widespread and increasing - Time to rewrite the textbooks? Cultural Evolution Society Meeting, 2018
+- Japanese Milk Consumption - Asymptomatic Lactose Intolerance Following a Recent Cultural Diffusion. Human Behavior and Evolution Society Meeting, 2018
+- Atherosclerosis as a Culturally-Transmitted Disease among Acculturating Horticulturalists. European Human Behavior and Evolution Association Meeting, 2018-04-07
+- What evolutionary mechanisms drive cultural change? Poster presented at the European Human Behavior and Evolution Association Meeting, 2017
+- Beyond conformity in cultural diffusion - Knowledge, opportunity and motivation Cultural Evolution Society Meeting. 2017
+- Advances in studying cultural diffusions, Department of Behavioral Sciences, Hokkaido University. 2017
+- Transparency and reproducibility in observational research - lessons from anthropology, Yale's Day of Data, co-presented with Dr. Melanie Martin, 2016
+- Anthropological Research as Software Development Yale Department of Anthropology, 2016
+- Social diffusion of gasoline motors in the Bolivian Amazon, American Anthropological Association Conference, 2016
+- Estimating Heritability of Reaction Norms Dynamics of Wealth Inequality and Family Structure, Santa Fe Institute, 2015
+- Cultural Evolution in Games of Chess and Go. American Anthropological Association Meeting. 2015
+- Left Ventricular Systolic and Diastolic Dysfunction is an Uncommon Finding in a Pre-Industrial Society with High Inflammation and Low Atherosclerotic Risk Factors. American Heart Association Meeting. 2015
+- What evolutionary processes drive cultural change?, Evolutionary Demography Society Meeting. 2014
+- Slow cardiovascular aging and rare infarcts among Tsimane forager-horticulturalists. American Association of Physical Anthropologists Meeting. 2014
+- Evolutionary dynamics in the Game of Go. Institute for Pure and Applied Mathematics, University of California at Los Angeles. 2013
+- Strategic Social Learning and Evolutionary Arms Races in the Game of Go Santa Fe Institute, Santa Fe, New Mexico, 2012
+- Inferring General Mechanisms of Cultural Evolution in Observational Settings Dissertation Exit Seminar, UC Davis, Davis, California, 2012
+- Evolutionary Decomposition and the Dynamics of Inequality. Santa Fe Institute, Santa Fe, New Mexico, 2012
+- Developing Measures of Cultural Variation and Dynamics in Hokkaido, Japan. Radcliffe Institute, Harvard University, Cambridge, Massachusetts, 2011
+- Inheritance and Ecology - Canoe Evolution in Fiji and Polynesia. 3UC Evolutionary Anthropology Conference. 2009
+- Japan’s Cultural Inoculation, The Radiation and Retreat of Firearms and Christianity. Human Behavior and Evolution Society Meeting. 2008
 
 fieldwork: 
 - San Borja, Bolivia (4 weeks, 2019)
@@ -415,11 +431,9 @@ supervision, training, mentorship:
 - postdoctoral:
   - Daniel Redhead, Ph.D., September 2018 to November 2020, MPI-EVA
 - doctoral:
+  - Han Tran, October 2018 - November 2021, University of Leipzig / MPI-EVA
   - Natalia Federova, starting August 2017, University of Leipzig / MPI-EVA
   - Riana Minocher, starting January 2018, University of Leipzig / MPI-EVA
-  - Han Tran, starting October 2018, University of Leipzig / MPI-EVA
-  - Daniel Cummings, Doctoral Candidate, University of New Mexico
-  - Edmond Seabright, Doctoral Candidate, University of New Mexico
 - masters, bachelors:
   - Anja Becker, Bachelor's & Master's Theses, 2018 and 2020, University of Leipzig
   - Leonie Ettie, Bachelor's Thesis, 2020, University of Leipzig
@@ -448,6 +462,8 @@ public essays, white papers and tutorials:
 - Beheim, B., Reis, M. (2003) A Theory of Social Formalism, The Four Horsemen and the New Deal. *Law and Society Review at the University of California, Santa Barbara* II, pp. 85-94.
 
 article reviews:
+- Evolutionary Human Sciences
+- Royal Society Open Science
 - Science Advances
 - PLOS ONE
 - Current Anthropology

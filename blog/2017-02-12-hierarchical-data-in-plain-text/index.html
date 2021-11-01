@@ -17,10 +17,10 @@ Plaintext data entry works great, unless the data are hierarchical." />
 <meta property="og:description" content="A practical method of entering structured data into a computer is to type it directly into a text file. Simply fire up your favorite CSV editor1, sit down with your source material and start typing. Unlike boutique database software, this method can be used immediately and with minimal training. In fact, I know several researchers who skip paper forms altogether and do it during their field interviews.
 Plaintext data entry works great, unless the data are hierarchical." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/2017-02-12-hierarchical-data-in-plain-text/" />
-<meta property="og:image" content="images/bret-head.jpg"/>
+<meta property="og:url" content="/blog/2017-02-12-hierarchical-data-in-plain-text/" /><meta property="og:image" content="images/bret-head.jpg"/><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2017-02-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2017-02-12T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+
 
 
 
@@ -36,16 +36,10 @@ Plaintext data entry works great, unless the data are hierarchical."/>
 
 <meta itemprop="name" content="Capturing Hierarchical Data in Plain Text">
 <meta itemprop="description" content="A practical method of entering structured data into a computer is to type it directly into a text file. Simply fire up your favorite CSV editor1, sit down with your source material and start typing. Unlike boutique database software, this method can be used immediately and with minimal training. In fact, I know several researchers who skip paper forms altogether and do it during their field interviews.
-Plaintext data entry works great, unless the data are hierarchical.">
-<meta itemprop="datePublished" content="2017-02-12T00:00:00+00:00" />
+Plaintext data entry works great, unless the data are hierarchical."><meta itemprop="datePublished" content="2017-02-12T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2017-02-12T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1014">
-<meta itemprop="image" content="images/bret-head.jpg"/>
-
-
-
+<meta itemprop="wordCount" content="1010"><meta itemprop="image" content="images/bret-head.jpg"/>
 <meta itemprop="keywords" content="" />
-
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -285,7 +279,7 @@ Plaintext data entry works great, unless the data are hierarchical.">
 <p>Recently I’ve been playing with the idea of <em>typing into a data interchange format</em>. Unlike wide-form tables, these formats were <em>designed</em> to store structured data in plain text so it could pass from place to place, e.g. from a web server to a broswer.</p>
 <p>So the idea, then, is you’d type each interview into a text file using an interchange format, then use standard parsing tools<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> to pull them into a relational database.</p>
 <p>The first format I tried is Javascript Object Notation (JSON), whose syntax is defined by <a href="http://www.json.org">five elegant diagrams</a>. For example, in building a database of 19th-century scientists, a JSON record might look like so:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#000080;font-weight:bold">&#34;name&#34;</span>: <span style="color:#00f">&#34;Charles Robert Darwin&#34;</span>,
   <span style="color:#000080;font-weight:bold">&#34;sex&#34;</span>: <span style="color:#00f">&#34;male&#34;</span>,
   <span style="color:#000080;font-weight:bold">&#34;dob&#34;</span>: <span style="color:#00f">&#34;1809-02-12&#34;</span>,
@@ -328,7 +322,7 @@ Plaintext data entry works great, unless the data are hierarchical.">
 <p>The language allows arbitrarily complex hierarchies because JSON values can include other JSON objects or arrays.</p>
 <p>However, looking at the example above, you can see that JSON is not really right for manual data entry, especially in a real time interview. Lots of quotation marks, braces, brackets, and commas have to be done <em>exactly</em> right, or else it won’t parse properly.</p>
 <p>Enter <a href="yaml.org">YAML</a>, a simplified sister format intended for direct human editing. For example, the above in YAML would be:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">name</span>:<span style="color:#bbb"> </span>Charles Robert Darwin<span style="color:#bbb">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">name</span>:<span style="color:#bbb"> </span>Charles Robert Darwin<span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">sex</span>:<span style="color:#bbb"> </span>male<span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">dob</span>:<span style="color:#bbb"> </span>1809-02-12<span style="color:#bbb">
 </span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">dod</span>:<span style="color:#bbb"> </span>1882-04-19<span style="color:#bbb">
@@ -368,16 +362,16 @@ Plaintext data entry works great, unless the data are hierarchical.">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Excel is ubiquitous, and the spreadsheet structure makes it easier to type with your eyes off the screen. Free alternatives include OpenOffice and Comma Cameleon. However, provided you are careful with formatting, there’s nothing stopping you from filling out a CSV table directly in a text editor, e.g. Notepad++ (windows) and Sublime Text (OSX / Linux). The latter program is also interesting because it uses JSON to store all user settings. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Excel is ubiquitous, and the spreadsheet structure makes it easier to type with your eyes off the screen. Free alternatives include OpenOffice and Comma Cameleon. However, provided you are careful with formatting, there’s nothing stopping you from filling out a CSV table directly in a text editor, e.g. Notepad++ (windows) and Sublime Text (OSX / Linux). The latter program is also interesting because it uses JSON to store all user settings.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>For R users, the library <code>JSONlite</code> provides a <code>readJSON</code> function which works well. The <code>yaml</code> library provides similar functions, but JSON is better for storage. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>For R users, the library <code>JSONlite</code> provides a <code>readJSON</code> function which works well. The <code>yaml</code> library provides similar functions, but JSON is better for storage.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>Specifically, if you open a non-Windows text file in Notepad it will not detect the Linux/Mac standard line break, creating a single-line document. Since YAML depends on exact line breaks, it can become unreadible, but JSON does not have this problem. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Specifically, if you open a non-Windows text file in Notepad it will not detect the Linux/Mac standard line break, creating a single-line document. Since YAML depends on exact line breaks, it can become unreadible, but JSON does not have this problem.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>as outlined by one developer’s hard-earned experience <a href="http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/">here</a>. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>as outlined by one developer’s hard-earned experience <a href="http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/">here</a>.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
