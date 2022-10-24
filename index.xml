@@ -27,7 +27,7 @@ Here we track specific opening variants as traits that change in frequency over 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/publications/</guid>
-      <description>papers I&amp;rsquo;ve contributed to
+      <description>papers I&amp;rsquo;ve written, or helped write
 my full CV as a PDF or as a plaintex YML
 also see my google scholar page
 - PDF
@@ -64,7 +64,7 @@ yamlform - a plaintext interview format for creating XLSForm documents for the O
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/teaching/</guid>
-      <description>some courses I&amp;rsquo;ve taught
+      <description> some courses I&amp;rsquo;ve taught
 I currently teach Reproducible Workflows for Scientific Computing, a short course at MPI-EVA based on the Software Carpentry curriculum.
 demonstration of the Poisson scatter theorem
 I&amp;rsquo;ve previously taught the following courses:
@@ -77,7 +77,7 @@ Introduction to Probability, short course for my lab group at MPI-EVA, taught 20
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/blog/</guid>
-      <description></description>
+      <description> </description>
     </item>
     
     <item>
@@ -86,10 +86,9 @@ Introduction to Probability, short course for my lab group at MPI-EVA, taught 20
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/notes/</guid>
-      <description>my public notebooks, roughly ordered by last update
+      <description> my public notebooks, roughly ordered by last update
 2022
-Conformist bias - everyone&amp;rsquo;s favorite method of maintaining cultural diversity 2021
-Stan programming - the currently language and engine in vogue for Markov-Chain Monte Carlo and Bayesian statistics, named after Stanisław Ulam </description>
+Conformist bias - everyone&amp;rsquo;s favorite method of maintaining cultural diversity </description>
     </item>
     
     <item>
@@ -222,16 +221,7 @@ Afflicted by studies with small sample sizes, tiny effects, invalid exploratory 
       <description>Notes on Conformist Bias Conformist bias was introduced in the early 1980s by Boyd and Richerson.
 Recommended Newberry, Mitchell G., and Joshua B. Plotkin. 2021. “Measuring Frequency-Dependent Selection in Culture.” ArXiv:2103.14178 [q-Bio], March. http://arxiv.org/abs/2103.14178.
 Deffner, Dominik, Vivien Kleinow, and Richard McElreath. 2020. “Dynamic Social Learning in Temporally and Spatially Variable Environments.” Royal Society Open Science 7 (12): 200734. https://doi.org/10.1098/rsos.200734.
-Barrett, Brendan J. 2019. “Equifinality in Empirical Studies of Cultural Transmission.” Behavioural Processes, Behavioral Evolution, 161 (April): 129–38.</description>
-    </item>
-    
-    <item>
-      <title>Stan Programming</title>
-      <link>/notebooks/stan/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/notebooks/stan/</guid>
-      <description>Programming in Stan recommended lit Applied Gaussian Processes in Stan Andre Zapic CmdStan User’s Guide Version 2.28 Stan Development Team (see also Stan Functions Reference Version 2.28 Stan Development Team) Stan Reference Manual Version 2.28 Stan Development Team Stan Modeling Language User’s Guide and Reference Manual Stan Development Team Stan Version 2.17.0 Stan User’s Guide Version 2.28 Stan Development Team https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919 [disclosure: Richard was on my PhD committee and I read several early drafts of this book] brms: An R Package for Bayesian Multilevel Models Using Stan 0 - setting up Before a Stan program can execute, it has to be compiled.</description>
+Barrett, Brendan J. 2019. “Equifinality in Empirical Studies of Cultural Transmission.</description>
     </item>
     
   </channel>
