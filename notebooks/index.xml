@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notebooks on Bret Alexander Beheim</title>
+    <link>/notebooks/</link>
+    <description>Recent content in Notebooks on Bret Alexander Beheim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2020, Bret Beheim.</copyright><atom:link href="/notebooks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conformity</title>
+      <link>/notebooks/conformity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notebooks/conformity/</guid>
+      <description>Notes on Conformist Bias Conformist bias was introduced in the early 1980s by Boyd and Richerson.
+Recommended Newberry, Mitchell G., and Joshua B. Plotkin. 2021. “Measuring Frequency-Dependent Selection in Culture.” ArXiv:2103.14178 [q-Bio], March. http://arxiv.org/abs/2103.14178.
+Deffner, Dominik, Vivien Kleinow, and Richard McElreath. 2020. “Dynamic Social Learning in Temporally and Spatially Variable Environments.” Royal Society Open Science 7 (12): 200734. https://doi.org/10.1098/rsos.200734.
+Barrett, Brendan J. 2019. “Equifinality in Empirical Studies of Cultural Transmission.” Behavioural Processes, Behavioral Evolution, 161 (April): 129–38.</description>
+    </item>
+    
+    <item>
+      <title>Stan Programming</title>
+      <link>/notebooks/stan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/notebooks/stan/</guid>
+      <description>Programming in Stan recommended lit Applied Gaussian Processes in Stan Andre Zapic CmdStan User’s Guide Version 2.28 Stan Development Team (see also Stan Functions Reference Version 2.28 Stan Development Team) Stan Reference Manual Version 2.28 Stan Development Team Stan Modeling Language User’s Guide and Reference Manual Stan Development Team Stan Version 2.17.0 Stan User’s Guide Version 2.28 Stan Development Team https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919 [disclosure: Richard was on my PhD committee and I read several early drafts of this book] brms: An R Package for Bayesian Multilevel Models Using Stan 0 - setting up Before a Stan program can execute, it has to be compiled.</description>
+    </item>
+    
+  </channel>
+</rss>

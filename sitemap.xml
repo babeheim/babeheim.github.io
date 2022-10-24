@@ -12,6 +12,8 @@
   </url><url>
     <loc>/teaching/</loc>
   </url><url>
+    <loc>/notes/</loc>
+  </url><url>
     <loc>/blog/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -53,5 +55,11 @@
   </url><url>
     <loc>/blog/2016-05-20-reproducible-research-new-default/</loc>
     <lastmod>2016-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/notebooks/conformity/</loc>
+  </url><url>
+    <loc>/notebooks/</loc>
+  </url><url>
+    <loc>/notebooks/stan/</loc>
   </url>
 </urlset>

@@ -45,20 +45,21 @@ Missing data is probably the most under-trained topic in data analysis. Methods 
   <style>
 
   html, body, h1, h2, h3, h4, h5, h6, p {
-    font-family: 'Open Sans', sans-serif;
-    text-rendering: optimizeLegibility;
+    font-family: "Times New Roman", Times, serif;
+     
   }
 
   p, .sidebar, ol, ul, dl {
     line-height: 1.6;
-    text-rendering: optimizeLegibility;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.05em;
+     
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2em;
     margin-bottom: 1.0em;
   }
+   
 
   body {
-    font-family: Verdana, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     margin: auto;
     padding: 20px;
     max-width: 720px;
@@ -122,8 +123,9 @@ Missing data is probably the most under-trained topic in data analysis. Methods 
 
   code {
     padding: 2px 5px;
-    background-color: #f2f2f2;
+    background-color: #f5f3ff;
   }
+   
 
   pre code {
     color: #222;
@@ -250,6 +252,8 @@ Missing data is probably the most under-trained topic in data analysis. Methods 
 
 <a href="/teaching/">Teaching</a>
 
+<a href="/notes/">Notebooks</a>
+
 
 <a href="/blog">Blog</a>
 
@@ -333,53 +337,53 @@ $$</p>
 <p>R scripts for Figures 2 and 3:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>library(rethinking)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"># data from step 06_prep_regression_data</span>
-</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"># at https://github.com/babeheim/moralizing-gods-reanalysis</span>
-</span></span><span style="display:flex;"><span>d &lt;- read.csv(<span style="color:#00f">&#34;./RegrDat.csv&#34;</span>, stringsAsFactors = <span style="color:#000080;font-weight:bold">FALSE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#008000"># data from step 06_prep_regression_data</span>
+</span></span><span style="display:flex;"><span><span style="color:#008000"># at https://github.com/babeheim/moralizing-gods-reanalysis</span>
+</span></span><span style="display:flex;"><span>d &lt;- read.csv(<span style="color:#a31515">&#34;./RegrDat.csv&#34;</span>, stringsAsFactors = <span style="color:#00f">FALSE</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>png(<span style="color:#00f">&#34;missing.png&#34;</span>, height = <span style="color:#00f">5</span>, width = <span style="color:#00f">8</span>, res = <span style="color:#00f">300</span>, units = <span style="color:#00f">&#34;in&#34;</span>)
+</span></span><span style="display:flex;"><span>png(<span style="color:#a31515">&#34;missing.png&#34;</span>, height = 5, width = 8, res = 300, units = <span style="color:#a31515">&#34;in&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>plot(<span style="color:#00f">1</span>, <span style="color:#00f">1</span>, type = <span style="color:#00f">&#34;n&#34;</span>, xlim = c(<span style="color:#00f">-10000</span>, <span style="color:#00f">2000</span>), ylim = c(<span style="color:#00f">1</span>, <span style="color:#00f">9</span>),
-</span></span><span style="display:flex;"><span>  xlab = <span style="color:#00f">&#34;Years BCE/CE&#34;</span>, ylab = <span style="color:#00f">&#34;Log10 Polity Population&#34;</span>)
+</span></span><span style="display:flex;"><span>plot(1, 1, type = <span style="color:#a31515">&#34;n&#34;</span>, xlim = c(-10000, 2000), ylim = c(1, 9),
+</span></span><span style="display:flex;"><span>  xlab = <span style="color:#a31515">&#34;Years BCE/CE&#34;</span>, ylab = <span style="color:#a31515">&#34;Log10 Polity Population&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tar &lt;- which(d$Writing == <span style="color:#00f">1</span>)
-</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
+</span></span><span style="display:flex;"><span>tar &lt;- which(d$Writing == 1)
+</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = 16, col = gray(0.85), cex = 3)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tar &lt;- which(d$MG_missing == <span style="color:#00f">1</span>)
-</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = <span style="color:#00f">4</span>, col = col.alpha(<span style="color:#00f">&#34;black&#34;</span>, <span style="color:#00f">0.9</span>))
+</span></span><span style="display:flex;"><span>tar &lt;- which(d$MG_missing == 1)
+</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = 4, col = col.alpha(<span style="color:#a31515">&#34;black&#34;</span>, 0.9))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tar &lt;- which(d$MG_missing == <span style="color:#00f">0</span>)
-</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = ifelse(d$MG[tar] == <span style="color:#00f">1</span>, <span style="color:#00f">16</span>, <span style="color:#00f">1</span>), col = col.alpha(<span style="color:#00f">&#34;#D1523B&#34;</span>, <span style="color:#00f">0.9</span>))
+</span></span><span style="display:flex;"><span>tar &lt;- which(d$MG_missing == 0)
+</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = ifelse(d$MG[tar] == 1, 16, 1), col = col.alpha(<span style="color:#a31515">&#34;#D1523B&#34;</span>, 0.9))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pch = <span style="color:#00f">16</span>, col = <span style="color:#00f">&#34;#D1523B&#34;</span>)
-</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods present&#34;</span>)
-</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pch = <span style="color:#00f">1</span>, col = <span style="color:#00f">&#34;#D1523B&#34;</span>)
-</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods absent&#34;</span>)
-</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">7</span>, pch = <span style="color:#00f">4</span>, col = <span style="color:#00f">&#34;black&#34;</span>)
-</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">7</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods unknown&#34;</span>)
+</span></span><span style="display:flex;"><span>points(-9500, 8, pch = 16, col = <span style="color:#a31515">&#34;#D1523B&#34;</span>)
+</span></span><span style="display:flex;"><span>text(-9500, 8, pos = 4, label = <span style="color:#a31515">&#34;moralizing gods present&#34;</span>)
+</span></span><span style="display:flex;"><span>points(-9500, 7.5, pch = 1, col = <span style="color:#a31515">&#34;#D1523B&#34;</span>)
+</span></span><span style="display:flex;"><span>text(-9500, 7.5, pos = 4, label = <span style="color:#a31515">&#34;moralizing gods absent&#34;</span>)
+</span></span><span style="display:flex;"><span>points(-9500, 7, pch = 4, col = <span style="color:#a31515">&#34;black&#34;</span>)
+</span></span><span style="display:flex;"><span>text(-9500, 7, pos = 4, label = <span style="color:#a31515">&#34;moralizing gods unknown&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">6</span>, pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
-</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">6</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;  writing present&#34;</span>)
+</span></span><span style="display:flex;"><span>points(-9500, 6, pch = 16, col = gray(0.85), cex = 3)
+</span></span><span style="display:flex;"><span>text(-9500, 6, pos = 4, label = <span style="color:#a31515">&#34;  writing present&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>dev.off()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>png(<span style="color:#00f">&#34;missing_to_0.png&#34;</span>, height = <span style="color:#00f">5</span>, width = <span style="color:#00f">8</span>, res = <span style="color:#00f">300</span>, units = <span style="color:#00f">&#34;in&#34;</span>)
+</span></span><span style="display:flex;"><span>png(<span style="color:#a31515">&#34;missing_to_0.png&#34;</span>, height = 5, width = 8, res = 300, units = <span style="color:#a31515">&#34;in&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>plot(<span style="color:#00f">1</span>, <span style="color:#00f">1</span>, xlim = c(<span style="color:#00f">-10000</span>, <span style="color:#00f">2000</span>), ylim = c(<span style="color:#00f">1</span>, <span style="color:#00f">9</span>),
-</span></span><span style="display:flex;"><span>  xlab = <span style="color:#00f">&#34;Years BCE/CE&#34;</span>, ylab = <span style="color:#00f">&#34;Log10 Polity Population&#34;</span>)
+</span></span><span style="display:flex;"><span>plot(1, 1, xlim = c(-10000, 2000), ylim = c(1, 9),
+</span></span><span style="display:flex;"><span>  xlab = <span style="color:#a31515">&#34;Years BCE/CE&#34;</span>, ylab = <span style="color:#a31515">&#34;Log10 Polity Population&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tar &lt;- which(d$Writing == <span style="color:#00f">1</span>)
-</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
+</span></span><span style="display:flex;"><span>tar &lt;- which(d$Writing == 1)
+</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = 16, col = gray(0.85), cex = 3)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>points(d$Time, d$PolPop, pch = ifelse(d$MG == <span style="color:#00f">1</span>, <span style="color:#00f">16</span>, <span style="color:#00f">1</span>), col = col.alpha(<span style="color:#00f">&#34;#5679AB&#34;</span>, <span style="color:#00f">0.9</span>))
+</span></span><span style="display:flex;"><span>points(d$Time, d$PolPop, pch = ifelse(d$MG == 1, 16, 1), col = col.alpha(<span style="color:#a31515">&#34;#5679AB&#34;</span>, 0.9))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pch = <span style="color:#00f">16</span>, col = <span style="color:#00f">&#34;#5679AB&#34;</span>)
-</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods known present&#34;</span>)
-</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pch = <span style="color:#00f">1</span>, col = <span style="color:#00f">&#34;#5679AB&#34;</span>)
-</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods not known present&#34;</span>)
+</span></span><span style="display:flex;"><span>points(-9500, 8, pch = 16, col = <span style="color:#a31515">&#34;#5679AB&#34;</span>)
+</span></span><span style="display:flex;"><span>text(-9500, 8, pos = 4, label = <span style="color:#a31515">&#34;moralizing gods known present&#34;</span>)
+</span></span><span style="display:flex;"><span>points(-9500, 7.5, pch = 1, col = <span style="color:#a31515">&#34;#5679AB&#34;</span>)
+</span></span><span style="display:flex;"><span>text(-9500, 7.5, pos = 4, label = <span style="color:#a31515">&#34;moralizing gods not known present&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">6.5</span>, pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
-</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">6.5</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;  writing present&#34;</span>)
+</span></span><span style="display:flex;"><span>points(-9500, 6.5, pch = 16, col = gray(0.85), cex = 3)
+</span></span><span style="display:flex;"><span>text(-9500, 6.5, pos = 4, label = <span style="color:#a31515">&#34;  writing present&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>dev.off()
 </span></span></code></pre></div><p>Endnotes:</p>

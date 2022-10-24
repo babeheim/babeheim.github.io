@@ -53,20 +53,21 @@ I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own ri
   <style>
 
   html, body, h1, h2, h3, h4, h5, h6, p {
-    font-family: 'Open Sans', sans-serif;
-    text-rendering: optimizeLegibility;
+    font-family: "Times New Roman", Times, serif;
+     
   }
 
   p, .sidebar, ol, ul, dl {
     line-height: 1.6;
-    text-rendering: optimizeLegibility;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.05em;
+     
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2em;
     margin-bottom: 1.0em;
   }
+   
 
   body {
-    font-family: Verdana, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     margin: auto;
     padding: 20px;
     max-width: 720px;
@@ -130,8 +131,9 @@ I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own ri
 
   code {
     padding: 2px 5px;
-    background-color: #f2f2f2;
+    background-color: #f5f3ff;
   }
+   
 
   pre code {
     color: #222;
@@ -258,6 +260,8 @@ I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own ri
 
 <a href="/teaching/">Teaching</a>
 
+<a href="/notes/">Notebooks</a>
+
 
 <a href="/blog">Blog</a>
 
@@ -282,8 +286,8 @@ I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own ri
 <p>Since this dataset will likely grow over time, having everything in one R script also means it can be re-used automatically as HBEB grows. So here goes:</p>
 <h1 id="initial-processing">Initial Processing</h1>
 <p>First, we need a tool that can parse *.bib files and load them into an R environment in a format we can manipulate. A Google search reveals a solution: the <code>ReadBib</code> function in package <code>RefManageR</code>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    hbeb_data &lt;- ReadBib(<span style="color:#00f">&#34;./data/Human Behavioral Ecology Bibliography.bib&#34;</span>, 
-</span></span><span style="display:flex;"><span>        check=<span style="color:#000080;font-weight:bold">FALSE</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    hbeb_data &lt;- ReadBib(<span style="color:#a31515">&#34;./data/Human Behavioral Ecology Bibliography.bib&#34;</span>, 
+</span></span><span style="display:flex;"><span>        check=<span style="color:#00f">FALSE</span>)
 </span></span></code></pre></div><pre tabindex="0"><code>## Unrecognized macro in Reyes-Garc{\&#39;\i}a, Victoria
 </code></pre><pre tabindex="0"><code>## Unrecognized macro in Manuel J. Mac{\&#39;\i}a
 </code></pre><pre tabindex="0"><code>## Unrecognized macro in Mart{\&#39;\i} Orta-Mart{\&#39;\i}nez
@@ -291,13 +295,13 @@ I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own ri
 </code></pre><pre tabindex="0"><code>## Unrecognized macro in Victoria Reyes-Garc{\&#39;\i}a
 </code></pre><pre tabindex="0"><code>## Unrecognized macro in Martha Fr{\&#39;\i}as-Armenta
 </code></pre><p>As ReadBib loads the file into R, it displays some messages about inconsistencies in the bib syntax. We can reroute those messages to write to a file by using <code>sink</code> calls to inspect later at our leisure.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    zz &lt;- file(<span style="color:#00f">&#34;./data/messages.txt&#34;</span>, open = <span style="color:#00f">&#34;wt&#34;</span>)
-</span></span><span style="display:flex;"><span>    sink(file=zz, type=<span style="color:#00f">&#34;message&#34;</span>)
-</span></span><span style="display:flex;"><span>    hbeb_data &lt;- ReadBib(<span style="color:#00f">&#34;./data/Human Behavioral Ecology Bibliography.bib&#34;</span>, check=<span style="color:#000080;font-weight:bold">FALSE</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    zz &lt;- file(<span style="color:#a31515">&#34;./data/messages.txt&#34;</span>, open = <span style="color:#a31515">&#34;wt&#34;</span>)
+</span></span><span style="display:flex;"><span>    sink(file=zz, type=<span style="color:#a31515">&#34;message&#34;</span>)
+</span></span><span style="display:flex;"><span>    hbeb_data &lt;- ReadBib(<span style="color:#a31515">&#34;./data/Human Behavioral Ecology Bibliography.bib&#34;</span>, check=<span style="color:#00f">FALSE</span>)
 </span></span><span style="display:flex;"><span>    sink()
 </span></span></code></pre></div><p>Having loaded the data, I need to turn it into one or more data frames to be able to do anything with it. I&rsquo;m not familar with the <code>BibEntry</code> class the data is now in, but it inherits the same behavior as basic R lists. I&rsquo;m going to apply some list methods I use in my [YAML to JSON to CSV pipeline]({% post_url 2017-02-12-hierarchical-data-in-plain-text %}) for processing field interviews.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    nullToNA &lt;- function(x) {
-</span></span><span style="display:flex;"><span>        x[sapply(x, is.null)] &lt;- <span style="color:#000080;font-weight:bold">NA</span>
+</span></span><span style="display:flex;"><span>        x[sapply(x, is.null)] &lt;- <span style="color:#00f">NA</span>
 </span></span><span style="display:flex;"><span>        return(x)
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
@@ -315,16 +319,16 @@ I&rsquo;m curious to know more about HBEB&rsquo;s use as a dataset in its own ri
 </span></span><span style="display:flex;"><span>        booktitle=unlist(nullToNA(hbeb_data$booktitle))
 </span></span><span style="display:flex;"><span>    )
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    for(i in <span style="color:#00f">1</span>:ncol(hbeb_df)) hbeb_df[,i] &lt;- as.character(hbeb_df[,i])
+</span></span><span style="display:flex;"><span>    for(i in 1:ncol(hbeb_df)) hbeb_df[,i] &lt;- as.character(hbeb_df[,i])
 </span></span></code></pre></div><p>To describe what the code block above is doing, the <code>unlist</code> function corrals the variables into simple vectors and the <code>data.frame</code> function column-binds them into a data frame. I wrote a new function, <code>nullToNA</code> so missing values are not dropped during this operation.</p>
 <p>The result is a data frame with 1255 rows (the same length as the <code>hbeb_data</code> list) and the 11 columns we defined above. Each entry contains data associated with that citation: the year, the title, the DOI, etc., with the exception of the authors. That part is complicated because it lends itself to a [hierarchical data model]({% post_url 2017-02-12-hierarchical-data-in-plain-text %}), so I will save it for last.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    barplot(table(hbeb_df$year), main=<span style="color:#00f">&#34;count by year of publication&#34;</span>, 
-</span></span><span style="display:flex;"><span>        border=<span style="color:#000080;font-weight:bold">NA</span>, col=barplot_color)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    barplot(table(hbeb_df$year), main=<span style="color:#a31515">&#34;count by year of publication&#34;</span>, 
+</span></span><span style="display:flex;"><span>        border=<span style="color:#00f">NA</span>, col=barplot_color)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    abline(h=seq(<span style="color:#00f">0</span>, <span style="color:#00f">100</span>, by=<span style="color:#00f">20</span>), lty=<span style="color:#00f">2</span>, col=col_alpha(<span style="color:#00f">&#34;gray&#34;</span>, <span style="color:#00f">0.6</span>))
+</span></span><span style="display:flex;"><span>    abline(h=seq(0, 100, by=20), lty=2, col=col_alpha(<span style="color:#a31515">&#34;gray&#34;</span>, 0.6))
 </span></span></code></pre></div><!-- raw HTML omitted -->
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    type_tab &lt;- prop.table(table(hbeb_df$type))
-</span></span><span style="display:flex;"><span>    type_tab &lt;- floor(<span style="color:#00f">100</span>*type_tab)
+</span></span><span style="display:flex;"><span>    type_tab &lt;- floor(100*type_tab)
 </span></span></code></pre></div><p>Of the 1255 publications in HBEB, 82 percent are articles, 15 percent are chapters in edited volumes, and 1 percent are books. Looking at the number of entries in HBEB through time, there&rsquo;s clearly fewer pubs since 2005, steadily declining up to the present.</p>
 <p>Such questions are feasible, now that the data are in a usable (for me) format.</p>
 <h1 id="what-journals-most-commonly-publish-human-behavioral-ecology-articles">What journals most commonly publish human behavioral ecology articles?</h1>
@@ -342,22 +346,22 @@ and even</li>
 <p>There&rsquo;s probably a more elegant approach to data cleaning, but in situations like this, I just renaming the entries like so:</p>
 <p>Let&rsquo;s make a backup copy, then apply the <code>gsub</code> command to eliminate strange characters.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    hbeb_df$journal_og &lt;- hbeb_df$journal
-</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- iconv(hbeb_df$journal, to = <span style="color:#00f">&#34;utf-8&#34;</span>)
-</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- gsub(<span style="color:#00f">&#34;\\{&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, hbeb_df$journal)
-</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- gsub(<span style="color:#00f">&#34;\\}&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, hbeb_df$journal)
-</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- gsub(<span style="color:#00f">&#34;\&#34;&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, hbeb_df$journal)
-</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- gsub(<span style="color:#00f">&#34;\\\\&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, hbeb_df$journal)
-</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- gsub(<span style="color:#00f">&#34;/&#39;&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, hbeb_df$journal)
+</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- iconv(hbeb_df$journal, to = <span style="color:#a31515">&#34;utf-8&#34;</span>)
+</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- gsub(<span style="color:#a31515">&#34;\\{&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, hbeb_df$journal)
+</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- gsub(<span style="color:#a31515">&#34;\\}&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, hbeb_df$journal)
+</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- gsub(<span style="color:#a31515">&#34;\&#34;&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, hbeb_df$journal)
+</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- gsub(<span style="color:#a31515">&#34;\\\\&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, hbeb_df$journal)
+</span></span><span style="display:flex;"><span>    hbeb_df$journal &lt;- gsub(<span style="color:#a31515">&#34;/&#39;&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, hbeb_df$journal)
 </span></span></code></pre></div><p>Now for the renaming:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    old_names &lt;- c(<span style="color:#00f">&#34;Proceedings of the Royal Society B: Biological Science&#34;</span>, 
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">&#34;Proceedings of the Royal Society B: Biological Sciences&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">&#34;Proceedings of the Royal Society Biology&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">&#34;Proceedings of the Royal Society of London: Biological Sciences&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">&#34;Proceedings of the Royal Society, Series B&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">&#34;roceedings of the Royal Society, Series B&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    old_names &lt;- c(<span style="color:#a31515">&#34;Proceedings of the Royal Society B: Biological Science&#34;</span>, 
+</span></span><span style="display:flex;"><span>        <span style="color:#a31515">&#34;Proceedings of the Royal Society B: Biological Sciences&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a31515">&#34;Proceedings of the Royal Society Biology&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a31515">&#34;Proceedings of the Royal Society of London: Biological Sciences&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a31515">&#34;Proceedings of the Royal Society, Series B&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a31515">&#34;roceedings of the Royal Society, Series B&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    hbeb_df$journal[hbeb_df$journal %in% 
-</span></span><span style="display:flex;"><span>        old_names] &lt;- <span style="color:#00f">&#34;Proceedings of the Royal Society B&#34;</span>
+</span></span><span style="display:flex;"><span>        old_names] &lt;- <span style="color:#a31515">&#34;Proceedings of the Royal Society B&#34;</span>
 </span></span></code></pre></div><p>I&rsquo;ll do a similar operation for PNAS and a few other journals in the Rmarkdown code, but for clarity, it will not be not printed here.</p>
 <p>This one is actually funny:</p>
 <ul>
@@ -369,48 +373,48 @@ and even</li>
 </ul>
 <p>We fix this one by standardizing capitalization. I&rsquo;ll use a function called <code>cw</code> which I got <a href="https://github.com/ropensci/wellknown/blob/master/R/zzz.R">here</a>.</p>
 <p>With the journal names at least somewhat cleaned of duplicates, we can count 165 unique journals listed. We can see the most popular ten as a horizontal barplot:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    par(mar=c(<span style="color:#00f">5.1</span>, <span style="color:#00f">20</span>, <span style="color:#00f">4.1</span>, <span style="color:#00f">2.1</span>))
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    par(mar=c(5.1, 20, 4.1, 2.1))
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    top_ten_journals &lt;- rev(sort(table(as.character(hbeb_df$journal[hbeb_df$type==<span style="color:#00f">&#34;Article&#34;</span>]))))[1:<span style="color:#00f">10</span>]
+</span></span><span style="display:flex;"><span>    top_ten_journals &lt;- rev(sort(table(as.character(hbeb_df$journal[hbeb_df$type==<span style="color:#a31515">&#34;Article&#34;</span>]))))[1:10]
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    barplot( rev(top_ten_journals), horiz=<span style="color:#000080;font-weight:bold">TRUE</span>, 
-</span></span><span style="display:flex;"><span>        las=<span style="color:#00f">1</span>, xlab=<span style="color:#00f">&#34;pub count&#34;</span>, border=<span style="color:#000080;font-weight:bold">NA</span>, col=barplot_color)
+</span></span><span style="display:flex;"><span>    barplot( rev(top_ten_journals), horiz=<span style="color:#00f">TRUE</span>, 
+</span></span><span style="display:flex;"><span>        las=1, xlab=<span style="color:#a31515">&#34;pub count&#34;</span>, border=<span style="color:#00f">NA</span>, col=barplot_color)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    abline(v=seq(<span style="color:#00f">0</span>, <span style="color:#00f">150</span>, by=<span style="color:#00f">50</span>), lty=<span style="color:#00f">2</span>, col=col_alpha(<span style="color:#00f">&#34;gray&#34;</span>, <span style="color:#00f">0.6</span>))
+</span></span><span style="display:flex;"><span>    abline(v=seq(0, 150, by=50), lty=2, col=col_alpha(<span style="color:#a31515">&#34;gray&#34;</span>, 0.6))
 </span></span></code></pre></div><p><img src="/figure/hbeb_top_jounals-1.png" alt="plot of chunk hbeb_top_jounals">
 The most popular journal in the database is Human Nature (165 publications), followed by Evolution And Human Behavior (160 publications) and Current Anthropology (76 publications). In total, these ten journals account for 63 percent of all articles in HBEB.</p>
 <h1 id="identifying-keywords-in-titles">Identifying keywords in titles</h1>
 <p>I&rsquo;ve always wanted to make a word cloud, and the title of each citation can be mined for common words. I&rsquo;m going to use the packages and methods outlined <a href="https://www.r-bloggers.com/building-wordclouds-in-r/">here</a>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#080;font-style:italic"># load needed libraries</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#008000"># load needed libraries</span>
 </span></span><span style="display:flex;"><span>    library(tm)
 </span></span><span style="display:flex;"><span>    library(SnowballC)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic"># remove strange characters from the title input</span>
-</span></span><span style="display:flex;"><span>    title_strings &lt;- iconv(hbeb_df$title, to = <span style="color:#00f">&#34;utf-8&#34;</span>)
-</span></span><span style="display:flex;"><span>    title_strings &lt;- gsub(<span style="color:#00f">&#34;\\{&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, title_strings)
-</span></span><span style="display:flex;"><span>    title_strings &lt;- gsub(<span style="color:#00f">&#34;\\}&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, title_strings)
-</span></span><span style="display:flex;"><span>    title_strings &lt;- gsub(<span style="color:#00f">&#34;\&#34;&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, title_strings)
-</span></span><span style="display:flex;"><span>    title_strings &lt;- gsub(<span style="color:#00f">&#34;\\\\&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, title_strings)
-</span></span><span style="display:flex;"><span>    title_strings &lt;- gsub(<span style="color:#00f">&#34;/&#39;&#34;</span>, <span style="color:#00f">&#34;&#34;</span>, title_strings)
+</span></span><span style="display:flex;"><span>    <span style="color:#008000"># remove strange characters from the title input</span>
+</span></span><span style="display:flex;"><span>    title_strings &lt;- iconv(hbeb_df$title, to = <span style="color:#a31515">&#34;utf-8&#34;</span>)
+</span></span><span style="display:flex;"><span>    title_strings &lt;- gsub(<span style="color:#a31515">&#34;\\{&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, title_strings)
+</span></span><span style="display:flex;"><span>    title_strings &lt;- gsub(<span style="color:#a31515">&#34;\\}&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, title_strings)
+</span></span><span style="display:flex;"><span>    title_strings &lt;- gsub(<span style="color:#a31515">&#34;\&#34;&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, title_strings)
+</span></span><span style="display:flex;"><span>    title_strings &lt;- gsub(<span style="color:#a31515">&#34;\\\\&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, title_strings)
+</span></span><span style="display:flex;"><span>    title_strings &lt;- gsub(<span style="color:#a31515">&#34;/&#39;&#34;</span>, <span style="color:#a31515">&#34;&#34;</span>, title_strings)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic"># use tm&#39;s corpus class to process the text</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#008000"># use tm&#39;s corpus class to process the text</span>
 </span></span><span style="display:flex;"><span>    d_cor &lt;- Corpus(VectorSource(title_strings))
 </span></span><span style="display:flex;"><span>    d_cor &lt;- tm_map(d_cor, PlainTextDocument)
 </span></span><span style="display:flex;"><span>    d_cor &lt;- tm_map(d_cor, removePunctuation)
 </span></span><span style="display:flex;"><span>    d_cor &lt;- tm_map(d_cor, tolower)
 </span></span><span style="display:flex;"><span>    d_cor &lt;- tm_map(d_cor, content_transformer(gsub), 
-</span></span><span style="display:flex;"><span>        pattern = <span style="color:#00f">&#34;evolutionary&#34;</span>, replacement = <span style="color:#00f">&#34;evolution&#34;</span>)
-</span></span><span style="display:flex;"><span>    d_cor &lt;- tm_map(d_cor, removeWords, c(<span style="color:#00f">&#39;the&#39;</span>, <span style="color:#00f">&#39;among&#39;</span>, 
-</span></span><span style="display:flex;"><span>        <span style="color:#00f">&#39;human&#39;</span>, <span style="color:#00f">&#39;evolution&#39;</span>, stopwords(<span style="color:#00f">&#39;english&#39;</span>)))
+</span></span><span style="display:flex;"><span>        pattern = <span style="color:#a31515">&#34;evolutionary&#34;</span>, replacement = <span style="color:#a31515">&#34;evolution&#34;</span>)
+</span></span><span style="display:flex;"><span>    d_cor &lt;- tm_map(d_cor, removeWords, c(<span style="color:#a31515">&#39;the&#39;</span>, <span style="color:#a31515">&#39;among&#39;</span>, 
+</span></span><span style="display:flex;"><span>        <span style="color:#a31515">&#39;human&#39;</span>, <span style="color:#a31515">&#39;evolution&#39;</span>, stopwords(<span style="color:#a31515">&#39;english&#39;</span>)))
 </span></span><span style="display:flex;"><span>    d_cor &lt;- Corpus(VectorSource(d_cor))
 </span></span></code></pre></div><p>Note that I took out the words &ldquo;the&rdquo;, &ldquo;evolution&rdquo;, &ldquo;evolutionary&rdquo; and &ldquo;human&rdquo;, since those are the most common and least informative. Now we make a wordcloud with the <code>wordcloud</code> function in the <code>wordcloud</code> library. Wordcloud.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#080;font-style:italic"># plot</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    <span style="color:#008000"># plot</span>
 </span></span><span style="display:flex;"><span>    library(wordcloud)
 </span></span><span style="display:flex;"><span>    library(RColorBrewer)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    cloud_cols &lt;- brewer.pal(<span style="color:#00f">8</span>, <span style="color:#00f">&#34;Dark2&#34;</span>)
+</span></span><span style="display:flex;"><span>    cloud_cols &lt;- brewer.pal(8, <span style="color:#a31515">&#34;Dark2&#34;</span>)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    wordcloud(d_cor, max.words=<span style="color:#00f">100</span>, random.order=<span style="color:#000080;font-weight:bold">FALSE</span>, colors=cloud_cols)
+</span></span><span style="display:flex;"><span>    wordcloud(d_cor, max.words=100, random.order=<span style="color:#00f">FALSE</span>, colors=cloud_cols)
 </span></span></code></pre></div><!-- raw HTML omitted -->
 <h1 id="identifying-authors-through-relational-tables">Identifying authors through relational tables</h1>
 <p>The author data introduces a common complication in behavioral databases. That is, the author data are not easy to fit in a flat file configuration, because each citation has a variable number of authors. You might be tempted to simply glom them onto the <code>hbeb_df</code> table as <code>author_given_name_1</code>, <code>author_family_name_1</code>, <code>author_given_name_2</code>, <code>author_family_name_2</code>, etc., but <strong>this is a terrible idea and you should stop doing it.</strong> Comes from a tradition of manipulating data tables by hand, wanting to be able to see the entries in a wide format.</p>
@@ -425,15 +429,15 @@ The most popular journal in the database is Human Nature (165 publications), fol
 ##   ..$ email  : NULL
 ##   ..$ comment: NULL
 </code></pre><p>The <code>person</code> class in RefManageR is essentially a list with five fixed slots. The following extraction code is quick and dirty but should serve. I begin by initializing a new data frame, which will grow <em>vertically</em>, one row added for each author in each citation. To keep things sane, I&rsquo;ll add the citation key of the paper in the rows of each author of that paper.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    authors &lt;- data.frame( citation_key = character(<span style="color:#00f">0</span>), 
-</span></span><span style="display:flex;"><span>        given_name = character(<span style="color:#00f">0</span>), family_name = character(<span style="color:#00f">0</span>) )
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    authors &lt;- data.frame( citation_key = character(0), 
+</span></span><span style="display:flex;"><span>        given_name = character(0), family_name = character(0) )
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    for(i in <span style="color:#00f">1</span>:length(hbeb_data)){
-</span></span><span style="display:flex;"><span>        if(!is.null(hbeb_data[[i]]$author)){ <span style="color:#080;font-style:italic"># skip if citation has no author</span>
-</span></span><span style="display:flex;"><span>            for(j in <span style="color:#00f">1</span>:length(hbeb_data[[i]]$author)){
+</span></span><span style="display:flex;"><span>    for(i in 1:length(hbeb_data)){
+</span></span><span style="display:flex;"><span>        if(!is.null(hbeb_data[[i]]$author)){ <span style="color:#008000"># skip if citation has no author</span>
+</span></span><span style="display:flex;"><span>            for(j in 1:length(hbeb_data[[i]]$author)){
 </span></span><span style="display:flex;"><span>                add &lt;- data.frame(
 </span></span><span style="display:flex;"><span>                    citation_key = hbeb_data[[i]]$key, 
-</span></span><span style="display:flex;"><span>                    given_name = paste(hbeb_data[[i]]$author[j]$given, collapse=<span style="color:#00f">&#34; &#34;</span>), 
+</span></span><span style="display:flex;"><span>                    given_name = paste(hbeb_data[[i]]$author[j]$given, collapse=<span style="color:#a31515">&#34; &#34;</span>), 
 </span></span><span style="display:flex;"><span>                    family_name = hbeb_data[[i]]$author[j]$family,
 </span></span><span style="display:flex;"><span>                    author_number = j
 </span></span><span style="display:flex;"><span>                )
@@ -442,32 +446,32 @@ The most popular journal in the database is Human Nature (165 publications), fol
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    for(i in <span style="color:#00f">1</span>:ncol(authors)) authors[,i] &lt;- as.character(authors[,i])
+</span></span><span style="display:flex;"><span>    for(i in 1:ncol(authors)) authors[,i] &lt;- as.character(authors[,i])
 </span></span></code></pre></div><p>Now we have a long-oriented table with 2942 author-citation entries, and (unlike a wide table) we can elegantly calculate useful statistics from this relational data structure. First, a let&rsquo;s count up how many coauthors on each citation:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    hbeb_df$author_count &lt;- table(authors$citation_key)[hbeb_df$key]
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    par(mar=c(<span style="color:#00f">5.1</span>, <span style="color:#00f">4.1</span>, <span style="color:#00f">4.1</span>, <span style="color:#00f">2.1</span>))
-</span></span><span style="display:flex;"><span>    par(mfrow=c(<span style="color:#00f">2</span>,<span style="color:#00f">2</span>))
-</span></span><span style="display:flex;"><span>    barplot(prop.table(table(hbeb_df$author_count)), las=<span style="color:#00f">1</span>, 
-</span></span><span style="display:flex;"><span>        xlab=<span style="color:#00f">&#34;number of coauthors&#34;</span>, ylab=<span style="color:#00f">&#34;frequency&#34;</span>, 
-</span></span><span style="display:flex;"><span>        main=<span style="color:#00f">&#34;all publications&#34;</span>, border=<span style="color:#000080;font-weight:bold">NA</span>, col=barplot_color, 
-</span></span><span style="display:flex;"><span>        xlim=c(<span style="color:#00f">0</span>, <span style="color:#00f">7.5</span>), ylim=c(<span style="color:#00f">0</span>, <span style="color:#00f">0.45</span>))
+</span></span><span style="display:flex;"><span>    par(mar=c(5.1, 4.1, 4.1, 2.1))
+</span></span><span style="display:flex;"><span>    par(mfrow=c(2,2))
+</span></span><span style="display:flex;"><span>    barplot(prop.table(table(hbeb_df$author_count)), las=1, 
+</span></span><span style="display:flex;"><span>        xlab=<span style="color:#a31515">&#34;number of coauthors&#34;</span>, ylab=<span style="color:#a31515">&#34;frequency&#34;</span>, 
+</span></span><span style="display:flex;"><span>        main=<span style="color:#a31515">&#34;all publications&#34;</span>, border=<span style="color:#00f">NA</span>, col=barplot_color, 
+</span></span><span style="display:flex;"><span>        xlim=c(0, 7.5), ylim=c(0, 0.45))
 </span></span><span style="display:flex;"><span>    barplot(
-</span></span><span style="display:flex;"><span>        prop.table(table(hbeb_df$author_count[hbeb_df$type==<span style="color:#00f">&#34;Article&#34;</span>])), 
-</span></span><span style="display:flex;"><span>        las=<span style="color:#00f">1</span>, xlab=<span style="color:#00f">&#34;number of coauthors&#34;</span>, ylab=<span style="color:#00f">&#34;frequency&#34;</span>, 
-</span></span><span style="display:flex;"><span>        main=<span style="color:#00f">&#34;articles&#34;</span>, border=<span style="color:#000080;font-weight:bold">NA</span>, col=barplot_color, 
-</span></span><span style="display:flex;"><span>        xlim=c(<span style="color:#00f">0</span>, <span style="color:#00f">7.5</span>), ylim=c(<span style="color:#00f">0</span>, <span style="color:#00f">0.45</span>))
+</span></span><span style="display:flex;"><span>        prop.table(table(hbeb_df$author_count[hbeb_df$type==<span style="color:#a31515">&#34;Article&#34;</span>])), 
+</span></span><span style="display:flex;"><span>        las=1, xlab=<span style="color:#a31515">&#34;number of coauthors&#34;</span>, ylab=<span style="color:#a31515">&#34;frequency&#34;</span>, 
+</span></span><span style="display:flex;"><span>        main=<span style="color:#a31515">&#34;articles&#34;</span>, border=<span style="color:#00f">NA</span>, col=barplot_color, 
+</span></span><span style="display:flex;"><span>        xlim=c(0, 7.5), ylim=c(0, 0.45))
 </span></span><span style="display:flex;"><span>    barplot(
-</span></span><span style="display:flex;"><span>        prop.table(table(hbeb_df$author_count[hbeb_df$type==<span style="color:#00f">&#34;Book&#34;</span>])), 
-</span></span><span style="display:flex;"><span>        las=<span style="color:#00f">1</span>, xlab=<span style="color:#00f">&#34;number of coauthors&#34;</span>, ylab=<span style="color:#00f">&#34;frequency&#34;</span>, 
-</span></span><span style="display:flex;"><span>        main=<span style="color:#00f">&#34;books&#34;</span>, border=<span style="color:#000080;font-weight:bold">NA</span>, col=barplot_color, ylim=c(<span style="color:#00f">0</span>, <span style="color:#00f">0.45</span>))
-</span></span><span style="display:flex;"><span>    barplot(prop.table(table(hbeb_df$author_count[hbeb_df$type==<span style="color:#00f">&#34;InCollection&#34;</span>])), 
-</span></span><span style="display:flex;"><span>        las=<span style="color:#00f">1</span>, xlab=<span style="color:#00f">&#34;number of coauthors&#34;</span>, ylab=<span style="color:#00f">&#34;frequency&#34;</span>, 
-</span></span><span style="display:flex;"><span>        main=<span style="color:#00f">&#34;chapters&#34;</span>, border=<span style="color:#000080;font-weight:bold">NA</span>, col=barplot_color, 
-</span></span><span style="display:flex;"><span>        xlim=c(<span style="color:#00f">0</span>, <span style="color:#00f">7.5</span>), ylim=c(<span style="color:#00f">0</span>, <span style="color:#00f">0.45</span>))
+</span></span><span style="display:flex;"><span>        prop.table(table(hbeb_df$author_count[hbeb_df$type==<span style="color:#a31515">&#34;Book&#34;</span>])), 
+</span></span><span style="display:flex;"><span>        las=1, xlab=<span style="color:#a31515">&#34;number of coauthors&#34;</span>, ylab=<span style="color:#a31515">&#34;frequency&#34;</span>, 
+</span></span><span style="display:flex;"><span>        main=<span style="color:#a31515">&#34;books&#34;</span>, border=<span style="color:#00f">NA</span>, col=barplot_color, ylim=c(0, 0.45))
+</span></span><span style="display:flex;"><span>    barplot(prop.table(table(hbeb_df$author_count[hbeb_df$type==<span style="color:#a31515">&#34;InCollection&#34;</span>])), 
+</span></span><span style="display:flex;"><span>        las=1, xlab=<span style="color:#a31515">&#34;number of coauthors&#34;</span>, ylab=<span style="color:#a31515">&#34;frequency&#34;</span>, 
+</span></span><span style="display:flex;"><span>        main=<span style="color:#a31515">&#34;chapters&#34;</span>, border=<span style="color:#00f">NA</span>, col=barplot_color, 
+</span></span><span style="display:flex;"><span>        xlim=c(0, 7.5), ylim=c(0, 0.45))
 </span></span></code></pre></div><!-- raw HTML omitted -->
 <p>Before that, though, we must solve a common problem. Consider the following entry for Peter J. Richerson:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    unique(authors[authors$family_name==<span style="color:#00f">&#34;Richerson&#34;</span>, c(<span style="color:#00f">&#34;given_name&#34;</span>, <span style="color:#00f">&#34;family_name&#34;</span>)])
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    unique(authors[authors$family_name==<span style="color:#a31515">&#34;Richerson&#34;</span>, c(<span style="color:#a31515">&#34;given_name&#34;</span>, <span style="color:#a31515">&#34;family_name&#34;</span>)])
 </span></span></code></pre></div><pre tabindex="0"><code>##      given_name family_name
 ## 39     Peter J.   Richerson
 ## 603       Peter   Richerson
@@ -476,7 +480,7 @@ The most popular journal in the database is Human Nature (165 publications), fol
 </code></pre><p>The given names are non-standardized! So people appear under multiple versions of their names.</p>
 <p>I&rsquo;m going to try a quick match using the first letter of <code>given_name</code>. This can be dangerous, since it will collide two people with the same last name and the same first initial, but (hopefully) it works for now.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    authors$author_key &lt;- paste(
-</span></span><span style="display:flex;"><span>        substr(authors$given_name, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>), authors$family_name
+</span></span><span style="display:flex;"><span>        substr(authors$given_name, 1, 1), authors$family_name
 </span></span><span style="display:flex;"><span>    )
 </span></span></code></pre></div><p>The author_key variable will allow us to create a unique table of authors, and count up how many times each appears.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    author_pk &lt;- unique(authors$author_key)
@@ -486,23 +490,23 @@ The most popular journal in the database is Human Nature (165 publications), fol
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    author_register &lt;- data.frame( author_pk, given_name, family_name, count )
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    author_register$count_firstauthor &lt;- <span style="color:#000080;font-weight:bold">NA</span>
-</span></span><span style="display:flex;"><span>    for(i in <span style="color:#00f">1</span>:nrow(author_register)){
+</span></span><span style="display:flex;"><span>    author_register$count_firstauthor &lt;- <span style="color:#00f">NA</span>
+</span></span><span style="display:flex;"><span>    for(i in 1:nrow(author_register)){
 </span></span><span style="display:flex;"><span>        author_register$count_firstauthor[i] &lt;- sum(
 </span></span><span style="display:flex;"><span>            authors$author_key == author_register$author_pk[i] 
-</span></span><span style="display:flex;"><span>            &amp; authors$author_number==<span style="color:#00f">1</span>
+</span></span><span style="display:flex;"><span>            &amp; authors$author_number==1
 </span></span><span style="display:flex;"><span>        )
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>And we have our answer: there are (approximately) 1137 unique authors in the HBEB. Like with the journals, we can calculate how many times each author appears in the database. Below I display a sorted count of the top forty authors in HBEB, by the number of publications listed.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    par(mar=c(<span style="color:#00f">5.1</span>, <span style="color:#00f">10</span>, <span style="color:#00f">4.1</span>, <span style="color:#00f">2.1</span>))
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>    par(mar=c(5.1, 10, 4.1, 2.1))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    o &lt;- rev(order(author_register$count))
 </span></span><span style="display:flex;"><span>    author_register &lt;- author_register[o,]
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    barplot( author_register$count[1:<span style="color:#00f">40</span>], horiz=<span style="color:#000080;font-weight:bold">TRUE</span>, 
-</span></span><span style="display:flex;"><span>        las=<span style="color:#00f">1</span>, xlab=<span style="color:#00f">&#34;pub count&#34;</span>, border=<span style="color:#000080;font-weight:bold">NA</span>, 
-</span></span><span style="display:flex;"><span>        col=barplot_color, names.arg=author_register$author_pk[1:<span style="color:#00f">40</span>])
-</span></span><span style="display:flex;"><span>    abline(v=seq(<span style="color:#00f">0</span>, <span style="color:#00f">50</span>, by=<span style="color:#00f">10</span>), lty=<span style="color:#00f">2</span>, col=col_alpha(<span style="color:#00f">&#34;gray&#34;</span>, <span style="color:#00f">0.6</span>))
+</span></span><span style="display:flex;"><span>    barplot( author_register$count[1:40], horiz=<span style="color:#00f">TRUE</span>, 
+</span></span><span style="display:flex;"><span>        las=1, xlab=<span style="color:#a31515">&#34;pub count&#34;</span>, border=<span style="color:#00f">NA</span>, 
+</span></span><span style="display:flex;"><span>        col=barplot_color, names.arg=author_register$author_pk[1:40])
+</span></span><span style="display:flex;"><span>    abline(v=seq(0, 50, by=10), lty=2, col=col_alpha(<span style="color:#a31515">&#34;gray&#34;</span>, 0.6))
 </span></span></code></pre></div><!-- raw HTML omitted -->
 <h2 id="footnotes">Footnotes</h2>
 <hr>

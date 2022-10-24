@@ -43,16 +43,16 @@ education:
 
 working papers:
 - authors    : Bret Beheim
-  title      : A linked mixture model of coronary atherosclerosis
+  title      : "A linked mixture model of coronary atherosclerosis"
   preprint   : https://doi.org/10.1101/2021.09.13.21263547
   materials  : https://github.com/babeheim/linked-calcium-growth
+- authors    : Friederike Hillemann, Bret A. Beheim, Elspeth Ready
+  title      : "Socio-economic predictors of Inuit foraging strategies and their implications for climate change adaptation"
+  materials  : https://github.com/fhillemann/MSrepo_harvest_patch_choice
+  status     : in review, Philosophical Transactions of the Royal Society B
 - authors    : N.-Han Tran, Bret A. Beheim
   title      : "Differential skill aquisition by age in two knowledge-intensive strategy games"
   status     : in prep
-- authors    : Natalia Fedorova, Richard McElreath, and Bret A. Beheim
-  title      : "The complex life course of mobility: Quantitative description of 60,000 residential moves in 1850-1950 Netherlands"
-  status     : in prep
-  materials  : https://github.com/Naty-fedorova/Dutch-historical-mobility
 - authors    : Schwartz, Matthew, et al.
   title      : "The role of parity and sex in tooth loss in a natural fertility population with little access to dentistry"
   status     : in prep, AJPA
@@ -70,6 +70,26 @@ working papers:
   status     : in prep
 
 publications:
+
+# 2022
+
+- authors    : Natalia Fedorova, Richard McElreath, and Bret A. Beheim
+  title      : "The complex life course of mobility: Quantitative description of 300,000 residential moves in 1850-1950 Netherlands"
+  year       : 2022
+  journal    : Evolutionary Human Sciences
+  doi        : https://doi.org/10.1017/ehs.2022.33
+  volume     : 4, E39
+  publisher  : Cambridge University Press
+  materials  : https://github.com/Naty-fedorova/Dutch-historical-mobility
+
+- authors    : Thomas S. Kraft, Daniel K. Cummings, Vivek Venkataraman, Sarah Alami, Bret Beheim, Paul Hooper, Ed Seabright, Benjamin C. Trumble, Jonathan Stieglitz, Hillard Kaplan, Karen L. Endicott, Kirk M. Endicott, Michael Gurven
+  title      : "Female cooperative labour networks in hunter–gatherers and horticulturalists"
+  year       : 2022
+  journal    : Philosophical Transactions of the Royal Society B
+  volume     : (in press))
+  doi        : https://doi.org/10.1098/rstb.2021.0431
+  materials  : 
+  publisher  : The Royal Society Publishing
 
 # 2021
 
@@ -377,6 +397,7 @@ grants, fellowships, awards:
 - Phi Beta Kappa Honors Society. 2004
 
 presentations:
+- "Strategic Social Leaning in the Era of Superhuman Artificial Intelligence: A Large-Scale, Longitudinal Case Study using the Game of Go", Cultural Evolution Society Meeting, 2022-09-28
 - The Adaptive Logic of False Beliefs, Human Behavior and Evolution Society Meeting, 2019-04-26
 - Improving Reproducibility in Evolutionary Anthropology, Santa Fe Institute ENDOW workshop, 2020-02-06
 - Open Science in the Field, Open Science and Reproducibility workshop, Interacting Minds Centre, Aarhus University, 2019-03-13
@@ -431,7 +452,7 @@ supervision, training, mentorship:
 - postdoctoral:
   - Daniel Redhead, Ph.D., September 2018 to November 2020, MPI-EVA
 - doctoral:
-  - Han Tran, October 2018 - November 2021, University of Leipzig / MPI-EVA
+  - Han Tran, October 2018 to November 2021, University of Leipzig / MPI-EVA
   - Natalia Federova, starting August 2017, University of Leipzig / MPI-EVA
   - Riana Minocher, starting January 2018, University of Leipzig / MPI-EVA
 - masters, bachelors:

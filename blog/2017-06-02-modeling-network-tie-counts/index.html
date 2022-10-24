@@ -45,20 +45,21 @@ In my field interviews, I had people name friends they could go to for support. 
   <style>
 
   html, body, h1, h2, h3, h4, h5, h6, p {
-    font-family: 'Open Sans', sans-serif;
-    text-rendering: optimizeLegibility;
+    font-family: "Times New Roman", Times, serif;
+     
   }
 
   p, .sidebar, ol, ul, dl {
     line-height: 1.6;
-    text-rendering: optimizeLegibility;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.05em;
+     
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2em;
     margin-bottom: 1.0em;
   }
+   
 
   body {
-    font-family: Verdana, sans-serif;
+    font-family: "Times New Roman", Times, serif;
     margin: auto;
     padding: 20px;
     max-width: 720px;
@@ -122,8 +123,9 @@ In my field interviews, I had people name friends they could go to for support. 
 
   code {
     padding: 2px 5px;
-    background-color: #f2f2f2;
+    background-color: #f5f3ff;
   }
+   
 
   pre code {
     color: #222;
@@ -250,6 +252,8 @@ In my field interviews, I had people name friends they could go to for support. 
 
 <a href="/teaching/">Teaching</a>
 
+<a href="/notes/">Notebooks</a>
+
 
 <a href="/blog">Blog</a>
 
@@ -276,35 +280,35 @@ In my field interviews, I had people name friends they could go to for support. 
 <p>To feel confident we&rsquo;re on the right track statistically, we will use a valuable trick. I will generate real-looking data from a stochastic process that embodies my assumptions about the real data, analyze it, and confirm that I can recover signals I inject into the data with my statistical methods.</p>
 <p>Here our generating process will be as follows: for our sample of people, we specify how many friends each will have. Then, of those friends, we will choose how many will be co-ethnics, and incorporate the original question by adding sex of the respondant as a factor in this process.</p>
 <p>In the real data, I am told, there are about 250 interviews, and everyone names at least 1 friend, roughly symmetrical about a mean of 15, with a standard deviation of 5. Coding this into an <a href="https://cran.r-project.org/">R</a> notebook, we have:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  set.seed(<span style="color:#00f">1234</span>)
-</span></span><span style="display:flex;"><span>  n_sample &lt;- <span style="color:#00f">250</span>
-</span></span><span style="display:flex;"><span>  n_friends &lt;- round( rnorm(n_sample, <span style="color:#00f">15</span>, <span style="color:#00f">5</span>) )
-</span></span><span style="display:flex;"><span>  n_friends[n_friends &lt; <span style="color:#00f">1</span>] &lt;- <span style="color:#00f">1</span> <span style="color:#080;font-style:italic"># hack so everyone has some friends</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  set.seed(1234)
+</span></span><span style="display:flex;"><span>  n_sample &lt;- 250
+</span></span><span style="display:flex;"><span>  n_friends &lt;- round( rnorm(n_sample, 15, 5) )
+</span></span><span style="display:flex;"><span>  n_friends[n_friends &lt; 1] &lt;- 1 <span style="color:#008000"># hack so everyone has some friends</span>
 </span></span><span style="display:flex;"><span>  n_friends &lt;- as.integer(n_friends)
 </span></span></code></pre></div><p>The distribution here is, to some extent, outside the scope of the question. We do not need to worry about whether, for example, men or women have more friends <em>in general</em>, so long as our methods condition on the number of friends for each person.</p>
 <p>Now we have a vector of 250 values, each representing the number of friends for that interview. Next we must determine how many of those are minority-group friends. We can do this by imaging each of the friends in the count is a &rsquo;trial&rsquo;, and is either a coethnic or not with some fixed probability. In other words, the process is Bernoulli.</p>
 <p>We choose a baseline number of minority friends at about 10%, which on the logit scale is about -2.2 log odds units.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>To generate this, I will treat each friend as a Bernoulli trial, and they will be a minority with probability <code>prob_minority_friend</code>, a value which differs for male and female interviewees. As R code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  female &lt;- rbinom(n_sample, <span style="color:#00f">1</span>, <span style="color:#00f">0.5</span>)
-</span></span><span style="display:flex;"><span>  a &lt;- (<span style="color:#00f">-2.2</span>)
-</span></span><span style="display:flex;"><span>  b &lt;- (<span style="color:#00f">-0.25</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  female &lt;- rbinom(n_sample, 1, 0.5)
+</span></span><span style="display:flex;"><span>  a &lt;- (-2.2)
+</span></span><span style="display:flex;"><span>  b &lt;- (-0.25)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  logistic &lt;- function(x) exp(x) / (<span style="color:#00f">1</span> + exp(x))
+</span></span><span style="display:flex;"><span>  logistic &lt;- function(x) exp(x) / (1 + exp(x))
 </span></span><span style="display:flex;"><span>  prob_minority_friend &lt;- logistic( a + b*female )
 </span></span><span style="display:flex;"><span>  n_minority_friends &lt;- rbinom( n_sample, n_friends, prob_minority_friend )
 </span></span></code></pre></div><p>We have set a log-odds difference of 0.25 between women and men, so the odds ratio is 0.78, and the data should show men to have more minority friends than women, conditional on any number of friends. If we can correctly recover that, we have a stats model we can take to the real data.</p>
 <p>One value of simulating data ourselves is that it encourages us to see the real data in a new light. The way we coded this focuses not on the percentage of coethnics among men and women, but rather, the probability. It is a subtle difference from the original question about percentages, which cannot properly account for variation in the total number of friends.</p>
 <p>The process model has, in fact, already specified the statistical model, save for the priors on the parameters. We will do this by a Binomial regression model with a logit link. Using <a href="http://www.xcelab.net/rm">Richard McElreath</a>&rsquo;s <code>map</code> model syntax, this would be:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  d &lt;- data.frame( n_friends, n_minority_friends, female )
-</span></span><span style="display:flex;"><span>  d$n_friends &lt;- as.integer(d$n_friends) <span style="color:#080;font-style:italic"># necessary for dbinom</span>
+</span></span><span style="display:flex;"><span>  d$n_friends &lt;- as.integer(d$n_friends) <span style="color:#008000"># necessary for dbinom</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  library(rethinking) <span style="color:#080;font-style:italic"># available at xcelab.net/rm/software</span>
+</span></span><span style="display:flex;"><span>  library(rethinking) <span style="color:#008000"># available at xcelab.net/rm/software</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  model1 &lt;- alist(
 </span></span><span style="display:flex;"><span>    n_minority_friends ~ dbinom(n_friends, p),
 </span></span><span style="display:flex;"><span>    logit(p) &lt;- a + b*female,
-</span></span><span style="display:flex;"><span>    a ~ dnorm(<span style="color:#00f">0</span>, <span style="color:#00f">1</span>),
-</span></span><span style="display:flex;"><span>    b ~ dnorm(<span style="color:#00f">0</span>, <span style="color:#00f">1</span>)
+</span></span><span style="display:flex;"><span>    a ~ dnorm(0, 1),
+</span></span><span style="display:flex;"><span>    b ~ dnorm(0, 1)
 </span></span><span style="display:flex;"><span>  )
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  fit1 &lt;- map(model1, data=d)
