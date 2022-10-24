@@ -95,7 +95,7 @@ I&amp;rsquo;m curious to know more about HBEB&amp;rsquo;s use as a dataset in it
       
       <guid>/blog/2017-06-02-modeling-network-tie-counts/</guid>
       <description>A colleague doing a social network analysis posed the following problem:1
- In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&amp;rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&amp;rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&amp;hellip;</description>
+In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&amp;rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&amp;rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&amp;hellip;</description>
     </item>
     
     <item>
@@ -125,8 +125,8 @@ The Department of Human Behavior, Ecology and Culture at the Max Planck Institut
       
       <guid>/blog/2016-05-20-reproducible-research-new-default/</guid>
       <description>the following article was adapted for the Evolutionary Anthropology Society newsletter for Summer 2016
-The last decade has been a sobering one for science, marked by increasingly frank conversations about &amp;lsquo;the idea that something has gone fundamentally wrong with one of our greatest human creations&amp;rsquo;, to quote Richard Horton, editor-in-chief of The Lancet. He continues,
- Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.</description>
+The last decade has been a sobering one for science, marked by increasingly frank conversations about &amp;rsquo;the idea that something has gone fundamentally wrong with one of our greatest human creations&amp;rsquo;, to quote Richard Horton, editor-in-chief of The Lancet. He continues,
+Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.</description>
     </item>
     
   </channel>

@@ -17,7 +17,6 @@
       <description>reseach precis organized by topic; see my list of publications
 code for most figures is also on my github page
 1. Dynamics of Cultural Diversity Understanding cultural change over time is the central focus for the field of cultural evolution. In 2014, I contributed a large-scale quantitative analysis of the East Asian board game of Go.
-
 recent evolution in Go opening strategy
 Here we track specific opening variants as traits that change in frequency over time as players adopt innovations in play styles.</description>
     </item>
@@ -31,10 +30,10 @@ Here we track specific opening variants as traits that change in frequency over 
       <description>papers I&amp;rsquo;ve contributed to
 my full CV as a PDF or as a plaintex YML
 also see my google scholar page
-  - PDF
-  - data / code
-  - citation (bibtex)
-Working Papers  Beheim, B. A Linked Mixture Model of Coronary Atherosclerosis. medRxiv 2021.09.13.21263547    Publications in Print 2021   Minocher, R., Atmaca, S., Bavero, C., McElreath, R., &amp;amp; Beheim, B. Estimating the reproducibility of social learning research published between 1955 and 2018.</description>
+- PDF
+- data / code
+- citation (bibtex)
+Working Papers Beheim, B. A Linked Mixture Model of Coronary Atherosclerosis. medRxiv 2021.09.13.21263547 Hillemann, F., Beheim, B., Ready, E. Socio-economic predictors of Inuit foraging strategies and their implications for climate change adaptation in review, Philosophical Transactions of the Royal Society B</description>
     </item>
     
     <item>
@@ -45,7 +44,7 @@ Working Papers  Beheim, B. A Linked Mixture Model of Coronary Atherosclerosis. m
       <guid>/people/</guid>
       <description>teams past and present
 Beheim Lab My lab group takes students through the Department of Human Behavior, Ecology and Culture @ MPI-EVA. Contact me for more info.
-Current  Riana Minocher (doctoral) N.-Han Tran (doctoral) Natalia Fedorova (doctoral)  Former  Anja Becker (master&amp;rsquo;s) Leonie Ettie (master&amp;rsquo;s) Daniel Redhead, Ph.D. (postdoc)  Data Provenance Research Group As part of the Department of Human Behavior, Ecology and Culture @ MPI-EVA, we organize computational and logistical support for a variety of faculty fieldsites worldwide.</description>
+Current Riana Minocher (doctoral) N.-Han Tran (doctoral) Natalia Fedorova (doctoral) Former Anja Becker (master&amp;rsquo;s) Leonie Ettie (master&amp;rsquo;s) Daniel Redhead, Ph.D. (postdoc) Data Provenance Research Group As part of the Department of Human Behavior, Ecology and Culture @ MPI-EVA, we organize computational and logistical support for a variety of faculty fieldsites worldwide.</description>
     </item>
     
     <item>
@@ -55,9 +54,8 @@ Current  Riana Minocher (doctoral) N.-Han Tran (doctoral) Natalia Fedorova (doct
       
       <guid>/software/</guid>
       <description>some software packages I&amp;rsquo;ve written for the R programming language
-
 replay of an AlphaGo training match using my kaya package
- yamlform - a plaintext interview format for creating XLSForm documents for the ODK software platform longformer - longitudinal database management in R yamltools - a suite of tools for parsing YAML-structured plaintext interview output ecodata - tools for managing transcription efforts in our research group SIMani - agent-based simulation of multiple generations of demographically-realistic human populations journaltools - a R package for keeping a simple plaintext journal kaya - parsing and analyzing Go games stored in the .</description>
+yamlform - a plaintext interview format for creating XLSForm documents for the ODK software platform longformer - longitudinal database management in R yamltools - a suite of tools for parsing YAML-structured plaintext interview output ecodata - tools for managing transcription efforts in our research group SIMani - agent-based simulation of multiple generations of demographically-realistic human populations journaltools - a R package for keeping a simple plaintext journal kaya - parsing and analyzing Go games stored in the .</description>
     </item>
     
     <item>
@@ -70,7 +68,7 @@ replay of an AlphaGo training match using my kaya package
 I currently teach Reproducible Workflows for Scientific Computing, a short course at MPI-EVA based on the Software Carpentry curriculum.
 demonstration of the Poisson scatter theorem
 I&amp;rsquo;ve previously taught the following courses:
- Introduction to Probability, short course for my lab group at MPI-EVA, taught 2020 using Joe Blitzstein&amp;rsquo;s materials The Human Life Course (UNM ANTH 160), taught 2013, 2014, 2015 - syllabus pdf Research Computing in Evolutionary Anthropology (UNM ANTH 560), taught 2014, 2015 - syllabus pdf Workshop on Statistical Rethinking, taught in 2015 Evolution and Human Nature (UCD ANT 50), taught 2011, 2015 - syllabus pdf Applied Research Methods (UCD ESP 178), taught 2011, 2012, 2015 - syllabus pdf Cultural Ecology (UCD ANT 102), taught 2010, 2015 - syllabus pdf   </description>
+Introduction to Probability, short course for my lab group at MPI-EVA, taught 2020 using Joe Blitzstein&amp;rsquo;s materials The Human Life Course (UNM ANTH 160), taught 2013, 2014, 2015 - syllabus pdf Research Computing in Evolutionary Anthropology (UNM ANTH 560), taught 2014, 2015 - syllabus pdf Workshop on Statistical Rethinking, taught in 2015 Evolution and Human Nature (UCD ANT 50), taught 2011, 2015 - syllabus pdf Applied Research Methods (UCD ESP 178), taught 2011, 2012, 2015 - syllabus pdf Cultural Ecology (UCD ANT 102), taught 2010, 2015 - syllabus pdf </description>
     </item>
     
     <item>
@@ -160,7 +158,7 @@ I&amp;rsquo;m curious to know more about HBEB&amp;rsquo;s use as a dataset in it
       
       <guid>/blog/2017-06-02-modeling-network-tie-counts/</guid>
       <description>A colleague doing a social network analysis posed the following problem:1
- In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&amp;rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&amp;rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&amp;hellip;</description>
+In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&amp;rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&amp;rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&amp;hellip;</description>
     </item>
     
     <item>
@@ -190,8 +188,8 @@ The Department of Human Behavior, Ecology and Culture at the Max Planck Institut
       
       <guid>/blog/2016-05-20-reproducible-research-new-default/</guid>
       <description>the following article was adapted for the Evolutionary Anthropology Society newsletter for Summer 2016
-The last decade has been a sobering one for science, marked by increasingly frank conversations about &amp;lsquo;the idea that something has gone fundamentally wrong with one of our greatest human creations&amp;rsquo;, to quote Richard Horton, editor-in-chief of The Lancet. He continues,
- Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.</description>
+The last decade has been a sobering one for science, marked by increasingly frank conversations about &amp;rsquo;the idea that something has gone fundamentally wrong with one of our greatest human creations&amp;rsquo;, to quote Richard Horton, editor-in-chief of The Lancet. He continues,
+Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.</description>
     </item>
     
   </channel>

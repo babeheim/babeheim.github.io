@@ -277,7 +277,7 @@ Missing data is probably the most under-trained topic in data analysis. Methods 
 <p>This is on my mind because of a high-profile paper this year on <a href="https://www.nature.com/articles/s41586-019-1043-4">the first appearance of morality in world religion</a> by the <a href="http://seshatdatabank.info/">Seshat historical research team</a>. The authors, led by Oxford anthropologist Harvey Whitehouse, argue that moral concepts like karma or the supernatural punishment of cheaters appear very recently in history, and mostly in societies larger than a million people.</p>
 <p><img src="/assets/venus.jpg" alt=""></p>
 <p><em>Figure 1. A statue of Aeiea, goddess of missing data (at least, pending evidence to the contrary)</em></p>
-<p>If true, this would be a big result. Looking carefully at <a href="https://github.com/babeheim/moralizing-gods-reanalysis">the authors' raw data</a>, however, we find an massive problem - nearly 2/3rds of their &ldquo;moralizing gods&rdquo; measure (61%) are actually missing values.</p>
+<p>If true, this would be a big result. Looking carefully at <a href="https://github.com/babeheim/moralizing-gods-reanalysis">the authors&rsquo; raw data</a>, however, we find an massive problem - nearly 2/3rds of their &ldquo;moralizing gods&rdquo; measure (61%) are actually missing values.</p>
 <p><img src="/assets/missing.png" alt=""></p>
 <p><em>Figure 2. Reanalysis of Seshat data from Beheim, et al. (2019); visualization with Richard McElreath</em></p>
 <p>So much data is missing about supernatural morality across time because such beliefs naturally require <em>written evidence</em>. This is probably an insurmountable problem, but in an analysis they describe as <a href="http://seshatdatabank.info/nature-paper-on-moralizing-gods/">&ldquo;far beyond the state of the art&rdquo;</a>, the Seshat team developed a workaround: assume AEIEA, and recode all missing values to &ldquo;not known present&rdquo;.</p>
@@ -300,7 +300,7 @@ $$</p>
 <p>$$
 p(x\vert d) = p(x) / p(d).
 $$</p>
-<p>Under AEIEA, the data we observe is thus <em>dependent with</em> the missingness distribution, since $p(x\vert d) &gt; p(x)$.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> If we apply Bayes' rule to the left-hand side of the previous equation, we have</p>
+<p>Under AEIEA, the data we observe is thus <em>dependent with</em> the missingness distribution, since $p(x\vert d) &gt; p(x)$.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> If we apply Bayes&rsquo; rule to the left-hand side of the previous equation, we have</p>
 <p>$$
 p(d\vert x) p(x) / p(d) = p(x) / p(d),
 $$</p>
@@ -331,79 +331,79 @@ $$</p>
 </li>
 </ul>
 <p>R scripts for Figures 2 and 3:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(rethinking)
-
-<span style="color:#080;font-style:italic"># data from step 06_prep_regression_data</span>
-<span style="color:#080;font-style:italic"># at https://github.com/babeheim/moralizing-gods-reanalysis</span>
-d &lt;- read.csv(<span style="color:#00f">&#34;./RegrDat.csv&#34;</span>, stringsAsFactors = <span style="color:#000080;font-weight:bold">FALSE</span>)
-
-png(<span style="color:#00f">&#34;missing.png&#34;</span>, height = <span style="color:#00f">5</span>, width = <span style="color:#00f">8</span>, res = <span style="color:#00f">300</span>, units = <span style="color:#00f">&#34;in&#34;</span>)
-
-plot(<span style="color:#00f">1</span>, <span style="color:#00f">1</span>, type = <span style="color:#00f">&#34;n&#34;</span>, xlim = c(<span style="color:#00f">-10000</span>, <span style="color:#00f">2000</span>), ylim = c(<span style="color:#00f">1</span>, <span style="color:#00f">9</span>),
-  xlab = <span style="color:#00f">&#34;Years BCE/CE&#34;</span>, ylab = <span style="color:#00f">&#34;Log10 Polity Population&#34;</span>)
-
-tar &lt;- which(d$Writing == <span style="color:#00f">1</span>)
-points(d$Time[tar], d$PolPop[tar], pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
-
-tar &lt;- which(d$MG_missing == <span style="color:#00f">1</span>)
-points(d$Time[tar], d$PolPop[tar], pch = <span style="color:#00f">4</span>, col = col.alpha(<span style="color:#00f">&#34;black&#34;</span>, <span style="color:#00f">0.9</span>))
-
-tar &lt;- which(d$MG_missing == <span style="color:#00f">0</span>)
-points(d$Time[tar], d$PolPop[tar], pch = ifelse(d$MG[tar] == <span style="color:#00f">1</span>, <span style="color:#00f">16</span>, <span style="color:#00f">1</span>), col = col.alpha(<span style="color:#00f">&#34;#D1523B&#34;</span>, <span style="color:#00f">0.9</span>))
-
-points(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pch = <span style="color:#00f">16</span>, col = <span style="color:#00f">&#34;#D1523B&#34;</span>)
-text(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods present&#34;</span>)
-points(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pch = <span style="color:#00f">1</span>, col = <span style="color:#00f">&#34;#D1523B&#34;</span>)
-text(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods absent&#34;</span>)
-points(<span style="color:#00f">-9500</span>, <span style="color:#00f">7</span>, pch = <span style="color:#00f">4</span>, col = <span style="color:#00f">&#34;black&#34;</span>)
-text(<span style="color:#00f">-9500</span>, <span style="color:#00f">7</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods unknown&#34;</span>)
-
-points(<span style="color:#00f">-9500</span>, <span style="color:#00f">6</span>, pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
-text(<span style="color:#00f">-9500</span>, <span style="color:#00f">6</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;  writing present&#34;</span>)
-
-dev.off()
-
-png(<span style="color:#00f">&#34;missing_to_0.png&#34;</span>, height = <span style="color:#00f">5</span>, width = <span style="color:#00f">8</span>, res = <span style="color:#00f">300</span>, units = <span style="color:#00f">&#34;in&#34;</span>)
-
-plot(<span style="color:#00f">1</span>, <span style="color:#00f">1</span>, xlim = c(<span style="color:#00f">-10000</span>, <span style="color:#00f">2000</span>), ylim = c(<span style="color:#00f">1</span>, <span style="color:#00f">9</span>),
-  xlab = <span style="color:#00f">&#34;Years BCE/CE&#34;</span>, ylab = <span style="color:#00f">&#34;Log10 Polity Population&#34;</span>)
-
-tar &lt;- which(d$Writing == <span style="color:#00f">1</span>)
-points(d$Time[tar], d$PolPop[tar], pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
-
-points(d$Time, d$PolPop, pch = ifelse(d$MG == <span style="color:#00f">1</span>, <span style="color:#00f">16</span>, <span style="color:#00f">1</span>), col = col.alpha(<span style="color:#00f">&#34;#5679AB&#34;</span>, <span style="color:#00f">0.9</span>))
-
-points(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pch = <span style="color:#00f">16</span>, col = <span style="color:#00f">&#34;#5679AB&#34;</span>)
-text(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods known present&#34;</span>)
-points(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pch = <span style="color:#00f">1</span>, col = <span style="color:#00f">&#34;#5679AB&#34;</span>)
-text(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods not known present&#34;</span>)
-
-points(<span style="color:#00f">-9500</span>, <span style="color:#00f">6.5</span>, pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
-text(<span style="color:#00f">-9500</span>, <span style="color:#00f">6.5</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;  writing present&#34;</span>)
-
-dev.off()
-</code></pre></div><p>Endnotes:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>library(rethinking)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"># data from step 06_prep_regression_data</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"># at https://github.com/babeheim/moralizing-gods-reanalysis</span>
+</span></span><span style="display:flex;"><span>d &lt;- read.csv(<span style="color:#00f">&#34;./RegrDat.csv&#34;</span>, stringsAsFactors = <span style="color:#000080;font-weight:bold">FALSE</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>png(<span style="color:#00f">&#34;missing.png&#34;</span>, height = <span style="color:#00f">5</span>, width = <span style="color:#00f">8</span>, res = <span style="color:#00f">300</span>, units = <span style="color:#00f">&#34;in&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plot(<span style="color:#00f">1</span>, <span style="color:#00f">1</span>, type = <span style="color:#00f">&#34;n&#34;</span>, xlim = c(<span style="color:#00f">-10000</span>, <span style="color:#00f">2000</span>), ylim = c(<span style="color:#00f">1</span>, <span style="color:#00f">9</span>),
+</span></span><span style="display:flex;"><span>  xlab = <span style="color:#00f">&#34;Years BCE/CE&#34;</span>, ylab = <span style="color:#00f">&#34;Log10 Polity Population&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tar &lt;- which(d$Writing == <span style="color:#00f">1</span>)
+</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tar &lt;- which(d$MG_missing == <span style="color:#00f">1</span>)
+</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = <span style="color:#00f">4</span>, col = col.alpha(<span style="color:#00f">&#34;black&#34;</span>, <span style="color:#00f">0.9</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tar &lt;- which(d$MG_missing == <span style="color:#00f">0</span>)
+</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = ifelse(d$MG[tar] == <span style="color:#00f">1</span>, <span style="color:#00f">16</span>, <span style="color:#00f">1</span>), col = col.alpha(<span style="color:#00f">&#34;#D1523B&#34;</span>, <span style="color:#00f">0.9</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pch = <span style="color:#00f">16</span>, col = <span style="color:#00f">&#34;#D1523B&#34;</span>)
+</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods present&#34;</span>)
+</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pch = <span style="color:#00f">1</span>, col = <span style="color:#00f">&#34;#D1523B&#34;</span>)
+</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods absent&#34;</span>)
+</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">7</span>, pch = <span style="color:#00f">4</span>, col = <span style="color:#00f">&#34;black&#34;</span>)
+</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">7</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods unknown&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">6</span>, pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
+</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">6</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;  writing present&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dev.off()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>png(<span style="color:#00f">&#34;missing_to_0.png&#34;</span>, height = <span style="color:#00f">5</span>, width = <span style="color:#00f">8</span>, res = <span style="color:#00f">300</span>, units = <span style="color:#00f">&#34;in&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plot(<span style="color:#00f">1</span>, <span style="color:#00f">1</span>, xlim = c(<span style="color:#00f">-10000</span>, <span style="color:#00f">2000</span>), ylim = c(<span style="color:#00f">1</span>, <span style="color:#00f">9</span>),
+</span></span><span style="display:flex;"><span>  xlab = <span style="color:#00f">&#34;Years BCE/CE&#34;</span>, ylab = <span style="color:#00f">&#34;Log10 Polity Population&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tar &lt;- which(d$Writing == <span style="color:#00f">1</span>)
+</span></span><span style="display:flex;"><span>points(d$Time[tar], d$PolPop[tar], pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>points(d$Time, d$PolPop, pch = ifelse(d$MG == <span style="color:#00f">1</span>, <span style="color:#00f">16</span>, <span style="color:#00f">1</span>), col = col.alpha(<span style="color:#00f">&#34;#5679AB&#34;</span>, <span style="color:#00f">0.9</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pch = <span style="color:#00f">16</span>, col = <span style="color:#00f">&#34;#5679AB&#34;</span>)
+</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">8</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods known present&#34;</span>)
+</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pch = <span style="color:#00f">1</span>, col = <span style="color:#00f">&#34;#5679AB&#34;</span>)
+</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">7.5</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;moralizing gods not known present&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>points(<span style="color:#00f">-9500</span>, <span style="color:#00f">6.5</span>, pch = <span style="color:#00f">16</span>, col = gray(<span style="color:#00f">0.85</span>), cex = <span style="color:#00f">3</span>)
+</span></span><span style="display:flex;"><span>text(<span style="color:#00f">-9500</span>, <span style="color:#00f">6.5</span>, pos = <span style="color:#00f">4</span>, label = <span style="color:#00f">&#34;  writing present&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dev.off()
+</span></span></code></pre></div><p>Endnotes:</p>
 <hr>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>The chance that the observation occurs, $d$, but is mis-coded from the true state, $x$ or $!x$, is important but distinct from the missing data problem. We here assume that either the phenomenon recorded accurately or is unknown.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>This can get very confusing, as $p(x\vert !d)$ is the probability of $x$ given that the outcome is unknown in our data, while $p(x)$ is the probability of $x$ not knowing whether the outcome is known or unknown in our data.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>Not all is lost though, since under AEIEA we can approximate $p(x)$ with the product of two quantities we can observe: $p(x\vert d) p(d)$. Further, if $p(x\vert d) \approx 1$ as in the moralizing gods dataset, then $p(x) \approx p(d).$ Given these assumptions about $p(x\vert d)$ and $p(x\vert !d)$, we don&rsquo;t actually need to look at the presence/absence data! We simply need to know if any data was observed, and that approximates our target $p(x)$ extremely well.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>The assumption used by Whitehouse, <em>et al.</em> (2019) is in fact the strongest possible version of the AEIEA fallacy, because $!d$ conveys complete information about $x$. A generalized AEIEA assumption is that $p(x\vert !d) &lt; p(x)$, so conditioning on $d$ gives only partial information about the phenomenon&rsquo;s occurrence. By the same logic as above, this implies that $p(d\vert x) &gt; p(d)$, so the weak form of AEIEA assumes that conditioning on the phenomenon&rsquo;s presence somehow increases the chances the data was recorded. In other words, similar theoretical requirements exist in the general AEIEA case as in the strongest version.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
+<li id="fn:5">
 <p>Sagan (1996), p.213&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
 </content>
 <p>

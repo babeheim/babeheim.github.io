@@ -38,7 +38,7 @@ Plaintext data entry works great, unless the data are hierarchical."/>
 <meta itemprop="description" content="A practical method of entering structured data into a computer is to type it directly into a text file. Simply fire up your favorite CSV editor1, sit down with your source material and start typing. Unlike boutique database software, this method can be used immediately and with minimal training. In fact, I know several researchers who skip paper forms altogether and do it during their field interviews.
 Plaintext data entry works great, unless the data are hierarchical."><meta itemprop="datePublished" content="2017-02-12T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2017-02-12T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1010"><meta itemprop="image" content="images/bret-head.jpg"/>
+<meta itemprop="wordCount" content="1048"><meta itemprop="image" content="images/bret-head.jpg"/>
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -279,41 +279,41 @@ Plaintext data entry works great, unless the data are hierarchical."><meta itemp
 <p>Recently I’ve been playing with the idea of <em>typing into a data interchange format</em>. Unlike wide-form tables, these formats were <em>designed</em> to store structured data in plain text so it could pass from place to place, e.g. from a web server to a broswer.</p>
 <p>So the idea, then, is you’d type each interview into a text file using an interchange format, then use standard parsing tools<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> to pull them into a relational database.</p>
 <p>The first format I tried is Javascript Object Notation (JSON), whose syntax is defined by <a href="http://www.json.org">five elegant diagrams</a>. For example, in building a database of 19th-century scientists, a JSON record might look like so:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#000080;font-weight:bold">&#34;name&#34;</span>: <span style="color:#00f">&#34;Charles Robert Darwin&#34;</span>,
-  <span style="color:#000080;font-weight:bold">&#34;sex&#34;</span>: <span style="color:#00f">&#34;male&#34;</span>,
-  <span style="color:#000080;font-weight:bold">&#34;dob&#34;</span>: <span style="color:#00f">&#34;1809-02-12&#34;</span>,
-  <span style="color:#000080;font-weight:bold">&#34;dod&#34;</span>: <span style="color:#00f">&#34;1882-04-19&#34;</span>,
-  <span style="color:#000080;font-weight:bold">&#34;nationality&#34;</span>: <span style="color:#00f">&#34;British&#34;</span>,
-  <span style="color:#000080;font-weight:bold">&#34;spouses&#34;</span>: <span style="color:#00f">&#34;Emma Wedgwood&#34;</span>,
-  <span style="color:#000080;font-weight:bold">&#34;children&#34;</span>: [
-    <span style="color:#00f">&#34;William Erasmus Darwin&#34;</span>,
-    <span style="color:#00f">&#34;Anne Elizabeth Darwin&#34;</span>,
-    <span style="color:#00f">&#34;Mary Eleanor Darwin&#34;</span>,
-    <span style="color:#00f">&#34;Henrietta Emma Darwin&#34;</span>,
-    <span style="color:#00f">&#34;George Howard Darwin&#34;</span>,
-    <span style="color:#00f">&#34;Elizabeth Darwin&#34;</span>,
-    <span style="color:#00f">&#34;Francis Darwin&#34;</span>,
-    <span style="color:#00f">&#34;Leonard Darwin&#34;</span>,
-    <span style="color:#00f">&#34;Horace Darwin&#34;</span>,
-    <span style="color:#00f">&#34;Charles Waring Darwin&#34;</span>
-  ],
-  <span style="color:#000080;font-weight:bold">&#34;published works&#34;</span>: [
-    {
-      <span style="color:#000080;font-weight:bold">&#34;name&#34;</span>: <span style="color:#00f">&#34;On the Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life&#34;</span>,
-      <span style="color:#000080;font-weight:bold">&#34;year&#34;</span>: <span style="color:#00f">&#34;1859&#34;</span>
-    },
-    {
-      <span style="color:#000080;font-weight:bold">&#34;name&#34;</span>: <span style="color:#00f">&#34;The Descent of Man, and Selection in Relation to Sex&#34;</span>,
-      <span style="color:#000080;font-weight:bold">&#34;year&#34;</span>: <span style="color:#00f">&#34;1871&#34;</span>
-    },
-    {
-      <span style="color:#000080;font-weight:bold">&#34;name&#34;</span>: <span style="color:#00f">&#34;The Expression of the Emotions in Man and Animals&#34;</span>,
-      <span style="color:#000080;font-weight:bold">&#34;year&#34;</span>: <span style="color:#00f">&#34;1872&#34;</span>
-    }
-  ]
-}
-</code></pre></div><p>JSON syntax is organized around three concepts:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">&#34;name&#34;</span>: <span style="color:#00f">&#34;Charles Robert Darwin&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">&#34;sex&#34;</span>: <span style="color:#00f">&#34;male&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">&#34;dob&#34;</span>: <span style="color:#00f">&#34;1809-02-12&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">&#34;dod&#34;</span>: <span style="color:#00f">&#34;1882-04-19&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">&#34;nationality&#34;</span>: <span style="color:#00f">&#34;British&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">&#34;spouses&#34;</span>: <span style="color:#00f">&#34;Emma Wedgwood&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">&#34;children&#34;</span>: [
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">&#34;William Erasmus Darwin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">&#34;Anne Elizabeth Darwin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">&#34;Mary Eleanor Darwin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">&#34;Henrietta Emma Darwin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">&#34;George Howard Darwin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">&#34;Elizabeth Darwin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">&#34;Francis Darwin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">&#34;Leonard Darwin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">&#34;Horace Darwin&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#00f">&#34;Charles Waring Darwin&#34;</span>
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">&#34;published works&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#000080;font-weight:bold">&#34;name&#34;</span>: <span style="color:#00f">&#34;On the Origin of Species by Means of Natural Selection, or the Preservation of Favoured Races in the Struggle for Life&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#000080;font-weight:bold">&#34;year&#34;</span>: <span style="color:#00f">&#34;1859&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#000080;font-weight:bold">&#34;name&#34;</span>: <span style="color:#00f">&#34;The Descent of Man, and Selection in Relation to Sex&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#000080;font-weight:bold">&#34;year&#34;</span>: <span style="color:#00f">&#34;1871&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#000080;font-weight:bold">&#34;name&#34;</span>: <span style="color:#00f">&#34;The Expression of the Emotions in Man and Animals&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#000080;font-weight:bold">&#34;year&#34;</span>: <span style="color:#00f">&#34;1872&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>JSON syntax is organized around three concepts:</p>
 <ul>
 <li>An <strong>object</strong> is an unordered set of name/value pairs. Each name is followed by a colon, and the name/value pairs are separated by commas. The object itself is enclosed by curly brackets ( { } ).</li>
 <li>An <strong>array</strong> is an ordered collection of values, enclosed by square brackets ( <input disabled="" type="checkbox"> ). The values are separated by commas.</li>
@@ -322,32 +322,32 @@ Plaintext data entry works great, unless the data are hierarchical."><meta itemp
 <p>The language allows arbitrarily complex hierarchies because JSON values can include other JSON objects or arrays.</p>
 <p>However, looking at the example above, you can see that JSON is not really right for manual data entry, especially in a real time interview. Lots of quotation marks, braces, brackets, and commas have to be done <em>exactly</em> right, or else it won’t parse properly.</p>
 <p>Enter <a href="yaml.org">YAML</a>, a simplified sister format intended for direct human editing. For example, the above in YAML would be:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">name</span>:<span style="color:#bbb"> </span>Charles Robert Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">sex</span>:<span style="color:#bbb"> </span>male<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">dob</span>:<span style="color:#bbb"> </span>1809-02-12<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">dod</span>:<span style="color:#bbb"> </span>1882-04-19<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">nationality</span>:<span style="color:#bbb"> </span>British<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">spouses</span>:<span style="color:#bbb"> </span>Emma Wedgwood<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">children</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- William Erasmus Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- Anne Elizabeth Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- Mary Eleanor Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- Henrietta Emma Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- George Howard Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- Elizabeth Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- Francis Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- Leonard Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- Horace Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- Charles Waring Darwin<span style="color:#bbb">
-</span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">published works</span>:<span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#000080;font-weight:bold">name</span>:<span style="color:#bbb"> </span><span style="color:#000080;font-weight:bold">On</span><span style="color:#bbb"> </span>the Origin of Species by Means of Natural Selection, or the Preservation<span style="color:#bbb">
-</span><span style="color:#bbb">      </span>of Favoured Races in the Struggle for Life<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080;font-weight:bold">year</span>:<span style="color:#bbb"> </span><span style="color:#00f">1859</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#000080;font-weight:bold">name</span>:<span style="color:#bbb"> </span>The Descent of Man, and Selection in Relation to Sex<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080;font-weight:bold">year</span>:<span style="color:#bbb"> </span><span style="color:#00f">1871</span><span style="color:#bbb">
-</span><span style="color:#bbb">  </span>- <span style="color:#000080;font-weight:bold">name</span>:<span style="color:#bbb"> </span>The Expression of the Emotions in Man and Animals<span style="color:#bbb">
-</span><span style="color:#bbb">    </span><span style="color:#000080;font-weight:bold">year</span>:<span style="color:#bbb"> </span><span style="color:#00f">1872</span><span style="color:#bbb">
-</span></code></pre></div><p>YAML’s syntax replaces almost all the JSON markup with clever line breaks and indentations in readible, logical ways. Moreover, <a href="https://www.json2yaml.com">any valid JSON can be written as YAML.</a>, so converting between the two is not hard.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">name</span>:<span style="color:#bbb"> </span>Charles Robert Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">sex</span>:<span style="color:#bbb"> </span>male<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">dob</span>:<span style="color:#bbb"> </span>1809-02-12<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">dod</span>:<span style="color:#bbb"> </span>1882-04-19<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">nationality</span>:<span style="color:#bbb"> </span>British<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">spouses</span>:<span style="color:#bbb"> </span>Emma Wedgwood<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">children</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- William Erasmus Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- Anne Elizabeth Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- Mary Eleanor Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- Henrietta Emma Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- George Howard Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- Elizabeth Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- Francis Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- Leonard Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- Horace Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- Charles Waring Darwin<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span><span style="color:#000080;font-weight:bold">published works</span>:<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#000080;font-weight:bold">name</span>:<span style="color:#bbb"> </span><span style="color:#000080;font-weight:bold">On</span><span style="color:#bbb"> </span>the Origin of Species by Means of Natural Selection, or the Preservation<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span>of Favoured Races in the Struggle for Life<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080;font-weight:bold">year</span>:<span style="color:#bbb"> </span><span style="color:#00f">1859</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#000080;font-weight:bold">name</span>:<span style="color:#bbb"> </span>The Descent of Man, and Selection in Relation to Sex<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080;font-weight:bold">year</span>:<span style="color:#bbb"> </span><span style="color:#00f">1871</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">  </span>- <span style="color:#000080;font-weight:bold">name</span>:<span style="color:#bbb"> </span>The Expression of the Emotions in Man and Animals<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#000080;font-weight:bold">year</span>:<span style="color:#bbb"> </span><span style="color:#00f">1872</span><span style="color:#bbb">
+</span></span></span></code></pre></div><p>YAML’s syntax replaces almost all the JSON markup with clever line breaks and indentations in readible, logical ways. Moreover, <a href="https://www.json2yaml.com">any valid JSON can be written as YAML.</a>, so converting between the two is not hard.</p>
 <p>The cost of this is fragility; unlike JSON, YAML depends on <em>exact</em> indentation, and some programs (e.g. Notepad.exe) will try to reformat your files.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
 <p>Does this mean you can simply do away with relational databases altogether? It’s probably a terrible idea.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> The goal, rather, is to send the data into a suitable heirarchical database. So my current pipeline is:</p>
 <ol>
@@ -358,23 +358,23 @@ Plaintext data entry works great, unless the data are hierarchical."><meta itemp
 <p>That’s all.</p>
 <h2 id="endnotes">Endnotes</h2>
 <hr>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Excel is ubiquitous, and the spreadsheet structure makes it easier to type with your eyes off the screen. Free alternatives include OpenOffice and Comma Cameleon. However, provided you are careful with formatting, there’s nothing stopping you from filling out a CSV table directly in a text editor, e.g. Notepad++ (windows) and Sublime Text (OSX / Linux). The latter program is also interesting because it uses JSON to store all user settings.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>For R users, the library <code>JSONlite</code> provides a <code>readJSON</code> function which works well. The <code>yaml</code> library provides similar functions, but JSON is better for storage.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>Specifically, if you open a non-Windows text file in Notepad it will not detect the Linux/Mac standard line break, creating a single-line document. Since YAML depends on exact line breaks, it can become unreadible, but JSON does not have this problem.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>as outlined by one developer’s hard-earned experience <a href="http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/">here</a>.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
 </content>
 <p>

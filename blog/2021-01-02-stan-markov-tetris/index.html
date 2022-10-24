@@ -271,30 +271,30 @@
 </code></pre><p>Each of the seven Tetris pieces is represented by a letter, with the three rounds separated by &ldquo;|&rdquo;. We also played four rounds on the Gameboy, with 692 draws as follows:</p>
 <pre tabindex="0"><code>SOITISIITZSOTJSSTTSJZOJZOJTJLZJZZOOSOTTOTZOZTLSJOLSSOTSJILTJLSTIOJSLTLJSSSOZSJTIOISSOJJSLOTOLSOZZSIJOOSLOJSOOZOTLOTJSLTZSJTOSSSO|ITLOTSTLISTJSIJOZISOZLTJSSLOJTLSZ|SIOJZZOISZOOZTTJLTISLISILTTJSZOOTOJTOSJIOTLSJTISJZJTZOLSZOJTOJTOJOJSZTIJZOJZSTLOLTLOSTLJJIOSZJZJITSOSJISZ|IJJSIOOZSLOTTJTIJTOISJOIOLZSTSJTSOJJOOZJSLLJOSISOLTIOSJOJJOIOZZTTJLIZOOSSIJITJOSOITLJJZSTIJSOIZJIOSJTIJTSTTTJLTLIJLIITLOIITLJTLOZSLTLSOOSSSZTSOIZLIZLTL|TJSJOLTIJOLZIOJZOLZLOSZTLJIZZIITTOSIOOSZTIOITZJISOOJZTJILJJZLLTISJJZTIOJZLLTSOJZOOZSOSOOZJOLZOLTTSSIOJOZTOITISOLTOJZTIOTLJZJJIZITOZSTOLZLTSIJJTOJTLLOOSJTSTZLISJIIOOZLOJZIITIIOJZLTILJSZOZZJZILTLJISJOIOOSLOTSOZIOLZITLJOOTILJOTIOZSIIZOTJOTOSOLTJOTOTZSOITISSITOILSIZTTLJJSOOTOLTO
 </code></pre><p>To fit statistical models to this data, we use the <code>rstan</code> package in R, and write out version of the Markov models from last time in the Stan language. The simplest model does not take history into account, and just estimates the frequency at which each piece appears in the sample:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#080;font-style:italic">// save as &#34;categorical.stan&#34;
-</span><span style="color:#080;font-style:italic"></span>data {
-  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; K; <span style="color:#080;font-style:italic">// number of unique outcomes (here, 7)
-</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; T; <span style="color:#080;font-style:italic">// number of outcomes observed
-</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">0</span>&gt; y[T]; <span style="color:#080;font-style:italic">// vector of outcome data, as integers
-</span><span style="color:#080;font-style:italic"></span>  vector&lt;lower = <span style="color:#00f">0</span>&gt;[K] alpha; <span style="color:#080;font-style:italic">// prior on outcomes
-</span><span style="color:#080;font-style:italic"></span>}
-parameters {
-  simplex[K] theta; <span style="color:#080;font-style:italic">// outcome probabilities
-</span><span style="color:#080;font-style:italic"></span>}
-model {
-  theta ~ dirichlet(alpha);
-  <span style="color:#000080;font-weight:bold">for</span> (i in <span style="color:#00f">1</span>:T) y[i] ~ categorical(theta);
-}
-</code></pre></div><p>Because these are Bayesian models, we must name our &lsquo;prior&rsquo; probability for each outcome before showing the data to the model. This is the <code>alpha</code> vector, which we&rsquo;ll set to provide equal, but reasonably uncertain, chances to each outcome. Stan will then update this prior using the data, returning &lsquo;posterior&rsquo; estimates of the probability of each outcome, according to <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes' theorem</a>. In R, we can do this with:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">dat_list &lt;- list(
-  y = y,   <span style="color:#080;font-style:italic"># vector of draws, as integers</span>
-  K = length(unique(y)), <span style="color:#080;font-style:italic"># number of unique outcomes, here 7</span>
-  N = length(y),   <span style="color:#080;font-style:italic"># total number of observations</span>
-  alpha = c(<span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>) 
-  <span style="color:#080;font-style:italic"># Dirichlet prior for each outcome, ~0.14 +/- 0.12</span>
-)
-m0 &lt;- stan(file = <span style="color:#00f">&#34;./stan/categorical.stan&#34;</span>, data = dat_list)
-</code></pre></div><p>The <code>stan</code> function returns posterior estimates of each parameter, standing for the marginal probability each of the seven pieces occurs. We can directly compare these estimates to the predictions from our R simulations from last time, to test if they match. Here I&rsquo;ve presented this as a plot, with the predicted probabilities from the simulation on the x-axis (exact values), and the matching estimates from the Stan model on the y-axis (means, and 89% density intervals).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#080;font-style:italic">// save as &#34;categorical.stan&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>data {
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; K; <span style="color:#080;font-style:italic">// number of unique outcomes (here, 7)
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; T; <span style="color:#080;font-style:italic">// number of outcomes observed
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">0</span>&gt; y[T]; <span style="color:#080;font-style:italic">// vector of outcome data, as integers
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  vector&lt;lower = <span style="color:#00f">0</span>&gt;[K] alpha; <span style="color:#080;font-style:italic">// prior on outcomes
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>parameters {
+</span></span><span style="display:flex;"><span>  simplex[K] theta; <span style="color:#080;font-style:italic">// outcome probabilities
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>model {
+</span></span><span style="display:flex;"><span>  theta ~ dirichlet(alpha);
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">for</span> (i in <span style="color:#00f">1</span>:T) y[i] ~ categorical(theta);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Because these are Bayesian models, we must name our &lsquo;prior&rsquo; probability for each outcome before showing the data to the model. This is the <code>alpha</code> vector, which we&rsquo;ll set to provide equal, but reasonably uncertain, chances to each outcome. Stan will then update this prior using the data, returning &lsquo;posterior&rsquo; estimates of the probability of each outcome, according to <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes&rsquo; theorem</a>. In R, we can do this with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>dat_list &lt;- list(
+</span></span><span style="display:flex;"><span>  y = y,   <span style="color:#080;font-style:italic"># vector of draws, as integers</span>
+</span></span><span style="display:flex;"><span>  K = length(unique(y)), <span style="color:#080;font-style:italic"># number of unique outcomes, here 7</span>
+</span></span><span style="display:flex;"><span>  N = length(y),   <span style="color:#080;font-style:italic"># total number of observations</span>
+</span></span><span style="display:flex;"><span>  alpha = c(<span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>, <span style="color:#00f">1</span>) 
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic"># Dirichlet prior for each outcome, ~0.14 +/- 0.12</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>m0 &lt;- stan(file = <span style="color:#00f">&#34;./stan/categorical.stan&#34;</span>, data = dat_list)
+</span></span></code></pre></div><p>The <code>stan</code> function returns posterior estimates of each parameter, standing for the marginal probability each of the seven pieces occurs. We can directly compare these estimates to the predictions from our R simulations from last time, to test if they match. Here I&rsquo;ve presented this as a plot, with the predicted probabilities from the simulation on the x-axis (exact values), and the matching estimates from the Stan model on the y-axis (means, and 89% density intervals).</p>
 <p><img src="/assets/model0_estimates_vs_sim_gameboy.png" alt=""><br>
 <em>Figure 1. Categorical parameter estimates from Gameboy data (n = 692, means and 89% HPDI). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
 <p><img src="/assets/model0_estimates_vs_sim_nes.png" alt=""><br>
@@ -302,44 +302,44 @@ m0 &lt;- stan(file = <span style="color:#00f">&#34;./stan/categorical.stan&#34;<
 <p>As we expected, the Gameboy algorithm is hard on Z, and favors S, T and especially O, which appears in 19% of actual draws. But this isn&rsquo;t really good evidence that either algorithm is accurate, since most estimates are not distinct from the horizontal line-of-evenness at 1/7th. Only the L-piece in the Gameboy is a clear match with the simulation. The other estimates could have come from the algorithm, but they could be from something else too. We need to go deeper&hellip;</p>
 <h2 id="markov">Fitting the Markov models</h2>
 <p>To estimate proper Markov models, and maybe get clearer results, we adapt the Stan model above to see the past states in the chain.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">data {
-  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; K; <span style="color:#080;font-style:italic">// number of unique outcomes (here, 7)
-</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; T; <span style="color:#080;font-style:italic">// length of the chain
-</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>, upper = K&gt; y[T]; <span style="color:#080;font-style:italic">// Markov chain data
-</span><span style="color:#080;font-style:italic"></span>  vector&lt;lower = <span style="color:#00f">0</span>&gt;[K] theta_prior[K]; <span style="color:#080;font-style:italic">// prior on transitions
-</span><span style="color:#080;font-style:italic"></span>}
-parameters {
-  simplex[K] theta[K]; <span style="color:#080;font-style:italic">// transition probabilities
-</span><span style="color:#080;font-style:italic"></span>}
-model {
-  <span style="color:#000080;font-weight:bold">for</span> (k in <span style="color:#00f">1</span>:K){
-    theta[k] ~ dirichlet(theta_prior[k]);
-  }
-  <span style="color:#000080;font-weight:bold">for</span> (t in <span style="color:#00f">2</span>:T) y[t] ~ categorical(theta[y[t - <span style="color:#00f">1</span>]]);
-}
-</code></pre></div><p>Our <code>theta</code> changes from a vector holding seven probabilities into seven vectors, one for each state we could be in at time <code>t - 1</code>. This is the transition matrix, now with 49 parameters instead of 7. We give each vector in <code>theta</code> its own Dirichlet prior as before, and update the model using the <code>stan</code> function in R.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> The estimates of each of the 49 posterior estimates is comparable to the 49 frequencies from the limiting distribution of the Markov chain:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>data {
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; K; <span style="color:#080;font-style:italic">// number of unique outcomes (here, 7)
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; T; <span style="color:#080;font-style:italic">// length of the chain
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>, upper = K&gt; y[T]; <span style="color:#080;font-style:italic">// Markov chain data
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  vector&lt;lower = <span style="color:#00f">0</span>&gt;[K] theta_prior[K]; <span style="color:#080;font-style:italic">// prior on transitions
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>parameters {
+</span></span><span style="display:flex;"><span>  simplex[K] theta[K]; <span style="color:#080;font-style:italic">// transition probabilities
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>model {
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">for</span> (k in <span style="color:#00f">1</span>:K){
+</span></span><span style="display:flex;"><span>    theta[k] ~ dirichlet(theta_prior[k]);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">for</span> (t in <span style="color:#00f">2</span>:T) y[t] ~ categorical(theta[y[t - <span style="color:#00f">1</span>]]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Our <code>theta</code> changes from a vector holding seven probabilities into seven vectors, one for each state we could be in at time <code>t - 1</code>. This is the transition matrix, now with 49 parameters instead of 7. We give each vector in <code>theta</code> its own Dirichlet prior as before, and update the model using the <code>stan</code> function in R.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> The estimates of each of the 49 posterior estimates is comparable to the 49 frequencies from the limiting distribution of the Markov chain:</p>
 <p><img src="/assets/model1_estimates_vs_sim_nes.png" alt=""><br>
 <em>Figure 3. Markov parameter estimates from NES data (n = 579, means and 89% HPDI). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
 <p>As predicted, the real data shows a strong bias against two-in-a-row outcomes (the bottom left estimates). This is strong evidence that the NES algorithm we wrote is an accurate reflection of what we see in the &lsquo;real world&rsquo; of gameplay on the NES, e.g. at the <a href="https://thectwc.com/">Classic Tetris World Championships</a>.</p>
 <p>To prepare the Markov model for the Gameboy data, we must allow it to see the <em>last two</em> draws as follows:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">data {
-  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; K; <span style="color:#080;font-style:italic">// number of unique outcomes (here, 7)
-</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; T; <span style="color:#080;font-style:italic">// length of the chain
-</span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>, upper = K&gt; y[T]; <span style="color:#080;font-style:italic">// markovian data vector
-</span><span style="color:#080;font-style:italic"></span>  simplex[K] theta_prior[K, K]; <span style="color:#080;font-style:italic">// prior on transitions
-</span><span style="color:#080;font-style:italic"></span>}
-parameters {
-  simplex[K] theta[K, K]; <span style="color:#080;font-style:italic">// transition probabilities
-</span><span style="color:#080;font-style:italic"></span>}
-model {
-  <span style="color:#000080;font-weight:bold">for</span> (k in <span style="color:#00f">1</span>:K){
-    <span style="color:#000080;font-weight:bold">for</span>(j in <span style="color:#00f">1</span>:K){
-      theta[k][j] ~ dirichlet(theta_prior[k][j]);
-    }
-  }
-  <span style="color:#000080;font-weight:bold">for</span> (t in <span style="color:#00f">3</span>:T) y[t] ~ categorical(theta[y[t - <span style="color:#00f">2</span>]][y[t - <span style="color:#00f">1</span>]]);
-}
-</code></pre></div><p>The <code>theta</code> object now has another dimension - rather than 7 vectors, we now need 7 $\times$ 7 vectors for 49 states in the system. We can pass the data into this model as above, giving estimates for all 343 parameters to compare against the predicted values:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>data {
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; K; <span style="color:#080;font-style:italic">// number of unique outcomes (here, 7)
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>&gt; T; <span style="color:#080;font-style:italic">// length of the chain
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#000080;font-weight:bold">int</span>&lt;lower = <span style="color:#00f">1</span>, upper = K&gt; y[T]; <span style="color:#080;font-style:italic">// markovian data vector
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  simplex[K] theta_prior[K, K]; <span style="color:#080;font-style:italic">// prior on transitions
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>parameters {
+</span></span><span style="display:flex;"><span>  simplex[K] theta[K, K]; <span style="color:#080;font-style:italic">// transition probabilities
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>model {
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">for</span> (k in <span style="color:#00f">1</span>:K){
+</span></span><span style="display:flex;"><span>    <span style="color:#000080;font-weight:bold">for</span>(j in <span style="color:#00f">1</span>:K){
+</span></span><span style="display:flex;"><span>      theta[k][j] ~ dirichlet(theta_prior[k][j]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#000080;font-weight:bold">for</span> (t in <span style="color:#00f">3</span>:T) y[t] ~ categorical(theta[y[t - <span style="color:#00f">2</span>]][y[t - <span style="color:#00f">1</span>]]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>theta</code> object now has another dimension - rather than 7 vectors, we now need 7 $\times$ 7 vectors for 49 states in the system. We can pass the data into this model as above, giving estimates for all 343 parameters to compare against the predicted values:</p>
 <p><img src="/assets/model2_estimates_vs_sim_gameboy.png" alt=""><br>
 <em>Figure 4. Second-order Markov parameter estimates from Gameboy data (n = 692, means only). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
 <p>Compared to the NES results, this is not very satisfying. With 343 parameters and only 692 data points, some effects were accurately predicted, but others are totally unclear, or clearly inaccurate. We still do not know if the simulation really matches real data.</p>
@@ -358,10 +358,10 @@ $$</p>
 p \sim \mathrm{Beta}(x + a, (n - x) + b)
 $$</p>
 <p>where $a$ and $b$ define a prior for what $p$ could be (with three favored outcomes of seven, let&rsquo;s say $a$ = 3 and $b$ = 4). This means we can find the mean and variance of the bias signal as:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">p_mean &lt;- (x + <span style="color:#00f">3</span>) / (n + <span style="color:#00f">7</span>) <span style="color:#080;font-style:italic"># prior on p is Beta(3, 4)</span>
-gamma_mean &lt;- p_mean - <span style="color:#00f">3</span>/<span style="color:#00f">7</span>
-gamma_sd &lt;- sqrt(p_mean * (<span style="color:#00f">1</span> - p_mean) / (n + <span style="color:#00f">7</span> + <span style="color:#00f">1</span>))
-</code></pre></div><p>In the real Gameboy data we collected, the chain visits these twelve special states $n$ = 188 times, and a &ldquo;favorite&rdquo; piece was chosen $x$ = 156 times. Updating our signal model with this data, we find $\gamma$ = 0.387($\pm$ 0.028), in almost exact agreement with the predictions from the simulation!<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>p_mean &lt;- (x + <span style="color:#00f">3</span>) / (n + <span style="color:#00f">7</span>) <span style="color:#080;font-style:italic"># prior on p is Beta(3, 4)</span>
+</span></span><span style="display:flex;"><span>gamma_mean &lt;- p_mean - <span style="color:#00f">3</span>/<span style="color:#00f">7</span>
+</span></span><span style="display:flex;"><span>gamma_sd &lt;- sqrt(p_mean * (<span style="color:#00f">1</span> - p_mean) / (n + <span style="color:#00f">7</span> + <span style="color:#00f">1</span>))
+</span></span></code></pre></div><p>In the real Gameboy data we collected, the chain visits these twelve special states $n$ = 188 times, and a &ldquo;favorite&rdquo; piece was chosen $x$ = 156 times. Updating our signal model with this data, we find $\gamma$ = 0.387($\pm$ 0.028), in almost exact agreement with the predictions from the simulation!<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 <p>Model symmetries let us test our predictions with only 692 observations, but we didn&rsquo;t even need this much data. If we plot the expected $x$ for any $n$ under each hypothesis, and compare to the observed data in each chain, the two algorithms quickly diverge:</p>
 <p><img src="/assets/cumulative_signals.png" alt=""><br>
 <em>Figure 5. Counts of $x$ and $n$ for each round of Tetris played, the 95% confidence intervals each algorithm, and the expected value under Uniform sampling.</em></p>
@@ -369,23 +369,23 @@ gamma_sd &lt;- sqrt(p_mean * (<span style="color:#00f">1</span> - p_mean) / (n +
 <h1 id="conclusions">Conclusions</h1>
 <p>From the above, it looks like the Tetris randomizer algorithms we tried are right. The NES algorithm, with its 49 parameters, was pretty easy to test using the multistate Markov model. But when real data is expensive to collect, or the model becomes too complex, it&rsquo;s better to forgo the full model and instead find special signals - like our parameter $\gamma$ - to test our predictions.</p>
 <p><em>all data and code for this project is available <a href="https://github.com/babeheim/tetris1989-markov">here</a></em></p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>One member of our data team played a round of Tetris for as long as they could, while another recorded each piece as it appeared. The NES games were played on an emulator, while the Gameboy games were played on both an emulator and the original hardware.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p>The model given here fits a single Markov chain, but in the real data, we have several chains because there are several rounds played. This difference does not change our results but is technically correct - the best kind of correct. Both versions of the Markov model are given in the <a href="https://github.com/babeheim/tetris1989-markov">full script and data</a>.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p>Under even chances, there&rsquo;s a 3/7 or 42.9% chance of any of three pieces being picked. In the Gameboy simulation we see the three favorite pieces chosen 81.3% of the time, or a bias of +38.4%.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p>In contrast, the NES chains visit these states 131 times but only select the Gameboy&rsquo;s favorite three outcomes 61 times. This means our estimate of $\gamma$ is about 0.035 ($\pm$ 0.042), very close to the simulation $\gamma$ of 0.062.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
 </content>
 <p>
