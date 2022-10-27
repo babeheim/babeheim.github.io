@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research</title>
-      <link>/research/</link>
+      <link>/research.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/research/</guid>
+      <guid>/research.html</guid>
       <description>reseach precis organized by topic; see my list of publications
 code for most figures is also on my github page
 1. Dynamics of Cultural Diversity Understanding cultural change over time is the central focus for the field of cultural evolution. In 2014, I contributed a large-scale quantitative analysis of the East Asian board game of Go.
@@ -23,10 +23,10 @@ Here we track specific opening variants as traits that change in frequency over 
     
     <item>
       <title>Publications</title>
-      <link>/publications/</link>
+      <link>/publications.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/publications/</guid>
+      <guid>/publications.html</guid>
       <description>papers I&amp;rsquo;ve written, or helped write
 my full CV as a PDF or as a plaintex YML
 also see my google scholar page
@@ -38,10 +38,10 @@ Working Papers Beheim, B. A Linked Mixture Model of Coronary Atherosclerosis. me
     
     <item>
       <title>People</title>
-      <link>/people/</link>
+      <link>/people.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/people/</guid>
+      <guid>/people.html</guid>
       <description>teams past and present
 Beheim Lab My lab group takes students through the Department of Human Behavior, Ecology and Culture @ MPI-EVA. Contact me for more info.
 Current Riana Minocher (doctoral) N.-Han Tran (doctoral) Natalia Fedorova (doctoral) Former Anja Becker (master&amp;rsquo;s) Leonie Ettie (master&amp;rsquo;s) Daniel Redhead, Ph.D. (postdoc) Data Provenance Research Group As part of the Department of Human Behavior, Ecology and Culture @ MPI-EVA, we organize computational and logistical support for a variety of faculty fieldsites worldwide.</description>
@@ -49,10 +49,10 @@ Current Riana Minocher (doctoral) N.-Han Tran (doctoral) Natalia Fedorova (docto
     
     <item>
       <title>Software</title>
-      <link>/software/</link>
+      <link>/software.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/software/</guid>
+      <guid>/software.html</guid>
       <description>some software packages I&amp;rsquo;ve written for the R programming language
 replay of an AlphaGo training match using my kaya package
 yamlform - a plaintext interview format for creating XLSForm documents for the ODK software platform longformer - longitudinal database management in R yamltools - a suite of tools for parsing YAML-structured plaintext interview output ecodata - tools for managing transcription efforts in our research group SIMani - agent-based simulation of multiple generations of demographically-realistic human populations journaltools - a R package for keeping a simple plaintext journal kaya - parsing and analyzing Go games stored in the .</description>
@@ -60,10 +60,10 @@ yamlform - a plaintext interview format for creating XLSForm documents for the O
     
     <item>
       <title>Teaching</title>
-      <link>/teaching/</link>
+      <link>/teaching.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/teaching/</guid>
+      <guid>/teaching.html</guid>
       <description> some courses I&amp;rsquo;ve taught
 I currently teach Reproducible Workflows for Scientific Computing, a short course at MPI-EVA based on the Software Carpentry curriculum.
 demonstration of the Poisson scatter theorem
@@ -73,19 +73,19 @@ Introduction to Probability, short course for my lab group at MPI-EVA, taught 20
     
     <item>
       <title>Blog</title>
-      <link>/blog/</link>
+      <link>/blog.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/</guid>
+      <guid>/blog.html</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Notebooks</title>
-      <link>/notes/</link>
+      <link>/notebooks.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/notes/</guid>
+      <guid>/notebooks.html</guid>
       <description> my public notebooks, roughly ordered by last update
 2022
 Conformist bias - everyone&amp;rsquo;s favorite method of maintaining cultural diversity </description>

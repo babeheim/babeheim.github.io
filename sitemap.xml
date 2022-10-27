@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/research/</loc>
+    <loc>/research.html</loc>
   </url><url>
-    <loc>/publications/</loc>
+    <loc>/publications.html</loc>
   </url><url>
-    <loc>/people/</loc>
+    <loc>/people.html</loc>
   </url><url>
-    <loc>/software/</loc>
+    <loc>/software.html</loc>
   </url><url>
-    <loc>/teaching/</loc>
+    <loc>/teaching.html</loc>
   </url><url>
-    <loc>/blog/</loc>
+    <loc>/blog.html</loc>
   </url><url>
-    <loc>/notes/</loc>
+    <loc>/notebooks.html</loc>
   </url><url>
     <loc>/blog/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
