@@ -44,7 +44,7 @@ Working Papers Beheim, B. A Linked Mixture Model of Coronary Atherosclerosis. me
       <guid>/people.html</guid>
       <description>teams past and present
 Beheim Lab My lab group takes students through the Department of Human Behavior, Ecology and Culture @ MPI-EVA. Contact me for more info.
-Current Riana Minocher (doctoral) N.-Han Tran (doctoral) Natalia Fedorova (doctoral) Former Anja Becker (master&amp;rsquo;s) Leonie Ettie (master&amp;rsquo;s) Daniel Redhead, Ph.D. (postdoc) Data Provenance Research Group As part of the Department of Human Behavior, Ecology and Culture @ MPI-EVA, we organize computational and logistical support for a variety of faculty fieldsites worldwide.</description>
+Current Riana Minocher (doctoral) Natalia Fedorova (doctoral) Former N.-Han Tran (doctoral, completed Feb. 2022) Anja Becker (master&amp;rsquo;s) Leonie Ettie (master&amp;rsquo;s) Daniel Redhead, Ph.D. (postdoc) Data Provenance Research Group As part of the Department of Human Behavior, Ecology and Culture @ MPI-EVA, we organize computational and logistical support for a variety of faculty fieldsites worldwide.</description>
     </item>
     
     <item>
@@ -97,7 +97,7 @@ Conformist bias - everyone&amp;rsquo;s favorite method of maintaining cultural d
       <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>/blog/2022-11-02-dynamic-latex/</guid>
-      <description>Recently, I&amp;rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&amp;rsquo;s nothing fundamentally wrong with these editors, but if I had to pick one reason, to stay with $\LaTeX$ it&amp;rsquo;s this: my first .tex problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc files from only a few years ago.</description>
+      <description>Recently, I&amp;rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&amp;rsquo;s nothing fundamentally wrong with such computational notebooks, but if I had to pick one reason to stay with $\LaTeX$ it&amp;rsquo;s this: my first .tex problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc workflows from only a few years ago.</description>
     </item>
     
     <item>
