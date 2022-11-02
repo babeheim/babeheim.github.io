@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2022, Bret Beheim.</copyright>
-    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Connecting $\LaTeX$ documents to dynamic computations</title>
+      <link>/blog/2022-11-02-dynamic-latex/</link>
+      <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022-11-02-dynamic-latex/</guid>
+      <description>Recently, I&amp;rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&amp;rsquo;s nothing fundamentally wrong with these editors, but if I had to pick one reason, to stay with $\LaTeX$ it&amp;rsquo;s this: my first .tex problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc files from only a few years ago.</description>
+    </item>
+    
     <item>
       <title>Indoor rowing &amp; data science with R</title>
       <link>/blog/2021-04-05-ergometer-data-science/</link>

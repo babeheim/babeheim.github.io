@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="images/favicon.png" />
+<title>Connecting $\LaTeX$ documents to dynamic computations | Bret Alexander Beheim</title>
+<meta name="title" content="Connecting $\LaTeX$ documents to dynamic computations" />
+<meta name="description" content="how to create and insert dynamic values into your Latex manuscripts" />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Connecting $\LaTeX$ documents to dynamic computations" />
+<meta property="og:description" content="how to create and insert dynamic values into your Latex manuscripts" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/2022-11-02-dynamic-latex/" /><meta property="og:image" content="https://babeheim.com/assets/goodtex.png" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-11-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-02T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://babeheim.com/assets/goodtex.png"/>
+
+<meta name="twitter:title" content="Connecting $\LaTeX$ documents to dynamic computations"/>
+<meta name="twitter:description" content="how to create and insert dynamic values into your Latex manuscripts"/>
+<meta name="twitter:site" content="@babeheim"/>
+
+
+
+<meta itemprop="name" content="Connecting $\LaTeX$ documents to dynamic computations">
+<meta itemprop="description" content="how to create and insert dynamic values into your Latex manuscripts"><meta itemprop="datePublished" content="2022-11-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-11-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="418"><meta itemprop="image" content="https://babeheim.com/assets/goodtex.png">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+
+  html, body, h1, h2, h3, h4, h5, h6, p {
+    font-family: "Times New Roman", Times, serif;
+     
+    font-size: 1.15em;
+  }
+
+  p, .sidebar, ol, ul, dl {
+    line-height: 1.6;
+     
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.05em;
+    margin-bottom: 1.0em;
+  }
+   
+
+  body {
+    font-family: "Times New Roman", Times, serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #3273dc;
+    text-decoration: underline;
+  }
+
+  .title {
+    font-size: 1.15em;
+    border: 0;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+   
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 90%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f5f3ff;
+  }
+   
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+</style>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
+}
+</script>
+
+
+<style>
+  .twitter-tweet-rendered {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .inline-svg {
+    display: inline-block;
+    height: 1.0rem;
+    width: 1.0rem;
+    top: 0.15rem;
+    position: relative;
+    fill: #636363;
+  }
+  .inline-svg:hover {
+    fill: #bdbdbd;
+    height: 1.0rem;
+    width: 1.0rem;
+  }
+  .inline-svg#pdf {
+    fill: #de2d26;
+  }
+  .inline-svg#pdf:hover {
+    fill: #fc9272;
+  }
+  .inline-svg#data {
+    fill: #1c9099;
+  }
+  .inline-svg#data:hover {
+    fill: #a6bddb;
+  }
+</style>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Bret Alexander Beheim</h2>
+</a>
+<nav><a href="/">About</a>
+
+<a href="/research.html">Research</a>
+
+<a href="/publications.html">Publications</a>
+
+<a href="/people.html">People</a>
+
+<a href="/software.html">Software</a>
+
+<a href="/teaching.html">Teaching</a>
+
+<a href="/blog/">Blog</a>
+
+<a href="/notebooks.html">Notebooks</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>Connecting $\LaTeX$ documents to dynamic computations</h1>
+<p>
+  <i>
+    <time datetime='2022-11-02' pubdate>
+      2 November, 2022
+    </time>
+  </i>
+</p>
+
+<content>
+  <figure><a href="https://tex.stackexchange.com/a/74609"><img src="/assets/goodtex.png"/></a>
+</figure>
+
+<p>Recently, I&rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&rsquo;s nothing fundamentally wrong with these editors, but if I had to pick one reason, to stay with $\LaTeX$ it&rsquo;s this: my first <code>.tex</code> problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc files from only a few years ago.</p>
+<p>The one thing I did lose, though, was the ability to write placeholder variables that render into (computed) values. In Rmarkdown, you write &ldquo;the mean of $x$ is <code>`r mean(x)`</code>&rdquo; and it just computes and inserts the mean value into the document in place of that code snippet. If you&rsquo;ve ever had to re-write numbers in your reports over and over again, you know how much of a killer feature this is, and a main selling point for these workflows. However, it turns out you can do something similar in $\LaTeX$, provided you separate the <em>dynamic insertion</em> step from <em>pre-computation</em> step.</p>
+<h2 id="dynamic-insertion">Dynamic Insertion</h2>
+<p>Inserting values into $\LaTeX$ documents is just a matter of creating new variables using the <code>\newcommand</code> command in the preamble of the <code>.tex</code> file. Here&rsquo;s a minimum working example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#00f">\documentclass</span>{article}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% add to preamble
+</span></span></span><span style="display:flex;"><span><span style="color:#008000"></span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nObs</span>}{2,123}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nPpl</span>}{53}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\meanAge</span>}{33.2}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">\begin</span>{document}
+</span></span><span style="display:flex;"><span>The number of observations is <span style="color:#00f">\nObs</span>.
+</span></span><span style="display:flex;"><span>The number of participants was <span style="color:#00f">\nPpl</span>{} with a mean age of <span style="color:#00f">\meanAge</span>.
+</span></span><span style="display:flex;"><span><span style="color:#00f">\end</span>{document}
+</span></span></code></pre></div><p>When the $\LaTeX$ document compiles, it replaces these custom commands with values<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> they store, so the document reads:</p>
+<p><img src="/assets/maindottex.png" alt=""></p>
+<p>Cool, but we still have to <em>type out the numbers</em> in the manuscript itself, like a schmuck. To really make this trick work, we have to tell LaTeX to <em>load</em> this calculation from somewhere.</p>
+<h2 id="pre-computation-in-r">Pre-computation in R</h2>
+<p>To make to documents dynamic, we just need to write code that saves our R calculations in the <code>\newcommand</code> format that $\LaTeX$ uses. Here&rsquo;s the function I use, and a simple example:</p>
+<script type="application/javascript" src="https://gist.github.com/babeheim/07fd4d102b6949086a1c36cee9fb0157.js"></script>
+
+<p>This code creates a file called <code>calcs.tex</code> that contains something like:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nObs</span>}{2,123}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nPpl</span>}{53}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\meanAge</span>}{33.2}
+</span></span></code></pre></div><p>This file can be called into the main document using <code>\input</code> in the preamble like so:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#00f">\documentclass</span>{article}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\input</span>{calcs.tex}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\begin</span>{document}
+</span></span><span style="display:flex;"><span>The number of observations is <span style="color:#00f">\nObs</span>.
+</span></span><span style="display:flex;"><span>The number of participants was <span style="color:#00f">\nPpl</span>{} with a mean age of <span style="color:#00f">\meanAge</span>.
+</span></span><span style="display:flex;"><span><span style="color:#00f">\end</span>{document}
+</span></span></code></pre></div><p>Voila! We can re-run our R scripts as a project evolves and re-generate all our figures, tables and in-text calculations. The $\LaTeX$ document will always be up to date, just like a <a href="https://en.wikipedia.org/wiki/Notebook_interface">computational notebook</a>.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Note the curly brackets in <code>\nPpl{}</code> are necessary to tell $\LaTeX$ to add a whitespace afterwards.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</content>
+<p>
+  
+</p>
+
+    
+  </main>
+  <footer>
+</footer>
+
+    
+</body>
+
+</html>
