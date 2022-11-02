@@ -34,7 +34,7 @@
 <meta itemprop="name" content="Adding dynamic computations to LaTeX documents">
 <meta itemprop="description" content="how to create and insert dynamic values into your Latex manuscripts"><meta itemprop="datePublished" content="2022-11-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-11-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="433"><meta itemprop="image" content="https://babeheim.com/assets/goodtex.png">
+<meta itemprop="wordCount" content="435"><meta itemprop="image" content="https://babeheim.com/assets/goodtex.png">
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -309,7 +309,7 @@ if (!doNotTrack) {
 </span></span></code></pre></div><p>When the $\LaTeX$ document compiles, it replaces these custom commands with values<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> they store, so the document reads:</p>
 <p><img src="/assets/maindottex.png" alt=""></p>
 <p>Cool, but we still have to <em>type out the numbers</em> in the manuscript itself, like a schmuck. To really make this trick work, we have to tell LaTeX to <em>load</em> these calculations from somewhere.</p>
-<h2 id="pre-computation-in-r">Pre-computation in R</h2>
+<h2 id="pre-computation-in-r-or-whatever">Pre-computation in R (or whatever)</h2>
 <p>To make to documents dynamic, we just need to write code that saves our R calculations in the <code>\newcommand</code> format that $\LaTeX$ uses. Here&rsquo;s the function I use, and a simple example:</p>
 <script type="application/javascript" src="https://gist.github.com/babeheim/07fd4d102b6949086a1c36cee9fb0157.js"></script>
 
