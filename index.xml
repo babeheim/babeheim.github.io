@@ -54,7 +54,7 @@ Current Riana Minocher (doctoral) Natalia Fedorova (doctoral) Former N.-Han Tran
       
       <guid>/software.html</guid>
       <description>some software packages I&amp;rsquo;ve written for the R programming language
-replay of an AlphaGo training match using my kaya package
+replay of an AlphaGo training match using the kaya package
 yamlform - a plaintext interview format for creating XLSForm documents for the ODK software platform longformer - longitudinal database management in R yamltools - a suite of tools for parsing YAML-structured plaintext interview output ecodata - tools for managing transcription efforts in our research group SIMani - agent-based simulation of multiple generations of demographically-realistic human populations journaltools - a R package for keeping a simple plaintext journal kaya - parsing and analyzing Go games stored in the .</description>
     </item>
     
@@ -231,6 +231,26 @@ Afflicted by studies with small sample sizes, tiny effects, invalid exploratory 
 Recommended Newberry, Mitchell G., and Joshua B. Plotkin. 2021. “Measuring Frequency-Dependent Selection in Culture.” ArXiv:2103.14178 [q-Bio], March. http://arxiv.org/abs/2103.14178.
 Deffner, Dominik, Vivien Kleinow, and Richard McElreath. 2020. “Dynamic Social Learning in Temporally and Spatially Variable Environments.” Royal Society Open Science 7 (12): 200734. https://doi.org/10.1098/rsos.200734.
 Barrett, Brendan J. 2019. “Equifinality in Empirical Studies of Cultural Transmission.</description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>/links.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/links.html</guid>
+      <description>Some links I use.
+newsletters, blogs, threads The Plain Person’s Guide to Plain Text Social Science
+Great Adaptations hashtag, mostly maintained by Joan Silk
+Paul Graham&amp;rsquo;s Essays
+Biased Transmission blog (active 2012 to 2017)
+Elements of Evolutionary Anthropology by Richard McElreath
+Statistical Modeling, Causal Inference, and Social Science by Andrew Gelman and friends
+Cliodynamica by Peter Turchin
+Three-Toed Sloth by Cosma Shalizi
+Crooked Timber
+Marginal Revolution
+Jason Collins Blog</description>
     </item>
     
   </channel>
