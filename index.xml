@@ -72,15 +72,6 @@ Introduction to Probability, short course for my lab group at MPI-EVA, taught 20
     </item>
     
     <item>
-      <title>Blog</title>
-      <link>/blog/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/</guid>
-      <description> </description>
-    </item>
-    
-    <item>
       <title>Notebooks</title>
       <link>/notebooks.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -98,6 +89,15 @@ Conformist bias - everyone&amp;rsquo;s favorite method of maintaining cultural d
       
       <guid>/blog/2022-11-02-dynamic-latex/</guid>
       <description>Recently, I&amp;rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&amp;rsquo;s nothing fundamentally wrong with such computational notebooks, but if I had to pick one reason to stay with $\LaTeX$ it&amp;rsquo;s this: my first .tex problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc workflows from only a few years ago.</description>
+    </item>
+    
+    <item>
+      <title>2022 Week 43 links</title>
+      <link>/blog/2022-10-31-week-43-links/</link>
+      <pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022-10-31-week-43-links/</guid>
+      <description>https://natureofcode.com/ - &amp;ldquo;This book focuses on a range of programming strategies and techniques behind computer simulations of natural systems, from elementary concepts in mathematics and physics to more advanced algorithms that enable sophisticated visual results. Readers will progress from building a basic physics engine to creating intelligent moving objects and complex systems, setting the foundation for further experiments in generative design. Subjects covered include forces, trigonometry, fractals, cellular automata, self-organization, and genetic algorithms.</description>
     </item>
     
     <item>

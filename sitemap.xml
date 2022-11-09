@@ -12,8 +12,6 @@
   </url><url>
     <loc>/teaching.html</loc>
   </url><url>
-    <loc>/blog/</loc>
-  </url><url>
     <loc>/notebooks.html</loc>
   </url><url>
     <loc>/blog/2022-11-02-dynamic-latex/</loc>
@@ -24,6 +22,9 @@
   </url><url>
     <loc>/</loc>
     <lastmod>2022-11-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/blog/2022-10-31-week-43-links/</loc>
+    <lastmod>2022-10-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/blog/2021-04-05-ergometer-data-science/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
