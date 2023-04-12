@@ -42,6 +42,27 @@ education:
   notes          : with distinction in the major (History); Phi Beta Kappa
 
 working papers:
+- authors    : Benjamin C. Trumble, Matt Schwartz, Andrew Ozga, Gary T. Schwartz, Christopher M. Stojanowski, Carrie L. Jenkins, Thomas S. Kraft, Angela R. Garcia, Daniel K. Cummings, Paul Hooper, Daniel Eid Rodriguez, Juan Copajira, Raul Quispe, Kenneth Buetow, Bret Beheim, Andrei Irimia, Gregory S. Thomas, Randall C Thompson, Margaret Gatz, Jonathan Stieglitz, Caleb E. Finch, Horus Team, Michael Gurven, Hillard Kaplan
+  title      : Poor oral health is associated with increases of inflammation, aortic valve calcification, and  brain atrophy in the Tsimane a substance population with low access to professional dental care
+  status     : in prep
+- authors    : Jordan S. Martin, Bret Beheim, Michael Gurven, Hillard Kaplan, Jonathan Stieglitz, Benjamin Trumble, Adrian V. Jaeggi
+  title      : Cooperation and plasticity accelerate adaptation in a small-scale human society
+  status     : in prep for Science
+- authors    : Arianna Dalzero, Bret A. Beheim, Hillard Kaplan, Michael Gurven, Dieter Lukas
+  title      : Cross-cousin marriage among Tsimane forager-horticulturalists during demographic transition and market integration
+  status     : in prep for Evolutionary Human Sciences
+- authors    : Kraft, Thomas, et al.
+  title      : Metapopulation dynamics of infectious disease (SARS-CoV-2) transmission in a small-scale human society
+  status     : in review, PLOS Biology
+- authors    : Cody Ross, et al.
+  title      : Reproductive inequality in humans and other mammals
+  status     : in review, Proceedings of the National Academy of Sciences
+- authors    : Bret Beheim, Adrian Bell
+  title      : Causality and variance across the spectrum of synergistic interaction
+  preprint   : https://doi.org/10.31234/osf.io/m3vgj
+  materials  : https://github.com/babeheim/causality-variance-cfst
+- authors    : Stieglitz, J, Buoro, Y, Beheim, B, Trumble, B, Kaplan, H, Gurven, M 
+  title      : "Labor's pain: strenuous subsistence work, mechanical wear-and-tear, and musculoskeletal pain in a forager-horticultural population"
 - authors    : Bret Beheim
   title      : "A linked mixture model of coronary atherosclerosis"
   preprint   : https://doi.org/10.1101/2021.09.13.21263547
@@ -71,6 +92,19 @@ working papers:
 
 publications:
 
+# 2023
+
+- authors    : Kaplan, Hillard and Hooper, Paul L. and Gatz, Margaret and Mack, Wendy J. and Law, E. Meng and Chui, Helena C. and Sutherland, M. Linda and Sutherland, James D. and Rowan, Christopher J. and Wann, L. Samuel and Allam, Adel H. and Thompson, Randall C. and Michalik, David E. and Lombardi, Guido and Miyamoto, Michael I. and Eid Rodriguez, Daniel and Copajira Adrian, Juan and Quispe Gutierrez, Raul and Beheim, Bret A. and Cummings, Daniel K. and Seabright, Edmond and Alami, Sarah and R. Garcia, Angela and Buetow, Kenneth and Thomas, Gregory S. and Finch, Caleb E. and Stieglitz, Jonathan and Trumble, Benjamin C. and Gurven, Michael D. and Irimia, Andrei
+  title      : Brain volume, energy balance, and cardiovascular health in two nonindustrial South American populations
+  year       : 2023
+  journal    : Proceedings of the National Academy of Sciences
+  doi        : https://doi.org/10.1073/pnas.2205448120
+  volume     : 120
+  number     : 13
+  pages      : e2205448120
+  publisher  : National Academy of Sciences
+  materials  : 
+
 # 2022
 
 - authors    : Natalia Fedorova, Richard McElreath, and Bret A. Beheim
@@ -86,9 +120,10 @@ publications:
   title      : "Female cooperative labour networks in hunter–gatherers and horticulturalists"
   year       : 2022
   journal    : Philosophical Transactions of the Royal Society B
-  volume     : (in press))
+  volume     : 378
+  pages      : 2021043120210431
   doi        : https://doi.org/10.1098/rstb.2021.0431
-  materials  : 
+  materials  : https://osf.io/f95qv/
   publisher  : The Royal Society Publishing
 
 # 2021
