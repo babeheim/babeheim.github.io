@@ -41,9 +41,9 @@ education:
   location       : Santa Barbara, California, USA
   notes          : with distinction in the major (History); Phi Beta Kappa
 
-working papers:
+projects in prep:
 - authors    : Benjamin C. Trumble, Matt Schwartz, Andrew Ozga, Gary T. Schwartz, Christopher M. Stojanowski, Carrie L. Jenkins, Thomas S. Kraft, Angela R. Garcia, Daniel K. Cummings, Paul Hooper, Daniel Eid Rodriguez, Juan Copajira, Raul Quispe, Kenneth Buetow, Bret Beheim, Andrei Irimia, Gregory S. Thomas, Randall C Thompson, Margaret Gatz, Jonathan Stieglitz, Caleb E. Finch, Horus Team, Michael Gurven, Hillard Kaplan
-  title      : Poor oral health is associated with increases of inflammation, aortic valve calcification, and  brain atrophy in the Tsimane a substance population with low access to professional dental care
+  title      : Poor oral health is associated with increases of inflammation, aortic valve calcification, and brain atrophy in the Tsimane a substance population with low access to professional dental care
   status     : in prep
 - authors    : Jordan S. Martin, Bret Beheim, Michael Gurven, Hillard Kaplan, Jonathan Stieglitz, Benjamin Trumble, Adrian V. Jaeggi
   title      : Cooperation and plasticity accelerate adaptation in a small-scale human society
@@ -51,30 +51,10 @@ working papers:
 - authors    : Arianna Dalzero, Bret A. Beheim, Hillard Kaplan, Michael Gurven, Dieter Lukas
   title      : Cross-cousin marriage among Tsimane forager-horticulturalists during demographic transition and market integration
   status     : in prep for Evolutionary Human Sciences
-- authors    : Kraft, Thomas, et al.
-  title      : Metapopulation dynamics of infectious disease (SARS-CoV-2) transmission in a small-scale human society
-  status     : in review, PLOS Biology
-- authors    : Cody Ross, et al.
-  title      : Reproductive inequality in humans and other mammals
-  status     : in review, Proceedings of the National Academy of Sciences
-- authors    : Bret Beheim, Adrian Bell
-  title      : Causality and variance across the spectrum of synergistic interaction
-  preprint   : https://doi.org/10.31234/osf.io/m3vgj
-  materials  : https://github.com/babeheim/causality-variance-cfst
-- authors    : Stieglitz, J, Buoro, Y, Beheim, B, Trumble, B, Kaplan, H, Gurven, M 
-  title      : "Labor's pain: strenuous subsistence work, mechanical wear-and-tear, and musculoskeletal pain in a forager-horticultural population"
-- authors    : Bret Beheim
-  title      : "A linked mixture model of coronary atherosclerosis"
-  preprint   : https://doi.org/10.1101/2021.09.13.21263547
-  materials  : https://github.com/babeheim/linked-calcium-growth
-- authors    : Friederike Hillemann, Bret A. Beheim, Elspeth Ready
-  title      : "Socio-economic predictors of Inuit foraging strategies and their implications for climate change adaptation"
-  materials  : https://github.com/fhillemann/MSrepo_harvest_patch_choice
-  status     : in review, Philosophical Transactions of the Royal Society B
 - authors    : N.-Han Tran, Bret A. Beheim
   title      : "Differential skill aquisition by age in two knowledge-intensive strategy games"
   status     : in prep
-- authors    : Schwartz, Matthew, et al.
+- authors    : Amy Anderson, Schwartz, Matthew, et al.
   title      : "The role of parity and sex in tooth loss in a natural fertility population with little access to dentistry"
   status     : in prep, AJPA
 - authors    : Beheim, B., Kaplan, H., Thompson, R.C., Trumble, B.C., Wann, L.S., Allam, A.H., Frohlich, B., Sutherland, M.L., Sutherland, J.D., Steiglitz, J. *et al*.
@@ -83,16 +63,47 @@ working papers:
 - authors    : Beheim, B., McElreath, R., Gurven, M., Kaplan, H.
   title      : "Social diffusion of gasoline motors in the Bolivian Amazon"
   target     : Evolution and Human Behavior
-- authors    : Thomas Kraft, Edmond Seabright, Sarah Alami, Paul Hooper, Ben Trumble, Angela Garcia, Dan Cummings, Michael Gurven, HIllard Kaplan
-  title      : "Metapopulation dynamics of infectious disease transmission in a small-scale human society"
-  status     : in prep
 - authors    : Riana Minocher, Bret Beheim
   title      : "Evolutionary dynamics of bilingualism in an indigenous South American population"
   status     : in prep
 
+working papers:
+- authors    : Stieglitz, J, Buoro, Y, Beheim, B, Trumble, B, Kaplan, H, Gurven, M 
+  title      : "Labor's pain: strenuous subsistence work, mechanical wear-and-tear, and musculoskeletal pain in a forager-horticultural population"
+  status     : in review, Proceedings of the National Academy of Science
+- authors    : Trumble, B., et al.
+  title      : "Energetic costs of testosterone in two physically active foraging populations"
+  status     : in review, American Journal of Human Biology
+- authors    : Kraft, Thomas, et al.
+  title      : Metapopulation dynamics of infectious disease (SARS-CoV-2) transmission in a small-scale human society
+  status     : in review, PLOS Biology
+- authors    : Bret Beheim, Adrian Bell
+  title      : Causality and variance across the spectrum of synergistic interaction
+  preprint   : https://doi.org/10.31234/osf.io/m3vgj
+  materials  : https://github.com/babeheim/causality-variance-cfst
+  status     : in review, Evolutionary Human Sciences
+- authors    : Bret Beheim
+  title      : "A linked mixture model of coronary atherosclerosis"
+  preprint   : https://doi.org/10.1101/2021.09.13.21263547
+  materials  : https://github.com/babeheim/linked-calcium-growth
+  status     : preprint uploaded to medarxiv
+- authors    : Friederike Hillemann, Bret A. Beheim, Elspeth Ready
+  title      : "Socio-economic predictors of Inuit foraging strategies and their implications for climate change adaptation"
+  materials  : https://github.com/fhillemann/MSrepo_harvest_patch_choice
+  status     : in review, Philosophical Transactions of the Royal Society B
+- authors    : Siobhán M. Mattison, Ruizhe Liu, Peter M. Mattison, Bret A. Beheim, Mary K. Shenk, Tami Blumenfield, Chun-Yi Sum, Edmond Seabright, and Sarah Alami
+  title      : "Gender disparities in material and noetic wealth differ by kinship system"
+  status     : in review, Philosphical Transactions of the Royal Society B
+
+
 publications:
 
 # 2023
+
+- authors    : Cody T. Ross, Paul L. Hooper, Jennifer E. Smith, Adrian V. Jaeggi, Eric Alden Smith, Sergey Gavrilets, et al.
+  title      : Reproductive inequality in humans and other mammals
+  status     : in press, Proceedings of the National Academy of Sciences
+  publisher  : National Academy of Sciences
 
 - authors    : Kaplan, Hillard and Hooper, Paul L. and Gatz, Margaret and Mack, Wendy J. and Law, E. Meng and Chui, Helena C. and Sutherland, M. Linda and Sutherland, James D. and Rowan, Christopher J. and Wann, L. Samuel and Allam, Adel H. and Thompson, Randall C. and Michalik, David E. and Lombardi, Guido and Miyamoto, Michael I. and Eid Rodriguez, Daniel and Copajira Adrian, Juan and Quispe Gutierrez, Raul and Beheim, Bret A. and Cummings, Daniel K. and Seabright, Edmond and Alami, Sarah and R. Garcia, Angela and Buetow, Kenneth and Thomas, Gregory S. and Finch, Caleb E. and Stieglitz, Jonathan and Trumble, Benjamin C. and Gurven, Michael D. and Irimia, Andrei
   title      : Brain volume, energy balance, and cardiovascular health in two nonindustrial South American populations
