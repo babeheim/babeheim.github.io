@@ -68,17 +68,11 @@ projects in prep:
   status     : in prep
 
 working papers:
-- authors    : Stieglitz, J, Buoro, Y, Beheim, B, Trumble, B, Kaplan, H, Gurven, M 
-  title      : "Labor's pain: strenuous subsistence work, mechanical wear-and-tear, and musculoskeletal pain in a forager-horticultural population"
-  status     : in review, Proceedings of the National Academy of Science
-- authors    : Trumble, B., et al.
-  title      : "Energetic costs of testosterone in two physically active foraging populations"
-  status     : in review, American Journal of Human Biology
-- authors    : Kraft, Thomas, et al.
-  title      : Metapopulation dynamics of infectious disease (SARS-CoV-2) transmission in a small-scale human society
-  status     : in review, PLOS Biology
+- authors    : Trumble, et al.
+  title      : "Testosterone is positively associated with coronary artery calcium in a low cardiovascular disease risk population"
+  status     : minor revisions, Evolution, Medicine, and Public Health
 - authors    : Bret Beheim, Adrian Bell
-  title      : Causality and variance across the spectrum of synergistic interaction
+  title      : "Cultural distance can promote - or erode - group-beneficial outcomes across a spectrum of behavioral interactions"
   preprint   : https://doi.org/10.31234/osf.io/m3vgj
   materials  : https://github.com/babeheim/causality-variance-cfst
   status     : in review, Evolutionary Human Sciences
@@ -87,28 +81,94 @@ working papers:
   preprint   : https://doi.org/10.1101/2021.09.13.21263547
   materials  : https://github.com/babeheim/linked-calcium-growth
   status     : preprint uploaded to medarxiv
-- authors    : Friederike Hillemann, Bret A. Beheim, Elspeth Ready
-  title      : "Socio-economic predictors of Inuit foraging strategies and their implications for climate change adaptation"
-  materials  : https://github.com/fhillemann/MSrepo_harvest_patch_choice
-  status     : in review, Philosophical Transactions of the Royal Society B
-- authors    : Siobhán M. Mattison, Ruizhe Liu, Peter M. Mattison, Bret A. Beheim, Mary K. Shenk, Tami Blumenfield, Chun-Yi Sum, Edmond Seabright, and Sarah Alami
-  title      : "Gender disparities in material and noetic wealth differ by kinship system"
-  status     : in review, Philosphical Transactions of the Royal Society B
-
+- authors    : Elspeth Ready, Bret Beheim, Cody T. Ross, and Jenn Parrott 
+  title      : "Subsistence and sustainability: Indigenous food production in a carbon economy"
+  materials  : https://github.com/elspethr/inuvialuit_carbon
+  status     : in review, Nature Sustainability
 
 publications:
 
 # 2023
 
+- authors    : Benjamin C. Trumble, Mia Charifson, Tom Kraft, Angela R. Garcia, Daniel K. Cummings, Paul Hooper, Amanda J. Lea, Daniel Eid Rodriguez, Stephanie V. Koebele, Kenneth Buetow, Bret Beheim, Riana Minocher, Maguin Gutierrez, Gregory S. Thomas, Margaret Gatz, Jonathan Stieglitz, Caleb E. Finch, Hillard Kaplan, Michael Gurven
+  title      : "Apolipoprotein-ε4 is associated with higher fecundity in a natural fertility population"
+  journal    : Science Advances
+  year       : 2023
+  volume     : 9
+  issue      : 32
+  pages      : eade9797
+  doi        : https://doi.org/10.1126/sciadv.ade9797
+  materials  : https://github.com/babeheim/tsimane-apoe-reproduction
+  publisher  : American Association for the Advancement of Science
+
+- authors    : Friederike Hillemann, Bret A. Beheim, Elspeth Ready
+  title      : "Socio-economic predictors of Inuit foraging strategies and their implications for climate change adaptation"
+  journal    : Philosophical Transactions of the Royal Society B
+  year       : 2023
+  volume     : 378
+  issue      : 1889
+  pages      : 20220395
+  materials  : https://github.com/fhillemann/MSrepo_harvest_patch_choice
+  doi        : https://doi.org/10.1098/rstb.2022.0395
+  publisher  : The Royal Society Publishing
+
+- authors    : Stieglitz, J, Buoro, Y, Beheim, B, Trumble, B, Kaplan, H, Gurven, M 
+  title      : "Labour's pain: strenuous subsistence work, mechanical wear-and-tear and musculoskeletal pain in a non-industrialized population"
+  journal    : Proceedings of the Royal Society B
+  year       : 2023
+  volume     : 290
+  issue      : 1998
+  pages      : 20222497
+  doi        : https://doi.org/10.1098/rspb.2022.2497
+  materials  : 
+  publisher  : The Royal Society Publishing
+
+- authors    : Benjamin C. Trumble, Herman Pontzer, Jonathan Stieglitz, Daniel K. Cummings, Brian Wood, Melissa Emery Thompson, David Raichlen, Bret Beheim, Gandhi Yetish, Hillard Kaplan, Michael Gurven
+  title      : "Energetic costs of testosterone in two physically active foraging populations"
+  journal    : American Journal of Human Biology
+  year       : 2023
+  doi        : https://doi.org/10.1002/ajhb.23949
+  pages      : e23949
+  materials  : 
+  publisher  : Wiley
+
+- authors    : Thomas S. Kraft, Edmond Seabright, Sarah Alami, Samuel M. Jenness, Paul Hooper, Bret Beheim, Helen Davis, Daniel K. Cummings, Daniel Eid Rodriguez, Maguin Gutierrez Cayuba, Emily Miner, Xavier de Lamballerie, Lucia Inchauste, Stéphane Priet, Benjamin C. Trumble, Jonathan Stieglitz, Hillard Kaplan, Michael D. Gurven 
+  title      : "Metapopulation dynamics of infectious disease (SARS-CoV-2) transmission in a small-scale human society"
+  journal    : PLOS Biology
+  year       : 2023
+  doi        : https://doi.org/10.1371/journal.pbio.3002108
+  materials  : https://osf.io/7yb2m/
+  volume     : 21
+  issue      : 8
+  pages      : e3002108
+  publisher  : PLOS
+
+- authors    : Siobhán M. Mattison, Ruizhe Liu, Peter M. Mattison, Bret A. Beheim, Mary K. Shenk, Tami Blumenfield, Chun-Yi Sum, Edmond Seabright, and Sarah Alami
+  title      : "Gender disparities in material and educational resources differ by kinship system"
+  journal    : Philosphical Transactions of the Royal Society B
+  year       : 2023
+  volume     : 378
+  issue      : 1883
+  pages      : 20220299
+  doi        : https://doi.org/10.1098/rstb.2022.0299
+  materials  : https://github.com/babeheim/mosuo-gender-inequality
+  publisher  : The Royal Society Publishing
+
 - authors    : Cody T. Ross, Paul L. Hooper, Jennifer E. Smith, Adrian V. Jaeggi, Eric Alden Smith, Sergey Gavrilets, et al.
   title      : Reproductive inequality in humans and other mammals
-  status     : in press, Proceedings of the National Academy of Sciences
+  journal    : Proceedings of the National Academy of Sciences
+  year       : 2023
+  volume     : 120
+  issue      : 22
+  pages      : e2220124120
+  doi        : https://doi.org/10.1073/pnas.2220124120
   publisher  : National Academy of Sciences
+  materials  : https://github.com/ctross/reproductiveskew
 
 - authors    : Kaplan, Hillard and Hooper, Paul L. and Gatz, Margaret and Mack, Wendy J. and Law, E. Meng and Chui, Helena C. and Sutherland, M. Linda and Sutherland, James D. and Rowan, Christopher J. and Wann, L. Samuel and Allam, Adel H. and Thompson, Randall C. and Michalik, David E. and Lombardi, Guido and Miyamoto, Michael I. and Eid Rodriguez, Daniel and Copajira Adrian, Juan and Quispe Gutierrez, Raul and Beheim, Bret A. and Cummings, Daniel K. and Seabright, Edmond and Alami, Sarah and R. Garcia, Angela and Buetow, Kenneth and Thomas, Gregory S. and Finch, Caleb E. and Stieglitz, Jonathan and Trumble, Benjamin C. and Gurven, Michael D. and Irimia, Andrei
-  title      : Brain volume, energy balance, and cardiovascular health in two nonindustrial South American populations
-  year       : 2023
+  title      : "Brain volume, energy balance, and cardiovascular health in two nonindustrial South American populations"
   journal    : Proceedings of the National Academy of Sciences
+  year       : 2023
   doi        : https://doi.org/10.1073/pnas.2205448120
   volume     : 120
   number     : 13
@@ -147,6 +207,7 @@ publications:
   volume     : 8:210450
   materials  : https://github.com/rianaminocher/reproducibility-analysis
   publisher  : The Royal Society Publishing
+
 - authors    : Angela R Garcia, Caleb E Finch, Margy Gatz, Thomas Kraft, Daniel Cummings, Jonathan Stieglitz, Mia Charifson, Daniel Eid Rodriguez, Kenneth Buetow, Bret Beheim, Hooman Allayee, Greg Thomas and the HORUS team, Michael Gurven, Hillard Kaplan, Benjamin C Trumble
   title      : "APOE4 is associated with elevated blood lipids and lower levels of innate immune biomarkers in a tropical Amerindian subsistence population"
   year       : 2021
@@ -155,6 +216,7 @@ publications:
   publisher  : eLife Sciences Publications Ltd.
   doi        : https://doi.org/0.7554/eLife.682311
   materials  : https://doi.org/10.5061/dryad.pg4f4qrpt
+
 - authors    : N.-Han Tran, Simon Kucharský, Timothy Waring, Silke Atmaca, Bret Beheim
   title      : "Limited scope for group coordination for stylistic variations in kolam art"
   year       : 2021
@@ -163,6 +225,7 @@ publications:
   doi        : https://doi.org/10.3389/fpsyg.2021.742577
   materials  : https://github.com/nhtran93/kolam_coordination
   publisher  : Frontiers
+
 - authors    : Bret Beheim, Quentin Atkinson, Joseph Bulbulia, Will M. Gervais, Russell Gray, Joseph Henrich, Martin Lang, M. Willis Monroe, Michael Muthukrishna, Ara Norenzayan, Benjamin Grant Purzycki, Azim Shariff, Edward Slingerland, Rachel Spicer, Aiyana K. Willard
   title      : "Treatment of missing data determined conclusions regarding moralizing gods"
   preprint   : https://doi.org/10.31234/osf.io/jwa2n
@@ -172,6 +235,7 @@ publications:
   volume     : 595
   doi        : https://doi.org/10.1038/s41586-021-03655-4
   publisher  : Springer Nature
+
 - authors    : Adrian V. Jaeggi, Aaron D. Blackwell, Christopher von Rueden, Benjamin C. Trumble, Jonathan Stieglitz, Angela R. Garcia, Thomas S. Kraft, Bret Beheim, Paul Hooper, Hillard Kaplan, Michael Gurven
   title      : "Relative wealth and inequality associate with health in a small-scale subsistence society"
   year       : 2021
@@ -180,6 +244,7 @@ publications:
   doi        : https://doi.org/10.7554/eLife.59437
   materials  : https://github.com/adblackwell/wealthinequality
   publisher  : eLife Sciences Publications Ltd.
+
 - authors    : Christopher J. Rowan, Michael A. Escander, Edmond Seabright, Daniel Eid Rodriguez, Edhitt Cortez Linares, Raul Quispe Gutierrez, Juan Copajira Adrian, Daniel Cummings, Bret Beheim, Kirsten Tolstrup, Abinash Achrekar, Thomas Kraft, David E. Michalik, Michael I Miyamoto, Adel H. Allam, L. Samuel Wann, Jagat Narula, Benjamin C. Trumble, Jonathan Stieglitz, Randall C. Thompson, Gregory S. Thomas, Hillard S. Kaplan, Michael D. Gurven
   title      : "Very low prevalence and incidence of atrial fibrillation among Bolivian forager-farmers"
   year       : 2021
@@ -188,6 +253,7 @@ publications:
   doi        : http://doi.org/10.5334/aogh.3252
   materials  : https://github.com/babeheim/tsimane-afib-public
   publisher  : Ubiquity Press
+
 - authors    : N.-Han Tran, Timothy Waring, Silke Atmaca, Bret A. Beheim
   title      : "Entropy trade-offs in artistic design: A case study of Tamil *kolam*"
   year       : 2021
@@ -207,6 +273,7 @@ publications:
   doi        : https://doi.org/10.1098/rspb.2020.1245
   preprint   : https://doi.org/10.31234/osf.io/thqsw
   publisher  : The Royal Society Publishing
+
 - authors    : Michael Gurven, Thomas S. Kraft, Sarah Alami, Juan Copajira Adrian, Edhitt Cortez Linares, Daniel Cummings, Daniel Eid Rodriguez, Paul L. Hooper, Adrian V. Jaeggi, Raul Quispe Gutierrez, Ivan Maldonado Suarez, Edmond Seabright, Hillard Kaplan, Jonathan Stieglitz, Benjamin Trumble 
   title      : "Rapidly declining body temperature in a tropical human population"
   year       : 2020
@@ -215,6 +282,7 @@ publications:
   doi        : https://doi.org/10.1126/sciadv.abc6599
   role       : primary database manager
   publisher  : American Association for the Advancement of Science
+
 - authors    : Brian M Wood, Herman Pontzer, Jacob A Harris, Audax ZP Mabulla, Marc T Hamilton, Theodore W Zderic, Bret A Beheim, David A Raichlen
   title      : "Step Counts From Satellites: Methods for Integrating Accelerometer and GPS Data for More Accurate Measures of Pedestrian Travel"
   year       : 2020
@@ -244,6 +312,7 @@ publications:
   doi        : https://doi.org/10.1098/rsif.2018.0035
   materials  : https://github.com/babeheim/polygyny-puzzle
   publisher  : The Royal Society Publishing
+
 - authors    : Benjamin C Trumble, Jonathan Stieglitz, Adrian V Jaeggi, Bret Beheim, Matthew Schwartz, Edmond Seabright, Daniel Cummings, Hillard Kaplan, Michael Gurven
   title      : "Parental hormones are associated with crop loss and family sickness following catastrophic flooding in lowland Bolivia"
   year       : 2018
@@ -251,6 +320,7 @@ publications:
   volume     : Volume 193, Part A, Pages 101-107
   doi        : https://doi.org/10.1016/j.physbeh.2018.02.028
   publisher  : Elsevier
+
 - authors    : Eric Schniter, Nathaniel T Wilcox, Bret A Beheim, Hillard S Kaplan, Michael Gurven
   title      : "Information transmission and the oral tradition: Evidence of a late-life service niche for Tsimane Amerindians"
   year       : 2018
@@ -268,6 +338,7 @@ publications:
   volume     : Volume 389, Issue 10080, pp.1730-1739
   doi        : https://doi.org/10.1016/S0140-6736(17)30752-3
   publisher  : Elsevier
+
 - authors    : Aaron D Blackwell, Samuel S Urlacher, Bret Beheim, Christopher von Rueden, Adrian Jaeggi, Jonathan Stieglitz, Benjamin C Trumble, Michael Gurven, Hillard Kaplan
   title      : "Growth references for Tsimane forager-horticulturalists of the Bolivian Amazon"
   year       : 2017
@@ -276,6 +347,7 @@ publications:
   doi        : https://doi.org/10.1002/ajpa.23128
   materials  : https://github.com/babeheim/tsimane-growth-references
   publisher  : Wiley
+
 - authors    : Michael Gurven, Eric Fuerstenberg, Benjamin Trumble, Jonathan Stieglitz, Bret Beheim, Helen Davis, Hillard Kaplan
   title      : "Cognitive performance across the life course of Bolivian forager-farmers with limited schooling"
   year       : 2017
@@ -283,6 +355,7 @@ publications:
   volume     : 53(1), pp. 160–176
   doi        : https://doi.org/10.1037/dev0000175
   publisher  : American Psychological Association
+
 - authors    : Michael Gurven, Jonathan Stieglitz, Benjamin Trumble, Aaron D Blackwell, Bret Beheim, Helen Davis, Paul Hooper, Hillard Kaplan
   title      : "The Tsimane Health and Life History Project: Integrating anthropology and biomedicine"
   year       : 2017
@@ -300,6 +373,7 @@ publications:
   journal    : Anthropology News
   publisher  : American Anthropological Association
   doi        : https://doi.org/10.1111/j.1556-3502.2016.570523.x
+
 - authors    : Benjamin C Trumble, Jonathan Stieglitz, Aaron D Blackwell, Hooman Allayee, Bret Beheim, Caleb E Finch, Michael Gurven, Hillard Kaplan
   title      : "Apolipoprotein E4 is associated with improved cognitive function in Amazonian forager-horticulturalists with a high parasite burden"
   year       : 2016
@@ -307,6 +381,7 @@ publications:
   volume     : 31.4, pp.1508-1515
   doi        : https://doi.org/10.1096/fj.201601084R
   publisher  : Wiley
+
 - authors    : Michael Gurven, Megan Costa, Ben Trumble, Jonathan Stieglitz, Bret Beheim, Daniel Eid Rodriguez, Paul L Hooper, Hillard Kaplan
   title      : "Health costs of reproduction are minimal despite high fertility, mortality and subsistence lifestyle"
   year       : 2016
@@ -314,6 +389,7 @@ publications:
   volume     : 6.1, pp.1-10
   doi        : https://doi.org/10.1038/srep30056
   publisher  : Nature Research
+
 - authors    : Adrian V Jaeggi, Paul L Hooper, Bret A Beheim, Hillard Kaplan, Michael Gurven
   title      : "Reciprocal exchange patterned by market forces helps explain cooperation in a small-scale society"
   year       : 2016
@@ -322,6 +398,7 @@ publications:
   doi        : https://doi.org/10.1016/j.cub.2016.06.019
   materials  : https://github.com/babeheim/tsimane-multigood-reciprocity
   publisher  : Elsevier
+
 - authors    : Michael D Gurven, Benjamin C Trumble, Jonathan Stieglitz, Gandhi Yetish, Daniel Cummings, Aaron D Blackwell, Bret Beheim, Hillard S Kaplan, Herman Pontzer
   title      : "High resting metabolic rate among Amazonian forager-horticulturalists experiencing high pathogen burden"
   year       : 2016
@@ -329,6 +406,7 @@ publications:
   volume     : 161.3, pp.414-425.
   doi        : https://doi.org/10.1002/ajpa.23040
   publisher  : Wiley
+
 - authors    : Aaron D Blackwell, Benjamin C Trumble, Ivan Maldonado Suarez, Jonathan Stieglitz, Bret Beheim, J Josh Snodgrass, Hillard Kaplan, Michael Gurven
   title      : "Immune Function in Amazonian Horticulturalists"
   year       : 2016
@@ -336,6 +414,7 @@ publications:
   volume     : 43(4), pp.382-396
   doi        : https://doi.org/10.1080/03014460.2016.1189963
   publisher  : Taylor & Francis
+
 - authors    : Siobhán M. Mattison, Eric A. Smith, Mary K. Shenk, Ethan E. Cochrane
   title      : "The Evolution of Inequality"
   year       : 2016
@@ -345,6 +424,7 @@ publications:
   publisher  : Wiley
   materials  : https://github.com/babeheim/evolution-of-inequality
   role       : data analyst, figure author
+
 - authors    : Siobhán M. Mattison, Bret Beheim, Bridget Chak, Peter Buston
   title      : "Offspring sex preferences among patrilineal and matrilineal Mosuo in Southwest China revealed by differences in parity progression"
   year       : 2016
@@ -363,6 +443,7 @@ publications:
   volume     : 156.4, 637-648
   doi        : https://doi.org/10.1002/ajpa.22681
   publisher  : Wiley
+
 - authors    : Aaron D Blackwell, Marilyne A Tamayo, Bret Beheim, Benjamin C Trumble, Jonathan Stieglitz, Paul L Hooper, Melanie Martin, Hillard Kaplan, Michael Gurven
   title      : "Helminth infection, fecundity, and age of first pregnancy in women"
   year       : 2015
@@ -393,6 +474,7 @@ publications:
   doi        : https://doi.org/10.21237/C7clio3212123
   materials  : https://github.com/babeheim/snoobs
   publisher  : University of California eScholarship Repository
+
 - authors    : Bret A Beheim, Adrian V Bell
   title      : "Inheritance, ecology and the evolution of the canoes of East Oceania"
   year       : 2011
@@ -401,6 +483,7 @@ publications:
   doi        : https://doi.org/10.1098/rspb.2011.0060
   materials  : https://github.com/babeheim/polynesian-canoe-analysis
   publisher  : The Royal Society Publishing
+
 - authors    : Monique Borgerhoff Mulder, Bret A Beheim
   title      : Understanding the nature of wealth and its effects on human fitness
   year       : 2011
@@ -409,6 +492,7 @@ publications:
   volume     : 366, pp.344–356
   materials  : https://github.com/babeheim/wealth-mortality-pimbwe
   publisher  : The Royal Society Publishing
+
 - authors    : Monique Borgerhoff Mulder, Samuel Bowles, Tom Hertz, Adrian Bell, Jan Beise, Greg Clark, Ila Fazzio, Michael Gurven, Kim Hill, Paul L. Hooper, William Irons, Hillard Kaplan, Donna Leonetti, Bobbi Low, Frank Marlowe, Richard McElreath, Suresh Naidu, David Nolin, Patrizio Piraino, Rob Quinlan, Eric Schniter, Rebecca Sear, Mary Shenk, Eric Alden Smith, Christopher von Rueden, Polly Wiessner
   title      : "Intergenerational wealth transmission and the dynamics of inequality in small-scale societies"
   year       : 2009
