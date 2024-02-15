@@ -7,157 +7,105 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2022, Bret Beheim.</copyright>
-    <lastBuildDate>Wed, 02 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>When diverse groups work better</title>
+      <link>/blog/2024-02-15-when-diverse-groups/</link>
+      <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>/blog/2024-02-15-when-diverse-groups/</guid>
+      <description>A classic theory in evolutionary social science argues that cooperation is generally promoted by high within-group similarity. William Hamilton himself contributed to this in 1975, following up on his famous rule for relatedness. For organsims playing a Prisoner&amp;rsquo;s Dilemma (or games like the PD), the within-group similarity coefficient&#xA;$$ F_{ST} &amp;gt; \frac{c}{b} $$&#xA;The benefits $b$ and the costs $c$ of cooperation. Taken seriously, one way to interpret this is: segregation works, and behaviorally-homogenous groups do better.</description>
+    </item>
     <item>
       <title>Adding dynamic computations to LaTeX documents</title>
       <link>/blog/2022-11-02-dynamic-latex/</link>
       <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2022-11-02-dynamic-latex/</guid>
       <description>Recently, I&amp;rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&amp;rsquo;s nothing fundamentally wrong with such computational notebooks, but if I had to pick one reason to stay with $\LaTeX$ it&amp;rsquo;s this: my first .tex problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc workflows from only a few years ago.</description>
     </item>
-    
-    <item>
-      <title>2022 Week 43 links</title>
-      <link>/blog/2022-10-31-week-43-links/</link>
-      <pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022-10-31-week-43-links/</guid>
-      <description>https://natureofcode.com/ - &amp;ldquo;This book focuses on a range of programming strategies and techniques behind computer simulations of natural systems, from elementary concepts in mathematics and physics to more advanced algorithms that enable sophisticated visual results. Readers will progress from building a basic physics engine to creating intelligent moving objects and complex systems, setting the foundation for further experiments in generative design. Subjects covered include forces, trigonometry, fractals, cellular automata, self-organization, and genetic algorithms.</description>
-    </item>
-    
-    <item>
-      <title>2022 Week 41 links</title>
-      <link>/blog/2022-10-17-week-41-links/</link>
-      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2022-10-17-week-41-links/</guid>
-      <description>A list of books on Imperial China
-Casio MT-40/41 - The Sleng Teng Review- Keen on Keys on the origin of a popular Jamaican reggae rhythm in 1985 &amp;ldquo;under mi sleng teng&amp;rdquo; with &amp;ldquo;pushed jamaican music into the digital era&amp;rdquo;. music engineer hiroko okuda (more on her here: https://www.nippon.com/en/japan-topics/g02027/)
-Color Theory Tutorial @emeldraws
-Viridian Principles 1.0 - Bruce Sterling, 21 principles for techno-positive, ecological living from the late 90s. It&amp;rsquo;s hard not to read every single one as having some major application or angle on a trend here in the early 2020s.</description>
-    </item>
-    
     <item>
       <title>Indoor rowing &amp; data science with R</title>
       <link>/blog/2021-04-05-ergometer-data-science/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2021-04-05-ergometer-data-science/</guid>
-      <description>Figure 1: Concept2 Model D ergometer
-Since 2014, I&amp;rsquo;ve been using a Concept2 indoor rowing machine. I&amp;rsquo;m not a very strong rower, but I enjoy tracking my progress from the great data stored by the PM5 on-board computer. Parsing the raw data is a bit tricky, so I wrote an R package, c2ergometer, to painlessly manage a database, and developed some data visualizations using the R language to track my rowing performance.</description>
+      <description>Figure 1: Concept2 Model D ergometer&#xA;Since 2014, I&amp;rsquo;ve been using a Concept2 indoor rowing machine. I&amp;rsquo;m not a very strong rower, but I enjoy tracking my progress from the great data stored by the PM5 on-board computer. Parsing the raw data is a bit tricky, so I wrote an R package, c2ergometer, to painlessly manage a database, and developed some data visualizations using the R language to track my rowing performance.</description>
     </item>
-    
     <item>
       <title>Fitting Markov Models to Tetris Data in Stan</title>
       <link>/blog/2021-01-02-stan-markov-tetris/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2021-01-02-stan-markov-tetris/</guid>
       <description>In my last post, I simulated millions draws from two versions of the piece randomizer inside Tetris. The 1989 algorithm for NES Tetris can be described as a first-order Markov process, biased against repeat pieces, while the Gameboy algorithm is a more complex, second-order process with some seriously strange biases. At least, that&amp;rsquo;s what the simulation says. Here we use real Tetris data to find out if these simulation models are accurate, using the Stan language to fit simple multistate Markov models.</description>
     </item>
-    
     <item>
       <title>Is Tetris Biased?</title>
       <link>/blog/2020-12-29-is-tetris-biased/</link>
       <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2020-12-29-is-tetris-biased/</guid>
       <description>My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&amp;rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.</description>
     </item>
-    
     <item>
       <title>Missing data, moralizing gods, and the siren song of Aeiea</title>
       <link>/blog/2019-09-19-song-of-aeiea/</link>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2019-09-19-song-of-aeiea/</guid>
-      <description>Update 2021-07-07: I&amp;rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
-Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.</description>
+      <description>Update 2021-07-07: I&amp;rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.&#xA;Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.</description>
     </item>
-    
     <item>
       <title>Postdoctoral research position on economic decision-making in subsistence societies</title>
       <link>/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</link>
       <pubDate>Thu, 29 Mar 2018 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</guid>
-      <description>I am currently recruiting a post-doctoral researcher for the department. The application period will close on 20 April 2018; description of the position is available below and as a pdf here.
-The Max Planck Institute for Evolutionary Anthropology unites scientists in the natural sciences and humanities to investigate the history of humankind from an interdisciplinary perspective, with the help of comparative analyses of genes, cultures, cognitive abilities, languages and social systems of past and present human populations as well as those of primates closely related to human beings.</description>
+      <description>I am currently recruiting a post-doctoral researcher for the department. The application period will close on 20 April 2018; description of the position is available below and as a pdf here.&#xA;The Max Planck Institute for Evolutionary Anthropology unites scientists in the natural sciences and humanities to investigate the history of humankind from an interdisciplinary perspective, with the help of comparative analyses of genes, cultures, cognitive abilities, languages and social systems of past and present human populations as well as those of primates closely related to human beings.</description>
     </item>
-    
     <item>
       <title>PhD student position on the transmission dynamics of signaling behavior</title>
       <link>/blog/2017-11-06-mpi-eva-signaling-phd-call/</link>
       <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-11-06-mpi-eva-signaling-phd-call/</guid>
-      <description>I am currently recruiting a doctoral student for the department. The application period will close on 1 December 2017; description of the position is available below and as a pdf here.
-The Department of Human Behavior, Ecology and Culture at the Max Planck Institute in Leipzig is seeking qualified applicants for a fully funded three-year doctoral project on the transmission dynamics of aesthetic display behavior, including the design and implementation of field research studying the social transmission and individual learning of artistic signaling among South Asian agriculturalists.</description>
+      <description>I am currently recruiting a doctoral student for the department. The application period will close on 1 December 2017; description of the position is available below and as a pdf here.&#xA;The Department of Human Behavior, Ecology and Culture at the Max Planck Institute in Leipzig is seeking qualified applicants for a fully funded three-year doctoral project on the transmission dynamics of aesthetic display behavior, including the design and implementation of field research studying the social transmission and individual learning of artistic signaling among South Asian agriculturalists.</description>
     </item>
-    
     <item>
       <title>My git-iversary</title>
       <link>/blog/2017-08-20-year-of-git/</link>
       <pubDate>Sun, 20 Aug 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-08-20-year-of-git/</guid>
-      <description>This week marks one year since I started using git in my research projects. It has been a major shift, but I&amp;rsquo;ve come to love the workflow, and see practical benefits for pretty much every kind of writing.
-Version history done right People must exist who never keep track of the history of their work. They start a file and just keep editing it, and the current version is always the best one.</description>
+      <description>This week marks one year since I started using git in my research projects. It has been a major shift, but I&amp;rsquo;ve come to love the workflow, and see practical benefits for pretty much every kind of writing.&#xA;Version history done right People must exist who never keep track of the history of their work. They start a file and just keep editing it, and the current version is always the best one.</description>
     </item>
-    
     <item>
       <title>Text Mining the Human Behavioral Ecology Bibliography</title>
       <link>/blog/2017-06-15-text-mining-the-hbeb/</link>
       <pubDate>Thu, 15 Jun 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-06-15-text-mining-the-hbeb/</guid>
-      <description>Thanks to Kermyt Anderson, the Human Behavioral Ecology Bibliography (HBEB) has recently gone online. Eleanor Power has taken this text file and parsed it into a bibtex file, and from there it can be turned into an Endnote library or other bibliographic database format.
-{{ tweet 874664941076328448 }}
-{{ tweet 875261184114442240 }}
-I&amp;rsquo;m curious to know more about HBEB&amp;rsquo;s use as a dataset in its own right, and since I&amp;rsquo;ve been doing similar work with our field data here at MPI-EVA&amp;rsquo;s new Department of Human Behavior, Ecology and Culture, I figured I could turn the lens on us at the same time as showcase the methods to interested parties.</description>
+      <description>Thanks to Kermyt Anderson, the Human Behavioral Ecology Bibliography (HBEB) has recently gone online. Eleanor Power has taken this text file and parsed it into a bibtex file, and from there it can be turned into an Endnote library or other bibliographic database format.&#xA;{{ tweet 874664941076328448 }}&#xA;{{ tweet 875261184114442240 }}&#xA;I&amp;rsquo;m curious to know more about HBEB&amp;rsquo;s use as a dataset in its own right, and since I&amp;rsquo;ve been doing similar work with our field data here at MPI-EVA&amp;rsquo;s new Department of Human Behavior, Ecology and Culture, I figured I could turn the lens on us at the same time as showcase the methods to interested parties.</description>
     </item>
-    
     <item>
       <title>Generating Ties to Explore Social Network Connectivity</title>
       <link>/blog/2017-06-02-modeling-network-tie-counts/</link>
       <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-06-02-modeling-network-tie-counts/</guid>
-      <description>A colleague doing a social network analysis posed the following problem:1
-In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&amp;rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&amp;rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&amp;hellip;</description>
+      <description>A colleague doing a social network analysis posed the following problem:1&#xA;In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&amp;rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&amp;rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&amp;hellip;</description>
     </item>
-    
     <item>
       <title>Capturing Hierarchical Data in Plain Text</title>
       <link>/blog/2017-02-12-hierarchical-data-in-plain-text/</link>
       <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-02-12-hierarchical-data-in-plain-text/</guid>
-      <description>A practical method of entering structured data into a computer is to type it directly into a text file. Simply fire up your favorite CSV editor1, sit down with your source material and start typing. Unlike boutique database software, this method can be used immediately and with minimal training. In fact, I know several researchers who skip paper forms altogether and do it during their field interviews.
-Plaintext data entry works great, unless the data are hierarchical.</description>
+      <description>A practical method of entering structured data into a computer is to type it directly into a text file. Simply fire up your favorite CSV editor1, sit down with your source material and start typing. Unlike boutique database software, this method can be used immediately and with minimal training. In fact, I know several researchers who skip paper forms altogether and do it during their field interviews.&#xA;Plaintext data entry works great, unless the data are hierarchical.</description>
     </item>
-    
     <item>
       <title>PhD position sought for MPI-EVA</title>
       <link>/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</link>
       <pubDate>Fri, 03 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</guid>
-      <description>I am currently recruiting a doctoral student for the department. The application period will close on 1 March 2017; description of the position is available below and as a pdf here.
-The Department of Human Behavior, Ecology and Culture at the Max Planck Institute in Leipzig is seeking qualified applicants for a three-year doctoral project on the topic of the reproducibility and refinement of quantitative scientific methods in evolutionary anthropology.</description>
+      <description>I am currently recruiting a doctoral student for the department. The application period will close on 1 March 2017; description of the position is available below and as a pdf here.&#xA;The Department of Human Behavior, Ecology and Culture at the Max Planck Institute in Leipzig is seeking qualified applicants for a three-year doctoral project on the topic of the reproducibility and refinement of quantitative scientific methods in evolutionary anthropology.</description>
     </item>
-    
     <item>
       <title>Reproducible Research As Our New Default</title>
       <link>/blog/2016-05-20-reproducible-research-new-default/</link>
       <pubDate>Fri, 20 May 2016 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2016-05-20-reproducible-research-new-default/</guid>
-      <description>the following article was adapted for the Evolutionary Anthropology Society newsletter for Summer 2016
-The last decade has been a sobering one for science, marked by increasingly frank conversations about &amp;rsquo;the idea that something has gone fundamentally wrong with one of our greatest human creations&amp;rsquo;, to quote Richard Horton, editor-in-chief of The Lancet. He continues,
-Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.</description>
+      <description>the following article was adapted for the Evolutionary Anthropology Society newsletter for Summer 2016&#xA;The last decade has been a sobering one for science, marked by increasingly frank conversations about &amp;rsquo;the idea that something has gone fundamentally wrong with one of our greatest human creations&amp;rsquo;, to quote Richard Horton, editor-in-chief of The Lancet. He continues,&#xA;Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.</description>
     </item>
-    
   </channel>
 </rss>

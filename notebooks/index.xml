@@ -6,18 +6,14 @@
     <description>Recent content in Notebooks on Bret Alexander Beheim</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <copyright>Copyright © 2022, Bret Beheim.</copyright><atom:link href="/notebooks/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2022, Bret Beheim.</copyright>
+    <atom:link href="/notebooks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conformity</title>
       <link>/notebooks/conformity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/notebooks/conformity/</guid>
-      <description>Notes on Conformist Bias Conformist bias was introduced in the early 1980s by Boyd and Richerson.
-Recommended Newberry, Mitchell G., and Joshua B. Plotkin. 2021. “Measuring Frequency-Dependent Selection in Culture.” ArXiv:2103.14178 [q-Bio], March. http://arxiv.org/abs/2103.14178.
-Deffner, Dominik, Vivien Kleinow, and Richard McElreath. 2020. “Dynamic Social Learning in Temporally and Spatially Variable Environments.” Royal Society Open Science 7 (12): 200734. https://doi.org/10.1098/rsos.200734.
-Barrett, Brendan J. 2019. “Equifinality in Empirical Studies of Cultural Transmission.</description>
+      <description>Notes on Conformist Bias Conformist bias was introduced in the early 1980s by Boyd and Richerson.&#xA;Recommended Newberry, Mitchell G., and Joshua B. Plotkin. 2021. “Measuring Frequency-Dependent Selection in Culture.” ArXiv:2103.14178 [q-Bio], March. http://arxiv.org/abs/2103.14178.&#xA;Deffner, Dominik, Vivien Kleinow, and Richard McElreath. 2020. “Dynamic Social Learning in Temporally and Spatially Variable Environments.” Royal Society Open Science 7 (12): 200734. https://doi.org/10.1098/rsos.200734.&#xA;Barrett, Brendan J. 2019. “Equifinality in Empirical Studies of Cultural Transmission.</description>
     </item>
-    
   </channel>
 </rss>

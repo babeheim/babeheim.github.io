@@ -21,10 +21,9 @@
 
 
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://babeheim.com/assets/goodtex.png"/>
 
-<meta name="twitter:title" content="Adding dynamic computations to LaTeX documents"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://babeheim.com/assets/goodtex.png" /><meta name="twitter:title" content="Adding dynamic computations to LaTeX documents"/>
 <meta name="twitter:description" content="how to create and insert dynamic values into your Latex manuscripts"/>
 <meta name="twitter:site" content="@babeheim"/>
 
@@ -33,7 +32,7 @@
 <meta itemprop="name" content="Adding dynamic computations to LaTeX documents">
 <meta itemprop="description" content="how to create and insert dynamic values into your Latex manuscripts"><meta itemprop="datePublished" content="2022-11-02T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-11-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="435"><meta itemprop="image" content="https://babeheim.com/assets/goodtex.png">
+<meta itemprop="wordCount" content="435"><meta itemprop="image" content="https://babeheim.com/assets/goodtex.png" />
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -309,7 +308,7 @@ if (!doNotTrack) {
 <p>Cool, but we still have to <em>type out the numbers</em> in the manuscript itself, like a schmuck. To really make this trick work, we have to tell LaTeX to <em>load</em> these calculations from somewhere.</p>
 <h2 id="pre-computation-in-r-or-whatever">Pre-computation in R (or whatever)</h2>
 <p>To make to documents dynamic, we just need to write code that saves our R calculations in the <code>\newcommand</code> format that $\LaTeX$ uses. Here&rsquo;s the function I use, and a simple example:</p>
-<script type="application/javascript" src="https://gist.github.com/babeheim/07fd4d102b6949086a1c36cee9fb0157.js"></script>
+<script src="https://gist.github.com/babeheim/07fd4d102b6949086a1c36cee9fb0157.js"></script>
 
 <p>This code creates a file called <code>calcs.tex</code> that contains something like:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nObs</span>}{2,123}
