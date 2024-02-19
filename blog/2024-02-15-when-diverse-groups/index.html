@@ -36,7 +36,7 @@ A classic theory in evolutionary social science argues that cooperation is gener
 <meta itemprop="description" content="On &lsquo;H-day&rsquo; in 1967, Sweden switched from driving on the left to the right side of the road
 A classic theory in evolutionary social science argues that cooperation is generally promoted by high within-group similarity. W. D. Hamilton himself contributed to this literature in 19751, following up on his famous rule for the evolution of altruism among kin. For a population of individuals clustered into groups playing a Prisoner&rsquo;s Dilemma (or games like the PD), Hamilton showed that cooperation can evolve when"><meta itemprop="datePublished" content="2024-02-18T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2024-02-18T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1095"><meta itemprop="image" content="https://babeheim.com/assets/Kungsgatan_1967.jpg" />
+<meta itemprop="wordCount" content="1071"><meta itemprop="image" content="https://babeheim.com/assets/Kungsgatan_1967.jpg" />
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -303,94 +303,26 @@ $$</p>
 <p>One way to interpret this theoretical result: <em>segregation works</em>. Cooperative groups that have the ability to discriminate against or exclude non-cooperators do better, and the individuals within them achieve higher payoffs. In real situations resembling a Prisoner&rsquo;s Dilemma, higher $F_{ST}$&rsquo;s should be associated with group-beneficial traits such as increased within-group cooperativeness and between-group xenophobia and warfare. Further, when two groups are very similar in terms of behavioral, cultural, or genetic markers, the pairwise $F_{ST}$ will be very small, while extremely different groups will have an $F_{ST}$ score near the maximum at one<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> (perhaps leading to the inference that more-distant cultures will have less effective interactions). But all this work is really just based on the Prisoner&rsquo;s Dilemma as a model of social interaction. What happens when we change the game?</p>
 <p>My coauthor Adrian Bell and I answer this question in a newly-published piece in <em>Evolutionary Human Sciences</em>. Following Hamilton, we ask how $F_{ST}$ works when we allow interactions to be <em>frequency-dependent</em>. In these games, no strategy is dominant, and the best response always depends on what other players will do. Familiar games in this category include the Stag Hunt, Snowdrift, the Hawk-Dove game, and Chicken.</p>
 <p>In the Hawk-Dove, for example, a group of Doves can be invaded by Hawk, but the reverse is also true: too much fighting means that Doves can invade a group of Hawks, leading to a stable, high-diversity mixed equilibrium. An example payoff matrix for this game is:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Dove</th>
-<th>Hawk</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Dove</strong></td>
-<td>5</td>
-<td>0</td>
-</tr>
-<tr>
-<td><strong>Hawk</strong></td>
-<td>10</td>
-<td>-1</td>
-</tr>
-</tbody>
-</table>
+<p><img src="/assets/hd_payoffs.png" alt=""></p>
 <p>Perhaps unsurprisingly, in all such games, the role of $F_{ST}$ here is more complex. Mathematically, we can show that group-beneficial behaviors now evolve according to the inequality</p>
 <p>$$
 F_{ST} &gt; \frac{c - d\overline{x}}{b + d(1-\overline{x})}\tag{2}
 $$</p>
 <p>where $d$ is Peter Queller&rsquo;s &lsquo;synergy coefficient&rsquo;, representing the extent to which social interactions are more than the sum of their parts<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. That is, if $b$ is the benefit from pairing up with a cooperator, the interaction of <em>two</em> cooperators leads to the synergistic payoff $b + d$ for each of them.</p>
 <p>One way to represent the role of $F_{ST}$ in selection for group-beneficial outcomes is with an <em>evolutionary phase diagram</em>, which shows the strength and direction of selection at any given population state. In a Prisoner&rsquo;s Dilemma, the phase diagram for the evolution of cooperation looks like this:</p>
-<figure><img src="/assets/pd_phase_diagram.png" width="80%"/>
-</figure>
-
+<p><img src="/assets/pd_phase_diagram.png" alt=""></p>
 <p>If $F_{ST}$ is below Hamilton&rsquo;s threshold $c/b$, the force of selection is against cooperation. If there is enough within-group similarity, though, selection reverses and cooperation will become common.</p>
 <p>When synergy is added, the frequencies of each behavior interact with $F_{ST}$ according to Equation 2. Consider the phase diagram for the Hawk-Dove game:</p>
-<figure><img src="/assets/hd_phase_diagram.png" width="80%"/>
-</figure>
-
+<p><img src="/assets/hd_phase_diagram.png" alt=""></p>
 <p>Like in the PD, higher $F_{ST}$&rsquo;s are generally good for evolving peaceful Dove behaviors &mdash; Doves generally are able to keep Hawks out of their groups, and Hawks become concentrated in quarrelsome, low-payoff groups. But there&rsquo;s a twist: Eq. 2 shows that frequency-dependent interactions, $F_{ST}$ are no longer directly comparable between populations, even playing the same game. Even though a population located at $Y$ in the Hawk-Dove phase diagram has a higher $F_{ST}$ than one at $X$, it has <em>weaker</em> selection for Doves.</p>
 <p>The role of $F_{ST}$ as a segregation index changes even more dramatically the further you go from a Prisoner&rsquo;s Dilemma. In certain classes of interaction, higher sub-group segregation (higher $F_{ST}$) will be <em>actively harmful</em> in evolving optimal behaviors. Consider the complementarity game, Invisible Hand:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Shelter</th>
-<th>Food</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Shelter</strong></td>
-<td>3</td>
-<td>10</td>
-</tr>
-<tr>
-<td><strong>Food</strong></td>
-<td>10</td>
-<td>5</td>
-</tr>
-</tbody>
-</table>
+<p><img src="/assets/ih_payoffs.png" alt=""></p>
 <p>Here agents can either construct a shelter, or produce some food, but each individual is better off specializing in one behavior and pairing up with a specialist in the other behavior. However, if $F_{ST}$ is high, will groups generally be entirely made up of one, or the other, behavior. Plugging this game into Eq. 2, we get an even more interesting phase diagram:</p>
-<figure><img src="/assets/ih_phase_diagram.png" width="80%"/>
-</figure>
-
+<p><img src="/assets/ih_phase_diagram.png" alt=""></p>
 <p>In Invisible Hand, segregation keeps complementary behaviors from invading homogenous groups, preventing the group from reaching the highest possible payoffs; imagine an overly-protectionistic market that keeps out delicious new foods, where the fear of a &ldquo;<a href="https://en.wikipedia.org/wiki/Taco_trucks_on_every_corner">taco truck on every corner</a>&rdquo; makes everyone worse off.</p>
 <p>We also find this surprising reversal in coordination games, in which groups are trying to settle on one or the other way to do things, e.g. <a href="https://en.wikipedia.org/wiki/Left-_and_right-hand_traffic">driving on the left or the right side of the road</a>. This is one example of the Pure Coordination game, in which the two options are functionally identical, but there are high costs for a group that fails to coordinate on the same behavior.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Left</th>
-<th>Right</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Left</strong></td>
-<td>0</td>
-<td>-1</td>
-</tr>
-<tr>
-<td><strong>Right</strong></td>
-<td>-1</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-<figure><img src="/assets/pc_phase_diagram.png" width="80%"/>
-</figure>
-
+<p><img src="/assets/pc_payoffs.png" alt=""></p>
+<p><img src="/assets/pc_phase_diagram.png" alt=""></p>
 <p>Suprisingly, $F_{ST}$ also slows the evolution of effective solutions in coordination games. Although groups benefit by converging on their own solutions, a higher $F_{ST}$ also means that groups will have a harder time shifting away from unpopular or inefficient ways of doing things. We could call this the &lsquo;<a href="https://en.wikipedia.org/wiki/Dagen_H">H-day problem</a>&rsquo;, after the enormous efforts Sweden untook in 1967 to switch the country away from driving on the left side of the road, which was not used by any of its neighbors.</p>
 <p>We think this is a pretty exciting addition to the theory. Under some frequency-dependent circumstances, the basic logic for low diversity promoting group-beneficial outcomes holds. But when behaviors are complementary with each other, or the task is one of simple coordination, between-group segregation can be actively harmful to evolving good solutions.</p>
 <h1 id="links">Links</h1>
