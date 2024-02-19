@@ -7,14 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2022, Bret Beheim.</copyright>
-    <lastBuildDate>Thu, 15 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Feb 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>When diverse groups work better</title>
       <link>/blog/2024-02-15-when-diverse-groups/</link>
-      <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 18 Feb 2024 00:00:00 +0000</pubDate>
       <guid>/blog/2024-02-15-when-diverse-groups/</guid>
-      <description>A classic theory in evolutionary social science argues that cooperation is generally promoted by high within-group similarity. William Hamilton himself contributed to this in 1975, following up on his famous rule for relatedness. For organsims playing a Prisoner&amp;rsquo;s Dilemma (or games like the PD), the within-group similarity coefficient&#xA;$$ F_{ST} &amp;gt; \frac{c}{b} $$&#xA;The benefits $b$ and the costs $c$ of cooperation. Taken seriously, one way to interpret this is: segregation works, and behaviorally-homogenous groups do better.</description>
+      <description>On &amp;lsquo;H-day&amp;rsquo; in 1967, Sweden switched from driving on the left to the right side of the road&#xA;A classic theory in evolutionary social science argues that cooperation is generally promoted by high within-group similarity. W. D. Hamilton himself contributed to this literature in 19751, following up on his famous rule for the evolution of altruism among kin. For a population of individuals clustered into groups playing a Prisoner&amp;rsquo;s Dilemma (or games like the PD), Hamilton showed that cooperation can evolve when</description>
     </item>
     <item>
       <title>Adding dynamic computations to LaTeX documents</title>
