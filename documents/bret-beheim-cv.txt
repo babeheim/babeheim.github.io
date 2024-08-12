@@ -48,9 +48,6 @@ projects in prep:
 - authors    : Jordan S. Martin, Bret Beheim, Michael Gurven, Hillard Kaplan, Jonathan Stieglitz, Benjamin Trumble, Adrian V. Jaeggi
   title      : Cooperation and plasticity accelerate adaptation in a small-scale human society
   status     : in prep for Science
-- authors    : Arianna Dalzero, Bret A. Beheim, Hillard Kaplan, Michael Gurven, Dieter Lukas
-  title      : Cross-cousin marriage among Tsimane forager-horticulturalists during demographic transition and market integration
-  status     : in prep for Evolutionary Human Sciences
 - authors    : N.-Han Tran, Bret A. Beheim
   title      : "Differential skill aquisition by age in two knowledge-intensive strategy games"
   status     : in prep
@@ -68,27 +65,60 @@ projects in prep:
   status     : in prep
 
 working papers:
-- authors    : Trumble, et al.
-  title      : "Testosterone is positively associated with coronary artery calcium in a low cardiovascular disease risk population"
-  status     : minor revisions, Evolution, Medicine, and Public Health
-- authors    : Bret Beheim, Adrian Bell
-  title      : "Cultural distance can promote - or erode - group-beneficial outcomes across a spectrum of behavioral interactions"
-  preprint   : https://doi.org/10.31234/osf.io/m3vgj
-  materials  : https://github.com/babeheim/causality-variance-cfst
-  status     : in review, Evolutionary Human Sciences
 - authors    : Bret Beheim
   title      : "A linked mixture model of coronary atherosclerosis"
   preprint   : https://doi.org/10.1101/2021.09.13.21263547
   materials  : https://github.com/babeheim/linked-calcium-growth
   status     : preprint uploaded to medarxiv
-- authors    : Elspeth Ready, Bret Beheim, Cody T. Ross, and Jenn Parrott 
-  title      : "Subsistence and sustainability: Indigenous food production in a carbon economy"
-  materials  : https://github.com/elspethr/inuvialuit_carbon
-  status     : in review, Nature Sustainability
 
 publications:
 
+# 2024
+
+- authors    : Elspeth Ready, Cody T. Ross, Bret Beheim, Jenn Parrott
+  title      : Indigenous food production in a carbon economy
+  journal    : Proceedings of the National Academy of Sciences
+  year       : 2024
+  volume     : 121
+  number     : 32
+  pages      : e2317686121
+  doi        : https://doi.org/10.1073/pnas.2317686121
+  materials  : https://github.com/elspethr/inuvialuit_carbon
+  publisher  : National Academy of Sciences
+
+- authors    : Bret Alexander Beheim, Adrian Viliami Bell
+  title      : Why cultural distance can promote – or impede – group-beneficial outcomes
+  journal    : Evolutionary Human Sciences
+  year       : 2024
+  volume     : 6
+  issue      : e14
+  doi        : https://doi.org/10.1017/ehs.2024.8
+  materials  : https://github.com/babeheim/causality-variance-fst
+  preprint   : https://doi.org/10.31234/osf.io/m3vgj
+  publisher  : Cambridge University Press
+
+- authors    : Arianna Dalzero, Bret A. Beheim, Cody Ross, Paul Hooper, Hillard Kaplan, Michael Gurven, Dieter Lukas
+  title      : Cross-cousin marriage among Tsimane forager-horticulturalists during demographic transition and market integration
+  journal    : Evolutionary Human Sciences
+  year       : 2024
+  volume     : 6
+  issue      : e18
+  doi        : https://doi.org/10.1017/ehs.2024.11
+  materials  : https://osf.io/pk8f7/
+  publisher  : Cambridge University Press
+
+
 # 2023
+
+- authors    : Benjamin C Trumble, Jacob Negrey, Stephanie V Koebele, Randall C Thompson, L Samuel Wann, Adel H Allam, Bret Beheim, M Linda Sutherland, James D Sutherland, Daniel Eid Rodriguez, David E Michalik, Chris J Rowan, Guido P Lombardi, Angela R Garcia, Daniel K Cummings, Edmond Seabright, Sarah Alami, Thomas S Kraft, Paul Hooper, Kenneth Buetow, Andrei Irimia, Margaret Gatz, Jonathan Stieglitz, Michael D Gurven, Hillard Kaplan, Gregory S Thomas, Tsimane Health and Life History Project Teams
+  title      : "Testosterone is positively associated with coronary artery calcium in a low cardiovascular disease risk population"
+  journal    : Evolution, Medicine, and Public Health
+  year       : 2023
+  volume     : 11
+  issue      : 1
+  pages      : 472-484
+  doi        : https://doi.org/10.1093/emph/eoad039
+  publisher  : Oxford University Press
 
 - authors    : Benjamin C. Trumble, Mia Charifson, Tom Kraft, Angela R. Garcia, Daniel K. Cummings, Paul Hooper, Amanda J. Lea, Daniel Eid Rodriguez, Stephanie V. Koebele, Kenneth Buetow, Bret Beheim, Riana Minocher, Maguin Gutierrez, Gregory S. Thomas, Margaret Gatz, Jonathan Stieglitz, Caleb E. Finch, Hillard Kaplan, Michael Gurven
   title      : "Apolipoprotein-ε4 is associated with higher fecundity in a natural fertility population"
@@ -155,7 +185,7 @@ publications:
   publisher  : The Royal Society Publishing
 
 - authors    : Cody T. Ross, Paul L. Hooper, Jennifer E. Smith, Adrian V. Jaeggi, Eric Alden Smith, Sergey Gavrilets, et al.
-  title      : Reproductive inequality in humans and other mammals
+  title      : "Reproductive inequality in humans and other mammals"
   journal    : Proceedings of the National Academy of Sciences
   year       : 2023
   volume     : 120
