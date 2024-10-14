@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="images/favicon.png" />
+<link rel="shortcut icon" href="//localhost:1313/images/favicon.png" />
 <title>Adding dynamic computations to LaTeX documents | Bret Alexander Beheim</title>
 <meta name="title" content="Adding dynamic computations to LaTeX documents" />
 <meta name="description" content="how to create and insert dynamic values into your Latex manuscripts" />
 <meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Adding dynamic computations to LaTeX documents" />
-<meta property="og:description" content="how to create and insert dynamic values into your Latex manuscripts" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/2022-11-02-dynamic-latex/" /><meta property="og:image" content="https://babeheim.com/assets/goodtex.png" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-11-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-02T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+<meta property="og:url" content="//localhost:1313/blog/2022-11-02-dynamic-latex/">
+  <meta property="og:site_name" content="Bret Alexander Beheim">
+  <meta property="og:title" content="Adding dynamic computations to LaTeX documents">
+  <meta property="og:description" content="how to create and insert dynamic values into your Latex manuscripts">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2022-11-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-11-02T00:00:00+00:00">
+    <meta property="og:image" content="https://babeheim.com/assets/goodtex.png">
 
 
 
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://babeheim.com/assets/goodtex.png" /><meta name="twitter:title" content="Adding dynamic computations to LaTeX documents"/>
-<meta name="twitter:description" content="how to create and insert dynamic values into your Latex manuscripts"/>
-<meta name="twitter:site" content="@babeheim"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://babeheim.com/assets/goodtex.png">
+  <meta name="twitter:title" content="Adding dynamic computations to LaTeX documents">
+  <meta name="twitter:description" content="how to create and insert dynamic values into your Latex manuscripts">
 
 
 
-<meta itemprop="name" content="Adding dynamic computations to LaTeX documents">
-<meta itemprop="description" content="how to create and insert dynamic values into your Latex manuscripts"><meta itemprop="datePublished" content="2022-11-02T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-11-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="435"><meta itemprop="image" content="https://babeheim.com/assets/goodtex.png" />
-<meta itemprop="keywords" content="" />
+
+  <meta itemprop="name" content="Adding dynamic computations to LaTeX documents">
+  <meta itemprop="description" content="how to create and insert dynamic values into your Latex manuscripts">
+  <meta itemprop="datePublished" content="2022-11-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2022-11-02T00:00:00+00:00">
+  <meta itemprop="wordCount" content="435">
+  <meta itemprop="image" content="https://babeheim.com/assets/goodtex.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -206,17 +212,20 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4PXGB1H7X2');
+        }
+      </script>
 
 <style>
   .twitter-tweet-rendered {
@@ -285,7 +294,7 @@ if (!doNotTrack) {
 </p>
 
 <content>
-  <figure><a href="https://tex.stackexchange.com/a/74609"><img src="/assets/goodtex.png"/></a>
+  <figure><a href="https://tex.stackexchange.com/a/74609"><img src="/assets/goodtex.png"></a>
 </figure>
 
 <p>Recently, I&rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&rsquo;s nothing fundamentally wrong with such <a href="https://en.wikipedia.org/wiki/Notebook_interface">computational notebooks</a>, but if I had to pick one reason to stay with $\LaTeX$ it&rsquo;s this: my first <code>.tex</code> problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc workflows from only a few years ago.</p>
