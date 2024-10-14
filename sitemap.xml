@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/research.html</loc>
+    <loc>/research.html</loc>
   </url><url>
-    <loc>//localhost:1313/publications.html</loc>
+    <loc>/publications.html</loc>
   </url><url>
-    <loc>//localhost:1313/people.html</loc>
+    <loc>/people.html</loc>
   </url><url>
-    <loc>//localhost:1313/software.html</loc>
+    <loc>/software.html</loc>
   </url><url>
-    <loc>//localhost:1313/teaching.html</loc>
+    <loc>/teaching.html</loc>
   </url><url>
-    <loc>//localhost:1313/notebooks.html</loc>
+    <loc>/notebooks.html</loc>
   </url><url>
-    <loc>//localhost:1313/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2024-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2024-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2022-11-02-dynamic-latex/</loc>
+    <loc>/blog/2022-11-02-dynamic-latex/</loc>
     <lastmod>2022-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2021-04-05-ergometer-data-science/</loc>
+    <loc>/blog/2021-04-05-ergometer-data-science/</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2021-01-02-stan-markov-tetris/</loc>
+    <loc>/blog/2021-01-02-stan-markov-tetris/</loc>
     <lastmod>2021-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2020-12-29-is-tetris-biased/</loc>
+    <loc>/blog/2020-12-29-is-tetris-biased/</loc>
     <lastmod>2020-12-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2019-09-19-song-of-aeiea/</loc>
+    <loc>/blog/2019-09-19-song-of-aeiea/</loc>
     <lastmod>2019-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</loc>
+    <loc>/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</loc>
     <lastmod>2018-03-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2017-11-06-mpi-eva-signaling-phd-call/</loc>
+    <loc>/blog/2017-11-06-mpi-eva-signaling-phd-call/</loc>
     <lastmod>2017-11-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2017-08-20-year-of-git/</loc>
+    <loc>/blog/2017-08-20-year-of-git/</loc>
     <lastmod>2017-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2017-06-15-text-mining-the-hbeb/</loc>
+    <loc>/blog/2017-06-15-text-mining-the-hbeb/</loc>
     <lastmod>2017-06-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2017-06-02-modeling-network-tie-counts/</loc>
+    <loc>/blog/2017-06-02-modeling-network-tie-counts/</loc>
     <lastmod>2017-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2017-02-12-hierarchical-data-in-plain-text/</loc>
+    <loc>/blog/2017-02-12-hierarchical-data-in-plain-text/</loc>
     <lastmod>2017-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</loc>
+    <loc>/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</loc>
     <lastmod>2017-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/blog/2016-05-20-reproducible-research-new-default/</loc>
+    <loc>/blog/2016-05-20-reproducible-research-new-default/</loc>
     <lastmod>2016-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/notebooks/conformity/</loc>
+    <loc>/notebooks/conformity/</loc>
   </url><url>
-    <loc>//localhost:1313/links.html</loc>
+    <loc>/links.html</loc>
   </url><url>
-    <loc>//localhost:1313/notebooks/</loc>
+    <loc>/notebooks/</loc>
   </url>
 </urlset>

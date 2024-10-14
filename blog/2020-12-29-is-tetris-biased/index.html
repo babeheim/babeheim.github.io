@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="//localhost:1313/images/favicon.png" />
+<link rel="shortcut icon" href="/images/favicon.png" />
 <title>Is Tetris Biased? | Bret Alexander Beheim</title>
 <meta name="title" content="Is Tetris Biased?" />
 <meta name="description" content="
@@ -13,7 +13,7 @@ My first experience with stochastic processes was in 1989, with Tetris on the Ni
 <meta name="keywords" content="" />
 
 
-<meta property="og:url" content="//localhost:1313/blog/2020-12-29-is-tetris-biased/">
+<meta property="og:url" content="/blog/2020-12-29-is-tetris-biased/">
   <meta property="og:site_name" content="Bret Alexander Beheim">
   <meta property="og:title" content="Is Tetris Biased?">
   <meta property="og:description" content="
@@ -23,13 +23,13 @@ My first experience with stochastic processes was in 1989, with Tetris on the Ni
     <meta property="article:section" content="blog">
     <meta property="article:published_time" content="2020-12-27T00:00:00+00:00">
     <meta property="article:modified_time" content="2020-12-27T00:00:00+00:00">
-    <meta property="og:image" content="//localhost:1313/images/bret-head.jpg">
+    <meta property="og:image" content="/images/bret-head.jpg">
 
 
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="//localhost:1313/images/bret-head.jpg">
+  <meta name="twitter:image" content="/images/bret-head.jpg">
   <meta name="twitter:title" content="Is Tetris Biased?">
   <meta name="twitter:description" content="
 My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn’t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.">
@@ -43,7 +43,7 @@ My first experience with stochastic processes was in 1989, with Tetris on the Ni
   <meta itemprop="datePublished" content="2020-12-27T00:00:00+00:00">
   <meta itemprop="dateModified" content="2020-12-27T00:00:00+00:00">
   <meta itemprop="wordCount" content="2358">
-  <meta itemprop="image" content="//localhost:1313/images/bret-head.jpg">
+  <meta itemprop="image" content="/images/bret-head.jpg">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -425,7 +425,7 @@ My first experience with stochastic processes was in 1989, with Tetris on the Ni
 <p>It&rsquo;s useful to compare both of these against what you would expect under purely random draws, where droughts would follow the Geometric distribution. Using R&rsquo;s built-in Geometric probability functions, <code>1 - pgeom(20, 1/7)</code> is 3.9% (dotted line), which closely tracks with the Gameboy.</p>
 <h2 id="conclusions-and-a-problem">Conclusions, and a Problem</h2>
 <p>Simulating out chains of draws from each algorithm and playing around with them in R has answered our question. Compared to simple random sampling, both the NES and Gameboy randomizers do a good job at flood prevention - the Gameboy&rsquo;s second-order transition matrix highly penalizes all three-in-a-row outcomes, and the NES&rsquo;s first-order matrix penalizes two-in-a-row outcomes. However, we&rsquo;ve also identified severe biases with the Gameboy algorithm, which probably explains why it was quietly replaced in late 1989 for the NES release. Even on the official NES release, though, Tetris has some small but detectable biases. As an exercise in learning new things about a game dear to many, the simulation approach is satisfying.</p>
-<p>But there&rsquo;s also a big problem with the above analysis (or any such analysis) - how do we know if our simulation is accurate to the &ldquo;real world&rdquo; of Tetris games? The reverse-engineering of the code may be flawed, or my implementation in <code>tetristools</code>. To really be sure, we must treat the above as predictions, and compare them against actual Tetris game data using statistical modeling, which we will take on <a href="//localhost:1313/blog/2021-01-02-stan-markov-tetris/">next time</a>.</p>
+<p>But there&rsquo;s also a big problem with the above analysis (or any such analysis) - how do we know if our simulation is accurate to the &ldquo;real world&rdquo; of Tetris games? The reverse-engineering of the code may be flawed, or my implementation in <code>tetristools</code>. To really be sure, we must treat the above as predictions, and compare them against actual Tetris game data using statistical modeling, which we will take on <a href="/blog/2021-01-02-stan-markov-tetris/">next time</a>.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
