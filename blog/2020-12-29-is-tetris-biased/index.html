@@ -5,45 +5,35 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="/images/favicon.png" />
+<link rel="shortcut icon" href="images/favicon.png" />
 <title>Is Tetris Biased? | Bret Alexander Beheim</title>
 <meta name="title" content="Is Tetris Biased?" />
-<meta name="description" content="
-My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise." />
+<meta name="description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise." />
 <meta name="keywords" content="" />
 
 
-<meta property="og:url" content="/blog/2020-12-29-is-tetris-biased/">
-  <meta property="og:site_name" content="Bret Alexander Beheim">
-  <meta property="og:title" content="Is Tetris Biased?">
-  <meta property="og:description" content="
-My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn’t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2020-12-27T00:00:00+00:00">
-    <meta property="article:modified_time" content="2020-12-27T00:00:00+00:00">
-    <meta property="og:image" content="/images/bret-head.jpg">
+<meta property="og:title" content="Is Tetris Biased?" />
+<meta property="og:description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/2020-12-29-is-tetris-biased/" /><meta property="og:image" content="images/bret-head.jpg" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-12-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-27T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="/images/bret-head.jpg">
-  <meta name="twitter:title" content="Is Tetris Biased?">
-  <meta name="twitter:description" content="
-My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn’t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="images/bret-head.jpg" /><meta name="twitter:title" content="Is Tetris Biased?"/>
+<meta name="twitter:description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise."/>
+<meta name="twitter:site" content="@babeheim"/>
 
 
 
-
-  <meta itemprop="name" content="Is Tetris Biased?">
-  <meta itemprop="description" content="
-My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn’t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.">
-  <meta itemprop="datePublished" content="2020-12-27T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2020-12-27T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2358">
-  <meta itemprop="image" content="/images/bret-head.jpg">
+<meta itemprop="name" content="Is Tetris Biased?">
+<meta itemprop="description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise."><meta itemprop="datePublished" content="2020-12-27T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-12-27T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2358"><meta itemprop="image" content="images/bret-head.jpg" />
+<meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -216,20 +206,17 @@ My first experience with stochastic processes was in 1989, with Tetris on the Ni
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4PXGB1H7X2');
-        }
-      </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
+}
+</script>
+
 
 <style>
   .twitter-tweet-rendered {

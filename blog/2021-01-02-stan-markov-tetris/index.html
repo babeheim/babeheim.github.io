@@ -5,41 +5,35 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="/images/favicon.png" />
+<link rel="shortcut icon" href="images/favicon.png" />
 <title>Fitting Markov Models to Tetris Data in Stan | Bret Alexander Beheim</title>
 <meta name="title" content="Fitting Markov Models to Tetris Data in Stan" />
 <meta name="description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language." />
 <meta name="keywords" content="" />
 
 
-<meta property="og:url" content="/blog/2021-01-02-stan-markov-tetris/">
-  <meta property="og:site_name" content="Bret Alexander Beheim">
-  <meta property="og:title" content="Fitting Markov Models to Tetris Data in Stan">
-  <meta property="og:description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2021-01-02T00:00:00+00:00">
-    <meta property="article:modified_time" content="2021-01-02T00:00:00+00:00">
-    <meta property="og:image" content="https://babeheim.com/assets/tetris-cover.jpg">
+<meta property="og:title" content="Fitting Markov Models to Tetris Data in Stan" />
+<meta property="og:description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/2021-01-02-stan-markov-tetris/" /><meta property="og:image" content="https://babeheim.com/assets/tetris-cover.jpg" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-01-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-02T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://babeheim.com/assets/tetris-cover.jpg">
-  <meta name="twitter:title" content="Fitting Markov Models to Tetris Data in Stan">
-  <meta name="twitter:description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language.">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://babeheim.com/assets/tetris-cover.jpg" /><meta name="twitter:title" content="Fitting Markov Models to Tetris Data in Stan"/>
+<meta name="twitter:description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language."/>
+<meta name="twitter:site" content="@babeheim"/>
 
 
 
-
-  <meta itemprop="name" content="Fitting Markov Models to Tetris Data in Stan">
-  <meta itemprop="description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language.">
-  <meta itemprop="datePublished" content="2021-01-02T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2021-01-02T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1824">
-  <meta itemprop="image" content="https://babeheim.com/assets/tetris-cover.jpg">
+<meta itemprop="name" content="Fitting Markov Models to Tetris Data in Stan">
+<meta itemprop="description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language."><meta itemprop="datePublished" content="2021-01-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-01-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1824"><meta itemprop="image" content="https://babeheim.com/assets/tetris-cover.jpg" />
+<meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -212,20 +206,17 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4PXGB1H7X2');
-        }
-      </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
+}
+</script>
+
 
 <style>
   .twitter-tweet-rendered {

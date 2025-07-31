@@ -6,6 +6,7 @@ contact:
   orcid    : 0000-0003-4653-3155
   github   : babeheim
   twitter  : "@babeheim"
+  bluesky  : "@babeheim"
   phone    : +49(0) 341 3550 310
   website  : babeheim.com
   address  : Max Planck Institute for Evolutionary Anthropology, Deutscher Platz 6, Leipzig, Germany D-04103
@@ -42,16 +43,10 @@ education:
   notes          : with distinction in the major (History); Phi Beta Kappa
 
 projects in prep:
-- authors    : Benjamin C. Trumble, Matt Schwartz, Andrew Ozga, Gary T. Schwartz, Christopher M. Stojanowski, Carrie L. Jenkins, Thomas S. Kraft, Angela R. Garcia, Daniel K. Cummings, Paul Hooper, Daniel Eid Rodriguez, Juan Copajira, Raul Quispe, Kenneth Buetow, Bret Beheim, Andrei Irimia, Gregory S. Thomas, Randall C Thompson, Margaret Gatz, Jonathan Stieglitz, Caleb E. Finch, Horus Team, Michael Gurven, Hillard Kaplan
-  title      : Poor oral health is associated with increases of inflammation, aortic valve calcification, and brain atrophy in the Tsimane a substance population with low access to professional dental care
-  status     : in prep
-- authors    : Jordan S. Martin, Bret Beheim, Michael Gurven, Hillard Kaplan, Jonathan Stieglitz, Benjamin Trumble, Adrian V. Jaeggi
-  title      : Cooperation and plasticity accelerate adaptation in a small-scale human society
-  status     : in prep for Science
 - authors    : N.-Han Tran, Bret A. Beheim
   title      : "Differential skill aquisition by age in two knowledge-intensive strategy games"
   status     : in prep
-- authors    : Amy Anderson, Schwartz, Matthew, et al.
+- authors    : Amy Anderson, et al.
   title      : "The role of parity and sex in tooth loss in a natural fertility population with little access to dentistry"
   status     : in prep, AJPA
 - authors    : Beheim, B., Kaplan, H., Thompson, R.C., Trumble, B.C., Wann, L.S., Allam, A.H., Frohlich, B., Sutherland, M.L., Sutherland, J.D., Steiglitz, J. *et al*.
@@ -64,14 +59,110 @@ projects in prep:
   title      : "Evolutionary dynamics of bilingualism in an indigenous South American population"
   status     : in prep
 
+
 working papers:
+
 - authors    : Bret Beheim
   title      : "A linked mixture model of coronary atherosclerosis"
   preprint   : https://doi.org/10.1101/2021.09.13.21263547
   materials  : https://github.com/babeheim/linked-calcium-growth
   status     : preprint uploaded to medarxiv
 
+# in review
+
+- authors    : Hooper, et al.
+  title      : Exceptionally low mortality despite widespread COVID-19 infection among Indigenous Tsimane and Moseten of Bolivia
+  status     : in review, Proc B (rejected at science ~Feb 2025, rejected at PNAS ~Jun)
+  note       : it looks like Inchauste is the first author now? and Paul's the last author? crazy
+
+- authors    : Tanay Katiyar, et al.
+  title      : Social Determinants of Depression in the Tsimane Forager-Horticulturalists of Bolivia
+  status     : under review at "Evolution, Medicine and Public Health"
+
+## In revision
+
+- authors    : Alejandro Pérez Velilla, Bret Beheim, Paul E. Smaldino
+  title      : The Development of Risk Attitudes and their Cultural Transmission
+  preprint   : https://osf.io/preprints/socarxiv/9yjes
+  materials  : https://osf.io/p5893/
+  status     : under review at *Psychological Review*
+
+- authors    : Colby, Abigail, et al.
+  title      : Oxytocin varies across the life course in a sex-specific way in a human subsistence population
+  status     : in revision, PNAS
+
+- authors    : Claudia A.F. Wascher, Gemini Waterhouse, Sam Reynolds & Bret Beheim
+  title      : Vocal mimicry in corvids
+  status     : in revision
+
+- authors    : Sánchez-Amaro, et al.
+  title      : EVApeCognition: An 18-Year Database Reveals Domain-Specific Characteristics in Great Ape Cognition
+  status     : in review, Science (got rejected @ Nature)
+
+## in press
+
+- authors    : Bret Beheim
+  title      : Opening strategies in the Game of Go from feudalism to superhuman AI
+  preprint   : https://osf.io/preprints/psyarxiv/cewst
+  materials  : https://github.com/babeheim/go-learning-eras
+  status     : in review, Evolutionary Human Sciences
+
+- authors    : Aronoff, Jacob, et al.
+  title      : Inflammaging is minimal among forager-horticulturalists in the Bolivian Amazon
+  status     : in press, ProceedingsB
+
+- authors    : Amy Anderson, et al.
+  title      : Childhood skeletal lesions common in prehistory are present in living forager-farmers and predict adult markers of immune function
+  status     : in press, *Science Advances*
+
+- authors    : Getz, Madeleine, et al.
+  title      : Higher blood lipid levels after the transition to menopause in two forager-horticulturalist populations
+  status     : in press, Evolution, Medicine, and Public Health
+
+
+books:
+
+- authors    : Bret Beheim, Paul Smaldino
+  title      : Mathematical Foundations of Cultural Evolution
+  publisher  : Princeton University Press
+  status     : submitting fall 2026
+  
+
+
 publications:
+
+# 2025
+
+- authors    : Fran Daw, Bret A. Beheim, Claudia A.F. Wascher
+  title      : Evolutionary drivers of caching behaviour in corvids
+  journal    : Animal Cognition
+  year       : 2025
+  volume.    : 28
+  issue      : 17
+  doi        : https://doi.org/10.1007/s10071-025-01938-1
+  materials. : https://link.springer.com/article/10.1007/s10071-025-01938-1#Sec9
+  publisher. : Springer Nature
+
+- authors    : Jordan S. Martin, Bret Beheim, Michael Gurven, Hillard Kaplan, Jonathan Stieglitz, Benjamin C. Trumble, Paul Hooper, Dan Cummings, Daniel Eid Rodriguez, Adrian V. Jaeggi
+  title      : Cooperation and plasticity accelerate adaptation in a small-scale human society
+  journal.   : Science Advances
+  year       : 2025
+  volume     : 11
+  issue      : eads3129
+  materials. : https://github.com/Jordan-Scott-Martin/Tsimane-neighbor-IGEs
+  doi        : https://doi.org/10.1126/sciadv.ads3129
+  publisher  : American Association for the Advancement of Science
+
+- authors    : Oleg Sobchuk, Bret Beheim
+  title      : Does literature evolve one funeral at a time?
+  journal    : Proceedings of the Royal Society, B
+  year       : 2025
+  volume     : 292
+  issue      : 2040
+  pages      : 20242033
+  materials  : https://osf.io/uy4s7/
+  doi        : https://doi.org/10.1098/rspb.2024.2033
+  publisher  : The Royal Society Publishing
 
 # 2024
 
@@ -96,7 +187,7 @@ publications:
   materials  : https://github.com/babeheim/causality-variance-fst
   preprint   : https://doi.org/10.31234/osf.io/m3vgj
   publisher  : Cambridge University Press
-
+  
 - authors    : Arianna Dalzero, Bret A. Beheim, Cody Ross, Paul Hooper, Hillard Kaplan, Michael Gurven, Dieter Lukas
   title      : Cross-cousin marriage among Tsimane forager-horticulturalists during demographic transition and market integration
   journal    : Evolutionary Human Sciences
@@ -107,6 +198,14 @@ publications:
   materials  : https://osf.io/pk8f7/
   publisher  : Cambridge University Press
 
+- authors    : Benjamin C. Trumble, Matt Schwartz, Andrew Ozga, Gary T. Schwartz, Christopher M. Stojanowski, Carrie L. Jenkins, Thomas S. Kraft, Angela R. Garcia, Daniel K. Cummings, Paul Hooper, Daniel Eid Rodriguez, Juan Copajira, Raul Quispe, Kenneth Buetow, Bret Beheim, Andrei Irimia, Gregory S. Thomas, Randall C Thompson, Margaret Gatz, Jonathan Stieglitz, Caleb E. Finch, Michael Gurven, Hillard Kaplan and HORUS Team
+  title      : Poor Oral Health Is Associated With Infammation, Aortic Valve Calcifcation, and Brain Volume Among Forager-Farmers
+  journal    : The Journals of Gerontology, Series A: Biological Sciences and Medical Sciences
+  year       : 2024
+  volume     : 79
+  issue      : 5
+  pages      : 1-8
+  doi        : https://doi.org/10.1093/gerona/glae013
 
 # 2023
 
@@ -548,6 +647,7 @@ theses supervised:
   date    : 2020-11-03
 
 grants, fellowships, awards:
+- THLHP co-investigator
 - MPI-EVA Senior Researcher Funding Line. $56,754 startup, $56,754 annual budget over five years, 2016-2021.
 - The Human Life Course and the Biodemography of Aging”, Co-Investigator, National Institutes of Health / National Institute on Aging. $590,659. 2005
 - Administrative Supplement to The Human Life Course and the Biodemography of Aging”, Co-Investigator National Institutes of Health / National Institute on Aging. $15,000. 2004
@@ -557,6 +657,17 @@ grants, fellowships, awards:
 - Phi Beta Kappa Honors Society. 2004
 
 presentations:
+
+- 'Does culture evolve “one funeral at a time”?', Oleg Sobchuk, Jean Barré, Marijn Koolen, Harin Lee and Bret Beheim, Computational Humanities Research 2025 (submitted)
+- Tubingen talk June 2025
+- "The Problem of Missingness in Historical and Evolutionary Datasets" Japan talk Nov 2024
+- SFI talk May 2025
+- Durham CES talk on cultural diversity 2024 and on decomposition
+- talk at john's height workshop
+- talk to the RDM group on unit tests
+- invited talk in Brno
+- invited talk in Rabat 
+- talk at oleg's workshop
 - "Strategic Social Leaning in the Era of Superhuman Artificial Intelligence: A Large-Scale, Longitudinal Case Study using the Game of Go", Cultural Evolution Society Meeting, 2022-09-28
 - The Adaptive Logic of False Beliefs, Human Behavior and Evolution Society Meeting, 2019-04-26
 - Improving Reproducibility in Evolutionary Anthropology, Santa Fe Institute ENDOW workshop, 2020-02-06
