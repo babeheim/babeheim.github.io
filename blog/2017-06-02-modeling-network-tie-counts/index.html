@@ -5,46 +5,40 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="/images/favicon.png" />
+<link rel="shortcut icon" href="images/favicon.png" />
 <title>Generating Ties to Explore Social Network Connectivity | Bret Alexander Beheim</title>
 <meta name="title" content="Generating Ties to Explore Social Network Connectivity" />
 <meta name="description" content="A colleague doing a social network analysis posed the following problem:1
-
-In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;" />
+ In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;" />
 <meta name="keywords" content="" />
 
 
-<meta property="og:url" content="/blog/2017-06-02-modeling-network-tie-counts/">
-  <meta property="og:site_name" content="Bret Alexander Beheim">
-  <meta property="og:title" content="Generating Ties to Explore Social Network Connectivity">
-  <meta property="og:description" content="A colleague doing a social network analysis posed the following problem:1
-In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I’m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there’s some way to do this in STAN in R, or some other way that you might know of how to deal with this…">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2017-06-02T00:00:00+00:00">
-    <meta property="article:modified_time" content="2017-06-02T00:00:00+00:00">
-    <meta property="og:image" content="/images/bret-head.jpg">
+<meta property="og:title" content="Generating Ties to Explore Social Network Connectivity" />
+<meta property="og:description" content="A colleague doing a social network analysis posed the following problem:1
+ In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/2017-06-02-modeling-network-tie-counts/" /><meta property="og:image" content="images/bret-head.jpg"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2017-06-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-06-02T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="/images/bret-head.jpg">
-  <meta name="twitter:title" content="Generating Ties to Explore Social Network Connectivity">
-  <meta name="twitter:description" content="A colleague doing a social network analysis posed the following problem:1
-In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I’m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there’s some way to do this in STAN in R, or some other way that you might know of how to deal with this…">
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="images/bret-head.jpg"/>
+
+<meta name="twitter:title" content="Generating Ties to Explore Social Network Connectivity"/>
+<meta name="twitter:description" content="A colleague doing a social network analysis posed the following problem:1
+ In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;"/>
 
 
 
-
-  <meta itemprop="name" content="Generating Ties to Explore Social Network Connectivity">
-  <meta itemprop="description" content="A colleague doing a social network analysis posed the following problem:1
-In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I’m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there’s some way to do this in STAN in R, or some other way that you might know of how to deal with this…">
-  <meta itemprop="datePublished" content="2017-06-02T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2017-06-02T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1010">
-  <meta itemprop="image" content="/images/bret-head.jpg">
+<meta itemprop="name" content="Generating Ties to Explore Social Network Connectivity">
+<meta itemprop="description" content="A colleague doing a social network analysis posed the following problem:1
+ In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;"><meta itemprop="datePublished" content="2017-06-02T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-06-02T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1010"><meta itemprop="image" content="images/bret-head.jpg"/>
+<meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="stylesheet" href="/css/custom.css">
@@ -72,54 +66,74 @@ In my field interviews, I had people name friends they could go to for support. 
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4PXGB1H7X2');
-        }
-      </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
+}
+</script>
+
+
+
+<script>
+(() => {
+  const KEY = "theme";
+  const stored = localStorage.getItem(KEY);
+  const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = stored || (systemDark ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
 
 <style>
-  .twitter-tweet-rendered {
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
+   
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666666;
+    --link: #0b5fff;
+    --card: #f6f7f9;
+    --border: #e6e8eb;
+
+     
+    --link-visited: #5a8cff;
+    --code-bg: #f5f3ff;
+    --code-fg: #222222;
   }
-  .inline-svg {
-    display: inline-block;
-    height: 1.0rem;
-    width: 1.0rem;
-    top: 0.15rem;
-    position: relative;
-    fill: #636363;
+  html[data-theme="dark"] {
+    --bg: #0e1113;
+    --fg: #e6e6e6;
+    --muted: #a0a0a0;
+    --link: #8ab4ff;
+    --card: #171a20;
+    --border: #2a2f3a;
+
+    --link-visited: #a3c2ff;
+    --code-bg: #1c1a28;
+    --code-fg: #e6e6e6;
   }
-  .inline-svg:hover {
-    fill: #bdbdbd;
-    height: 1.0rem;
-    width: 1.0rem;
+
+   
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme]) {
+      --bg: #0e0f12;
+      --fg: #e6e6e6;
+      --muted: #a0a0a0;
+      --link: #8ab4ff;
+      --card: #171a20;
+      --border: #2a2f3a;
+
+      --link-visited: #a3c2ff;
+      --code-bg: #1c1a28;
+      --code-fg: #e6e6e6;
+    }
   }
-  .inline-svg#pdf {
-    fill: #de2d26;
-  }
-  .inline-svg#pdf:hover {
-    fill: #fc9272;
-  }
-  .inline-svg#data {
-    fill: #1c9099;
-  }
-  .inline-svg#data:hover {
-    fill: #a6bddb;
-  }
-</style>
-</head>
+</style></head>
 
 <body>
   <header><a href="/" class="title">
@@ -136,6 +150,18 @@ In my field interviews, I had people name friends they could go to for support. 
 <a href="/teaching.html">Teaching</a>
 
 <a href="/blog">Blog</a>
+
+<button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode" class="theme-toggle">
+  <span id="theme-toggle-icon">🌙</span>
+</button>
+<style>
+.theme-toggle {
+  border: 0; background: none; cursor: pointer; font-size: 1rem;
+  padding: .4rem .6rem; border-radius: .5rem;
+}
+.theme-toggle:hover { background: rgba(127,127,127,.12); }
+</style>
+
 </nav>
 </header>
   <main>
@@ -152,45 +178,46 @@ In my field interviews, I had people name friends they could go to for support. 
 <content>
   <p>A colleague doing a social network analysis posed the following problem:<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <blockquote>
-<p>In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;</p></blockquote>
+<p>In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&hellip;</p>
+</blockquote>
 <p>While the question is asking about proportions, in my experience, it is better to use counts, if you can. Only counts can properly take sample sizes into consideration.</p>
 <p>However, it is not accurate to just change question to, &ldquo;Do women in the sample have a greater number of coethnic friends than men?&rdquo; It could be that women might have a higher number, on average, because women have more friends in general. The spirit of the original question requires we condition the analysis on the total number of friends first, or, &ldquo;Do men have more/fewer minority friends, <em>for a given number of friends</em>, than women?&rdquo;</p>
 <p>To feel confident we&rsquo;re on the right track statistically, we will use a valuable trick. I will generate real-looking data from a stochastic process that embodies my assumptions about the real data, analyze it, and confirm that I can recover signals I inject into the data with my statistical methods.</p>
 <p>Here our generating process will be as follows: for our sample of people, we specify how many friends each will have. Then, of those friends, we will choose how many will be co-ethnics, and incorporate the original question by adding sex of the respondant as a factor in this process.</p>
 <p>In the real data, I am told, there are about 250 interviews, and everyone names at least 1 friend, roughly symmetrical about a mean of 15, with a standard deviation of 5. Coding this into an <a href="https://cran.r-project.org/">R</a> notebook, we have:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  set.seed(1234)
-</span></span><span style="display:flex;"><span>  n_sample &lt;- 250
-</span></span><span style="display:flex;"><span>  n_friends &lt;- round( rnorm(n_sample, 15, 5) )
-</span></span><span style="display:flex;"><span>  n_friends[n_friends &lt; 1] &lt;- 1 <span style="color:#008000"># hack so everyone has some friends</span>
-</span></span><span style="display:flex;"><span>  n_friends &lt;- as.integer(n_friends)
-</span></span></code></pre></div><p>The distribution here is, to some extent, outside the scope of the question. We do not need to worry about whether, for example, men or women have more friends <em>in general</em>, so long as our methods condition on the number of friends for each person.</p>
-<p>Now we have a vector of 250 values, each representing the number of friends for that interview. Next we must determine how many of those are minority-group friends. We can do this by imaging each of the friends in the count is a &rsquo;trial&rsquo;, and is either a coethnic or not with some fixed probability. In other words, the process is Bernoulli.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">  set.seed(1234)
+  n_sample &lt;- 250
+  n_friends &lt;- round( rnorm(n_sample, 15, 5) )
+  n_friends[n_friends &lt; 1] &lt;- 1 <span style="color:#008000"># hack so everyone has some friends</span>
+  n_friends &lt;- as.integer(n_friends)
+</code></pre></div><p>The distribution here is, to some extent, outside the scope of the question. We do not need to worry about whether, for example, men or women have more friends <em>in general</em>, so long as our methods condition on the number of friends for each person.</p>
+<p>Now we have a vector of 250 values, each representing the number of friends for that interview. Next we must determine how many of those are minority-group friends. We can do this by imaging each of the friends in the count is a &lsquo;trial&rsquo;, and is either a coethnic or not with some fixed probability. In other words, the process is Bernoulli.</p>
 <p>We choose a baseline number of minority friends at about 10%, which on the logit scale is about -2.2 log odds units.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>To generate this, I will treat each friend as a Bernoulli trial, and they will be a minority with probability <code>prob_minority_friend</code>, a value which differs for male and female interviewees. As R code:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  female &lt;- rbinom(n_sample, 1, 0.5)
-</span></span><span style="display:flex;"><span>  a &lt;- (-2.2)
-</span></span><span style="display:flex;"><span>  b &lt;- (-0.25)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  logistic &lt;- <span style="color:#00f">function</span>(x) exp(x) / (1 + exp(x))
-</span></span><span style="display:flex;"><span>  prob_minority_friend &lt;- logistic( a + b*female )
-</span></span><span style="display:flex;"><span>  n_minority_friends &lt;- rbinom( n_sample, n_friends, prob_minority_friend )
-</span></span></code></pre></div><p>We have set a log-odds difference of 0.25 between women and men, so the odds ratio is 0.78, and the data should show men to have more minority friends than women, conditional on any number of friends. If we can correctly recover that, we have a stats model we can take to the real data.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">  female &lt;- rbinom(n_sample, 1, 0.5)
+  a &lt;- (-2.2)
+  b &lt;- (-0.25)
+
+  logistic &lt;- function(x) exp(x) / (1 + exp(x))
+  prob_minority_friend &lt;- logistic( a + b*female )
+  n_minority_friends &lt;- rbinom( n_sample, n_friends, prob_minority_friend )
+</code></pre></div><p>We have set a log-odds difference of 0.25 between women and men, so the odds ratio is 0.78, and the data should show men to have more minority friends than women, conditional on any number of friends. If we can correctly recover that, we have a stats model we can take to the real data.</p>
 <p>One value of simulating data ourselves is that it encourages us to see the real data in a new light. The way we coded this focuses not on the percentage of coethnics among men and women, but rather, the probability. It is a subtle difference from the original question about percentages, which cannot properly account for variation in the total number of friends.</p>
 <p>The process model has, in fact, already specified the statistical model, save for the priors on the parameters. We will do this by a Binomial regression model with a logit link. Using <a href="http://www.xcelab.net/rm">Richard McElreath</a>&rsquo;s <code>map</code> model syntax, this would be:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>  d &lt;- data.frame( n_friends, n_minority_friends, female )
-</span></span><span style="display:flex;"><span>  d$n_friends &lt;- as.integer(d$n_friends) <span style="color:#008000"># necessary for dbinom</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  library(rethinking) <span style="color:#008000"># available at xcelab.net/rm/software</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  model1 &lt;- alist(
-</span></span><span style="display:flex;"><span>    n_minority_friends ~ dbinom(n_friends, p),
-</span></span><span style="display:flex;"><span>    logit(p) &lt;- a + b*female,
-</span></span><span style="display:flex;"><span>    a ~ dnorm(0, 1),
-</span></span><span style="display:flex;"><span>    b ~ dnorm(0, 1)
-</span></span><span style="display:flex;"><span>  )
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  fit1 &lt;- map(model1, data=d)
-</span></span></code></pre></div><p>Summarizing the model fits using <code>precis</code>, we have:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">  d &lt;- data.frame( n_friends, n_minority_friends, female )
+  d$n_friends &lt;- as.integer(d$n_friends) <span style="color:#008000"># necessary for dbinom</span>
+
+  library(rethinking) <span style="color:#008000"># available at xcelab.net/rm/software</span>
+
+  model1 &lt;- alist(
+    n_minority_friends ~ dbinom(n_friends, p),
+    logit(p) &lt;- a + b*female,
+    a ~ dnorm(0, 1),
+    b ~ dnorm(0, 1)
+  )
+
+  fit1 &lt;- map(model1, data=d)
+</code></pre></div><p>Summarizing the model fits using <code>precis</code>, we have:</p>
 <pre tabindex="0"><code>##    Mean StdDev  5.5% 94.5%
 ## a -2.22   0.08 -2.35 -2.09
 ## b -0.20   0.11 -0.39 -0.02
@@ -200,23 +227,23 @@ In my field interviews, I had people name friends they could go to for support. 
 <p>Still, this kind of validation analysis has wide applicability, and I try to use it whenever I can to check my understanding.</p>
 <h2 id="endnotes">Endnotes</h2>
 <hr>
-<div class="footnotes" role="doc-endnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1">
+<li id="fn:1" role="doc-endnote">
 <p>modified slightly for clarity&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2">
+<li id="fn:2" role="doc-endnote">
 <p>Confirm that <code>logistic(-2.2) = 0.10</code>, where <code>logistic(x) = exp(x)/(1 + exp(x))</code>.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3">
+<li id="fn:3" role="doc-endnote">
 <p>Confirm <code>logistic(a)</code> and <code>logistic(a + b)</code> from the <code>map</code> parameter estimates.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4">
+<li id="fn:4" role="doc-endnote">
 <p>Varying effects require we replace <code>map</code> with <code>map2stan</code>, so we can run a true MCMC analysis.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</div>
+</section>
 
 </content>
 <p>
@@ -226,6 +253,31 @@ In my field interviews, I had people name friends they could go to for support. 
     
   </main>
   <footer>
+
+<script>
+(() => {
+  const KEY = "theme";
+  const root = document.documentElement;
+  const btn  = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-toggle-icon");
+  if (!btn || !icon) return; 
+
+  const cur = () => root.getAttribute("data-theme") || "light";
+  const setIcon = t => {
+    icon.textContent = t === "dark" ? "☀️" : "🌙";
+    btn.title = btn.ariaLabel = t === "dark" ? "Switch to light mode" : "Switch to dark mode";
+  };
+  const apply = t => { root.setAttribute("data-theme", t); localStorage.setItem(KEY, t); setIcon(t); };
+
+  setIcon(cur());
+  btn.addEventListener("click", () => apply(cur() === "dark" ? "light" : "dark"));
+
+  const mql = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+  mql && mql.addEventListener?.("change", e => {
+    if (!localStorage.getItem(KEY)) apply(e.matches ? "dark" : "light");
+  });
+})();
+</script>
 </footer>
 
     
