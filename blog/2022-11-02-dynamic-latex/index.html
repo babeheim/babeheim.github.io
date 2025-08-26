@@ -5,183 +5,44 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="images/favicon.png" />
+<link rel="shortcut icon" href="/images/favicon.png" />
 <title>Adding dynamic computations to LaTeX documents | Bret Alexander Beheim</title>
 <meta name="title" content="Adding dynamic computations to LaTeX documents" />
 <meta name="description" content="how to create and insert dynamic values into your Latex manuscripts" />
 <meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Adding dynamic computations to LaTeX documents" />
-<meta property="og:description" content="how to create and insert dynamic values into your Latex manuscripts" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/2022-11-02-dynamic-latex/" /><meta property="og:image" content="https://babeheim.com/assets/goodtex.png" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-11-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-02T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+<meta property="og:url" content="/blog/2022-11-02-dynamic-latex/">
+  <meta property="og:site_name" content="Bret Alexander Beheim">
+  <meta property="og:title" content="Adding dynamic computations to LaTeX documents">
+  <meta property="og:description" content="how to create and insert dynamic values into your Latex manuscripts">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2022-11-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-11-02T00:00:00+00:00">
+    <meta property="og:image" content="https://babeheim.com/assets/goodtex.png">
 
 
 
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://babeheim.com/assets/goodtex.png" /><meta name="twitter:title" content="Adding dynamic computations to LaTeX documents"/>
-<meta name="twitter:description" content="how to create and insert dynamic values into your Latex manuscripts"/>
-<meta name="twitter:site" content="@babeheim"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://babeheim.com/assets/goodtex.png">
+  <meta name="twitter:title" content="Adding dynamic computations to LaTeX documents">
+  <meta name="twitter:description" content="how to create and insert dynamic values into your Latex manuscripts">
 
 
 
-<meta itemprop="name" content="Adding dynamic computations to LaTeX documents">
-<meta itemprop="description" content="how to create and insert dynamic values into your Latex manuscripts"><meta itemprop="datePublished" content="2022-11-02T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-11-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="435"><meta itemprop="image" content="https://babeheim.com/assets/goodtex.png" />
-<meta itemprop="keywords" content="" />
+
+  <meta itemprop="name" content="Adding dynamic computations to LaTeX documents">
+  <meta itemprop="description" content="how to create and insert dynamic values into your Latex manuscripts">
+  <meta itemprop="datePublished" content="2022-11-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2022-11-02T00:00:00+00:00">
+  <meta itemprop="wordCount" content="435">
+  <meta itemprop="image" content="https://babeheim.com/assets/goodtex.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
-  <style>
-
-  html, body, h1, h2, h3, h4, h5, h6, p {
-    font-family: "Times New Roman", Times, serif;
-     
-    font-size: 1.15em;
-  }
-
-  p, .sidebar, ol, ul, dl {
-    line-height: 1.6;
-     
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.05em;
-    margin-bottom: 1.0em;
-  }
-   
-
-  body {
-    font-family: "Times New Roman", Times, serif;
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: #ffffff;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: #444;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: #222;
-  }
-
-  a {
-    color: #3273dc;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #3273dc;
-    text-decoration: underline;
-  }
-
-  .title {
-    font-size: 1.15em;
-    border: 0;
-  }
-
-  .title:hover {
-    text-decoration: none;
-  }
-   
-
-  .title span {
-    font-weight: 400;
-  }
-
-  nav a {
-    margin-right: 10px;
-  }
-
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  input {
-    font-size: 16px;
-  }
-
-  content {
-    line-height: 1.6;
-  }
-
-  table {
-    width: 100%;
-  }
-
-  img {
-    max-width: 90%;
-  }
-
-  code {
-    padding: 2px 5px;
-    background-color: #f5f3ff;
-  }
-   
-
-  pre code {
-    color: #222;
-    display: block;
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-  }
-
-  blockquote {
-    border-left: 1px solid #999;
-    color: #222;
-    padding-left: 20px;
-    font-style: italic;
-  }
-
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
-
-  .helptext {
-    color: #777;
-    font-size: small;
-  }
-
-  .errorlist {
-    color: #eba613;
-    font-size: small;
-  }
-
-   
-  ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-  }
-
-  ul.blog-posts li {
-    display: flex;
-  }
-
-  ul.blog-posts li span {
-    flex: 0 0 130px;
-  }
-
-  ul.blog-posts li a:visited {
-    color: #8b6fcb;
-  }
-
-</style>
-
+  <link rel="stylesheet" href="/css/custom.css">
 <script>
   MathJax = {
     tex: {
@@ -206,17 +67,20 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4PXGB1H7X2');
+        }
+      </script>
 
 <style>
   .twitter-tweet-rendered {
@@ -258,8 +122,6 @@ if (!doNotTrack) {
 </a>
 <nav><a href="/">About</a>
 
-<a href="/research.html">Research</a>
-
 <a href="/publications.html">Publications</a>
 
 <a href="/people.html">People</a>
@@ -267,8 +129,6 @@ if (!doNotTrack) {
 <a href="/software.html">Software</a>
 
 <a href="/teaching.html">Teaching</a>
-
-<a href="/notebooks.html">Notebooks</a>
 
 <a href="/blog">Blog</a>
 </nav>
@@ -285,7 +145,7 @@ if (!doNotTrack) {
 </p>
 
 <content>
-  <figure><a href="https://tex.stackexchange.com/a/74609"><img src="/assets/goodtex.png"/></a>
+  <figure><a href="https://tex.stackexchange.com/a/74609"><img src="/assets/goodtex.png"></a>
 </figure>
 
 <p>Recently, I&rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&rsquo;s nothing fundamentally wrong with such <a href="https://en.wikipedia.org/wiki/Notebook_interface">computational notebooks</a>, but if I had to pick one reason to stay with $\LaTeX$ it&rsquo;s this: my first <code>.tex</code> problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc workflows from only a few years ago.</p>
@@ -304,7 +164,12 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>The number of participants was <span style="color:#00f">\nPpl</span>{} with a mean age of <span style="color:#00f">\meanAge</span>.
 </span></span><span style="display:flex;"><span><span style="color:#00f">\end</span>{document}
 </span></span></code></pre></div><p>When the $\LaTeX$ document compiles, it replaces these custom commands with values<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> they store, so the document reads:</p>
-<p><img src="/assets/maindottex.png" alt=""></p>
+<p><img
+  src="/assets/maindottex.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/></p>
 <p>Cool, but we still have to <em>type out the numbers</em> in the manuscript itself, like a schmuck. To really make this trick work, we have to tell LaTeX to <em>load</em> these calculations from somewhere.</p>
 <h2 id="pre-computation-in-r-or-whatever">Pre-computation in R (or whatever)</h2>
 <p>To make to documents dynamic, we just need to write code that saves our R calculations in the <code>\newcommand</code> format that $\LaTeX$ uses. Here&rsquo;s the function I use, and a simple example:</p>

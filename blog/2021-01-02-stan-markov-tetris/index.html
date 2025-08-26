@@ -5,183 +5,44 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="images/favicon.png" />
+<link rel="shortcut icon" href="/images/favicon.png" />
 <title>Fitting Markov Models to Tetris Data in Stan | Bret Alexander Beheim</title>
 <meta name="title" content="Fitting Markov Models to Tetris Data in Stan" />
 <meta name="description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language." />
 <meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Fitting Markov Models to Tetris Data in Stan" />
-<meta property="og:description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/2021-01-02-stan-markov-tetris/" /><meta property="og:image" content="https://babeheim.com/assets/tetris-cover.jpg" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2021-01-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-01-02T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+<meta property="og:url" content="/blog/2021-01-02-stan-markov-tetris/">
+  <meta property="og:site_name" content="Bret Alexander Beheim">
+  <meta property="og:title" content="Fitting Markov Models to Tetris Data in Stan">
+  <meta property="og:description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2021-01-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-01-02T00:00:00+00:00">
+    <meta property="og:image" content="https://babeheim.com/assets/tetris-cover.jpg">
 
 
 
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://babeheim.com/assets/tetris-cover.jpg" /><meta name="twitter:title" content="Fitting Markov Models to Tetris Data in Stan"/>
-<meta name="twitter:description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language."/>
-<meta name="twitter:site" content="@babeheim"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://babeheim.com/assets/tetris-cover.jpg">
+  <meta name="twitter:title" content="Fitting Markov Models to Tetris Data in Stan">
+  <meta name="twitter:description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language.">
 
 
 
-<meta itemprop="name" content="Fitting Markov Models to Tetris Data in Stan">
-<meta itemprop="description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language."><meta itemprop="datePublished" content="2021-01-02T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-01-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1824"><meta itemprop="image" content="https://babeheim.com/assets/tetris-cover.jpg" />
-<meta itemprop="keywords" content="" />
+
+  <meta itemprop="name" content="Fitting Markov Models to Tetris Data in Stan">
+  <meta itemprop="description" content="we use real Tetris data to fit Bayesian multistate Markov models in the Stan programming language.">
+  <meta itemprop="datePublished" content="2021-01-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2021-01-02T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1824">
+  <meta itemprop="image" content="https://babeheim.com/assets/tetris-cover.jpg">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
-  <style>
-
-  html, body, h1, h2, h3, h4, h5, h6, p {
-    font-family: "Times New Roman", Times, serif;
-     
-    font-size: 1.15em;
-  }
-
-  p, .sidebar, ol, ul, dl {
-    line-height: 1.6;
-     
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.05em;
-    margin-bottom: 1.0em;
-  }
-   
-
-  body {
-    font-family: "Times New Roman", Times, serif;
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: #ffffff;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: #444;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: #222;
-  }
-
-  a {
-    color: #3273dc;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #3273dc;
-    text-decoration: underline;
-  }
-
-  .title {
-    font-size: 1.15em;
-    border: 0;
-  }
-
-  .title:hover {
-    text-decoration: none;
-  }
-   
-
-  .title span {
-    font-weight: 400;
-  }
-
-  nav a {
-    margin-right: 10px;
-  }
-
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  input {
-    font-size: 16px;
-  }
-
-  content {
-    line-height: 1.6;
-  }
-
-  table {
-    width: 100%;
-  }
-
-  img {
-    max-width: 90%;
-  }
-
-  code {
-    padding: 2px 5px;
-    background-color: #f5f3ff;
-  }
-   
-
-  pre code {
-    color: #222;
-    display: block;
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-  }
-
-  blockquote {
-    border-left: 1px solid #999;
-    color: #222;
-    padding-left: 20px;
-    font-style: italic;
-  }
-
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
-
-  .helptext {
-    color: #777;
-    font-size: small;
-  }
-
-  .errorlist {
-    color: #eba613;
-    font-size: small;
-  }
-
-   
-  ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-  }
-
-  ul.blog-posts li {
-    display: flex;
-  }
-
-  ul.blog-posts li span {
-    flex: 0 0 130px;
-  }
-
-  ul.blog-posts li a:visited {
-    color: #8b6fcb;
-  }
-
-</style>
-
+  <link rel="stylesheet" href="/css/custom.css">
 <script>
   MathJax = {
     tex: {
@@ -206,17 +67,20 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4PXGB1H7X2');
+        }
+      </script>
 
 <style>
   .twitter-tweet-rendered {
@@ -258,8 +122,6 @@ if (!doNotTrack) {
 </a>
 <nav><a href="/">About</a>
 
-<a href="/research.html">Research</a>
-
 <a href="/publications.html">Publications</a>
 
 <a href="/people.html">People</a>
@@ -267,8 +129,6 @@ if (!doNotTrack) {
 <a href="/software.html">Software</a>
 
 <a href="/teaching.html">Teaching</a>
-
-<a href="/notebooks.html">Notebooks</a>
 
 <a href="/blog">Blog</a>
 </nav>
@@ -285,7 +145,12 @@ if (!doNotTrack) {
 </p>
 
 <content>
-  <p><img src="/assets/tetrisnes.gif" alt=""></p>
+  <p><img
+  src="/assets/tetrisnes.gif"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/></p>
 <p>In my <a href="/blog/2020-12-29-is-tetris-biased/">last post</a>, I simulated millions draws from two versions of the piece randomizer inside Tetris. The 1989 algorithm for NES Tetris can be described as a first-order Markov process, biased against repeat pieces, while the Gameboy algorithm is a more complex, second-order process with some <a href="/blog/2020-12-29-is-tetris-biased/#markov-and-tetris">seriously strange biases</a>. At least, that&rsquo;s what the simulation says. Here we use real Tetris data to find out if these simulation models are accurate, using the Stan language to fit simple multistate Markov models.</p>
 <h2 id="the-data">The Data</h2>
 <p>My daughters and I recorded several hundred real Tetris sequences, from both the official 1989 NES edition and the 1989 Gameboy edition.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> After three rounds, we had these 579 draws from the NES:</p>
@@ -317,9 +182,19 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>)
 </span></span><span style="display:flex;"><span>m0 &lt;- stan(file = <span style="color:#a31515">&#34;./stan/categorical.stan&#34;</span>, data = dat_list)
 </span></span></code></pre></div><p>The <code>stan</code> function returns posterior estimates of each parameter, standing for the marginal probability each of the seven pieces occurs. We can directly compare these estimates to the predictions from our R simulations from last time, to test if they match. Here I&rsquo;ve presented this as a plot, with the predicted probabilities from the simulation on the x-axis (exact values), and the matching estimates from the Stan model on the y-axis (means, and 89% density intervals).</p>
-<p><img src="/assets/model0_estimates_vs_sim_gameboy.png" alt=""><br>
+<p><img
+  src="/assets/model0_estimates_vs_sim_gameboy.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/>
 <em>Figure 1. Categorical parameter estimates from Gameboy data (n = 692, means and 89% HPDI). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
-<p><img src="/assets/model0_estimates_vs_sim_nes.png" alt=""><br>
+<p><img
+  src="/assets/model0_estimates_vs_sim_nes.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/><br>
 <em>Figure 2. Categorical parameter estimates from NES data (n = 579, means and 89% HPDI). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
 <p>As we expected, the Gameboy algorithm is hard on Z, and favors S, T and especially O, which appears in 19% of actual draws. But this isn&rsquo;t really good evidence that either algorithm is accurate, since most estimates are not distinct from the horizontal line-of-evenness at 1/7th. Only the L-piece in the Gameboy is a clear match with the simulation. The other estimates could have come from the algorithm, but they could be from something else too. We need to go deeper&hellip;</p>
 <h2 id="markov">Fitting the Markov models</h2>
@@ -340,7 +215,12 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>  <span style="color:#00f">for</span> (t in 2:T) y[t] ~ categorical(theta[y[t - 1]]);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Our <code>theta</code> changes from a vector holding seven probabilities into seven vectors, one for each state we could be in at time <code>t - 1</code>. This is the transition matrix, now with 49 parameters instead of 7. We give each vector in <code>theta</code> its own Dirichlet prior as before, and update the model using the <code>stan</code> function in R.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> The estimates of each of the 49 posterior estimates is comparable to the 49 frequencies from the limiting distribution of the Markov chain:</p>
-<p><img src="/assets/model1_estimates_vs_sim_nes.png" alt=""><br>
+<p><img
+  src="/assets/model1_estimates_vs_sim_nes.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/><br>
 <em>Figure 3. Markov parameter estimates from NES data (n = 579, means and 89% HPDI). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
 <p>As predicted, the real data shows a strong bias against two-in-a-row outcomes (the bottom left estimates). This is strong evidence that the NES algorithm we wrote is an accurate reflection of what we see in the &lsquo;real world&rsquo; of gameplay on the NES, e.g. at the <a href="https://thectwc.com/">Classic Tetris World Championships</a>.</p>
 <p>To prepare the Markov model for the Gameboy data, we must allow it to see the <em>last two</em> draws as follows:</p>
@@ -362,7 +242,12 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>  <span style="color:#00f">for</span> (t in 3:T) y[t] ~ categorical(theta[y[t - 2]][y[t - 1]]);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>theta</code> object now has another dimension - rather than 7 vectors, we now need 7 $\times$ 7 vectors for 49 states in the system. We can pass the data into this model as above, giving estimates for all 343 parameters to compare against the predicted values:</p>
-<p><img src="/assets/model2_estimates_vs_sim_gameboy.png" alt=""><br>
+<p><img
+  src="/assets/model2_estimates_vs_sim_gameboy.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/><br>
 <em>Figure 4. Second-order Markov parameter estimates from Gameboy data (n = 692, means only). The slanted line indicates observations match predictions, the horizontal line indicates uniform random sampling.</em></p>
 <p>Compared to the NES results, this is not very satisfying. With 343 parameters and only 692 data points, some effects were accurately predicted, but others are totally unclear, or clearly inaccurate. We still do not know if the simulation really matches real data.</p>
 <p>What to do? One solution is just to collect <em>more data</em>, which would bring our estimates into sharper focus. But more data takes time and energy to prepare (which I have been told is not in the family budget). There is a simpler way, though.</p>
@@ -385,7 +270,12 @@ $$</p>
 </span></span><span style="display:flex;"><span>gamma_sd &lt;- sqrt(p_mean * (1 - p_mean) / (n + 7 + 1))
 </span></span></code></pre></div><p>In the real Gameboy data we collected, the chain visits these twelve special states $n$ = 188 times, and a &ldquo;favorite&rdquo; piece was chosen $x$ = 156 times. Updating our signal model with this data, we find $\gamma$ = 0.387($\pm$ 0.028), in almost exact agreement with the predictions from the simulation!<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 <p>Model symmetries let us test our predictions with only 692 observations, but we didn&rsquo;t even need this much data. If we plot the expected $x$ for any $n$ under each hypothesis, and compare to the observed data in each chain, the two algorithms quickly diverge:</p>
-<p><img src="/assets/cumulative_signals.png" alt=""><br>
+<p><img
+  src="/assets/cumulative_signals.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/><br>
 <em>Figure 5. Counts of $x$ and $n$ for each round of Tetris played, the 95% confidence intervals each algorithm, and the expected value under Uniform sampling.</em></p>
 <p>After only about 120 draws (so an special-state $n$ between 30 and 40), the behavior of the two algorithms is clearly different, and we know which is which.</p>
 <h1 id="conclusions">Conclusions</h1>

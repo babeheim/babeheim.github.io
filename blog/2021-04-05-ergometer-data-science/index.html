@@ -5,183 +5,44 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="images/favicon.png" />
+<link rel="shortcut icon" href="/images/favicon.png" />
 <title>Indoor rowing &amp; data science with R | Bret Alexander Beheim</title>
 <meta name="title" content="Indoor rowing &amp; data science with R" />
 <meta name="description" content="exploring the data from my Concept2 rowing ergometer" />
 <meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Indoor rowing &amp; data science with R" />
-<meta property="og:description" content="exploring the data from my Concept2 rowing ergometer" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/2021-04-05-ergometer-data-science/" /><meta property="og:image" content="https://babeheim.com/assets/distance_split.png" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2021-04-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-04-05T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+<meta property="og:url" content="/blog/2021-04-05-ergometer-data-science/">
+  <meta property="og:site_name" content="Bret Alexander Beheim">
+  <meta property="og:title" content="Indoor rowing & data science with R">
+  <meta property="og:description" content="exploring the data from my Concept2 rowing ergometer">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2021-04-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-04-05T00:00:00+00:00">
+    <meta property="og:image" content="https://babeheim.com/assets/distance_split.png">
 
 
 
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://babeheim.com/assets/distance_split.png" /><meta name="twitter:title" content="Indoor rowing &amp; data science with R"/>
-<meta name="twitter:description" content="exploring the data from my Concept2 rowing ergometer"/>
-<meta name="twitter:site" content="@babeheim"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://babeheim.com/assets/distance_split.png">
+  <meta name="twitter:title" content="Indoor rowing & data science with R">
+  <meta name="twitter:description" content="exploring the data from my Concept2 rowing ergometer">
 
 
 
-<meta itemprop="name" content="Indoor rowing &amp; data science with R">
-<meta itemprop="description" content="exploring the data from my Concept2 rowing ergometer"><meta itemprop="datePublished" content="2021-04-05T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2021-04-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1049"><meta itemprop="image" content="https://babeheim.com/assets/distance_split.png" />
-<meta itemprop="keywords" content="" />
+
+  <meta itemprop="name" content="Indoor rowing & data science with R">
+  <meta itemprop="description" content="exploring the data from my Concept2 rowing ergometer">
+  <meta itemprop="datePublished" content="2021-04-05T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2021-04-05T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1049">
+  <meta itemprop="image" content="https://babeheim.com/assets/distance_split.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
-  <style>
-
-  html, body, h1, h2, h3, h4, h5, h6, p {
-    font-family: "Times New Roman", Times, serif;
-     
-    font-size: 1.15em;
-  }
-
-  p, .sidebar, ol, ul, dl {
-    line-height: 1.6;
-     
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.05em;
-    margin-bottom: 1.0em;
-  }
-   
-
-  body {
-    font-family: "Times New Roman", Times, serif;
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: #ffffff;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: #444;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: #222;
-  }
-
-  a {
-    color: #3273dc;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #3273dc;
-    text-decoration: underline;
-  }
-
-  .title {
-    font-size: 1.15em;
-    border: 0;
-  }
-
-  .title:hover {
-    text-decoration: none;
-  }
-   
-
-  .title span {
-    font-weight: 400;
-  }
-
-  nav a {
-    margin-right: 10px;
-  }
-
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  input {
-    font-size: 16px;
-  }
-
-  content {
-    line-height: 1.6;
-  }
-
-  table {
-    width: 100%;
-  }
-
-  img {
-    max-width: 90%;
-  }
-
-  code {
-    padding: 2px 5px;
-    background-color: #f5f3ff;
-  }
-   
-
-  pre code {
-    color: #222;
-    display: block;
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-  }
-
-  blockquote {
-    border-left: 1px solid #999;
-    color: #222;
-    padding-left: 20px;
-    font-style: italic;
-  }
-
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
-
-  .helptext {
-    color: #777;
-    font-size: small;
-  }
-
-  .errorlist {
-    color: #eba613;
-    font-size: small;
-  }
-
-   
-  ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-  }
-
-  ul.blog-posts li {
-    display: flex;
-  }
-
-  ul.blog-posts li span {
-    flex: 0 0 130px;
-  }
-
-  ul.blog-posts li a:visited {
-    color: #8b6fcb;
-  }
-
-</style>
-
+  <link rel="stylesheet" href="/css/custom.css">
 <script>
   MathJax = {
     tex: {
@@ -206,17 +67,20 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4PXGB1H7X2');
+        }
+      </script>
 
 <style>
   .twitter-tweet-rendered {
@@ -258,8 +122,6 @@ if (!doNotTrack) {
 </a>
 <nav><a href="/">About</a>
 
-<a href="/research.html">Research</a>
-
 <a href="/publications.html">Publications</a>
 
 <a href="/people.html">People</a>
@@ -267,8 +129,6 @@ if (!doNotTrack) {
 <a href="/software.html">Software</a>
 
 <a href="/teaching.html">Teaching</a>
-
-<a href="/notebooks.html">Notebooks</a>
 
 <a href="/blog">Blog</a>
 </nav>
@@ -285,31 +145,44 @@ if (!doNotTrack) {
 </p>
 
 <content>
-  <p><img src="/assets/model-d.png" alt=""><br>
+  <p><img
+  src="/assets/model-d.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/><br>
 <em>Figure 1: Concept2 Model D ergometer</em></p>
 <p>Since 2014, I&rsquo;ve been using a Concept2 indoor rowing machine. I&rsquo;m not a very strong rower, but I enjoy tracking my progress from the great data stored by the PM5 on-board computer. Parsing the raw data is a bit tricky, so I wrote an R package, <a href="https://github.com/babeheim/c2ergometer">c2ergometer</a>, to painlessly manage a database, and developed some data visualizations using the R language to track my rowing performance. Here, I&rsquo;ll show some of my favorites.</p>
 <h2 id="rowing-speed-power-and-energy">Rowing Speed, Power, and Energy</h2>
 <p>During a row, the Concept2 Performance Monitor saves running averages for preset observation intervals called splits. Rowers care most about the <em>split time</em>, the time to travel 500 meters; the lower the split time, the faster the rower. The <em>total distance</em> traveled in a particular row is also critical, with 2-kilometer events the standard racing distance. Together, these numbers give a good basis for comparing rows, and rowers.</p>
-<p><img src="/assets/distance_split.png" alt=""><br>
+<p><img
+  src="/assets/distance_split.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/><br>
 <em>Figure 2: workout distances and split times, with energy isoclines</em></p>
 <p>In Figure 2, I&rsquo;ve plotted some of my workouts distances against their average split times. Each workout is a line, curving up and down as my speed changes, and ending in a colored dot (I shaded the colors by Wattage, see below). The fixed-distance rows all end at the same point on the x-axis, but faster rows have lower y-axis values. For the 30-minute rows, the distance rowed varies along a curve, depending on how fast I was going.</p>
 <p>This graph highlights the pattern of my personal bests for each event. My fastest 500m sprints take about 100 seconds (1:40). For the 2000m event, I&rsquo;ve finished with a split time under 2 minutes for 2000m sometimes, but I&rsquo;ve never done this for 5K or higher. As the distance increases, I also get slower.</p>
 <p>There&rsquo;s one more piece of information I&rsquo;ve added to this graph, shown by the dashed blue lines. These represent lines of constant <em>mechanical energy</em>, measured in Watt-hours. Since the PM5 Performance Monitor can track the power added to the rower&rsquo;s flywheel, we can find the average power for a known workout distance and average velocity.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> These lines also allow us to compare how much energy each row demands. For example, my personal best 30-minute row (point A) generated about 75 Watt-hours over about 7,000 meters, which is still less energy than a slow, casual 10,000 meter row (point B).</p>
 <h2 id="stroke-power-separation">Stroke-Power Separation</h2>
 <p>Velocity is the key measure of performance in rowing, but not the only one. Another key metric from the Performance Monitor is the <em>stroke rate</em>, in rowing strokes per minute, which can help us understand a bit about a rower&rsquo;s strength, endurance and approach to a race.</p>
-<p><img src="/assets/stroke-form-diagram.png" alt=""><br>
+<p><img
+  src="/assets/stroke-form-diagram.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/><br>
 <em>Figure 3: Proper stroke form illustration from the Concept2 manual</em></p>
 <p>Watch this rower doing a 2K test:</p>
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/Ju_FDZDy9Zs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Ju_FDZDy9Zs?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
 
 <p>Compare with this rower, also doing a 2K test:</p>
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/AJdzDykb_M0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/AJdzDykb_M0?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
 
 <p>Both athletes row the same distance, and they finish within a few seconds of each other. Yet their SPM is quite different - the first rows at 39 strokes per minute, finishing with a time of 7:11.7, while the second was going at 32 strokes per minute, yet finished about 7 seconds faster. Why?</p>
 <p>The second rower goes through the stroke cycle slower, but is pulling harder, and so doing <em>more work per stroke</em>. This is related to the rower&rsquo;s power output (and so the speed) by</p>
@@ -317,16 +190,31 @@ if (!doNotTrack) {
 \frac{\mathrm{work}}{\mathrm{stroke}} \times \frac{\mathrm{strokes}}{\mathrm{time}} = \mathrm{power}.
 $$</p>
 <p>Since power and stroke rate are supplied by the PM5, we can calculate the work-per-stroke using this formula, which leads to my second visualization:</p>
-<p><img src="/assets/power_2000.png" alt=""><br>
+<p><img
+  src="/assets/power_2000.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/><br>
 <em>Figure 4: stroke-power decomposition for my rows (orange) and the two rows from the above footage</em></p>
 <p>The curved lines trace constant split times, in increments to 10 seconds. That is, any point along the &ldquo;2:00&rdquo; line shows the exact combination of stroke rate and work-per-stroke that results in a 2:00 split time. We can see Rower 2&rsquo;s got the lowest split time,  Comparing my own rows, I can&rsquo;t really row as fast as Rower 1 at 39 SPM, and I can&rsquo;t pull as hard as Rower 2, who creates about 500 joules per stroke, so I&rsquo;m unlikely to enter the sub-1:50 club anytime soon.</p>
 <h2 id="cardiovascular-efficiency">Cardiovascular Efficiency</h2>
 <p>The Performance Monitor also has the ability to connect to heart rate monitors, and for each split stores my average heart rate in beats per minute. Plotting my heart rate against the split time, I see the following relationship:</p>
-<p><img src="/assets/heart_rate_pace.png" alt=""><br>
+<p><img
+  src="/assets/heart_rate_pace.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/><br>
 <em>Figure 5: my split times and average heart rates, with linear regression line</em></p>
 <p>There&rsquo;s a pretty solid linear relationship here: the faster I go, the higher my heart rate, with each increase in 10 seconds requires about 8 BPM, up to my max heart rate in the high 170s.</p>
 <p>This isn&rsquo;t quite the whole story, though. Like the above with work-per-stroke, I&rsquo;ve found it useful to separate power into heart rate and work-per-heartbeat, and graph that:</p>
-<p><img src="/assets/heart_rate_work.png" alt=""><br>
+<p><img
+  src="/assets/heart_rate_work.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/><br>
 <em>Figure 6: power decomposition by heart rate for 2000m (blue), 5000m (orange), and 30-minute (red) rows, with trend lines</em></p>
 <p>On short rows (blue dots), a higher heart rate means more speed. But on long 30-minute rows (red dots), even with a high heart rate, I&rsquo;m not going much faster. Why is this? My guess is fatigue. To put it another way, as I get tired, my heart rate goes up even as I hold a steady pace. I suppose that one metric for physical endurance, then, is the extent to which this slope stays nice and steep on longer rows.</p>
 <h2 id="conclusions">Conclusions</h2>

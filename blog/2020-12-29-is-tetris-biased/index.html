@@ -5,183 +5,45 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="images/favicon.png" />
+<link rel="shortcut icon" href="/images/favicon.png" />
 <title>Is Tetris Biased? | Bret Alexander Beheim</title>
 <meta name="title" content="Is Tetris Biased?" />
-<meta name="description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise." />
+<meta name="description" content="
+My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise." />
 <meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Is Tetris Biased?" />
-<meta property="og:description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/2020-12-29-is-tetris-biased/" /><meta property="og:image" content="images/bret-head.jpg" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2020-12-27T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-12-27T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+<meta property="og:url" content="/blog/2020-12-29-is-tetris-biased/">
+  <meta property="og:site_name" content="Bret Alexander Beheim">
+  <meta property="og:title" content="Is Tetris Biased?">
+  <meta property="og:description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn’t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2020-12-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-12-27T00:00:00+00:00">
+    <meta property="og:image" content="/images/bret-head.jpg">
 
 
 
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="images/bret-head.jpg" /><meta name="twitter:title" content="Is Tetris Biased?"/>
-<meta name="twitter:description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise."/>
-<meta name="twitter:site" content="@babeheim"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/images/bret-head.jpg">
+  <meta name="twitter:title" content="Is Tetris Biased?">
+  <meta name="twitter:description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn’t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.">
 
 
 
-<meta itemprop="name" content="Is Tetris Biased?">
-<meta itemprop="description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise."><meta itemprop="datePublished" content="2020-12-27T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-12-27T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2358"><meta itemprop="image" content="images/bret-head.jpg" />
-<meta itemprop="keywords" content="" />
+
+  <meta itemprop="name" content="Is Tetris Biased?">
+  <meta itemprop="description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn’t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.">
+  <meta itemprop="datePublished" content="2020-12-27T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2020-12-27T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2358">
+  <meta itemprop="image" content="/images/bret-head.jpg">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
-  <style>
-
-  html, body, h1, h2, h3, h4, h5, h6, p {
-    font-family: "Times New Roman", Times, serif;
-     
-    font-size: 1.15em;
-  }
-
-  p, .sidebar, ol, ul, dl {
-    line-height: 1.6;
-     
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.05em;
-    margin-bottom: 1.0em;
-  }
-   
-
-  body {
-    font-family: "Times New Roman", Times, serif;
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: #ffffff;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: #444;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: #222;
-  }
-
-  a {
-    color: #3273dc;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #3273dc;
-    text-decoration: underline;
-  }
-
-  .title {
-    font-size: 1.15em;
-    border: 0;
-  }
-
-  .title:hover {
-    text-decoration: none;
-  }
-   
-
-  .title span {
-    font-weight: 400;
-  }
-
-  nav a {
-    margin-right: 10px;
-  }
-
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  input {
-    font-size: 16px;
-  }
-
-  content {
-    line-height: 1.6;
-  }
-
-  table {
-    width: 100%;
-  }
-
-  img {
-    max-width: 90%;
-  }
-
-  code {
-    padding: 2px 5px;
-    background-color: #f5f3ff;
-  }
-   
-
-  pre code {
-    color: #222;
-    display: block;
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-  }
-
-  blockquote {
-    border-left: 1px solid #999;
-    color: #222;
-    padding-left: 20px;
-    font-style: italic;
-  }
-
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
-
-  .helptext {
-    color: #777;
-    font-size: small;
-  }
-
-  .errorlist {
-    color: #eba613;
-    font-size: small;
-  }
-
-   
-  ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-  }
-
-  ul.blog-posts li {
-    display: flex;
-  }
-
-  ul.blog-posts li span {
-    flex: 0 0 130px;
-  }
-
-  ul.blog-posts li a:visited {
-    color: #8b6fcb;
-  }
-
-</style>
-
+  <link rel="stylesheet" href="/css/custom.css">
 <script>
   MathJax = {
     tex: {
@@ -206,17 +68,20 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
-}
-</script>
-
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4PXGB1H7X2');
+        }
+      </script>
 
 <style>
   .twitter-tweet-rendered {
@@ -258,8 +123,6 @@ if (!doNotTrack) {
 </a>
 <nav><a href="/">About</a>
 
-<a href="/research.html">Research</a>
-
 <a href="/publications.html">Publications</a>
 
 <a href="/people.html">People</a>
@@ -267,8 +130,6 @@ if (!doNotTrack) {
 <a href="/software.html">Software</a>
 
 <a href="/teaching.html">Teaching</a>
-
-<a href="/notebooks.html">Notebooks</a>
 
 <a href="/blog">Blog</a>
 </nav>
@@ -285,7 +146,12 @@ if (!doNotTrack) {
 </p>
 
 <content>
-  <p><img src="/assets/tetrisgameboy.gif" alt="" title="gif by Twothless"></p>
+  <p><img
+  src="/assets/tetrisgameboy.gif"
+  alt=""
+  title="gif by Twothless"
+  loading="lazy" decoding="async"
+  class="post-image"/></p>
 <p>My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some <a href="https://www.youtube.com/watch?v=Alw5hs0chj0">mysterious intelligence</a> who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the <a href="https://cran.r-project.org/">R programming language</a> - and plenty of free resources <a href="https://tetris.fandom.com/wiki/Tetris_Wiki">online</a>, this is a straightforwards exercise.</p>
 <p>The first thing to know about the Tetris randomizer is there is no <em>one</em> randomizer, as it has changed in almost every edition since Alexey Pajitnov&rsquo;s original uniform sampler in 1984.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> To Tetris aficionados, two key phenomena determine the quality of a particular randomizer: <em>droughts</em>, which are the periods before a piece reappears, and <em>floods</em>, in which a piece appears multiple times in a row. Since 2001, official copies of Tetris use the &ldquo;7-bag&rdquo; randomizer, in which the seven pieces are output in randomly ordered sets. The two algorithms I will focus on here are the ones I grew up with, for Tetris on the NES and the Gameboy, both released in 1989.</p>
 <h2 id="two-1989-algorithms">Two 1989 Algorithms</h2>
@@ -307,7 +173,12 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>    yaxt = <span style="color:#a31515">&#34;n&#34;</span>, ylim = c(0, 15e5))
 </span></span><span style="display:flex;"><span>abline(h = 1e7/7, lty = 2)
 </span></span><span style="display:flex;"><span>axis(2, at = c(0, 5e5, 10e5, 15e5))
-</span></span></code></pre></div><p><img src="/assets/randomizer_counts.png" alt=""></p>
+</span></span></code></pre></div><p><img
+  src="/assets/randomizer_counts.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/></p>
 <p>Simulating ten million draws from each, we can see right away that something is wrong with the Gameboy algorithm. Several hundred thousand L pieces are missing, there are far too many O, S and T pieces, and a clear bias against J, Z and I. With so much data, we can think of these counts as a <em>limiting probability distribution</em> of outcomes, e.g.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>round(100 * (prop.table(table(x_gb))), 1)
 </span></span><span style="display:flex;"><span>&gt; x_gb
@@ -407,7 +278,12 @@ if (!doNotTrack) {
 </span></span><span style="display:flex;"><span>drought_pmf &lt;- prop.table(table(drought_lengths)) <span style="color:#008000"># pr(X = t)</span>
 </span></span><span style="display:flex;"><span>drought_cdf &lt;- cumsum(drought_pmf) <span style="color:#008000"># pr(X &lt;= t)</span>
 </span></span><span style="display:flex;"><span>drought_ccdf &lt;- 1 - drought_cdf <span style="color:#008000"># pr(X &gt; t)</span>
-</span></span></code></pre></div><p><img src="/assets/drought_lengths.png" alt=""></p>
+</span></span></code></pre></div><p><img
+  src="/assets/drought_lengths.png"
+  alt=""
+  
+  loading="lazy" decoding="async"
+  class="post-image"/></p>
 <p>The average drought length for the NES is 6.2 pieces, and for the Gameboy, 6.3, but with an exponential decay this not especially useful to know. Graphing the cumulative probability the drought lasts as long as any length $t$ implies that the drought duration follows a power law for both NES and Gameboy, with the NES having a slightly faster decay rate. For example, a drought longer than 20 pieces will occur 3.3% of the time on the NES, and 4% of the time on the Gameboy, and a drought longer than 40 occurs twice as often on the Gameboy (0.2% vs 0.1%).</p>
 <p>It&rsquo;s useful to compare both of these against what you would expect under purely random draws, where droughts would follow the Geometric distribution. Using R&rsquo;s built-in Geometric probability functions, <code>1 - pgeom(20, 1/7)</code> is 3.9% (dotted line), which closely tracks with the Gameboy.</p>
 <h2 id="conclusions-and-a-problem">Conclusions, and a Problem</h2>
