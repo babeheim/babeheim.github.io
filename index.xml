@@ -61,15 +61,6 @@ I&amp;rsquo;ve previously taught the following courses:
     </item>
     
     <item>
-      <title>Test</title>
-      <link>/test.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/test.html</guid>
-      <description>{width=10%}</description>
-    </item>
-    
-    <item>
       <title>Adding dynamic computations to LaTeX documents</title>
       <link>/blog/2022-11-02-dynamic-latex/</link>
       <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
