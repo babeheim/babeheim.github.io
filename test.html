@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="//localhost:1313/images/favicon.png" />
+<link rel="shortcut icon" href="images/favicon.png" />
 <title>Test | Bret Alexander Beheim</title>
 <meta name="title" content="Test" />
-<meta name="description" content="Test
-" />
+<meta name="description" content="{width=10%}" />
 <meta name="keywords" content="" />
 
 
-<meta property="og:url" content="//localhost:1313/test.html">
-  <meta property="og:site_name" content="Bret Alexander Beheim">
-  <meta property="og:title" content="Test">
-  <meta property="og:description" content="Test">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="og:image" content="//localhost:1313/images/bret-head.jpg">
+<meta property="og:title" content="Test" />
+<meta property="og:description" content="{width=10%}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/test.html" /><meta property="og:image" content="images/bret-head.jpg"/><meta property="article:section" content="" />
+
+<meta property="og:site_name" content="Bret Alexander Beheim" />
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="//localhost:1313/images/bret-head.jpg">
-  <meta name="twitter:title" content="Test">
-  <meta name="twitter:description" content="Test">
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="images/bret-head.jpg"/>
+
+<meta name="twitter:title" content="Test"/>
+<meta name="twitter:description" content="{width=10%}"/>
 
 
 
+<meta itemprop="name" content="Test">
+<meta itemprop="description" content="{width=10%}">
 
-  <meta itemprop="name" content="Test">
-  <meta itemprop="description" content="Test">
-  <meta itemprop="wordCount" content="1">
-  <meta itemprop="image" content="//localhost:1313/images/bret-head.jpg">
+<meta itemprop="wordCount" content="1"><meta itemprop="image" content="images/bret-head.jpg"/>
+<meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="stylesheet" href="/css/custom.css">
@@ -63,60 +62,86 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4PXGB1H7X2');
-        }
-      </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
+}
+</script>
+
+
+<script>
+ 
+(function () {
+  const KEY = "theme";
+  const stored = localStorage.getItem(KEY);
+  const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = stored || (systemDark ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", theme);
+  
+  document.documentElement.style.colorScheme = theme === "dark" ? "dark" : "light";
+})();
+</script>
 
 <style>
-  .twitter-tweet-rendered {
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
+   
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666666;
+    --link: #0b5fff;
+    --card: #f6f7f9;
+    --border: #e6e8eb;
+
+     
+    --link-visited: #5a8cff;
+    --code-bg: #f5f3ff;
+    --code-fg: #222222;
   }
-  .inline-svg {
-    display: inline-block;
-    height: 1.0rem;
-    width: 1.0rem;
-    top: 0.15rem;
-    position: relative;
-    fill: #636363;
+  html[data-theme="dark"] {
+    --bg: #0e1113;
+    --fg: #e6e6e6;
+    --muted: #a0a0a0;
+    --link: #8ab4ff;
+    --card: #171a20;
+    --border: #2a2f3a;
+
+    --link-visited: #a3c2ff;
+    --code-bg: #1c1a28;
+    --code-fg: #e6e6e6;
   }
-  .inline-svg:hover {
-    fill: #bdbdbd;
-    height: 1.0rem;
-    width: 1.0rem;
-  }
-  .inline-svg#pdf {
-    fill: #de2d26;
-  }
-  .inline-svg#pdf:hover {
-    fill: #fc9272;
-  }
-  .inline-svg#data {
-    fill: #1c9099;
-  }
-  .inline-svg#data:hover {
-    fill: #a6bddb;
+
+   
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme]) {
+      --bg: #0e0f12;
+      --fg: #e6e6e6;
+      --muted: #a0a0a0;
+      --link: #8ab4ff;
+      --card: #171a20;
+      --border: #2a2f3a;
+
+      --link-visited: #a3c2ff;
+      --code-bg: #1c1a28;
+      --code-fg: #e6e6e6;
+    }
   }
 </style>
+
+
 </head>
 
 <body>
   <header><a href="/" class="title">
   <h2>Bret Alexander Beheim</h2>
 </a>
-<nav><a href="/">About</a>
+<nav>
+  <div class="nav-links"><a href="/">About</a>
 
 <a href="/publications.html">Publications</a>
 
@@ -126,19 +151,81 @@
 
 <a href="/teaching.html">Teaching</a>
 
+<a href="/test.html">Test</a>
+
 <a href="/blog">Blog</a>
+
+</div>
+  <div class="nav-toggle">
+    
+<label class="switch" aria-label="Toggle dark mode" title="Toggle dark mode">
+  <input id="theme-toggle" type="checkbox">
+  <span class="slider round"></span>
+</label>
+
+<style>
+ 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;    
+  height: 26px;
+  vertical-align: middle;  
+}
+
+ 
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+ 
+
+ 
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #242424;
+  transition: .4s;
+}
+
+ 
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #e3e3e3;
+  transition: .4s;
+}
+
+input:checked + .slider { background-color: #e3e3e3; }
+input:checked + .slider:before { background-color: #242424; transform: translateX(24px); }
+
+ 
+.slider.round { border-radius: 26px; }
+.slider.round:before { border-radius: 50%; }
+</style>
+  </div>
 </nav>
-</header>
+
+<style>
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+</style></header>
   <main>
 
 <content>
-  <h1 id="test">Test</h1>
-<img
-  src="/assets/drought_lengths.png"
-  alt=""
-  
-  loading="lazy" decoding="async"
-  class="post-image"style="width: 640px; height: auto;"/>
+  <p><img src="../images/pipeline.png" alt="">
+{width=10%}</p>
+
 </content>
 <p>
   
@@ -147,6 +234,41 @@
     
   </main>
   <footer>
+
+
+<script>
+(function () {
+  const KEY = "theme";
+  const el = document.getElementById("theme-toggle");
+  if (!el) return;
+
+  const getTheme = () => document.documentElement.getAttribute("data-theme") || "light";
+  const setTheme = (t) => {
+    document.documentElement.setAttribute("data-theme", t);
+    document.documentElement.style.colorScheme = t === "dark" ? "dark" : "light";
+    localStorage.setItem(KEY, t);
+  };
+
+  
+  el.checked = getTheme() === "dark";
+
+  
+  el.addEventListener("change", () => setTheme(el.checked ? "dark" : "light"));
+
+  
+  
+  const stored = localStorage.getItem(KEY);
+  if (!stored && window.matchMedia) {
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    mq.addEventListener?.("change", (e) => {
+      setTheme(e.matches ? "dark" : "light");
+      el.checked = e.matches;
+    });
+  }
+})();
+</script>
+
+
 </footer>
 
     

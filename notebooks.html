@@ -83,14 +83,16 @@ if (!doNotTrack) {
 </script>
 
 
-
 <script>
-(() => {
+ 
+(function () {
   const KEY = "theme";
   const stored = localStorage.getItem(KEY);
   const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   const theme = stored || (systemDark ? "dark" : "light");
   document.documentElement.setAttribute("data-theme", theme);
+  
+  document.documentElement.style.colorScheme = theme === "dark" ? "dark" : "light";
 })();
 </script>
 
@@ -137,13 +139,17 @@ if (!doNotTrack) {
       --code-fg: #e6e6e6;
     }
   }
-</style></head>
+</style>
+
+
+</head>
 
 <body>
   <header><a href="/" class="title">
   <h2>Bret Alexander Beheim</h2>
 </a>
-<nav><a href="/">About</a>
+<nav>
+  <div class="nav-links"><a href="/">About</a>
 
 <a href="/publications.html">Publications</a>
 
@@ -153,21 +159,75 @@ if (!doNotTrack) {
 
 <a href="/teaching.html">Teaching</a>
 
+<a href="/test.html">Test</a>
+
 <a href="/blog">Blog</a>
 
-<button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode" class="theme-toggle">
-  <span id="theme-toggle-icon">🌙</span>
-</button>
-<style>
-.theme-toggle {
-  border: 0; background: none; cursor: pointer; font-size: 1rem;
-  padding: .4rem .6rem; border-radius: .5rem;
-}
-.theme-toggle:hover { background: rgba(127,127,127,.12); }
-</style>
+</div>
+  <div class="nav-toggle">
+    
+<label class="switch" aria-label="Toggle dark mode" title="Toggle dark mode">
+  <input id="theme-toggle" type="checkbox">
+  <span class="slider round"></span>
+</label>
 
+<style>
+ 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;    
+  height: 26px;
+  vertical-align: middle;  
+}
+
+ 
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+ 
+
+ 
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #242424;
+  transition: .4s;
+}
+
+ 
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #e3e3e3;
+  transition: .4s;
+}
+
+input:checked + .slider { background-color: #e3e3e3; }
+input:checked + .slider:before { background-color: #242424; transform: translateX(24px); }
+
+ 
+.slider.round { border-radius: 26px; }
+.slider.round:before { border-radius: 50%; }
+</style>
+  </div>
 </nav>
-</header>
+
+<style>
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+</style></header>
   <main>
 
 <content>
@@ -188,30 +248,40 @@ if (!doNotTrack) {
   </main>
   <footer>
 
+
 <script>
-(() => {
+(function () {
   const KEY = "theme";
-  const root = document.documentElement;
-  const btn  = document.getElementById("theme-toggle");
-  const icon = document.getElementById("theme-toggle-icon");
-  if (!btn || !icon) return; 
+  const el = document.getElementById("theme-toggle");
+  if (!el) return;
 
-  const cur = () => root.getAttribute("data-theme") || "light";
-  const setIcon = t => {
-    icon.textContent = t === "dark" ? "☀️" : "🌙";
-    btn.title = btn.ariaLabel = t === "dark" ? "Switch to light mode" : "Switch to dark mode";
+  const getTheme = () => document.documentElement.getAttribute("data-theme") || "light";
+  const setTheme = (t) => {
+    document.documentElement.setAttribute("data-theme", t);
+    document.documentElement.style.colorScheme = t === "dark" ? "dark" : "light";
+    localStorage.setItem(KEY, t);
   };
-  const apply = t => { root.setAttribute("data-theme", t); localStorage.setItem(KEY, t); setIcon(t); };
 
-  setIcon(cur());
-  btn.addEventListener("click", () => apply(cur() === "dark" ? "light" : "dark"));
+  
+  el.checked = getTheme() === "dark";
 
-  const mql = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
-  mql && mql.addEventListener?.("change", e => {
-    if (!localStorage.getItem(KEY)) apply(e.matches ? "dark" : "light");
-  });
+  
+  el.addEventListener("change", () => setTheme(el.checked ? "dark" : "light"));
+
+  
+  
+  const stored = localStorage.getItem(KEY);
+  if (!stored && window.matchMedia) {
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    mq.addEventListener?.("change", (e) => {
+      setTheme(e.matches ? "dark" : "light");
+      el.checked = e.matches;
+    });
+  }
 })();
 </script>
+
+
 </footer>
 
     
