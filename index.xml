@@ -4,242 +4,164 @@
     <title>Bret Alexander Beheim</title>
     <link>/</link>
     <description>Recent content on Bret Alexander Beheim</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Bret Beheim.</copyright>
-    <lastBuildDate>Wed, 02 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Publications</title>
       <link>/publications.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/publications.html</guid>
-      <description>papers I&amp;rsquo;ve written, or helped write
-my full CV as a PDF or as a plaintex YML
-also see my google scholar page
-  - PDF
-  - data / code
-  - citation (bibtex)
-Working Papers   Pérez Velilla, A., Beheim, B., Smaldino, P.E. The Development of Risk Attitudes and their Cultural Transmission  
-  Beheim, B. A Linked Mixture Model of Coronary Atherosclerosis.</description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;papers I&amp;rsquo;ve written, or helped write&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;my full CV as a &lt;a href=&#34;../documents/bret-beheim-cv.pdf&#34;&gt;PDF&lt;/a&gt; or as a &lt;a href=&#34;../documents/bret-beheim-cv.txt&#34;&gt;plaintex YML&lt;/a&gt;&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;also see my &lt;a href=&#34;https://scholar.google.com/citations?user=V6Ea-MkAAAAJ&amp;amp;hl=en&#34;&gt;google scholar&lt;/a&gt; page&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;span class=&#34;inline-svg&#34; id=&#34;pdf&#34;&gt;&#xA;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 384 512&#34;&gt;&lt;!-- Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --&gt;&lt;path d=&#34;M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z&#34;/&gt;&lt;/svg&gt;&#xA;&lt;/span&gt; - PDF&lt;br&gt;&#xA;&lt;span class=&#34;inline-svg&#34; id=&#34;data&#34;&gt;&#xA;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 384 512&#34;&gt;&lt;!-- Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --&gt;&lt;path d=&#34;M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z&#34;/&gt;&lt;/svg&gt;&#xA;&lt;/span&gt; - data / code&lt;br&gt;&#xA;&lt;span class=&#34;inline-svg&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;!-- Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --&gt;&lt;path d=&#34;M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z&#34;/&gt;&lt;/svg&gt;&#xA;&lt;/span&gt; - citation (bibtex)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>People</title>
       <link>/people.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/people.html</guid>
-      <description>teams past and present
-Beheim Lab My lab group takes students through the Department of Human Behavior, Ecology and Culture @ MPI-EVA. Contact me for more info.
-Current  Peeter Tinits, Ph.D. (indepedent postdoc) Oleg Sobchuk, Ph.D. (postdoc)  Former  Natalia Fedorova (doctoral, completed January 2025; now Assistant Professor, Aarhus University) Riana Minocher, Ph.D. (doctoral, completed Nov. 2022; Research Fellow within the Berlin Institute for Health at the Charité) N.</description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;teams past and present&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;beheim-lab&#34;&gt;Beheim Lab&lt;/h1&gt;&#xA;&lt;p&gt;My lab group takes students through the Department of Human Behavior, Ecology and Culture @ MPI-EVA. Contact me for more info.&lt;/p&gt;&#xA;&lt;h2 id=&#34;current&#34;&gt;Current&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://peetertinits.github.io/&#34;&gt;Peeter Tinits&lt;/a&gt;, Ph.D. (indepedent postdoc)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.eva.mpg.de/ecology/staff/oleg-sobchuk/&#34;&gt;Oleg Sobchuk&lt;/a&gt;, Ph.D. (postdoc)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;former&#34;&gt;Former&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/naty-fedorova&#34;&gt;Natalia Fedorova&lt;/a&gt; (doctoral, completed January 2025; now Assistant Professor, Aarhus University)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/rianaminocher&#34;&gt;Riana Minocher&lt;/a&gt;, Ph.D. (doctoral, completed Nov. 2022; Research Fellow within the Berlin Institute for Health at the Charité)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/nhtran93&#34;&gt;N.-Han Tran&lt;/a&gt; (doctoral, completed Feb. 2022; now Chief Data and Analytics Officer (Referatsleiterin) at the Federal Statistical Office of Germany)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.eva.mpg.de/ecology/staff/anja-becker/&#34;&gt;Anja Becker&lt;/a&gt; (master&amp;rsquo;s; now doctoral student in the &lt;a href=&#34;https://www.eva.mpg.de/birthrites/&#34;&gt;BirthRites group&lt;/a&gt; @ MPI-EVA)&lt;/li&gt;&#xA;&lt;li&gt;Leonie Ettie (master&amp;rsquo;s)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://github.com/danielredhead&#34;&gt;Daniel Redhead&lt;/a&gt;, Ph.D. (postdoc, now Assistant Professor, University of Groningen)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;data-provenance-research-group&#34;&gt;Data Provenance Research Group&lt;/h1&gt;&#xA;&lt;p&gt;As part of the Department of Human Behavior, Ecology and Culture @ MPI-EVA, we organize computational and logistical support for a variety of faculty fieldsites worldwide.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Software</title>
       <link>/software.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/software.html</guid>
-      <description>some software packages I&amp;rsquo;ve written for the R programming language
-
-replay of an AlphaGo training match using the kaya package
- yamlform - a plaintext interview format for creating XLSForm documents for the ODK software platform longformer - longitudinal database management in R yamltools - a suite of tools for parsing YAML-structured plaintext interview output ecodata - tools for managing transcription efforts in our research group SIMani - agent-based simulation of multiple generations of demographically-realistic human populations journaltools - a R package for keeping a simple plaintext journal kaya - parsing and analyzing Go games stored in the .</description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;some software packages I&amp;rsquo;ve written for the R programming language&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/babeheim/kaya&#34;&gt;&lt;img src=&#34;../images/tiny.gif&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;replay of an AlphaGo training match using the &lt;code&gt;kaya&lt;/code&gt; package&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/babeheim/yamlform&#34;&gt;yamlform&lt;/a&gt; - a plaintext interview format for creating XLSForm documents for the ODK software platform&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/babeheim/longformer&#34;&gt;longformer&lt;/a&gt; - longitudinal database management in R&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/babeheim/yamltools&#34;&gt;yamltools&lt;/a&gt; - a suite of tools for parsing YAML-structured plaintext interview output&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/babeheim/ecodata&#34;&gt;ecodata&lt;/a&gt; - tools for managing transcription efforts in our research group&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/babeheim/SIMani&#34;&gt;SIMani&lt;/a&gt; - agent-based simulation of multiple generations of demographically-realistic human populations&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/babeheim/journaltools&#34;&gt;journaltools&lt;/a&gt; - a R package for keeping a simple plaintext journal&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/babeheim/kaya&#34;&gt;kaya&lt;/a&gt; - parsing and analyzing Go games stored in the &lt;code&gt;.sgf&lt;/code&gt; format&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/babeheim/chessparse&#34;&gt;chessparse&lt;/a&gt; - parsing and analyzing Chess games stored in the &lt;code&gt;.png&lt;/code&gt; format&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/babeheim/pacmanjr&#34;&gt;pacmanjr&lt;/a&gt; - lightweight package manager for an R codebase&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/babeheim&#34;&gt;&lt;img src=&#34;https://github-readme-stats.vercel.app/api?username=babeheim&amp;amp;count_private=true&#34; alt=&#34;Bret&amp;rsquo;s github stats&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Teaching</title>
       <link>/teaching.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/teaching.html</guid>
-      <description> some courses I&amp;rsquo;ve taught
-I currently teach &amp;ldquo;Reproducible Workflows for Scientific Computing&amp;rdquo;, a short course at MPI-EVA based on the Software Carpentry curriculum.
- 2023 course 2022 course 2021 course 2020 course 2019 course  demonstration of the Poisson scatter theorem
-I&amp;rsquo;ve previously taught the following courses:
- Introduction to Probability, short course for my lab group at MPI-EVA, taught 2020 using Joe Blitzstein&amp;rsquo;s materials The Human Life Course (UNM ANTH 160), taught 2013, 2014, 2015 - syllabus pdf Research Computing in Evolutionary Anthropology (UNM ANTH 560), taught 2014, 2015 - syllabus pdf Workshop on Statistical Rethinking, taught in 2015 Evolution and Human Nature (UCD ANT 50), taught 2011, 2015 - syllabus pdf Applied Research Methods (UCD ESP 178), taught 2011, 2012, 2015 - syllabus pdf Cultural Ecology (UCD ANT 102), taught 2010, 2015 - syllabus pdf  </description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;some courses I&amp;rsquo;ve taught&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;I currently teach &amp;ldquo;Reproducible Workflows for Scientific Computing&amp;rdquo;, a short course at MPI-EVA based on the &lt;a href=&#34;https://www.software-carpentry.org&#34;&gt;Software Carpentry&lt;/a&gt; curriculum.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hbec-mpi-eva.github.io/2023-11-27-leipzig/&#34;&gt;2023 course&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hbec-mpi-eva.github.io/2022-11-21-leipzig-online/&#34;&gt;2022 course&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://babeheim.github.io/2021-11-29-leipzig-online&#34;&gt;2021 course&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hbec-mpi-eva.github.io/2020-11-23-leipzig-online&#34;&gt;2020 course&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://hbec-mpi-eva.github.io/2019-12-09-leipzig&#34;&gt;2019 course&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../images/plot_50.gif&#34; alt=&#34;demonstration of the Poisson scatter theorem&#34;&gt;&#xA;&lt;em&gt;demonstration of the Poisson scatter theorem&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve previously taught the following courses:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Introduction to Probability, short course for my lab group at MPI-EVA, taught 2020 &lt;a href=&#34;https://projects.iq.harvard.edu/stat110/home&#34;&gt;using Joe Blitzstein&amp;rsquo;s materials&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;The Human Life Course (UNM ANTH 160), taught 2013, 2014, 2015 - &lt;a href=&#34;../documents/Anth160SyllabusSpring2015.pdf&#34;&gt;syllabus pdf&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Research Computing in Evolutionary Anthropology (UNM ANTH 560), taught 2014, 2015 - &lt;a href=&#34;../documents/ResearchComputingClassSyllabus2014.pdf&#34;&gt;syllabus pdf&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Workshop on Statistical Rethinking, taught in 2015&lt;/li&gt;&#xA;&lt;li&gt;Evolution and Human Nature (UCD ANT 50), taught 2011, 2015 - &lt;a href=&#34;../documents/Anth50SyllabusFall2011.pdf&#34;&gt;syllabus pdf&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Applied Research Methods (UCD ESP 178), taught 2011, 2012, 2015 - &lt;a href=&#34;../documents/2012ESP178Syllabus.pdf&#34;&gt;syllabus pdf&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Cultural Ecology (UCD ANT 102), taught 2010, 2015 - &lt;a href=&#34;../documents/ANT102Syllabus.pdf&#34;&gt;syllabus pdf&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Adding dynamic computations to LaTeX documents</title>
       <link>/blog/2022-11-02-dynamic-latex/</link>
       <pubDate>Wed, 02 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2022-11-02-dynamic-latex/</guid>
-      <description>Recently, I&amp;rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&amp;rsquo;s nothing fundamentally wrong with such computational notebooks, but if I had to pick one reason to stay with $\LaTeX$ it&amp;rsquo;s this: my first .tex problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc workflows from only a few years ago.</description>
+      <description>&lt;figure&gt;&lt;a href=&#34;https://tex.stackexchange.com/a/74609&#34;&gt;&lt;img src=&#34;/assets/goodtex.png&#34;&gt;&lt;/a&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Recently, I&amp;rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&amp;rsquo;s nothing fundamentally wrong with such &lt;a href=&#34;https://en.wikipedia.org/wiki/Notebook_interface&#34;&gt;computational notebooks&lt;/a&gt;, but if I had to pick one reason to stay with $\LaTeX$ it&amp;rsquo;s this: my first &lt;code&gt;.tex&lt;/code&gt; problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc workflows from only a few years ago.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Indoor rowing &amp; data science with R</title>
       <link>/blog/2021-04-05-ergometer-data-science/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2021-04-05-ergometer-data-science/</guid>
-      <description>Figure 1: Concept2 Model D ergometer
-Since 2014, I&amp;rsquo;ve been using a Concept2 indoor rowing machine. I&amp;rsquo;m not a very strong rower, but I enjoy tracking my progress from the great data stored by the PM5 on-board computer. Parsing the raw data is a bit tricky, so I wrote an R package, c2ergometer, to painlessly manage a database, and developed some data visualizations using the R language to track my rowing performance.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;/assets/model-d.png&#34; alt=&#34;&#34;&gt;&lt;br&gt;&#xA;&lt;em&gt;Figure 1: Concept2 Model D ergometer&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Since 2014, I&amp;rsquo;ve been using a Concept2 indoor rowing machine. I&amp;rsquo;m not a very strong rower, but I enjoy tracking my progress from the great data stored by the PM5 on-board computer. Parsing the raw data is a bit tricky, so I wrote an R package, &lt;a href=&#34;https://github.com/babeheim/c2ergometer&#34;&gt;c2ergometer&lt;/a&gt;, to painlessly manage a database, and developed some data visualizations using the R language to track my rowing performance. Here, I&amp;rsquo;ll show some of my favorites.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Fitting Markov Models to Tetris Data in Stan</title>
       <link>/blog/2021-01-02-stan-markov-tetris/</link>
       <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2021-01-02-stan-markov-tetris/</guid>
-      <description>In my last post, I simulated millions draws from two versions of the piece randomizer inside Tetris. The 1989 algorithm for NES Tetris can be described as a first-order Markov process, biased against repeat pieces, while the Gameboy algorithm is a more complex, second-order process with some seriously strange biases. At least, that&amp;rsquo;s what the simulation says. Here we use real Tetris data to find out if these simulation models are accurate, using the Stan language to fit simple multistate Markov models.</description>
+      <description>&lt;img src=&#34;/assets/tetrisnes.gif&#34; alt=&#34;&#34;&gt;&lt;p&gt;In my &lt;a href=&#34;/blog/2020-12-29-is-tetris-biased/&#34;&gt;last post&lt;/a&gt;, I simulated millions draws from two versions of the piece randomizer inside Tetris. The 1989 algorithm for NES Tetris can be described as a first-order Markov process, biased against repeat pieces, while the Gameboy algorithm is a more complex, second-order process with some &lt;a href=&#34;/blog/2020-12-29-is-tetris-biased/#markov-and-tetris&#34;&gt;seriously strange biases&lt;/a&gt;. At least, that&amp;rsquo;s what the simulation says. Here we use real Tetris data to find out if these simulation models are accurate, using the Stan language to fit simple multistate Markov models.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Is Tetris Biased?</title>
       <link>/blog/2020-12-29-is-tetris-biased/</link>
       <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2020-12-29-is-tetris-biased/</guid>
-      <description>My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&amp;rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.</description>
+      <description>&lt;img src=&#34;/assets/tetrisgameboy.gif&#34; alt=&#34;&#34; title=&#34;gif by Twothless&#34;&gt;&lt;p&gt;My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some &lt;a href=&#34;https://www.youtube.com/watch?v=Alw5hs0chj0&#34;&gt;mysterious intelligence&lt;/a&gt; who seemed to know exactly which pieces I didn&amp;rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the &lt;a href=&#34;https://cran.r-project.org/&#34;&gt;R programming language&lt;/a&gt; - and plenty of free resources &lt;a href=&#34;https://tetris.fandom.com/wiki/Tetris_Wiki&#34;&gt;online&lt;/a&gt;, this is a straightforwards exercise.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Missing data, moralizing gods, and the siren song of Aeiea</title>
       <link>/blog/2019-09-19-song-of-aeiea/</link>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2019-09-19-song-of-aeiea/</guid>
-      <description>Update 2021-07-07: I&amp;rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
-Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.</description>
+      <description>&lt;p&gt;&lt;em&gt;Update 2021-07-07: I&amp;rsquo;ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been &lt;a href=&#34;https://www.nature.com/articles/s41586-021-03656-3&#34;&gt;retracted&lt;/a&gt; by the authors.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Postdoctoral research position on economic decision-making in subsistence societies</title>
       <link>/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</link>
       <pubDate>Thu, 29 Mar 2018 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2018-03-29-mpi-eva-subsistence-postdoc-call/</guid>
-      <description>I am currently recruiting a post-doctoral researcher for the department. The application period will close on 20 April 2018; description of the position is available below and as a pdf here.
-The Max Planck Institute for Evolutionary Anthropology unites scientists in the natural sciences and humanities to investigate the history of humankind from an interdisciplinary perspective, with the help of comparative analyses of genes, cultures, cognitive abilities, languages and social systems of past and present human populations as well as those of primates closely related to human beings.</description>
+      <description>&lt;p&gt;&lt;em&gt;I am currently recruiting a post-doctoral researcher for the department. The application period will close on 20 April 2018; description of the position is available below and &lt;a href=&#34;/files/hbec-subsistence-call.pdf&#34;&gt;as a pdf here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;img src=&#34;/assets/bananas.jpg&#34; alt=&#34;&#34;&gt;&lt;p&gt;The Max Planck Institute for Evolutionary Anthropology unites scientists in the natural sciences and humanities to investigate the history of humankind from an interdisciplinary perspective, with the help of comparative analyses of genes, cultures, cognitive abilities, languages and social systems of past and present human populations as well as those of primates closely related to human beings.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PhD student position on the transmission dynamics of signaling behavior</title>
       <link>/blog/2017-11-06-mpi-eva-signaling-phd-call/</link>
       <pubDate>Mon, 06 Nov 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-11-06-mpi-eva-signaling-phd-call/</guid>
-      <description>I am currently recruiting a doctoral student for the department. The application period will close on 1 December 2017; description of the position is available below and as a pdf here.
-The Department of Human Behavior, Ecology and Culture at the Max Planck Institute in Leipzig is seeking qualified applicants for a fully funded three-year doctoral project on the transmission dynamics of aesthetic display behavior, including the design and implementation of field research studying the social transmission and individual learning of artistic signaling among South Asian agriculturalists.</description>
+      <description>&lt;p&gt;&lt;em&gt;I am currently recruiting a doctoral student for the department. The application period will close on 1 December 2017; description of the position is available below and &lt;a href=&#34;/files/hbec-signaling-call.pdf&#34;&gt;as a pdf here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;img src=&#34;/assets/kolam.jpg&#34; alt=&#34;&#34;&gt;&lt;p&gt;The Department of Human Behavior, Ecology and Culture at the Max Planck Institute in Leipzig is seeking qualified applicants for a fully funded three-year doctoral project on the transmission dynamics of aesthetic display behavior, including the design and implementation of field research studying the social transmission and individual learning of artistic signaling among South Asian agriculturalists.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>My git-iversary</title>
       <link>/blog/2017-08-20-year-of-git/</link>
       <pubDate>Sun, 20 Aug 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-08-20-year-of-git/</guid>
-      <description>This week marks one year since I started using git in my research projects. It has been a major shift, but I&amp;rsquo;ve come to love the workflow, and see practical benefits for pretty much every kind of writing.
-Version history done right People must exist who never keep track of the history of their work. They start a file and just keep editing it, and the current version is always the best one.</description>
+      <description>&lt;img src=&#34;/assets/git-logo.png&#34; alt=&#34;&#34;&gt;&lt;p&gt;This week marks one year since I started using &lt;a href=&#34;https://git-scm.com/&#34;&gt;git&lt;/a&gt; in my research projects. It has been a major shift, but I&amp;rsquo;ve come to love the workflow, and see practical benefits for pretty much every kind of writing.&lt;/p&gt;&#xA;&lt;h1 id=&#34;version-history-done-right&#34;&gt;Version history done right&lt;/h1&gt;&#xA;&lt;p&gt;People must exist who never keep track of the history of their work. They start a file and just keep editing it, and the current version is always the best one. They never have false starts, or hit dead ends, or try it two different ways to see which one they like best, or bring back something they took out (or never took anything out to begin with).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Text Mining the Human Behavioral Ecology Bibliography</title>
       <link>/blog/2017-06-15-text-mining-the-hbeb/</link>
       <pubDate>Thu, 15 Jun 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-06-15-text-mining-the-hbeb/</guid>
-      <description>Thanks to Kermyt Anderson, the Human Behavioral Ecology Bibliography (HBEB) has recently gone online. Eleanor Power has taken this text file and parsed it into a bibtex file, and from there it can be turned into an Endnote library or other bibliographic database format.
-I&amp;rsquo;m curious to know more about HBEB&amp;rsquo;s use as a dataset in its own right, and since I&amp;rsquo;ve been doing similar work with our field data here at MPI-EVA&amp;rsquo;s new Department of Human Behavior, Ecology and Culture, I figured I could turn the lens on us at the same time as showcase the methods to interested parties.</description>
+      <description>&lt;p&gt;Thanks to Kermyt Anderson, the Human Behavioral Ecology Bibliography (HBEB) has recently gone online. Eleanor Power has taken this text file and parsed it into &lt;a href=&#34;https://docs.google.com/document/d/1_noydOgcQ2fOUpkNOmx74o1_lw8KBHUsNyoYIvCHw2g/edit&#34;&gt;a bibtex file&lt;/a&gt;, and from there it can be turned into an Endnote library or other bibliographic database format.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m curious to know more about HBEB&amp;rsquo;s use as a dataset in its own right, and since I&amp;rsquo;ve been doing similar work with our field data here at MPI-EVA&amp;rsquo;s new &lt;a href=&#34;http://www.eva.mpg.de/ecology/projects.html&#34;&gt;Department of Human Behavior, Ecology and Culture&lt;/a&gt;, I figured I could turn the lens on us at the same time as showcase the methods to interested parties.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Generating Ties to Explore Social Network Connectivity</title>
       <link>/blog/2017-06-02-modeling-network-tie-counts/</link>
       <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-06-02-modeling-network-tie-counts/</guid>
-      <description>A colleague doing a social network analysis posed the following problem:1
- In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&amp;rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&amp;rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&amp;hellip;</description>
+      <description>&lt;p&gt;A colleague doing a social network analysis posed the following problem:&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;In my field interviews, I had people name friends they could go to for support. Most friends are the same ethnicity as my interviewees, but some are members of nearby minority groups. I&amp;rsquo;m trying to see if the women at my field site have a lesser/greater percent of friends from other ethnic groups than men. I was wondering if there&amp;rsquo;s some way to do this in STAN in R, or some other way that you might know of how to deal with this&amp;hellip;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Capturing Hierarchical Data in Plain Text</title>
       <link>/blog/2017-02-12-hierarchical-data-in-plain-text/</link>
       <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-02-12-hierarchical-data-in-plain-text/</guid>
-      <description>A practical method of entering structured data into a computer is to type it directly into a text file. Simply fire up your favorite CSV editor1, sit down with your source material and start typing. Unlike boutique database software, this method can be used immediately and with minimal training. In fact, I know several researchers who skip paper forms altogether and do it during their field interviews.
-Plaintext data entry works great, unless the data are hierarchical.</description>
+      <description>&lt;p&gt;A practical method of entering structured data into a computer is to type it directly into a text file. Simply fire up your favorite CSV editor&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, sit down with your source material and start typing. Unlike boutique database software, this method can be used immediately and with minimal training. In fact, I know several researchers who skip paper forms altogether and do it &lt;em&gt;during&lt;/em&gt; their field interviews.&lt;/p&gt;&#xA;&lt;p&gt;Plaintext data entry works great, unless the data are hierarchical. I’m thinking of one of three situations:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PhD position sought for MPI-EVA</title>
       <link>/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</link>
       <pubDate>Fri, 03 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2017-02-03-mpi-eva-reproducibility-phd-call/</guid>
-      <description>I am currently recruiting a doctoral student for the department. The application period will close on 1 March 2017; description of the position is available below and as a pdf here.
-The Department of Human Behavior, Ecology and Culture at the Max Planck Institute in Leipzig is seeking qualified applicants for a three-year doctoral project on the topic of the reproducibility and refinement of quantitative scientific methods in evolutionary anthropology.</description>
+      <description>&lt;p&gt;&lt;em&gt;I am currently recruiting a doctoral student for the department. The application period will close on 1 March 2017; description of the position is available below and &lt;a href=&#34;documents/blog/hbec-reproducibility-call.pdf&#34;&gt;as a pdf here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;img src=&#34;assets/mpi-eva-lobby.jpg&#34; alt=&#34;&#34;&gt;&lt;p&gt;The Department of Human Behavior, Ecology and Culture at the Max Planck Institute in Leipzig is seeking qualified applicants for a three-year doctoral project on the topic of the reproducibility and refinement of quantitative scientific methods in evolutionary anthropology.&lt;/p&gt;&#xA;&lt;h1 id=&#34;background&#34;&gt;Background&lt;/h1&gt;&#xA;&lt;p&gt;The Max Planck Institute for Evolutionary Anthropology unites scientists in the natural sciences and humanities to investigate the history of humankind from an interdisciplinary perspective, with the help of comparative analyses of genes, cultures, cognitive abilities, languages and social systems of past and present human populations as well as those of primates closely related to human beings. The Department of Human Behavior, Ecology, and Culture focuses on the various forms of human behavioral, cultural, and cognitive adaptation.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Reproducible Research As Our New Default</title>
       <link>/blog/2016-05-20-reproducible-research-new-default/</link>
       <pubDate>Fri, 20 May 2016 00:00:00 +0000</pubDate>
-      
       <guid>/blog/2016-05-20-reproducible-research-new-default/</guid>
-      <description>the following article was adapted for the Evolutionary Anthropology Society newsletter for Summer 2016
-The last decade has been a sobering one for science, marked by increasingly frank conversations about &amp;lsquo;the idea that something has gone fundamentally wrong with one of our greatest human creations&amp;rsquo;, to quote Richard Horton, editor-in-chief of The Lancet. He continues,
- Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.</description>
+      <description>&lt;p&gt;&lt;em&gt;the following article was adapted for the Evolutionary Anthropology Society newsletter for Summer 2016&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;The last decade has been a sobering one for science, marked by increasingly frank conversations about &amp;rsquo;the idea that something has gone fundamentally wrong with one of our greatest human creations&amp;rsquo;, to quote Richard Horton, editor-in-chief of The Lancet. He continues,&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Afflicted by studies with small sample sizes, tiny effects, invalid exploratory analyses, and flagrant conflicts of interest, together with an obsession for pursuing fashionable trends of dubious importance, science has taken a turn towards darkness.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title></title>
+      <link>/gallery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/gallery/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Conformity</title>
       <link>/notebooks/conformity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/notebooks/conformity/</guid>
-      <description>Notes on Conformist Bias Conformist bias was introduced in the early 1980s by Boyd and Richerson.
-Recommended   Newberry, Mitchell G., and Joshua B. Plotkin. 2021. “Measuring Frequency-Dependent Selection in Culture.” ArXiv:2103.14178 [q-Bio], March. http://arxiv.org/abs/2103.14178.
-  Deffner, Dominik, Vivien Kleinow, and Richard McElreath. 2020. “Dynamic Social Learning in Temporally and Spatially Variable Environments.” Royal Society Open Science 7 (12): 200734. https://doi.org/10.1098/rsos.200734.
-  Barrett, Brendan J. 2019. “Equifinality in Empirical Studies of Cultural Transmission.</description>
+      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;notes-on-conformist-bias&#34;&gt;Notes on Conformist Bias&lt;/h1&gt;&#xA;&lt;p&gt;Conformist bias was introduced in the early 1980s by Boyd and Richerson.&lt;/p&gt;&#xA;&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Newberry, Mitchell G., and Joshua B. Plotkin. 2021. “Measuring Frequency-Dependent Selection in Culture.” ArXiv:2103.14178 [q-Bio], March. &lt;a href=&#34;http://arxiv.org/abs/2103.14178&#34;&gt;http://arxiv.org/abs/2103.14178&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Deffner, Dominik, Vivien Kleinow, and Richard McElreath. 2020. “Dynamic Social Learning in Temporally and Spatially Variable Environments.” Royal Society Open Science 7 (12): 200734. &lt;a href=&#34;https://doi.org/10.1098/rsos.200734&#34;&gt;https://doi.org/10.1098/rsos.200734&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Barrett, Brendan J. 2019. “Equifinality in Empirical Studies of Cultural Transmission.” Behavioural Processes, Behavioral Evolution, 161 (April): 129–38. &lt;a href=&#34;https://doi.org/10.1016/j.beproc.2018.01.011&#34;&gt;https://doi.org/10.1016/j.beproc.2018.01.011&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Links</title>
       <link>/links.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/links.html</guid>
-      <description>Some links I use.
-newsletters, blogs, threads   The Plain Person’s Guide to Plain Text Social Science
-  Great Adaptations hashtag, mostly maintained by Joan Silk
-  Paul Graham&amp;rsquo;s Essays
-  Biased Transmission blog (active 2012 to 2017)
-  Elements of Evolutionary Anthropology by Richard McElreath
-  Statistical Modeling, Causal Inference, and Social Science by Andrew Gelman and friends
-  Cliodynamica by Peter Turchin</description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;Some links I use.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;newsletters-blogs-threads&#34;&gt;newsletters, blogs, threads&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://plain-text.co/&#34;&gt;The Plain Person’s Guide to Plain Text Social Science&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://twitter.com/search?q=%23greatadaptations&amp;amp;src=typed_query&#34;&gt;Great Adaptations&lt;/a&gt; hashtag, mostly maintained by Joan Silk&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.paulgraham.com/articles.html&#34;&gt;Paul Graham&amp;rsquo;s Essays&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.biasedtransmission.org/&#34;&gt;Biased Transmission&lt;/a&gt; blog (active 2012 to 2017)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://elevanth.org/blog/&#34;&gt;Elements of Evolutionary Anthropology&lt;/a&gt; by Richard McElreath&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://statmodeling.stat.columbia.edu/&#34;&gt;Statistical Modeling, Causal Inference, and Social Science&lt;/a&gt; by Andrew Gelman and friends&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://peterturchin.com/cliodynamica/&#34;&gt;Cliodynamica&lt;/a&gt; by Peter Turchin&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://bactra.org/weblog/&#34;&gt;Three-Toed Sloth&lt;/a&gt; by Cosma Shalizi&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://crookedtimber.org/&#34;&gt;Crooked Timber&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://marginalrevolution.com/&#34;&gt;Marginal Revolution&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.jasoncollins.blog&#34;&gt;Jason Collins Blog&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://traditionsofconflict.substack.com/&#34;&gt;Traditions of Conflict&lt;/a&gt; by William Buckner&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Notebooks</title>
       <link>/notebooks.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/notebooks.html</guid>
-      <description> my public notebooks, roughly ordered by last update
-2022
- Conformist bias - everyone&amp;rsquo;s favorite method of maintaining cultural diversity  </description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;my &lt;a href=&#34;http://bactra.org/notebooks/&#34;&gt;public notebooks&lt;/a&gt;, roughly ordered by last update&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;2022&lt;/em&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;/notebooks/conformity&#34;&gt;Conformist bias&lt;/a&gt; - everyone&amp;rsquo;s favorite method of maintaining cultural diversity&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Research</title>
       <link>/research.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/research.html</guid>
-      <description>reseach precis organized by topic; see my list of publications
-code for most figures is also on my github page
-1. Dynamics of Cultural Diversity Understanding cultural change over time is the central focus for the field of cultural evolution. In 2014, I contributed a large-scale quantitative analysis of the East Asian board game of Go.
-
-recent evolution in Go opening strategy
-Here we track specific opening variants as traits that change in frequency over time as players adopt innovations in play styles.</description>
+      <description>&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;reseach precis organized by topic; see my &lt;a href=&#34;../publications/&#34;&gt;list of publications&lt;/a&gt;&lt;/em&gt;&lt;br&gt;&#xA;&lt;em&gt;code for most figures is also on my &lt;a href=&#34;https://github.com/babeheim&#34;&gt;github page&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-dynamics-of-cultural-diversity&#34;&gt;1. Dynamics of Cultural Diversity&lt;/h2&gt;&#xA;&lt;p&gt;Understanding cultural change over time is the central focus for the field of cultural evolution. In 2014, I contributed a large-scale quantitative analysis of the East Asian board game of Go.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://doi.org/10.1016/j.evolhumbehav.2014.04.001&#34;&gt;&lt;img src=&#34;../images/Fig3.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;br&gt;&#xA;&lt;em&gt;recent evolution in Go opening strategy&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Here we track specific opening variants as traits that change in frequency over time as players adopt innovations in play styles. Our major focus was on &lt;em&gt;strategic&lt;/em&gt; social learning, in which individuals selectively draw upon information available from others. We developed a general method for measuring this, both by player and across the life course:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

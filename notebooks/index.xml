@@ -4,20 +4,16 @@
     <title>Notebooks on Bret Alexander Beheim</title>
     <link>/notebooks/</link>
     <description>Recent content in Notebooks on Bret Alexander Beheim</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-US</language>
-    <copyright>Copyright © 2025, Bret Beheim.</copyright><atom:link href="/notebooks/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2025, Bret Beheim.</copyright>
+    <atom:link href="/notebooks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conformity</title>
       <link>/notebooks/conformity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>/notebooks/conformity/</guid>
-      <description>Notes on Conformist Bias Conformist bias was introduced in the early 1980s by Boyd and Richerson.
-Recommended   Newberry, Mitchell G., and Joshua B. Plotkin. 2021. “Measuring Frequency-Dependent Selection in Culture.” ArXiv:2103.14178 [q-Bio], March. http://arxiv.org/abs/2103.14178.
-  Deffner, Dominik, Vivien Kleinow, and Richard McElreath. 2020. “Dynamic Social Learning in Temporally and Spatially Variable Environments.” Royal Society Open Science 7 (12): 200734. https://doi.org/10.1098/rsos.200734.
-  Barrett, Brendan J. 2019. “Equifinality in Empirical Studies of Cultural Transmission.</description>
+      <description>&lt;hr&gt;&#xA;&lt;h1 id=&#34;notes-on-conformist-bias&#34;&gt;Notes on Conformist Bias&lt;/h1&gt;&#xA;&lt;p&gt;Conformist bias was introduced in the early 1980s by Boyd and Richerson.&lt;/p&gt;&#xA;&lt;h2 id=&#34;recommended&#34;&gt;Recommended&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Newberry, Mitchell G., and Joshua B. Plotkin. 2021. “Measuring Frequency-Dependent Selection in Culture.” ArXiv:2103.14178 [q-Bio], March. &lt;a href=&#34;http://arxiv.org/abs/2103.14178&#34;&gt;http://arxiv.org/abs/2103.14178&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Deffner, Dominik, Vivien Kleinow, and Richard McElreath. 2020. “Dynamic Social Learning in Temporally and Spatially Variable Environments.” Royal Society Open Science 7 (12): 200734. &lt;a href=&#34;https://doi.org/10.1098/rsos.200734&#34;&gt;https://doi.org/10.1098/rsos.200734&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Barrett, Brendan J. 2019. “Equifinality in Empirical Studies of Cultural Transmission.” Behavioural Processes, Behavioral Evolution, 161 (April): 129–38. &lt;a href=&#34;https://doi.org/10.1016/j.beproc.2018.01.011&#34;&gt;https://doi.org/10.1016/j.beproc.2018.01.011&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
