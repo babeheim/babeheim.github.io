@@ -5,41 +5,36 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="/images/favicon.png" />
+<link rel="shortcut icon" href="images/favicon.png" />
 <title>Is Tetris Biased? | Bret Alexander Beheim</title>
 <meta name="title" content="Is Tetris Biased?" />
 <meta name="description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise." />
 <meta name="keywords" content="" />
 
 
-<meta property="og:url" content="/blog/2020-12-29-is-tetris-biased/">
-  <meta property="og:site_name" content="Bret Alexander Beheim">
-  <meta property="og:title" content="Is Tetris Biased?">
-  <meta property="og:description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn’t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2020-12-27T00:00:00+00:00">
-    <meta property="article:modified_time" content="2020-12-27T00:00:00+00:00">
-    <meta property="og:image" content="/images/bret-head.jpg">
+<meta property="og:title" content="Is Tetris Biased?" />
+<meta property="og:description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/2020-12-29-is-tetris-biased/" /><meta property="og:image" content="images/bret-head.jpg"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-12-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-27T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="/images/bret-head.jpg">
-  <meta name="twitter:title" content="Is Tetris Biased?">
-  <meta name="twitter:description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn’t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.">
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="images/bret-head.jpg"/>
+
+<meta name="twitter:title" content="Is Tetris Biased?"/>
+<meta name="twitter:description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise."/>
 
 
 
-
-  <meta itemprop="name" content="Is Tetris Biased?">
-  <meta itemprop="description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn’t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise.">
-  <meta itemprop="datePublished" content="2020-12-27T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2020-12-27T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2358">
-  <meta itemprop="image" content="/images/bret-head.jpg">
+<meta itemprop="name" content="Is Tetris Biased?">
+<meta itemprop="description" content="My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some mysterious intelligence who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the R programming language - and plenty of free resources online, this is a straightforwards exercise."><meta itemprop="datePublished" content="2020-12-27T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-12-27T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2358"><meta itemprop="image" content="images/bret-head.jpg"/>
+<meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="stylesheet" href="/css/custom.css">
@@ -68,20 +63,17 @@
 
 
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-4PXGB1H7X2');
-        }
-      </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
+}
+</script>
+
 
 <script>
  
@@ -239,7 +231,8 @@ nav {
 </p>
 
 <content>
-  <img src="/assets/tetrisgameboy.gif" alt="" title="gif by Twothless"><p>My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some <a href="https://www.youtube.com/watch?v=Alw5hs0chj0">mysterious intelligence</a> who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the <a href="https://cran.r-project.org/">R programming language</a> - and plenty of free resources <a href="https://tetris.fandom.com/wiki/Tetris_Wiki">online</a>, this is a straightforwards exercise.</p>
+  <p><img src="/assets/tetrisgameboy.gif" alt="" title="gif by Twothless"></p>
+<p>My first experience with stochastic processes was in 1989, with Tetris on the Nintendo Gameboy. Each of the seven Tetris pieces arrived one at a time, chosen by some <a href="https://www.youtube.com/watch?v=Alw5hs0chj0">mysterious intelligence</a> who seemed to know exactly which pieces I didn&rsquo;t want. In the early 1990s, I had no way to tell how this process worked, or confirm whether it really was biased in some way, but with modern tools - primarily the <a href="https://cran.r-project.org/">R programming language</a> - and plenty of free resources <a href="https://tetris.fandom.com/wiki/Tetris_Wiki">online</a>, this is a straightforwards exercise.</p>
 <p>The first thing to know about the Tetris randomizer is there is no <em>one</em> randomizer, as it has changed in almost every edition since Alexey Pajitnov&rsquo;s original uniform sampler in 1984.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> To Tetris aficionados, two key phenomena determine the quality of a particular randomizer: <em>droughts</em>, which are the periods before a piece reappears, and <em>floods</em>, in which a piece appears multiple times in a row. Since 2001, official copies of Tetris use the &ldquo;7-bag&rdquo; randomizer, in which the seven pieces are output in randomly ordered sets. The two algorithms I will focus on here are the ones I grew up with, for Tetris on the NES and the Gameboy, both released in 1989.</p>
 <h2 id="two-1989-algorithms">Two 1989 Algorithms</h2>
 <p>As a pair, the 1989 NES and Gameboy versions of Tetris have sold 43 million copies, making them some of the most popular games ever.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> Both versions were written in Assembly, using the instruction set for the NES&rsquo;s MOS 6502 processor and for the Gameboy&rsquo;s Sharp LR35902. By looking at this hexadecimal machine code, hobbyists have reverse-engineered each algorithm, and from their descriptions we can see the two algorithms work quite differently.</p>
@@ -247,45 +240,46 @@ nav {
 <p>Although both were released in 1989 by Nintendo, the Gameboy algorithm was written first<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, followed by a rewrite for the NES a few months later. Why the NES uses a new algorithm is unclear, but the answer may lie in how each algorithm behaves over many, many draws.</p>
 <h2 id="using-r-for-simulation">Using R for Simulation</h2>
 <p>It&rsquo;s prohibitively difficult to describe each algorithm in the &ldquo;real world&rdquo; of Tetris gameplay, since it takes a long time to observe even a few hundred draws. We can instead write stochastic simulations of each, and draw from these as many times as we like. In the programming language R, I&rsquo;ve written a package called <code>tetristools</code> and its core function, <code>rtetris</code>.<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> Like most random number functions in R, e.g. <code>rnorm</code>, <code>runif</code>, etc.), we tell <code>rtetris</code> how big of a sample we want, and it generates pieces as character vectors<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>library(tetristools)
-</span></span><span style="display:flex;"><span>x_gb &lt;- rtetris(1e7, algo = <span style="color:#a31515">&#34;gameboy&#34;</span>)
-</span></span><span style="display:flex;"><span>x_nes &lt;- rtetris(1e7, algo = <span style="color:#a31515">&#34;nes&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>par(mfrow = c(1, 2))
-</span></span><span style="display:flex;"><span>barplot(table(x_gb), border = <span style="color:#00f">NA</span>, col = <span style="color:#a31515">&#34;dodgerblue&#34;</span>, main = <span style="color:#a31515">&#34;Gameboy&#34;</span>,
-</span></span><span style="display:flex;"><span>    yaxt = <span style="color:#a31515">&#34;n&#34;</span>, ylim = c(0, 15e5))
-</span></span><span style="display:flex;"><span>abline(h = 1e7/7, lty = 2)
-</span></span><span style="display:flex;"><span>axis(2, at = c(0, 5e5, 10e5, 15e5))
-</span></span><span style="display:flex;"><span>barplot(table(x_nes), border = <span style="color:#00f">NA</span>, col = <span style="color:#a31515">&#34;dodgerblue&#34;</span>, main = <span style="color:#a31515">&#34;NES&#34;</span>,
-</span></span><span style="display:flex;"><span>    yaxt = <span style="color:#a31515">&#34;n&#34;</span>, ylim = c(0, 15e5))
-</span></span><span style="display:flex;"><span>abline(h = 1e7/7, lty = 2)
-</span></span><span style="display:flex;"><span>axis(2, at = c(0, 5e5, 10e5, 15e5))
-</span></span></code></pre></div><img src="/assets/randomizer_counts.png" alt=""><p>Simulating ten million draws from each, we can see right away that something is wrong with the Gameboy algorithm. Several hundred thousand L pieces are missing, there are far too many O, S and T pieces, and a clear bias against J, Z and I. With so much data, we can think of these counts as a <em>limiting probability distribution</em> of outcomes, e.g.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>round(100 * (prop.table(table(x_gb))), 1)
-</span></span><span style="display:flex;"><span>&gt; x_gb
-</span></span><span style="display:flex;"><span>&gt;    I    J    L    O    S    T    Z 
-</span></span><span style="display:flex;"><span>&gt; 13.7 13.6 10.7 16.1 16.0 16.1 13.8 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>round(100 * (prop.table(table(x_nes))), 1)
-</span></span><span style="display:flex;"><span>&gt; x_nes
-</span></span><span style="display:flex;"><span>&gt;    I    J    L    O    S    T    Z 
-</span></span><span style="display:flex;"><span>&gt; 13.9 14.3 13.9 14.2 14.7 14.6 14.3
-</span></span></code></pre></div><p>In comparison to a 14.3% chance under uniform sampling of seven options, the Gameboy has a cumulative bias of over five percentage points towards O, S and T, and penalty of about -3.5% against L. In comparison, the NES algorithm favors S and T, and also disfavors I and L, but none of the NES biases are greater than half a percentage point.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">library(tetristools)
+x_gb &lt;- rtetris(1e7, algo = <span style="color:#a31515">&#34;gameboy&#34;</span>)
+x_nes &lt;- rtetris(1e7, algo = <span style="color:#a31515">&#34;nes&#34;</span>)
+
+par(mfrow = c(1, 2))
+barplot(table(x_gb), border = <span style="color:#00f">NA</span>, col = <span style="color:#a31515">&#34;dodgerblue&#34;</span>, main = <span style="color:#a31515">&#34;Gameboy&#34;</span>,
+    yaxt = <span style="color:#a31515">&#34;n&#34;</span>, ylim = c(0, 15e5))
+abline(h = 1e7/7, lty = 2)
+axis(2, at = c(0, 5e5, 10e5, 15e5))
+barplot(table(x_nes), border = <span style="color:#00f">NA</span>, col = <span style="color:#a31515">&#34;dodgerblue&#34;</span>, main = <span style="color:#a31515">&#34;NES&#34;</span>,
+    yaxt = <span style="color:#a31515">&#34;n&#34;</span>, ylim = c(0, 15e5))
+abline(h = 1e7/7, lty = 2)
+axis(2, at = c(0, 5e5, 10e5, 15e5))
+</code></pre></div><p><img src="/assets/randomizer_counts.png" alt=""></p>
+<p>Simulating ten million draws from each, we can see right away that something is wrong with the Gameboy algorithm. Several hundred thousand L pieces are missing, there are far too many O, S and T pieces, and a clear bias against J, Z and I. With so much data, we can think of these counts as a <em>limiting probability distribution</em> of outcomes, e.g.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">round(100 * (prop.table(table(x_gb))), 1)
+&gt; x_gb
+&gt;    I    J    L    O    S    T    Z 
+&gt; 13.7 13.6 10.7 16.1 16.0 16.1 13.8 
+
+round(100 * (prop.table(table(x_nes))), 1)
+&gt; x_nes
+&gt;    I    J    L    O    S    T    Z 
+&gt; 13.9 14.3 13.9 14.2 14.7 14.6 14.3
+</code></pre></div><p>In comparison to a 14.3% chance under uniform sampling of seven options, the Gameboy has a cumulative bias of over five percentage points towards O, S and T, and penalty of about -3.5% against L. In comparison, the NES algorithm favors S and T, and also disfavors I and L, but none of the NES biases are greater than half a percentage point.</p>
 <h2 id="markov-and-tetris">Markov and Tetris</h2>
 <p>The tabulated counts are enough to identify some strange pathologies, especially in the Gameboy randomizer, but we can do much, much better. The description of the NES randomizer implies that the choice of next piece is dependent on the current piece, that is, the NES algorithm is a first-order Markov process. As such, we should describe the seven <em>conditional</em> probability distributions for each of the seven &ldquo;states&rdquo; the system could be, in based on the seven pieces. Expressed as percentages:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>current_piece &lt;- x_nes[1:(length(x_nes) - 1)]
-</span></span><span style="display:flex;"><span>next_piece &lt;- x_nes[2:length(x_nes)]
-</span></span><span style="display:flex;"><span>round(100 * (t(apply(table(current_piece, next_piece), 1, simplex))), 1)
-</span></span><span style="display:flex;"><span>&gt;             next_piece
-</span></span><span style="display:flex;"><span>&gt;current_piece    I    J    L    O    S    T    Z
-</span></span><span style="display:flex;"><span>&gt;            I  3.2 15.5 15.6 15.6 19.0 15.5 15.6
-</span></span><span style="display:flex;"><span>&gt;            J 15.6  3.0 15.5 15.6 15.7 18.7 15.8
-</span></span><span style="display:flex;"><span>&gt;            L 15.6 15.7  3.2 15.7 15.6 18.6 15.7
-</span></span><span style="display:flex;"><span>&gt;            O 15.7 15.6 15.8  6.1 15.7 15.7 15.5
-</span></span><span style="display:flex;"><span>&gt;            S 15.6 15.7 15.7 15.7  6.3 15.6 15.5
-</span></span><span style="display:flex;"><span>&gt;            T 15.6 15.7 15.7 15.6 15.6  3.1 18.7
-</span></span><span style="display:flex;"><span>&gt;            Z 15.8 18.7 15.7 15.5 15.5 15.7  3.2
-</span></span></code></pre></div><p>Unlike the barplot above, this Markovian <em>transition matrix</em> completely describes the NES algorithm, with each row representing a state-dependent probability distribution. If we wished, we could perfectly replicate the NES&rsquo;s behavior by sampling recursively from this, with each choice determining the next row to use. So written, we can see that the algorithm is heavily biased against two-in-a-row sequences, but also has a few odd biases not visible from the piece frequencies:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">current_piece &lt;- x_nes[1:(length(x_nes) - 1)]
+next_piece &lt;- x_nes[2:length(x_nes)]
+round(100 * (t(apply(table(current_piece, next_piece), 1, simplex))), 1)
+&gt;             next_piece
+&gt;current_piece    I    J    L    O    S    T    Z
+&gt;            I  3.2 15.5 15.6 15.6 19.0 15.5 15.6
+&gt;            J 15.6  3.0 15.5 15.6 15.7 18.7 15.8
+&gt;            L 15.6 15.7  3.2 15.7 15.6 18.6 15.7
+&gt;            O 15.7 15.6 15.8  6.1 15.7 15.7 15.5
+&gt;            S 15.6 15.7 15.7 15.7  6.3 15.6 15.5
+&gt;            T 15.6 15.7 15.7 15.6 15.6  3.1 18.7
+&gt;            Z 15.8 18.7 15.7 15.5 15.5 15.7  3.2
+</code></pre></div><p>Unlike the barplot above, this Markovian <em>transition matrix</em> completely describes the NES algorithm, with each row representing a state-dependent probability distribution. If we wished, we could perfectly replicate the NES&rsquo;s behavior by sampling recursively from this, with each choice determining the next row to use. So written, we can see that the algorithm is heavily biased against two-in-a-row sequences, but also has a few odd biases not visible from the piece frequencies:</p>
 <ul>
 <li>I favors S</li>
 <li>J &amp; L favor T</li>
@@ -294,105 +288,106 @@ nav {
 </ul>
 <p>This is one of the great <a href="https://en.wikipedia.org/wiki/Simpson%27s_paradox">paradoxes</a> of conditional versus marginal probabilities: none of the seven states bias against the all-important I piece, but in the aggregate there is a bias.<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup></p>
 <p>We could make a similar table for Gameboy draws, but that would be inaccurate because the algorithm depends on both the current piece <em>and</em> the last piece in the chain. It is a <em>second-order</em> Markov process, and we must define 49 states from the 7 $\times$ 7 possible combinations of the last two draws, and describe a conditional probability distribution for each one. Or, to look at it another way, we need seven different transition matrices to fully describe the system:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>last_piece &lt;- x_gb[1:(length(x_gb) - 2)]
-</span></span><span style="display:flex;"><span>current_piece &lt;- x_gb[2:(length(x_gb) - 1)]
-</span></span><span style="display:flex;"><span>current_state &lt;- paste0(last_piece, current_piece)
-</span></span><span style="display:flex;"><span>next_piece &lt;- x_gb[3:length(x_gb)]
-</span></span><span style="display:flex;"><span>round(100 * t(apply(table(current_state, next_piece), 1, simplex)), 0)
-</span></span><span style="display:flex;"><span>&gt;             next_piece
-</span></span><span style="display:flex;"><span>&gt;current_state  I  J  L  O  S  T  Z
-</span></span><span style="display:flex;"><span>&gt;           II  1 20  1 20 19 20 19
-</span></span><span style="display:flex;"><span>&gt;           IJ 14 14 14 15 14 15 14
-</span></span><span style="display:flex;"><span>&gt;           IL  1 20  1 20 19 19 19
-</span></span><span style="display:flex;"><span>&gt;           IO 14 15 14 14 14 14 15
-</span></span><span style="display:flex;"><span>&gt;           IS 14 14 14 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           IT 15 14 14 15 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           IZ 14 14 14 14 14 15 14
-</span></span><span style="display:flex;"><span>&gt;           JI 15 14 14 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           JJ 19  1  1 19 20 20 20
-</span></span><span style="display:flex;"><span>&gt;           JL 20  1  1 19 20 20 19
-</span></span><span style="display:flex;"><span>&gt;           JO 14 14 15 14 15 14 14
-</span></span><span style="display:flex;"><span>&gt;           JS 14 14 15 14 15 14 14
-</span></span><span style="display:flex;"><span>&gt;           JT 14 14 14 14 15 15 14
-</span></span><span style="display:flex;"><span>&gt;           JZ 14 14 14 15 15 14 14
-</span></span><span style="display:flex;"><span>&gt;           LI 14 14 14 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           LJ 15 14 14 15 14 14 15
-</span></span><span style="display:flex;"><span>&gt;           LL 17 16  0 17 17 16 16
-</span></span><span style="display:flex;"><span>&gt;           LO 14 14 14 14 15 14 14
-</span></span><span style="display:flex;"><span>&gt;           LS 14 14 14 15 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           LT 14 14 14 14 14 14 15
-</span></span><span style="display:flex;"><span>&gt;           LZ 14 14 15 14 14 14 15
-</span></span><span style="display:flex;"><span>&gt;           OI  5  5  5  5 27 27 27
-</span></span><span style="display:flex;"><span>&gt;           OJ  5  5  5  5 27 27 27
-</span></span><span style="display:flex;"><span>&gt;           OL  4  4  5  5 27 27 27
-</span></span><span style="display:flex;"><span>&gt;           OO  4  5  5  5 27 27 27
-</span></span><span style="display:flex;"><span>&gt;           OS 14 14 15 14 15 14 14
-</span></span><span style="display:flex;"><span>&gt;           OT 14 14 14 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           OZ 14 14 15 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           SI 14 14 14 15 15 14 14
-</span></span><span style="display:flex;"><span>&gt;           SJ 27  5  5 27  5 28  5
-</span></span><span style="display:flex;"><span>&gt;           SL 28  5  5 27  4 27  5
-</span></span><span style="display:flex;"><span>&gt;           SO 14 14 15 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           SS 27  5  5 27  5 27  5
-</span></span><span style="display:flex;"><span>&gt;           ST 14 14 14 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           SZ 27  5  5 27  5 27  4
-</span></span><span style="display:flex;"><span>&gt;           TI  5 27  5 27 27  5  5
-</span></span><span style="display:flex;"><span>&gt;           TJ 15 14 15 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           TL  5 27  4 27 27  5  5
-</span></span><span style="display:flex;"><span>&gt;           TO 14 14 14 15 15 14 14
-</span></span><span style="display:flex;"><span>&gt;           TS 14 14 15 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           TT  5 27  5 27 27  5  5
-</span></span><span style="display:flex;"><span>&gt;           TZ  5 27  4 27 27  5  4
-</span></span><span style="display:flex;"><span>&gt;           ZI 14 14 14 14 14 14 15
-</span></span><span style="display:flex;"><span>&gt;           ZJ 14 14 14 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           ZL 20 19  1 19 19 20  1
-</span></span><span style="display:flex;"><span>&gt;           ZO 14 14 14 15 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           ZS 14 14 14 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           ZT 14 15 14 14 14 14 14
-</span></span><span style="display:flex;"><span>&gt;           ZZ 19 19  1 20 19 20  1
-</span></span></code></pre></div><p>From this, we can see some very large biases in the Gameboy algorithm, with some pieces being penalized below 1% (an I after I, L), and others being greatly favored (an O after two T&rsquo;s).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">last_piece &lt;- x_gb[1:(length(x_gb) - 2)]
+current_piece &lt;- x_gb[2:(length(x_gb) - 1)]
+current_state &lt;- paste0(last_piece, current_piece)
+next_piece &lt;- x_gb[3:length(x_gb)]
+round(100 * t(apply(table(current_state, next_piece), 1, simplex)), 0)
+&gt;             next_piece
+&gt;current_state  I  J  L  O  S  T  Z
+&gt;           II  1 20  1 20 19 20 19
+&gt;           IJ 14 14 14 15 14 15 14
+&gt;           IL  1 20  1 20 19 19 19
+&gt;           IO 14 15 14 14 14 14 15
+&gt;           IS 14 14 14 14 14 14 14
+&gt;           IT 15 14 14 15 14 14 14
+&gt;           IZ 14 14 14 14 14 15 14
+&gt;           JI 15 14 14 14 14 14 14
+&gt;           JJ 19  1  1 19 20 20 20
+&gt;           JL 20  1  1 19 20 20 19
+&gt;           JO 14 14 15 14 15 14 14
+&gt;           JS 14 14 15 14 15 14 14
+&gt;           JT 14 14 14 14 15 15 14
+&gt;           JZ 14 14 14 15 15 14 14
+&gt;           LI 14 14 14 14 14 14 14
+&gt;           LJ 15 14 14 15 14 14 15
+&gt;           LL 17 16  0 17 17 16 16
+&gt;           LO 14 14 14 14 15 14 14
+&gt;           LS 14 14 14 15 14 14 14
+&gt;           LT 14 14 14 14 14 14 15
+&gt;           LZ 14 14 15 14 14 14 15
+&gt;           OI  5  5  5  5 27 27 27
+&gt;           OJ  5  5  5  5 27 27 27
+&gt;           OL  4  4  5  5 27 27 27
+&gt;           OO  4  5  5  5 27 27 27
+&gt;           OS 14 14 15 14 15 14 14
+&gt;           OT 14 14 14 14 14 14 14
+&gt;           OZ 14 14 15 14 14 14 14
+&gt;           SI 14 14 14 15 15 14 14
+&gt;           SJ 27  5  5 27  5 28  5
+&gt;           SL 28  5  5 27  4 27  5
+&gt;           SO 14 14 15 14 14 14 14
+&gt;           SS 27  5  5 27  5 27  5
+&gt;           ST 14 14 14 14 14 14 14
+&gt;           SZ 27  5  5 27  5 27  4
+&gt;           TI  5 27  5 27 27  5  5
+&gt;           TJ 15 14 15 14 14 14 14
+&gt;           TL  5 27  4 27 27  5  5
+&gt;           TO 14 14 14 15 15 14 14
+&gt;           TS 14 14 15 14 14 14 14
+&gt;           TT  5 27  5 27 27  5  5
+&gt;           TZ  5 27  4 27 27  5  4
+&gt;           ZI 14 14 14 14 14 14 15
+&gt;           ZJ 14 14 14 14 14 14 14
+&gt;           ZL 20 19  1 19 19 20  1
+&gt;           ZO 14 14 14 15 14 14 14
+&gt;           ZS 14 14 14 14 14 14 14
+&gt;           ZT 14 15 14 14 14 14 14
+&gt;           ZZ 19 19  1 20 19 20  1
+</code></pre></div><p>From this, we can see some very large biases in the Gameboy algorithm, with some pieces being penalized below 1% (an I after I, L), and others being greatly favored (an O after two T&rsquo;s).</p>
 <p>Both the NES and Gameboy transition matrices also imply the existence of modal loops that are more likely to occur than any others. For the NES, it is J $\rightarrow$ T $\rightarrow$ Z $\rightarrow$ J, though the biases here are small. For the Gameboy, the O, S, and T pieces become highly biased towards each other if another piece is in-between, and this &lsquo;citation ring&rsquo; leads to their over-representation in the Gameboy&rsquo;s marginal distribution.</p>
 <h2 id="predicting-drought-lengths">Predicting Drought Lengths</h2>
 <p>A critical calculation is the period of time between two &ldquo;I&rdquo; pieces, called a drought. With the modern 7-bag randomizer, this cannot last longer than 12 pieces, but since both NES and Gameboy&rsquo;s algorithms are probabilistic, there is no upper limit on how long a drought can last. Taking the simulations above, we calculate the drought lengths between I pieces as:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>hits &lt;- which(x_gb == <span style="color:#a31515">&#34;I&#34;</span>)
-</span></span><span style="display:flex;"><span>drought_lengths &lt;- diff(hits) - 1 <span style="color:#008000"># t</span>
-</span></span><span style="display:flex;"><span>drought_pmf &lt;- prop.table(table(drought_lengths)) <span style="color:#008000"># pr(X = t)</span>
-</span></span><span style="display:flex;"><span>drought_cdf &lt;- cumsum(drought_pmf) <span style="color:#008000"># pr(X &lt;= t)</span>
-</span></span><span style="display:flex;"><span>drought_ccdf &lt;- 1 - drought_cdf <span style="color:#008000"># pr(X &gt; t)</span>
-</span></span></code></pre></div><img src="/assets/drought_lengths.png" alt=""><p>The average drought length for the NES is 6.2 pieces, and for the Gameboy, 6.3, but with an exponential decay this not especially useful to know. Graphing the cumulative probability the drought lasts as long as any length $t$ implies that the drought duration follows a power law for both NES and Gameboy, with the NES having a slightly faster decay rate. For example, a drought longer than 20 pieces will occur 3.3% of the time on the NES, and 4% of the time on the Gameboy, and a drought longer than 40 occurs twice as often on the Gameboy (0.2% vs 0.1%).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">hits &lt;- which(x_gb == <span style="color:#a31515">&#34;I&#34;</span>)
+drought_lengths &lt;- diff(hits) - 1 <span style="color:#008000"># t</span>
+drought_pmf &lt;- prop.table(table(drought_lengths)) <span style="color:#008000"># pr(X = t)</span>
+drought_cdf &lt;- cumsum(drought_pmf) <span style="color:#008000"># pr(X &lt;= t)</span>
+drought_ccdf &lt;- 1 - drought_cdf <span style="color:#008000"># pr(X &gt; t)</span>
+</code></pre></div><p><img src="/assets/drought_lengths.png" alt=""></p>
+<p>The average drought length for the NES is 6.2 pieces, and for the Gameboy, 6.3, but with an exponential decay this not especially useful to know. Graphing the cumulative probability the drought lasts as long as any length $t$ implies that the drought duration follows a power law for both NES and Gameboy, with the NES having a slightly faster decay rate. For example, a drought longer than 20 pieces will occur 3.3% of the time on the NES, and 4% of the time on the Gameboy, and a drought longer than 40 occurs twice as often on the Gameboy (0.2% vs 0.1%).</p>
 <p>It&rsquo;s useful to compare both of these against what you would expect under purely random draws, where droughts would follow the Geometric distribution. Using R&rsquo;s built-in Geometric probability functions, <code>1 - pgeom(20, 1/7)</code> is 3.9% (dotted line), which closely tracks with the Gameboy.</p>
 <h2 id="conclusions-and-a-problem">Conclusions, and a Problem</h2>
 <p>Simulating out chains of draws from each algorithm and playing around with them in R has answered our question. Compared to simple random sampling, both the NES and Gameboy randomizers do a good job at flood prevention - the Gameboy&rsquo;s second-order transition matrix highly penalizes all three-in-a-row outcomes, and the NES&rsquo;s first-order matrix penalizes two-in-a-row outcomes. However, we&rsquo;ve also identified severe biases with the Gameboy algorithm, which probably explains why it was quietly replaced in late 1989 for the NES release. Even on the official NES release, though, Tetris has some small but detectable biases. As an exercise in learning new things about a game dear to many, the simulation approach is satisfying.</p>
 <p>But there&rsquo;s also a big problem with the above analysis (or any such analysis) - how do we know if our simulation is accurate to the &ldquo;real world&rdquo; of Tetris games? The reverse-engineering of the code may be flawed, or my implementation in <code>tetristools</code>. To really be sure, we must treat the above as predictions, and compare them against actual Tetris game data using statistical modeling, which we will take on <a href="/blog/2021-01-02-stan-markov-tetris/">next time</a>.</p>
-<div class="footnotes" role="doc-endnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1">
+<li id="fn:1" role="doc-endnote">
 <p>Simon Laroche has written an engaging <a href="https://simon.lc/the-history-of-tetris-randomizers">history of Tetris randomizers</a>, unfortunately without the Gameboy algorithm.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2">
+<li id="fn:2" role="doc-endnote">
 <p><a href="https://www.telegraph.co.uk/technology/video-games/10877456/Tetris-at-30-a-history-of-the-worlds-most-successful-game.html">https://www.telegraph.co.uk/technology/video-games/10877456/Tetris-at-30-a-history-of-the-worlds-most-successful-game.html</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3">
+<li id="fn:3" role="doc-endnote">
 <p>This is a bit of a simplification, as the second sample might happen 1/8th of the time even without a repetition. Additionally, a small amount of non-random error is introduced by a modulo operation which leads to the biases in the NES transition matrix. The assembly code for the NES randomizer is well-documented by Mike Birken <a href="http://meatfighter.com/nintendotetrisai/#Picking_Tetriminos">here</a>, and identifies the same marginal biases we see in the simulations. The pseudo-random number generator is also interesting, but beyond our scope.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4">
+<li id="fn:4" role="doc-endnote">
 <p>The Gameboy algorithm is described on the harddrop Wiki <a href="http://harddrop.com/wiki/Tetris_(Game_Boy)#Randomizer">here</a>, and includes details about how the bitwise OR operation is performed.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5">
+<li id="fn:5" role="doc-endnote">
 <p>Henk Rogers describes the vastly-worse algorithm that was almost shipped with the Gameboy, and his dramatic weekend rewriting it <a href="https://www.youtube.com/watch?v=Lf8f4FFyqiw#t=855">here</a>.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:6">
+<li id="fn:6" role="doc-endnote">
 <p>The <code>tetristools</code> package is available on github <a href="https://github.com/babeheim/tetristools">here</a>. It can be installed in R by first installing the <a href="https://cran.r-project.org/web/packages/remotes/index.html">remotes</a> package, and running the command <code>install_github(&quot;babeheim/tetristools&quot;)</code>.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:7">
+<li id="fn:7" role="doc-endnote">
 <p>Here I use the common notation of O, T, S, Z, L, J, and I for the seven pieces, which are roughly shaped like each letter.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:8">
+<li id="fn:8" role="doc-endnote">
 <p>To be precise, there is a bias against I and L at the margin because there is is no bias <em>for</em> I or L within any state.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</div>
+</section>
 
 </content>
 <p>
