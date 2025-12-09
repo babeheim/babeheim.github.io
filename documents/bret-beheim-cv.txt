@@ -73,7 +73,7 @@ working papers:
 - authors    : Hooper, et al.
   title      : Exceptionally low mortality despite widespread COVID-19 infection among Indigenous Tsimane and Moseten of Bolivia
   status     : in review, Proc B (rejected at science ~Feb 2025, rejected at PNAS ~Jun)
-  note       : it looks like Inchauste is the first author now? and Paul's the last author? crazy
+  note       : it looks like Inchauste is the first author now? and Paul's the last author? crazy. wait, now kaplan is first author? this paper seems cursed
 
 - authors    : Tanay Katiyar, et al.
   title      : Social Determinants of Depression in the Tsimane Forager-Horticulturalists of Bolivia
@@ -81,44 +81,15 @@ working papers:
 
 ## In revision
 
-- authors    : Alejandro Pérez Velilla, Bret Beheim, Paul E. Smaldino
-  title      : The Development of Risk Attitudes and their Cultural Transmission
-  preprint   : https://osf.io/preprints/socarxiv/9yjes
-  materials  : https://osf.io/p5893/
-  status     : under review at *Psychological Review*
-
-- authors    : Colby, Abigail, et al.
-  title      : Oxytocin varies across the life course in a sex-specific way in a human subsistence population
-  status     : in revision, PNAS
-
-- authors    : Claudia A.F. Wascher, Gemini Waterhouse, Sam Reynolds & Bret Beheim
-  title      : Vocal mimicry in corvids
-  status     : in revision
-
 - authors    : Sánchez-Amaro, et al.
   title      : EVApeCognition: An 18-Year Database Reveals Domain-Specific Characteristics in Great Ape Cognition
   status     : in review, Science (got rejected @ Nature)
 
 ## in press
 
-- authors    : Bret Beheim
-  title      : Opening strategies in the Game of Go from feudalism to superhuman AI
-  preprint   : https://osf.io/preprints/psyarxiv/cewst
-  materials  : https://github.com/babeheim/go-learning-eras
-  status     : in review, Evolutionary Human Sciences
-
-- authors    : Aronoff, Jacob, et al.
-  title      : Inflammaging is minimal among forager-horticulturalists in the Bolivian Amazon
-  status     : in press, ProceedingsB
-
-- authors    : Amy Anderson, et al.
-  title      : Childhood skeletal lesions common in prehistory are present in living forager-farmers and predict adult markers of immune function
-  status     : in press, *Science Advances*
-
-- authors    : Getz, Madeleine, et al.
-  title      : Higher blood lipid levels after the transition to menopause in two forager-horticulturalist populations
-  status     : in press, Evolution, Medicine, and Public Health
-
+- authors    : Colby, Abigail, et al.
+  title      : Oxytocin varies across the life course in a sex-specific way in a human subsistence population
+  status     : in revision, PNAS
 
 books:
 
@@ -133,12 +104,68 @@ publications:
 
 # 2025
 
+- authors    : Alejandro Pérez Velilla, Bret Beheim, Paul E. Smaldino
+  title      : The Development of Risk Attitudes and their Cultural Transmission
+  preprint   : https://osf.io/preprints/socarxiv/9yjes
+  materials  : https://osf.io/p5893/
+  doi        : https://doi.org/10.1037/rev0000599
+  journal    : Psychological Review
+  year       : 2025
+  volume     : 
+  issue      : 
+  publisher  : American Psychological Association 
+
+- authors    : M J Getz, J E Aronoff, C L Jenkins, S Ghafoor, J Vazquez, N T Appel, M Gatz, D K Cummings, P L Hooper, B Beheim, K H Buetow, C E Finch, G S Thomas, J Stieglitz, M Gurven, H Kaplan, B C Trumble
+  title      : Higher blood lipid levels after the transition to menopause in two forager-horticulturalist populations 
+  year       : 2025
+  journal    : Evolution, Medicine, and Public Health
+  volume     : 13
+  issue      : 1
+  pages      : 201-214
+  doi        : https://doi.org/10.1093/emph/eoaf020
+
+- authors    : Amy S. Anderson, Aaron Blackwell, M. Linda Sutherland, Thomas Kraft, James Sutherland, Bret Beheim, Dan Cummings, Suhail Ghafoor, Paul L. Hooper, Daniel Eid Rodriguez, Andrei Irimia, Margaret Gatz, Wendy Mack, Chris Rowan, Michael Miyamoto, Kenneth Buetow, Caleb Finch, L. Samuel Wann, Adel Allam, Randall C. Thompson, Gregory Thomas, Hillard Kaplan, Jonathan Stieglitz, Benjamin Trumble, and Michael D. Gurven 
+  title      : Childhood skeletal lesions common in prehistory are present in living forager-farmers and predict adult markers of immune function
+  journal    : Science Advances
+  year       : 2025
+  volume     : 11
+  issue      : 29
+  publisher  : Science
+  doi        : 10.1126/sciadv.adw3697
+
+- authors    : Jacob E. Aronoff, Carrie L. Jenkins, Angela R. Garcia, Stephanie V. Koebele, Suhail Ghafoor; Kate L. Woolard; Mia Charifson; Ivan M. Suarez; Daniel Eid Rodriguez; Bret Beheim, Daniel K. Cummings; Paul L. Hooper; Thomas K. Kraft, Kenneth Buetow; Caleb E. Finch; Maximilien Franck, Alan A. Cohen, Jonathan Stieglitz, Michael Gurven, Hillard Kaplan, Benjamin C. Trumble
+  title      : Inflammaging is minimal among forager-horticulturalists in the Bolivian Amazon
+  journal    : Proceedings of the Royal Society, B
+  volume     : 292
+  issue      : 2053
+  doi        : https://doi.org/10.1098/rspb.2025.1111
+  publisher  : The Royal Society
+
+- authors    : Bret Beheim
+  title      : Opening strategies in the Game of Go from feudalism to superhuman AI
+  preprint   : https://osf.io/preprints/psyarxiv/cewst
+  materials  : https://github.com/babeheim/go-learning-eras
+  journal    : Evolutionary Human Sciences
+  volume     : 7(e28)
+  year       : 2025
+  doi        : https://doi.org/10.1017/ehs.2025.10016
+
+- authors    : Claudia A.F. Wascher, Gemini Waterhouse & Bret A. Beheim
+  title      : Vocal mimicry in corvids
+  journal    : Animal Cognition
+  year       : 2025
+  volume     : 28
+  number     : 88
+  doi        : https://doi.org/10.1007/s10071-025-02006-4
+  materials  : https://github.com/babeheim/corvid-mimicry
+  publisher  : Springer Nature
+
 - authors    : Fran Daw, Bret A. Beheim, Claudia A.F. Wascher
   title      : Evolutionary drivers of caching behaviour in corvids
   journal    : Animal Cognition
   year       : 2025
-  volume.    : 28
-  issue      : 17
+  volume     : 28
+  number     : 17
   doi        : https://doi.org/10.1007/s10071-025-01938-1
   materials. : https://link.springer.com/article/10.1007/s10071-025-01938-1#Sec9
   publisher. : Springer Nature
@@ -665,9 +692,10 @@ presentations:
 - Durham CES talk on cultural diversity 2024 and on decomposition
 - talk at john's height workshop
 - talk to the RDM group on unit tests
-- invited talk in Brno
+- invited talk on brno czechia
 - invited talk in Rabat 
 - talk at oleg's workshop
+
 - "Strategic Social Leaning in the Era of Superhuman Artificial Intelligence: A Large-Scale, Longitudinal Case Study using the Game of Go", Cultural Evolution Society Meeting, 2022-09-28
 - The Adaptive Logic of False Beliefs, Human Behavior and Evolution Society Meeting, 2019-04-26
 - Improving Reproducibility in Evolutionary Anthropology, Santa Fe Institute ENDOW workshop, 2020-02-06
