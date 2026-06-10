@@ -68,7 +68,7 @@ working papers:
   materials  : https://github.com/babeheim/linked-calcium-growth
   status     : preprint uploaded to medarxiv
 
-# in review
+# in review / revision
 
 - authors    : Hooper, et al.
   title      : Exceptionally low mortality despite widespread COVID-19 infection among Indigenous Tsimane and Moseten of Bolivia
@@ -79,17 +79,11 @@ working papers:
   title      : Social Determinants of Depression in the Tsimane Forager-Horticulturalists of Bolivia
   status     : under review at "Evolution, Medicine and Public Health"
 
-## In revision
-
 - authors    : Sánchez-Amaro, et al.
   title      : EVApeCognition: An 18-Year Database Reveals Domain-Specific Characteristics in Great Ape Cognition
   status     : in review, Science (got rejected @ Nature)
 
 ## in press
-
-- authors    : Colby, Abigail, et al.
-  title      : Oxytocin varies across the life course in a sex-specific way in a human subsistence population
-  status     : in revision, PNAS
 
 books:
 
@@ -103,6 +97,15 @@ books:
 publications:
 
 # 2025
+
+- authors    : Abigail E. Colby, Dominik C. Jud, Valerie Baettig, Jordan S. Martin, Camila Scaff, Michael D. Gurven, Benjamin C. Trumble, Bret A. Beheim, Paul L. Hooper, Daniel K. Cummings, Hillard Kaplan, Jonathan Stieglitz, Arnulfo Cary Ista, and Adrian V. Jaeggi
+  title      : Oxytocin varies across the life course in a sex-specific way in a human subsistence population
+  journal    : Proceedings of the National Academy of Sciences
+  doi        : https://doi.org/10.1073/pnas.2509977122
+  year       : 2025
+  volume     : 122
+  issue      : 51
+  pages      : e2509977122
 
 - authors    : Alejandro Pérez Velilla, Bret Beheim, Paul E. Smaldino
   title      : The Development of Risk Attitudes and their Cultural Transmission
@@ -674,7 +677,7 @@ theses supervised:
   date    : 2020-11-03
 
 grants, fellowships, awards:
-- THLHP co-investigator
+- THLHP co-investigator since 2012
 - MPI-EVA Senior Researcher Funding Line. $56,754 startup, $56,754 annual budget over five years, 2016-2021.
 - The Human Life Course and the Biodemography of Aging”, Co-Investigator, National Institutes of Health / National Institute on Aging. $590,659. 2005
 - Administrative Supplement to The Human Life Course and the Biodemography of Aging”, Co-Investigator National Institutes of Health / National Institute on Aging. $15,000. 2004
@@ -684,7 +687,6 @@ grants, fellowships, awards:
 - Phi Beta Kappa Honors Society. 2004
 
 presentations:
-
 - 'Does culture evolve “one funeral at a time”?', Oleg Sobchuk, Jean Barré, Marijn Koolen, Harin Lee and Bret Beheim, Computational Humanities Research 2025 (submitted)
 - Tubingen talk June 2025
 - "The Problem of Missingness in Historical and Evolutionary Datasets" Japan talk Nov 2024
@@ -796,13 +798,15 @@ article reviews:
 
 grant reviewing:
 - NSF Cultural Anthropology
+- grant reviewer, CES ACE award program 2025
 
 professional memberships past and present:
+- program committee, CES 2026 Rabat
 - Software Carpentry / Data Carpentry certification, December 2018
-- American Anthropological Association (since 2015)
+- American Anthropological Association (lapsed)
 - Human Behavior and Evolution Society (since 2018)
 - European Human Behavior and Evolution Association (since 2017)
-- American Association of Physical Anthropologists (since 2015)
+- American Association of Behavioral Anthropologists (lapsed)
 - California Undergraduate Anthropology Conference (Principle Organizer), May 2004
 - Anthropology Student Union President, UC Santa Barbara (2003-2004)
 
@@ -834,7 +838,7 @@ recent collaborators:
 language and technical proficiency:
 - Japanese, intermediate
 - Spanish, intermediate
-- German, intermediate
+- German, intermediate, B1 certified
 - Tsimane', basic
 - Markup Languages; TeX, HTML, Markdown, JSON, YAML
 - Computing Environments; R, ArcGIS, Stata, MATLAB, UNIX shell
