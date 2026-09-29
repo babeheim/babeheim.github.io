@@ -5,40 +5,44 @@
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="images/favicon.png" />
+<link rel="shortcut icon" href="/images/favicon.png" />
 <title>Adding dynamic computations to LaTeX documents | Bret Alexander Beheim</title>
 <meta name="title" content="Adding dynamic computations to LaTeX documents" />
 <meta name="description" content="how to create and insert dynamic values into your Latex manuscripts" />
 <meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Adding dynamic computations to LaTeX documents" />
-<meta property="og:description" content="how to create and insert dynamic values into your Latex manuscripts" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/blog/2022-11-02-dynamic-latex/" /><meta property="og:image" content="https://babeheim.com/assets/goodtex.png" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-11-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-02T00:00:00+00:00" /><meta property="og:site_name" content="Bret Alexander Beheim" />
+<meta property="og:url" content="/blog/2022-11-02-dynamic-latex/">
+  <meta property="og:site_name" content="Bret Alexander Beheim">
+  <meta property="og:title" content="Adding dynamic computations to LaTeX documents">
+  <meta property="og:description" content="how to create and insert dynamic values into your Latex manuscripts">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2022-11-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-11-02T00:00:00+00:00">
+    <meta property="og:image" content="https://babeheim.com/assets/goodtex.png">
 
 
 
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://babeheim.com/assets/goodtex.png"/>
-
-<meta name="twitter:title" content="Adding dynamic computations to LaTeX documents"/>
-<meta name="twitter:description" content="how to create and insert dynamic values into your Latex manuscripts"/>
-
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://babeheim.com/assets/goodtex.png">
+  <meta name="twitter:title" content="Adding dynamic computations to LaTeX documents">
+  <meta name="twitter:description" content="how to create and insert dynamic values into your Latex manuscripts">
 
 
-<meta itemprop="name" content="Adding dynamic computations to LaTeX documents">
-<meta itemprop="description" content="how to create and insert dynamic values into your Latex manuscripts"><meta itemprop="datePublished" content="2022-11-02T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-11-02T00:00:00+00:00" />
-<meta itemprop="wordCount" content="435"><meta itemprop="image" content="https://babeheim.com/assets/goodtex.png">
-<meta itemprop="keywords" content="" />
+
+
+  <meta itemprop="name" content="Adding dynamic computations to LaTeX documents">
+  <meta itemprop="description" content="how to create and insert dynamic values into your Latex manuscripts">
+  <meta itemprop="datePublished" content="2022-11-02T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2022-11-02T00:00:00+00:00">
+  <meta itemprop="wordCount" content="435">
+  <meta itemprop="image" content="https://babeheim.com/assets/goodtex.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
-  <link rel="stylesheet" href="/css/custom.css">
-<script>
+  <link rel="stylesheet" href="/css/custom.css"><script>
   MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -62,162 +66,71 @@
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-4PXGB1H7X2', { 'anonymize_ip': false });
-}
-</script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4PXGB1H7X2');
+        }
+      </script>
 
 
+
+
+
 <script>
- 
 (function () {
   const KEY = "theme";
   const stored = localStorage.getItem(KEY);
-  const systemDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const theme = stored || (systemDark ? "dark" : "light");
+
+  const theme = stored || "light";
+
   document.documentElement.setAttribute("data-theme", theme);
-  
-  document.documentElement.style.colorScheme = theme === "dark" ? "dark" : "light";
+  document.documentElement.style.colorScheme =
+    theme === "dark" ? "dark" : "light";
 })();
 </script>
-
-<style>
-   
-  :root {
-    --bg: #ffffff;
-    --fg: #1a1a1a;
-    --muted: #666666;
-    --link: #0b5fff;
-    --card: #f6f7f9;
-    --border: #e6e8eb;
-
-     
-    --link-visited: #5a8cff;
-    --code-bg: #f5f3ff;
-    --code-fg: #222222;
-  }
-  
-  html[data-theme="dark"] {
-    --bg: #0e1113;
-    --fg: #e6e6e6;
-    --muted: #a0a0a0;
-    --link: #8ab4ff;
-    --card: #171a20;
-    --border: #2a2f3a;
-
-    --link-visited: #a3c2ff;
-    --code-bg: #1c1a28;
-    --code-fg: #e6e6e6;
-  }
-
-   
-  @media (prefers-color-scheme: dark) {
-    html:not([data-theme]) {
-      --bg: #0e0f12;
-      --fg: #e6e6e6;
-      --muted: #a0a0a0;
-      --link: #8ab4ff;
-      --card: #171a20;
-      --border: #2a2f3a;
-
-      --link-visited: #a3c2ff;
-      --code-bg: #1c1a28;
-      --code-fg: #e6e6e6;
-    }
-  }
-</style>
-
-
 </head>
 
 <body>
-  <header><a href="/" class="title">
-  <h2>Bret Alexander Beheim</h2>
-</a>
-<nav>
-  <div class="nav-links"><a href="/">About</a>
+  <header><div class="site-header-inner">
+  <a href="/" class="site-title-link" aria-label="Bret Beheim home">
+    <span class="site-title">Bret Beheim</span>
+  </a>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-links">
+<a href="/#research">Research</a>
+<a href="/#book">Book</a>
+<a href="/#publications">Publications</a>
+<a href="/#group">Group</a>
+<a href="/#teaching">Teaching</a>
+<a href="/#software">Software</a>
 
-<a href="/publications.html">Publications</a>
-
-<a href="/people.html">People</a>
-
-<a href="/software.html">Software</a>
-
-<a href="/teaching.html">Teaching</a>
-
-<a href="/blog">Blog</a>
-
+<a href="/documents/bret-beheim-cv.pdf">CV</a>
 </div>
-  <div class="nav-toggle">
-    
-<label class="switch" aria-label="Toggle dark mode" title="Toggle dark mode">
-  <input id="theme-toggle" type="checkbox">
-  <span class="slider round"></span>
+    <div class="nav-toggle">
+      
+<label class="switch" title="Toggle dark mode">
+  <input
+    id="theme-toggle"
+    type="checkbox"
+    role="switch"
+    aria-label="Toggle dark mode"
+  >
+  <span class="slider round" aria-hidden="true"></span>
 </label>
 
-<style>
- 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;    
-  height: 26px;
-  vertical-align: middle;  
-}
-
- 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
- 
-
- 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  inset: 0;
-  background-color: #242424;
-  transition: .4s;
-}
-
- 
-.slider:before {
-  content: "";
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  left: 3px;
-  bottom: 3px;
-  background-color: #e3e3e3;
-  transition: .4s;
-}
-
-input:checked + .slider { background-color: #e3e3e3; }
-input:checked + .slider:before { background-color: #242424; transform: translateX(24px); }
-
- 
-.slider.round { border-radius: 26px; }
-.slider.round:before { border-radius: 50%; }
-</style>
-  </div>
-</nav>
-
-<style>
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-</style></header>
+    </div>
+  </nav>
+</div>
+</header>
   <main>
 
 <h1>Adding dynamic computations to LaTeX documents</h1>
@@ -230,53 +143,51 @@ nav {
 </p>
 
 <content>
-  <figure><a href="https://tex.stackexchange.com/a/74609"><img src="/assets/goodtex.png"/></a>
+  <figure><a href="https://tex.stackexchange.com/a/74609"><img src="/assets/goodtex.png"></a>
 </figure>
 
 <p>Recently, I&rsquo;ve found myself writing up in $\LaTeX$ again, over the Rmarkdown / Quarto / knitr / pandoc / etc. ecosystem. There&rsquo;s nothing fundamentally wrong with such <a href="https://en.wikipedia.org/wiki/Notebook_interface">computational notebooks</a>, but if I had to pick one reason to stay with $\LaTeX$ it&rsquo;s this: my first <code>.tex</code> problem sets from 2006 still compile perfectly, but I hit dependency issues with my Rmd / pandoc workflows from only a few years ago.</p>
 <p>The one thing I did lose, though, was the ability to write placeholder variables that render into (computed) values. In Rmarkdown, you write &ldquo;the mean of $x$ is <code>`r mean(x)`</code>&rdquo; and it just computes and inserts the mean value into the document in place of that code snippet. If you&rsquo;ve ever had to re-write numbers in your reports over and over again, you know how much of a killer feature this is for computational notebooks. However, it turns out you can do something similar in $\LaTeX$, provided you separate the <em>dynamic insertion</em> step from <em>pre-computation</em> step.</p>
 <h2 id="dynamic-insertion">Dynamic Insertion</h2>
 <p>Inserting values into $\LaTeX$ documents is just a matter of creating new variables using the <code>\newcommand</code> command in the preamble of the <code>.tex</code> file. Here&rsquo;s a minimum working example:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#00f">\documentclass</span>{article}
-
-<span style="color:#008000">% add to preamble
-</span><span style="color:#008000"></span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nObs</span>}{2,123}
-<span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nPpl</span>}{53}
-<span style="color:#00f">\newcommand</span>{<span style="color:#00f">\meanAge</span>}{33.2}
-
-<span style="color:#00f">\begin</span>{document}
-The number of observations is <span style="color:#00f">\nObs</span>.
-The number of participants was <span style="color:#00f">\nPpl</span>{} with a mean age of <span style="color:#00f">\meanAge</span>.
-<span style="color:#00f">\end</span>{document}
-
-</code></pre></div><p>When the $\LaTeX$ document compiles, it replaces these custom commands with values<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> they store, so the document reads:</p>
-<p><img src="/assets/maindottex.png" alt=""></p>
-<p>Cool, but we still have to <em>type out the numbers</em> in the manuscript itself, like a schmuck. To really make this trick work, we have to tell LaTeX to <em>load</em> these calculations from somewhere.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#00f">\documentclass</span>{article}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000">% add to preamble
+</span></span></span><span style="display:flex;"><span><span style="color:#008000"></span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nObs</span>}{2,123}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nPpl</span>}{53}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\meanAge</span>}{33.2}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#00f">\begin</span>{document}
+</span></span><span style="display:flex;"><span>The number of observations is <span style="color:#00f">\nObs</span>.
+</span></span><span style="display:flex;"><span>The number of participants was <span style="color:#00f">\nPpl</span>{} with a mean age of <span style="color:#00f">\meanAge</span>.
+</span></span><span style="display:flex;"><span><span style="color:#00f">\end</span>{document}
+</span></span></code></pre></div><p>When the $\LaTeX$ document compiles, it replaces these custom commands with values<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> they store, so the document reads:</p>
+<img src="/assets/maindottex.png" alt=""><p>Cool, but we still have to <em>type out the numbers</em> in the manuscript itself, like a schmuck. To really make this trick work, we have to tell LaTeX to <em>load</em> these calculations from somewhere.</p>
 <h2 id="pre-computation-in-r-or-whatever">Pre-computation in R (or whatever)</h2>
 <p>To make to documents dynamic, we just need to write code that saves our R calculations in the <code>\newcommand</code> format that $\LaTeX$ uses. Here&rsquo;s the function I use, and a simple example:</p>
-<script type="application/javascript" src="https://gist.github.com/babeheim/07fd4d102b6949086a1c36cee9fb0157.js"></script>
+<script src="https://gist.github.com/babeheim/07fd4d102b6949086a1c36cee9fb0157.js"></script>
 
 <p>This code creates a file called <code>calcs.tex</code> that contains something like:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nObs</span>}{2,123}
-<span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nPpl</span>}{53}
-<span style="color:#00f">\newcommand</span>{<span style="color:#00f">\meanAge</span>}{33.2}
-</code></pre></div><p>Note that you never have to touch these numbers yourself. R takes care of that for you.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nObs</span>}{2,123}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\nPpl</span>}{53}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\newcommand</span>{<span style="color:#00f">\meanAge</span>}{33.2}
+</span></span></code></pre></div><p>Note that you never have to touch these numbers yourself. R takes care of that for you.</p>
 <p>Then, this file can be called into the main document using <code>\input</code> in the preamble like so:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-latex" data-lang="latex"><span style="color:#00f">\documentclass</span>{article}
-<span style="color:#00f">\input</span>{calcs.tex}
-<span style="color:#00f">\begin</span>{document}
-The number of observations is <span style="color:#00f">\nObs</span>.
-The number of participants was <span style="color:#00f">\nPpl</span>{} with a mean age of <span style="color:#00f">\meanAge</span>.
-<span style="color:#00f">\end</span>{document}
-</code></pre></div><p>Voila! We can re-run our R scripts as a project evolves and re-generate all our figures, tables and in-text calculations. The $\LaTeX$ document will always be up to date, just like a computational Rmarkdown-style notebook.</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#00f">\documentclass</span>{article}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\input</span>{calcs.tex}
+</span></span><span style="display:flex;"><span><span style="color:#00f">\begin</span>{document}
+</span></span><span style="display:flex;"><span>The number of observations is <span style="color:#00f">\nObs</span>.
+</span></span><span style="display:flex;"><span>The number of participants was <span style="color:#00f">\nPpl</span>{} with a mean age of <span style="color:#00f">\meanAge</span>.
+</span></span><span style="display:flex;"><span><span style="color:#00f">\end</span>{document}
+</span></span></code></pre></div><p>Voila! We can re-run our R scripts as a project evolves and re-generate all our figures, tables and in-text calculations. The $\LaTeX$ document will always be up to date, just like a computational Rmarkdown-style notebook.</p>
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p>Note the curly brackets in <code>\nPpl{}</code> are necessary to tell $\LaTeX$ to add a whitespace afterwards.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
 </content>
 <p>
@@ -285,7 +196,10 @@ The number of participants was <span style="color:#00f">\nPpl</span>{} with a me
 
     
   </main>
-  <footer>
+  <footer><div class="footer-links">
+  <a href="/archive.html">Older notes and essays</a>
+</div>
+
 
 
 <script>
@@ -301,14 +215,9 @@ The number of participants was <span style="color:#00f">\nPpl</span>{} with a me
     localStorage.setItem(KEY, t);
   };
 
-  
   el.checked = getTheme() === "dark";
-
-  
   el.addEventListener("change", () => setTheme(el.checked ? "dark" : "light"));
 
-  
-  
   const stored = localStorage.getItem(KEY);
   if (!stored && window.matchMedia) {
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
