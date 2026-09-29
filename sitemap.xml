@@ -6,8 +6,6 @@
   </url><url>
     <loc>/</loc>
   </url><url>
-    <loc>/gallery/</loc>
-  </url><url>
     <loc>/links.html</loc>
   </url><url>
     <loc>/people.html</loc>
@@ -19,5 +17,7 @@
     <loc>/teaching.html</loc>
   </url><url>
     <loc>/publications.html</loc>
+  </url><url>
+    <loc>/gallery.html</loc>
   </url>
 </urlset>
