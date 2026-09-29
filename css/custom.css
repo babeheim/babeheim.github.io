@@ -4,7 +4,7 @@
  * A restrained academic design:
  *   - serif typography for reading
  *   - sans-serif navigation and metadata
- *   - narrow readable measure
+ *   - relaxed readable measure
  *   - strong typographic hierarchy
  *   - minimal ornament
  *
@@ -18,7 +18,7 @@
    ------------------------------------------------------------ */
 
 :root {
-  --content-width: 72ch;
+  --content-width: 48rem;
 
   --bg: #ffffff;
   --fg: #1a1a1a;
@@ -78,7 +78,7 @@ body {
   color: var(--fg);
 
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1rem;
+  font-size: 1.0625rem;
   line-height: 1.68;
 
   text-align: left;
@@ -346,8 +346,8 @@ content {
   margin-top: 0;
   margin-bottom: 1.15rem;
 
-  font-size: 1rem;
-  line-height: 1.68;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 strong,

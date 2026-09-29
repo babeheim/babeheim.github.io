@@ -133,13 +133,11 @@ Three-Toed Sloth by Cosma Shalizi">
 
 
 <script>
- 
 (function () {
   const KEY = "theme";
   const stored = localStorage.getItem(KEY);
-  const systemDark = window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const theme = stored || (systemDark ? "dark" : "light");
+
+  const theme = stored || "light";
 
   document.documentElement.setAttribute("data-theme", theme);
   document.documentElement.style.colorScheme =
