@@ -1,0 +1,968 @@
+
+name   : Bret Alexander Beheim
+
+contact:
+  email    : bret_beheim@eva.mpg.de
+  orcid    : 0000-0003-4653-3155
+  github   : babeheim
+  bluesky  : "@babeheim"
+  phone    : +49(0) 341 3550 310
+  website  : babeheim.com
+  address  : Max Planck Institute for Evolutionary Anthropology, Deutscher Platz 6, Leipzig, Germany D-04103
+  pronouns : he/him
+
+employment:
+- position      : Group Leader
+  years         : 2020–present
+  group         : MOSAIC (Models of Sociality, Art, Information and Culture) Research Group
+  institution   : Max Planck Institute for Evolutionary Anthropology (MPI-EVA)
+  department    : Department of Human Behavior, Ecology, and Culture
+- position      : Senior Researcher
+  years         : 2016–2020
+  institution   : Max Planck Institute for Evolutionary Anthropology (MPI-EVA)
+  department    : Department of Human Behavior, Ecology, and Culture
+- position      : Postdoctoral Researcher
+  years         : 2012–2016
+  institution   : University of New Mexico
+  department    : Department of Anthropology
+
+education:
+- degree         : Doctor of Philosophy in Ecology
+  year_received  : 2012
+  institution    : University of California at Davis
+  location       : Davis, California, USA
+- degree         : Master of Arts in Social Sciences
+  year_received  : 2006
+  institution    : University of Chicago
+  location       : Chicago, Illinois, USA
+- degree         : Bachelor of Arts in History and Anthropology
+  year_received  : 2004
+  institution    : University of California at Santa Barbara
+  location       : Santa Barbara, California, USA
+  notes          : with distinction in the major (History); Phi Beta Kappa
+
+projects in prep:
+- authors    :
+  title      :
+  status     :
+- authors    : N.-Han Tran, Bret A. Beheim
+  title      : "Differential skill acquisition by age in two knowledge-intensive strategy games"
+  status     : in preparation
+- authors    : Amy Anderson, et al.
+  title      : "The role of parity and sex in tooth loss in a natural fertility population with little access to dentistry"
+  status     : in preparation, AJPA
+- authors    : Beheim, B., Kaplan, H., Thompson, R.C., Trumble, B.C., Wann, L.S., Allam, A.H., Frohlich, B., Sutherland, M.L., Sutherland, J.D., Steiglitz, J. *et al*.
+  title      : "Cardiovascular acculturation among subsistence horticulturalists in the Bolivian Amazon"
+  target     : Evolution, Medicine, and Public Health
+- authors    : Beheim, B., McElreath, R., Gurven, M., Kaplan, H.
+  title      : "Social diffusion of gasoline motors in the Bolivian Amazon"
+  target     : Evolution and Human Behavior
+- authors    : Riana Minocher, Bret Beheim
+  title      : "Evolutionary dynamics of bilingualism in an indigenous South American population"
+  status     : in preparation
+
+
+working papers:
+
+- authors    : Bret Beheim
+  title      : "A linked mixture model of coronary atherosclerosis"
+  preprint   : https://doi.org/10.1101/2021.09.13.21263547
+  materials  : https://github.com/babeheim/linked-calcium-growth
+  status     : preprint uploaded to medRxiv
+
+# in review / revision
+
+- authors    :
+  title      : Evaluating Performance Bias in Face-to-BMI Vision Transformer Models Across Diverse Human Populations
+  status     : about to be submitted, needs feedback - https://docs.google.com/document/d/1LGNgy-4rKY57uNSxs5iJW82UABvz7igqe3sELr6Ljz8/edit?tab=t.0
+
+- authors    :
+  title      : Longitudinal evidence that helminth infection lowers cardiometabolic risk in the Tsimane, attenuated by APOE-ε4 genotype
+  status     : R&R at PNAS, July 2026
+
+- authors    :
+  title      : Infectious history predicts elevated amyloid and tau and poorer cognitive performance among forager-farmers in the Bolivian Tropics
+  status     : Nature
+
+- authors    :
+  title      : Lifetime infectious burden is associated with Alzheimer's disease biomarkers in an Indigenous Amazonian population
+  status     : in review, Nature Aging, July 2026 (rejected @ Science earlier that month)
+- authors    :
+  title      : Social Determinants of Depression in a Small-Scale Subsistence Population
+  status     : in review, Evolutionary Human Sciences, July 2026; preprint on PsyArXiv
+- authors    :
+  title      : Bone demineralization accompanies vascular mineralization in physically active adults with few cardiometabolic risk factors
+  status     : in review, Science Advances, June 2026
+- authors    : Power, E., et al.
+  title      : Social Network Structure, Wealth, and Wealth Inequality Across Cultures
+  status     : presubmission inquiries
+
+- title      : Bone demineralization accompanies vascular mineralization in physically active adults with few cardiometabolic risk factors
+  notes      : rejected at PNAS, December 2025
+
+- authors    : Hooper, et al.
+  title      : Exceptionally low mortality despite widespread COVID-19 infection among Indigenous Tsimane and Moseten of Bolivia
+  status     : in review, Proceedings of the Royal Society B (rejected at Science, ~February 2025, rejected at PNAS, ~June)
+  note       : it looks like Inchauste is the first author now? and Paul's the last author? crazy. wait, now kaplan is first author? this paper seems cursed
+
+- authors    : Tanay Katiyar, et al.
+  title      : Social Determinants of Depression in the Tsimane Forager-Horticulturalists of Bolivia
+  status     : under review at "Evolution, Medicine and Public Health"
+
+## in press
+
+- authors    :
+
+- authors    :
+  title      : Blood pressure changes during aging and menopause among forager-horticulturalists in the Bolivian Amazon
+  status     : in press at American Journal of Biological Anthropology (June 2026), DOI:10.1002/ajpa.70309
+
+
+books:
+
+- authors    : Bret A. Beheim, Paul E. Smaldino
+  title      : Mathematical Foundations of Cultural Evolution
+  publisher  : Princeton University Press
+  status     : under contract
+  approx_pages : 400
+  manuscript_due: December 2026
+
+
+
+publications:
+
+- authors    :
+  title      :
+  journal    :
+  doi        :
+  year       :
+  volume     :
+  issue      :
+  pages      :
+
+# 2026
+
+- authors    : Alejandro Sánchez-Amaro, Sonja J. Ebel van Wijk, Carin Molenaar, Akzira Abuova, Lizbeth Mujica-Manrique, Sarah M. Leisterer-Peoples, Bret Beheim, Luke Maurits, Anna Albiach-Serrano, Matthias Allritz, Nazli Altınok, Federica Amici, Alice MI Auersperg, Filippo Aureli, Elisa Bandini, Jochen Barth, Leïla Benziad, Bettina E. Bläsing, Manuel Bohn, Marie Bourjade, Juliane Bräuer, Marie-Hélène Broihanne, Sarah F. Brosnan, Nereida Bueno-Guerra, Thomas Bugnyar, David Buttelmann, Frances Buttelmann, Trix Cacchione, Malinda Carpenter, Fernando Colmenares, Catherine Crockford, Katherine A. Cronin, África de las Heras, Arianna De Marco, Sarah E. DeTroy, Valérie Dufour, Shona Duguid, Robin I. M. Dunbar, Johanna Eckert, Jan M. Engelmann, Joel Fagot, Julia Fischer, Sofia Ingrid Fredrika Forss, Martina Funk, György Gergely, Julia R. Greenberg, Johannes Großmann, Sebastian Grüneisen, Marta Halina, Daniel Hanus, Sarah R. Heilbronner, Christophe Heintz, Robert Hepach, Esther Herrmann, Satoshi Hirata, Alenka Hribar, Gabriele Janzen, Juliane Kaminski, Patricia Kanngiesser, Fumihiro Kano, Katharina C. Kirchhofer, Hagen Knofe, Kathrin S. Kopp, Christopher Krupenye, Isabelle Barbara Laumer, Stephen C. Levinson, Ulf Liszkowski, Héctor M. Manrique, Gema Martin-Ordas, Emma Suvi McEwen, Richard T. Moore, Enric Munar, Marcos Nadal, Christian Nawroth, Suska Nolte, Marie Pelé, Patrizia Potì, Hannes Rakoczy, Julia Riedel, Amélie Romain, Federico Rossano, Yvan I. Russell, Gloria Sabbatini, Marie Schäfer, Marina Scheumann, Martin Schmelz, Benjamin Schmid, Vanesa Schmitt, Carla Sebastián-Enesco, Amanda Madeleine Seed, Chikako Suda-King, Tibor Tauzin, Sebastian Tempelmann, Claudio Tennie, Valentina Truppa, Jana Uher, Amrisha Vaish, Edwin J.C. van Leeuwen, Elisabetta M. Visalberghi, Christoph J. Völter, Victoria Vonau, Claudia A. F. Wascher, Roman M. Wittig, Wouter Wolf, Michael Tomasello, Katja Liebal, Josep Call, Daniel B. M. Haun
+  title      : "EVApeCognition: An 18-Year Dataset of Great Ape Cognition"
+  journal    : Scientific Data
+  year       : 2026
+  volume     : 13
+  issue      : 1
+  pages      : 805
+  doi        : https://doi.org/10.1038/s41597-026-07191-6
+  publisher  : Springer Nature
+
+- authors    : Lucia Inchauste, Xavier de Lamballerie, Stéphane Priet, Maguin Gutierrez Cayuba, Juan Copajira Adrian, Daniel Eid Rodriguez, Raul Quispe Gutierrez, Sarah Alami, Jacob E. Aronoff, Kenneth Buetow, Daniel K. Cummings, Bret A. Beheim, Caleb E. Finch, Margaret Gatz, Suhail Ghafoor, Thomas S. Kraft, Amanda J. Lea, Wendy J. Mack, David E. Michalik, M. Katherine Sayre, Edmond Seabright, Jonathan Stieglitz, Gregory S. Thomas, Randall C. Thompson, Benjamin C. Trumble, Hillard S. Kaplan, Michael D. Gurven, Paul L. Hooper
+  title      : Exceptionally low mortality despite widespread COVID-19 infection among Indigenous Tsimane and Moseten of Bolivia
+  journal    : Social Science & Medicine
+  doi        : https://doi.org/10.1016/j.socscimed.2026.119493
+  year       : 2026
+  volume     : 404
+  issue      : 119493
+  pages      :
+
+# 2025
+
+- authors    : Abigail E. Colby, Dominik C. Jud, Valerie Baettig, Jordan S. Martin, Camila Scaff, Michael D. Gurven, Benjamin C. Trumble, Bret A. Beheim, Paul L. Hooper, Daniel K. Cummings, Hillard Kaplan, Jonathan Stieglitz, Arnulfo Cary Ista, and Adrian V. Jaeggi
+  title      : Oxytocin varies across the life course in a sex-specific way in a human subsistence population
+  journal    : Proceedings of the National Academy of Sciences
+  doi        : https://doi.org/10.1073/pnas.2509977122
+  year       : 2025
+  volume     : 122
+  issue      : 51
+  pages      : e2509977122
+
+- authors    : Alejandro Pérez Velilla, Bret Beheim, Paul E. Smaldino
+  title      : The development of risk behaviors and their cultural transmission
+  preprint   : https://osf.io/preprints/socarxiv/9yjes
+  materials  : https://osf.io/p5893/
+  doi        : https://doi.org/10.1037/rev0000599
+  journal    : Psychological Review
+  year       : 2025
+  volume     :
+  issue      :
+  publisher  : American Psychological Association
+
+- authors    : M J Getz, J E Aronoff, C L Jenkins, S Ghafoor, J Vazquez, N T Appel, M Gatz, D K Cummings, P L Hooper, B Beheim, K H Buetow, C E Finch, G S Thomas, J Stieglitz, M Gurven, H Kaplan, B C Trumble
+  title      : Higher blood lipid levels after the transition to menopause in two forager-horticulturalist populations
+  year       : 2025
+  journal    : Evolution, Medicine, and Public Health
+  volume     : 13
+  issue      : 1
+  pages      : 201-214
+  doi        : https://doi.org/10.1093/emph/eoaf020
+
+- authors    : Amy S. Anderson, Aaron Blackwell, M. Linda Sutherland, Thomas Kraft, James Sutherland, Bret Beheim, Dan Cummings, Suhail Ghafoor, Paul L. Hooper, Daniel Eid Rodriguez, Andrei Irimia, Margaret Gatz, Wendy Mack, Chris Rowan, Michael Miyamoto, Kenneth Buetow, Caleb Finch, L. Samuel Wann, Adel Allam, Randall C. Thompson, Gregory Thomas, Hillard Kaplan, Jonathan Stieglitz, Benjamin Trumble, and Michael D. Gurven
+  title      : Childhood skeletal lesions common in prehistory are present in living forager-farmers and predict adult markers of immune function
+  journal    : Science Advances
+  year       : 2025
+  volume     : 11
+  issue      : 29
+  publisher  : Science
+  doi        : 10.1126/sciadv.adw3697
+
+- authors    : Jacob E. Aronoff, Carrie L. Jenkins, Angela R. Garcia, Stephanie V. Koebele, Suhail Ghafoor, Kate L. Woolard, Mia Charifson, Ivan M. Suarez, Daniel Eid Rodriguez, Bret Beheim, Daniel K. Cummings, Paul L. Hooper, Thomas K. Kraft, Kenneth Buetow; Caleb E. Finch; Maximilien Franck, Alan A. Cohen, Jonathan Stieglitz, Michael Gurven, Hillard Kaplan, Benjamin C. Trumble
+  title      : Inflammaging is minimal among forager-horticulturalists in the Bolivian Amazon
+  journal    : Proceedings of the Royal Society, B
+  volume     : 292
+  issue      : 2053
+  year       : 2025
+  doi        : https://doi.org/10.1098/rspb.2025.1111
+  publisher  : The Royal Society
+
+- authors    : Bret Beheim
+  title      : Opening strategies in the Game of Go from feudalism to superhuman AI
+  preprint   : https://osf.io/preprints/psyarxiv/cewst
+  materials  : https://github.com/babeheim/go-learning-eras
+  journal    : Evolutionary Human Sciences
+  volume     : 7(e28)
+  year       : 2025
+  doi        : https://doi.org/10.1017/ehs.2025.10016
+
+- authors    : Claudia A.F. Wascher, Gemini Waterhouse & Bret A. Beheim
+  title      : Vocal mimicry in corvids
+  journal    : Animal Cognition
+  year       : 2025
+  volume     : 28
+  number     : 88
+  doi        : https://doi.org/10.1007/s10071-025-02006-4
+  materials  : https://github.com/babeheim/corvid-mimicry
+  publisher  : Springer Nature
+
+- authors    : Fran Daw, Bret A. Beheim, Claudia A.F. Wascher
+  title      : Evolutionary drivers of caching behaviour in corvids
+  journal    : Animal Cognition
+  year       : 2025
+  volume     : 28
+  number     : 17
+  doi        : https://doi.org/10.1007/s10071-025-01938-1
+  materials  : https://link.springer.com/article/10.1007/s10071-025-01938-1#Sec9
+  publisher  : Springer Nature
+
+- authors    : Jordan S. Martin, Bret Beheim, Michael Gurven, Hillard Kaplan, Jonathan Stieglitz, Benjamin C. Trumble, Paul Hooper, Dan Cummings, Daniel Eid Rodriguez, Adrian V. Jaeggi
+  title      : Indirect genetic effects among neighbors promote cooperation and accelerate adaptation in a small-scale human society
+  journal    : Science Advances
+  year       : 2025
+  volume     : 11
+  issue      : eads3129
+  materials  : https://github.com/Jordan-Scott-Martin/Tsimane-neighbor-IGEs
+  doi        : https://doi.org/10.1126/sciadv.ads3129
+  publisher  : American Association for the Advancement of Science
+
+- authors    : Oleg Sobchuk, Bret Beheim
+  title      : Does literature evolve one funeral at a time?
+  journal    : Proceedings of the Royal Society, B
+  year       : 2025
+  volume     : 292
+  issue      : 2040
+  pages      : 20242033
+  materials  : https://osf.io/uy4s7/
+  doi        : https://doi.org/10.1098/rspb.2024.2033
+  publisher  : The Royal Society Publishing
+
+# 2024
+
+- authors    : Elspeth Ready, Cody T. Ross, Bret Beheim, Jenn Parrott
+  title      : Indigenous food production in a carbon economy
+  journal    : Proceedings of the National Academy of Sciences
+  year       : 2024
+  volume     : 121
+  number     : 32
+  pages      : e2317686121
+  doi        : https://doi.org/10.1073/pnas.2317686121
+  materials  : https://github.com/elspethr/inuvialuit_carbon
+  publisher  : National Academy of Sciences
+
+- authors    : Bret Alexander Beheim, Adrian Viliami Bell
+  title      : Why cultural distance can promote – or impede – group-beneficial outcomes
+  journal    : Evolutionary Human Sciences
+  year       : 2024
+  volume     : 6
+  issue      : e14
+  doi        : https://doi.org/10.1017/ehs.2024.8
+  materials  : https://github.com/babeheim/causality-variance-fst
+  preprint   : https://doi.org/10.31234/osf.io/m3vgj
+  publisher  : Cambridge University Press
+
+- authors    : Arianna Dalzero, Bret A. Beheim, Cody Ross, Paul Hooper, Hillard Kaplan, Michael Gurven, Dieter Lukas
+  title      : Cross-cousin marriage among Tsimane forager-horticulturalists during demographic transition and market integration
+  journal    : Evolutionary Human Sciences
+  year       : 2024
+  volume     : 6
+  issue      : e18
+  doi        : https://doi.org/10.1017/ehs.2024.11
+  materials  : https://osf.io/pk8f7/
+  publisher  : Cambridge University Press
+
+- authors    : Benjamin C. Trumble, Matt Schwartz, Andrew Ozga, Gary T. Schwartz, Christopher M. Stojanowski, Carrie L. Jenkins, Thomas S. Kraft, Angela R. Garcia, Daniel K. Cummings, Paul Hooper, Daniel Eid Rodriguez, Juan Copajira, Raul Quispe, Kenneth Buetow, Bret Beheim, Andrei Irimia, Gregory S. Thomas, Randall C Thompson, Margaret Gatz, Jonathan Stieglitz, Caleb E. Finch, Michael Gurven, Hillard Kaplan and HORUS Team
+  title      : Poor Oral Health Is Associated With Inflammation, Aortic Valve Calcification, and Brain Volume Among Forager-Farmers
+  journal    : "The Journals of Gerontology, Series A: Biological Sciences and Medical Sciences"
+  year       : 2024
+  volume     : 79
+  issue      : 5
+  pages      : 1-8
+  doi        : https://doi.org/10.1093/gerona/glae013
+
+# 2023
+
+- authors    : Benjamin C Trumble, Jacob Negrey, Stephanie V Koebele, Randall C Thompson, L Samuel Wann, Adel H Allam, Bret Beheim, M Linda Sutherland, James D Sutherland, Daniel Eid Rodriguez, David E Michalik, Chris J Rowan, Guido P Lombardi, Angela R Garcia, Daniel K Cummings, Edmond Seabright, Sarah Alami, Thomas S Kraft, Paul Hooper, Kenneth Buetow, Andrei Irimia, Margaret Gatz, Jonathan Stieglitz, Michael D Gurven, Hillard Kaplan, Gregory S Thomas, Tsimane Health and Life History Project Teams
+  title      : "Testosterone is positively associated with coronary artery calcium in a low cardiovascular disease risk population"
+  journal    : Evolution, Medicine, and Public Health
+  year       : 2023
+  volume     : 11
+  issue      : 1
+  pages      : 472-484
+  doi        : https://doi.org/10.1093/emph/eoad039
+  publisher  : Oxford University Press
+
+- authors    : Benjamin C. Trumble, Mia Charifson, Tom Kraft, Angela R. Garcia, Daniel K. Cummings, Paul Hooper, Amanda J. Lea, Daniel Eid Rodriguez, Stephanie V. Koebele, Kenneth Buetow, Bret Beheim, Riana Minocher, Maguin Gutierrez, Gregory S. Thomas, Margaret Gatz, Jonathan Stieglitz, Caleb E. Finch, Hillard Kaplan, Michael Gurven
+  title      : "Apolipoprotein-ε4 is associated with higher fecundity in a natural fertility population"
+  journal    : Science Advances
+  year       : 2023
+  volume     : 9
+  issue      : 32
+  pages      : eade9797
+  doi        : https://doi.org/10.1126/sciadv.ade9797
+  materials  : https://github.com/babeheim/tsimane-apoe-reproduction
+  publisher  : American Association for the Advancement of Science
+
+- authors    : Friederike Hillemann, Bret A. Beheim, Elspeth Ready
+  title      : "Socio-economic predictors of Inuit foraging strategies and their implications for climate change adaptation"
+  journal    : Philosophical Transactions of the Royal Society B
+  year       : 2023
+  volume     : 378
+  issue      : 1889
+  pages      : 20220395
+  materials  : https://github.com/fhillemann/MSrepo_harvest_patch_choice
+  doi        : https://doi.org/10.1098/rstb.2022.0395
+  publisher  : The Royal Society Publishing
+
+- authors    : Stieglitz, J, Buoro, Y, Beheim, B, Trumble, B, Kaplan, H, Gurven, M
+  title      : "Labour's pain: strenuous subsistence work, mechanical wear-and-tear and musculoskeletal pain in a non-industrialized population"
+  journal    : Proceedings of the Royal Society B
+  year       : 2023
+  volume     : 290
+  issue      : 1998
+  pages      : 20222497
+  doi        : https://doi.org/10.1098/rspb.2022.2497
+  materials  :
+  publisher  : The Royal Society Publishing
+
+- authors    : Benjamin C. Trumble, Herman Pontzer, Jonathan Stieglitz, Daniel K. Cummings, Brian Wood, Melissa Emery Thompson, David Raichlen, Bret Beheim, Gandhi Yetish, Hillard Kaplan, Michael Gurven
+  title      : "Energetic costs of testosterone in two physically active foraging populations"
+  journal    : American Journal of Human Biology
+  year       : 2023
+  doi        : https://doi.org/10.1002/ajhb.23949
+  pages      : e23949
+  materials  :
+  publisher  : Wiley
+
+- authors    : Thomas S. Kraft, Edmond Seabright, Sarah Alami, Samuel M. Jenness, Paul Hooper, Bret Beheim, Helen Davis, Daniel K. Cummings, Daniel Eid Rodriguez, Maguin Gutierrez Cayuba, Emily Miner, Xavier de Lamballerie, Lucia Inchauste, Stéphane Priet, Benjamin C. Trumble, Jonathan Stieglitz, Hillard Kaplan, Michael D. Gurven
+  title      : "Metapopulation dynamics of infectious disease (SARS-CoV-2) transmission in a small-scale human society"
+  journal    : PLOS Biology
+  year       : 2023
+  doi        : https://doi.org/10.1371/journal.pbio.3002108
+  materials  : https://osf.io/7yb2m/
+  volume     : 21
+  issue      : 8
+  pages      : e3002108
+  publisher  : PLOS
+
+- authors    : Siobhán M. Mattison, Ruizhe Liu, Peter M. Mattison, Bret A. Beheim, Mary K. Shenk, Tami Blumenfield, Chun-Yi Sum, Edmond Seabright, and Sarah Alami
+  title      : "Gender disparities in material and educational resources differ by kinship system"
+  journal    : Philosophical Transactions of the Royal Society B
+  year       : 2023
+  volume     : 378
+  issue      : 1883
+  pages      : 20220299
+  doi        : https://doi.org/10.1098/rstb.2022.0299
+  materials  : https://github.com/babeheim/mosuo-gender-inequality
+  publisher  : The Royal Society Publishing
+
+- authors    : Cody T. Ross, Paul L. Hooper, Jennifer E. Smith, Adrian V. Jaeggi, Eric Alden Smith, Sergey Gavrilets, et al.
+  title      : "Reproductive inequality in humans and other mammals"
+  journal    : Proceedings of the National Academy of Sciences
+  year       : 2023
+  volume     : 120
+  issue      : 22
+  pages      : e2220124120
+  doi        : https://doi.org/10.1073/pnas.2220124120
+  publisher  : National Academy of Sciences
+  materials  : https://github.com/ctross/reproductiveskew
+
+- authors    : Kaplan, Hillard and Hooper, Paul L. and Gatz, Margaret and Mack, Wendy J. and Law, E. Meng and Chui, Helena C. and Sutherland, M. Linda and Sutherland, James D. and Rowan, Christopher J. and Wann, L. Samuel and Allam, Adel H. and Thompson, Randall C. and Michalik, David E. and Lombardi, Guido and Miyamoto, Michael I. and Eid Rodriguez, Daniel and Copajira Adrian, Juan and Quispe Gutierrez, Raul and Beheim, Bret A. and Cummings, Daniel K. and Seabright, Edmond and Alami, Sarah and R. Garcia, Angela and Buetow, Kenneth and Thomas, Gregory S. and Finch, Caleb E. and Stieglitz, Jonathan and Trumble, Benjamin C. and Gurven, Michael D. and Irimia, Andrei
+  title      : "Brain volume, energy balance, and cardiovascular health in two nonindustrial South American populations"
+  journal    : Proceedings of the National Academy of Sciences
+  year       : 2023
+  doi        : https://doi.org/10.1073/pnas.2205448120
+  volume     : 120
+  number     : 13
+  pages      : e2205448120
+  publisher  : National Academy of Sciences
+  materials  :
+
+# 2022
+
+- authors    : Natalia Fedorova, Richard McElreath, and Bret A. Beheim
+  title      : "The complex life course of mobility: Quantitative description of 300,000 residential moves in 1850-1950 Netherlands"
+  year       : 2022
+  journal    : Evolutionary Human Sciences
+  doi        : https://doi.org/10.1017/ehs.2022.33
+  volume     : 4, E39
+  publisher  : Cambridge University Press
+  materials  : https://github.com/Naty-fedorova/Dutch-historical-mobility
+
+- authors    : Thomas S. Kraft, Daniel K. Cummings, Vivek Venkataraman, Sarah Alami, Bret Beheim, Paul Hooper, Ed Seabright, Benjamin C. Trumble, Jonathan Stieglitz, Hillard Kaplan, Karen L. Endicott, Kirk M. Endicott, Michael Gurven
+  title      : "Female cooperative labour networks in hunter–gatherers and horticulturalists"
+  year       : 2022
+  journal    : Philosophical Transactions of the Royal Society B
+  volume     : 378
+  pages      : 20210431
+  doi        : https://doi.org/10.1098/rstb.2021.0431
+  materials  : https://osf.io/f95qv/
+  publisher  : The Royal Society Publishing
+
+# 2021
+
+- authors    : Riana Minocher, Silke Atmaca, Claudia Bavero, Richard McElreath, Bret Beheim
+  title      : "Estimating the reproducibility of social learning research published between 1955 and 2018"
+  preprint   : https://doi.org/10.31234/osf.io/4nzc7
+  doi        : https://doi.org/10.1098/rsos.210450
+  journal    : Royal Society Open Science
+  volume     : 8:210450
+  materials  : https://github.com/rianaminocher/reproducibility-analysis
+  publisher  : The Royal Society Publishing
+
+- authors    : Angela R Garcia, Caleb E Finch, Margy Gatz, Thomas Kraft, Daniel Cummings, Jonathan Stieglitz, Mia Charifson, Daniel Eid Rodriguez, Kenneth Buetow, Bret Beheim, Hooman Allayee, Greg Thomas and the HORUS team, Michael Gurven, Hillard Kaplan, Benjamin C Trumble
+  title      : "APOE4 is associated with elevated blood lipids and lower levels of innate immune biomarkers in a tropical Amerindian subsistence population"
+  year       : 2021
+  journal    : eLife
+  volume     : 10:e68231
+  publisher  : eLife Sciences Publications Ltd.
+  doi        : https://doi.org/10.7554/eLife.682311
+  materials  : https://doi.org/10.5061/dryad.pg4f4qrpt
+
+- authors    : N.-Han Tran, Simon Kucharský, Timothy Waring, Silke Atmaca, Bret Beheim
+  title      : "Limited scope for group coordination for stylistic variations in kolam art"
+  year       : 2021
+  journal    : Frontiers in Psychology
+  volume     : 12:4770
+  doi        : https://doi.org/10.3389/fpsyg.2021.742577
+  materials  : https://github.com/nhtran93/kolam_coordination
+  publisher  : Frontiers
+
+- authors    : Bret Beheim, Quentin Atkinson, Joseph Bulbulia, Will M. Gervais, Russell Gray, Joseph Henrich, Martin Lang, M. Willis Monroe, Michael Muthukrishna, Ara Norenzayan, Benjamin Grant Purzycki, Azim Shariff, Edward Slingerland, Rachel Spicer, Aiyana K. Willard
+  title      : "Treatment of missing data determined conclusions regarding moralizing gods"
+  preprint   : https://doi.org/10.31234/osf.io/jwa2n
+  materials  : https://github.com/babeheim/moralizing-gods-reanalysis
+  year       : 2021
+  journal    : Nature
+  volume     : 595
+  doi        : https://doi.org/10.1038/s41586-021-03655-4
+  publisher  : Springer Nature
+
+- authors    : Adrian V. Jaeggi, Aaron D. Blackwell, Christopher von Rueden, Benjamin C. Trumble, Jonathan Stieglitz, Angela R. Garcia, Thomas S. Kraft, Bret Beheim, Paul Hooper, Hillard Kaplan, Michael Gurven
+  title      : "Relative wealth and inequality associate with health in a small-scale subsistence society"
+  year       : 2021
+  journal    : eLife
+  volume     : 10:e59437
+  doi        : https://doi.org/10.7554/eLife.59437
+  materials  : https://github.com/adblackwell/wealthinequality
+  publisher  : eLife Sciences Publications Ltd.
+
+- authors    : Christopher J. Rowan, Michael A. Escander, Edmond Seabright, Daniel Eid Rodriguez, Edhitt Cortez Linares, Raul Quispe Gutierrez, Juan Copajira Adrian, Daniel Cummings, Bret Beheim, Kirsten Tolstrup, Abinash Achrekar, Thomas Kraft, David E. Michalik, Michael I Miyamoto, Adel H. Allam, L. Samuel Wann, Jagat Narula, Benjamin C. Trumble, Jonathan Stieglitz, Randall C. Thompson, Gregory S. Thomas, Hillard S. Kaplan, Michael D. Gurven
+  title      : "Very low prevalence and incidence of atrial fibrillation among Bolivian forager-farmers"
+  year       : 2021
+  journal    : Annals of Global Health
+  volume     : 87(1)
+  doi        : https://doi.org/10.5334/aogh.3252
+  materials  : https://github.com/babeheim/tsimane-afib-public
+  publisher  : Ubiquity Press
+
+- authors    : N.-Han Tran, Timothy Waring, Silke Atmaca, Bret A. Beheim
+  title      : "Entropy trade-offs in artistic design: A case study of Tamil *kolam*"
+  year       : 2021
+  journal    : Evolutionary Human Sciences
+  volume     : 3(E23)
+  doi        : https://doi.org/10.1017/ehs.2021.14
+  materials  : https://github.com/nhtran93/kolam_signaling
+  publisher  : Cambridge University Press
+
+# 2020
+
+- authors    : Tanya Broesch, Alyssa N Crittenden, Bret Beheim, Aaron Blackwell, John Bunce, Heidi Colleran, Kristin Hagel, Michelle Kline, Richard McElreath, Robin Nelson, Anne Pisor, Sean Prall, Ilaria Pretelli, Benjamin Grant Purzycki, Elizabeth A Quinn, Cody T Ross, Brooke Scelza, Katie Starkweather, Jonathan Stieglitz, Monique Borgerhoff Mulder
+  title      : "Navigating cross-cultural research: methodological and ethical considerations"
+  year       : 2020
+  journal    : Proceedings of the Royal Society B
+  volume     : 287:20201245
+  doi        : https://doi.org/10.1098/rspb.2020.1245
+  preprint   : https://doi.org/10.31234/osf.io/thqsw
+  publisher  : The Royal Society Publishing
+
+- authors    : Michael Gurven, Thomas S. Kraft, Sarah Alami, Juan Copajira Adrian, Edhitt Cortez Linares, Daniel Cummings, Daniel Eid Rodriguez, Paul L. Hooper, Adrian V. Jaeggi, Raul Quispe Gutierrez, Ivan Maldonado Suarez, Edmond Seabright, Hillard Kaplan, Jonathan Stieglitz, Benjamin Trumble
+  title      : "Rapidly declining body temperature in a tropical human population"
+  year       : 2020
+  journal    : Science Advances
+  volume     : Vol. 6, no. 44, eabc6599
+  doi        : https://doi.org/10.1126/sciadv.abc6599
+  role       : primary database manager
+  publisher  : American Association for the Advancement of Science
+
+- authors    : Brian M Wood, Herman Pontzer, Jacob A Harris, Audax ZP Mabulla, Marc T Hamilton, Theodore W Zderic, Bret A Beheim, David A Raichlen
+  title      : "Step Counts From Satellites: Methods for Integrating Accelerometer and GPS Data for More Accurate Measures of Pedestrian Travel"
+  year       : 2020
+  journal    : Journal for the Measurement of Physical Behaviour
+  volume     : 3(1), pp. 58–66
+  doi        : https://doi.org/10.1123/jmpb.2019-0016
+  publisher  : Human Kinetics
+
+# 2019
+
+- authors    : Monique Borgerhoff Mulder, Mary C Towner, Ryan Baldini, Bret A Beheim, Samuel Bowles, Heidi Colleran, Michael Gurven, Karen L Kramer, Siobhán M Mattison, David A Nolin, Brooke A Scelza, Eric Schniter, Rebecca Sear, Mary K Shenk, Eckart Voland, John Ziker
+  title      : "Differences between sons and daughters in the intergenerational transmission of wealth"
+  year       : 2019
+  journal    : Philosophical Transactions of the Royal Society B
+  volume     : 374:20180076
+  doi        : https://doi.org/10.1098/rstb.2018.0076
+  materials  : https://github.com/babeheim/wealth-transmission-son-bias
+  publisher  : The Royal Society Publishing
+
+# 2018
+
+- authors    : Cody T Ross, Monique Borgerhoff Mulder, Seung-Yun Oh, Samuel Bowles, Bret Beheim, John Bunce, Mark Caudell, Gregory Clark, Heidi Colleran, Carmen Cortez, Patricia Draper, Russell D Greaves, Michael Gurven, Thomas Headland, Janet Headland, Kim Hill, Barry Hewlett, Hillard S Kaplan, Jeremy Koster, Karen Kramer, Frank Marlowe, Richard McElreath, David Nolin, Marsha Quinlan, Robert Quinlan, Caissa Revilla-Minaya, Brooke Scelza, Ryan Schacht, Mary Shenk, Ray Uehara, Eckart Voland, Kai Willführ, Bruce Winterhalder, John Ziker
+  title      : "Greater wealth inequality, less polygyny: rethinking the polygyny threshold model"
+  year       : 2018
+  journal    : Journal of the Royal Society Interface
+  volume     : 15:20180035
+  doi        : https://doi.org/10.1098/rsif.2018.0035
+  materials  : https://github.com/babeheim/polygyny-puzzle
+  publisher  : The Royal Society Publishing
+
+- authors    : Benjamin C Trumble, Jonathan Stieglitz, Adrian V Jaeggi, Bret Beheim, Matthew Schwartz, Edmond Seabright, Daniel Cummings, Hillard Kaplan, Michael Gurven
+  title      : "Parental hormones are associated with crop loss and family sickness following catastrophic flooding in lowland Bolivia"
+  year       : 2018
+  journal    : Physiology & Behavior
+  volume     : 193(A), pp. 101–107
+  doi        : https://doi.org/10.1016/j.physbeh.2018.02.028
+  publisher  : Elsevier
+
+- authors    : Eric Schniter, Nathaniel T Wilcox, Bret A Beheim, Hillard S Kaplan, Michael Gurven
+  title      : "Information transmission and the oral tradition: Evidence of a late-life service niche for Tsimane Amerindians"
+  year       : 2018
+  volume     : 39(1), pp. 94–105
+  journal    : Evolution and Human Behavior
+  doi        : https://doi.org/10.1016/j.evolhumbehav.2017.10.006
+  publisher  : Elsevier
+
+# 2017
+
+- authors    : Hillard Kaplan, Randall C Thompson, Benjamin C Trumble, L Samuel Wann, Adel H Allam, Bret Beheim, Bruno Frohlich, M Linda Sutherland, James D Sutherland, Jonathan Stieglitz, Daniel Eid Rodriguez, David E Michalik, Chris J Rowan, Guido P Lombardi, Ram Bedi, Angela R Garcia, James K Min, Jagat Narula, Caleb E Finch, Michael Gurven, Gregory S Thomas
+  title      : "Coronary atherosclerosis in indigenous South American Tsimane: a cross-sectional cohort study"
+  year       : 2017
+  journal    : The Lancet
+  volume     : 389(10080), pp. 1730–1739
+  doi        : https://doi.org/10.1016/S0140-6736(17)30752-3
+  publisher  : Elsevier
+
+- authors    : Aaron D Blackwell, Samuel S Urlacher, Bret Beheim, Christopher von Rueden, Adrian Jaeggi, Jonathan Stieglitz, Benjamin C Trumble, Michael Gurven, Hillard Kaplan
+  title      : "Growth references for Tsimane forager-horticulturalists of the Bolivian Amazon"
+  year       : 2017
+  journal    : American Journal of Physical Anthropology
+  volume     : 162(3), pp. 441–461
+  doi        : https://doi.org/10.1002/ajpa.23128
+  materials  : https://github.com/babeheim/tsimane-growth-references
+  publisher  : Wiley
+
+- authors    : Michael Gurven, Eric Fuerstenberg, Benjamin Trumble, Jonathan Stieglitz, Bret Beheim, Helen Davis, Hillard Kaplan
+  title      : "Cognitive performance across the life course of Bolivian forager-farmers with limited schooling"
+  year       : 2017
+  journal    : Developmental Psychology
+  volume     : 53(1), pp. 160–176
+  doi        : https://doi.org/10.1037/dev0000175
+  publisher  : American Psychological Association
+
+- authors    : Michael Gurven, Jonathan Stieglitz, Benjamin Trumble, Aaron D Blackwell, Bret Beheim, Helen Davis, Paul Hooper, Hillard Kaplan
+  title      : "The Tsimane Health and Life History Project: Integrating anthropology and biomedicine"
+  year       : 2017
+  journal    : Evolutionary Anthropology
+  volume     : 26(2), pp. 54–73
+  doi        : https://doi.org/10.1002/evan.21515
+  publisher  : Wiley
+
+# 2016
+
+- authors    : Bret Beheim
+  title      : "Reproducible Research as our New Default"
+  volume     : 57.5, e57-e58
+  year       : 2016
+  journal    : Anthropology News
+  publisher  : American Anthropological Association
+  doi        : https://doi.org/10.1111/j.1556-3502.2016.570523.x
+
+- authors    : Benjamin C Trumble, Jonathan Stieglitz, Aaron D Blackwell, Hooman Allayee, Bret Beheim, Caleb E Finch, Michael Gurven, Hillard Kaplan
+  title      : "Apolipoprotein E4 is associated with improved cognitive function in Amazonian forager-horticulturalists with a high parasite burden"
+  year       : 2016
+  journal    : The FASEB Journal
+  volume     : 31(4), pp. 1508–1515
+  doi        : https://doi.org/10.1096/fj.201601084R
+  publisher  : Wiley
+
+- authors    : Michael Gurven, Megan Costa, Ben Trumble, Jonathan Stieglitz, Bret Beheim, Daniel Eid Rodriguez, Paul L Hooper, Hillard Kaplan
+  title      : "Health costs of reproduction are minimal despite high fertility, mortality and subsistence lifestyle"
+  year       : 2016
+  journal    : Scientific Reports
+  volume     : 6(1), pp. 1–10
+  doi        : https://doi.org/10.1038/srep30056
+  publisher  : Nature Research
+
+- authors    : Adrian V Jaeggi, Paul L Hooper, Bret A Beheim, Hillard Kaplan, Michael Gurven
+  title      : "Reciprocal exchange patterned by market forces helps explain cooperation in a small-scale society"
+  year       : 2016
+  journal    : Current Biology
+  volume     : 26(16), pp. 2180–2187
+  doi        : https://doi.org/10.1016/j.cub.2016.06.019
+  materials  : https://github.com/babeheim/tsimane-multigood-reciprocity
+  publisher  : Elsevier
+
+- authors    : Michael D Gurven, Benjamin C Trumble, Jonathan Stieglitz, Gandhi Yetish, Daniel Cummings, Aaron D Blackwell, Bret Beheim, Hillard S Kaplan, Herman Pontzer
+  title      : "High resting metabolic rate among Amazonian forager-horticulturalists experiencing high pathogen burden"
+  year       : 2016
+  journal    : American Journal of Physical Anthropology
+  volume     : 161(3), pp. 414–425
+  doi        : https://doi.org/10.1002/ajpa.23040
+  publisher  : Wiley
+
+- authors    : Aaron D Blackwell, Benjamin C Trumble, Ivan Maldonado Suarez, Jonathan Stieglitz, Bret Beheim, J Josh Snodgrass, Hillard Kaplan, Michael Gurven
+  title      : "Immune Function in Amazonian Horticulturalists"
+  year       : 2016
+  journal    : Annals of Human Biology
+  volume     : 43(4), pp. 382–396
+  doi        : https://doi.org/10.1080/03014460.2016.1189963
+  publisher  : Taylor & Francis
+
+- authors    : Siobhán M. Mattison, Eric A. Smith, Mary K. Shenk, Ethan E. Cochrane
+  title      : "The Evolution of Inequality"
+  year       : 2016
+  journal    : Evolutionary Anthropology
+  volume     : 25(4), pp. 184–199
+  doi        : https://doi.org/10.1002/evan.21491
+  publisher  : Wiley
+  materials  : https://github.com/babeheim/evolution-of-inequality
+  role       : data analyst, figure author
+
+- authors    : Siobhán M. Mattison, Bret Beheim, Bridget Chak, Peter Buston
+  title      : "Offspring sex preferences among patrilineal and matrilineal Mosuo in Southwest China revealed by differences in parity progression"
+  year       : 2016
+  journal    : Royal Society Open Science
+  volume     : 3:160526
+  doi        : https://doi.org/10.1098/rsos.160526
+  publisher  : The Royal Society Publishing
+  materials  : https://github.com/babeheim/mosuo-ppr
+
+# 2015
+
+- authors    : Jonathan Stieglitz, Bret A Beheim, Benjamin C Trumble, Felicia C Madimenos, Hillard Kaplan, Michael Gurven
+  title      : "Low Mineral Density of a Weight-Bearing Bone Among Adult Women in a High Fertility Population"
+  year       : 2015
+  journal    : American Journal of Physical Anthropology
+  volume     : 156(4), pp. 637–648
+  doi        : https://doi.org/10.1002/ajpa.22681
+  publisher  : Wiley
+
+- authors    : Aaron D Blackwell, Marilyne A Tamayo, Bret Beheim, Benjamin C Trumble, Jonathan Stieglitz, Paul L Hooper, Melanie Martin, Hillard Kaplan, Michael Gurven
+  title      : "Helminth infection, fecundity, and age of first pregnancy in women"
+  year       : 2015
+  journal    : Science
+  volume     : 350(6263), pp. 970–972
+  publisher  : American Association for the Advancement of Science
+  doi        : https://doi.org/10.1126/science.aac7902
+
+# 2014
+
+- authors    : Bret Alexander Beheim, Calvin Thigpen, Richard McElreath
+  title      : "Strategic social learning and the population dynamics of human behavior: the game of Go"
+  year       : 2014
+  journal    : Evolution and Human Behavior
+  volume     : 35(5), pp. 351–357
+  preprint   : https://doi.org/10.1101/005223
+  doi        : https://doi.org/10.1016/j.evolhumbehav.2014.04.001
+  materials  : https://github.com/babeheim/go-firstmove
+  publisher  : Elsevier
+
+# 2012 and before
+
+- authors    : Bret A Beheim, Ryan Baldini
+  title      : "Evolutionary decomposition and the mechanisms of cultural change"
+  volume     : 3(2)
+  year       : 2012
+  journal    : Cliodynamics
+  doi        : https://doi.org/10.21237/C7clio3212123
+  materials  : https://github.com/babeheim/snoobs
+  publisher  : University of California eScholarship Repository
+
+- authors    : Bret A Beheim, Adrian V Bell
+  title      : "Inheritance, ecology and the evolution of the canoes of East Oceania"
+  year       : 2011
+  journal    : "Proceedings of the Royal Society B: Biological Sciences"
+  volume     : 278(1721), pp. 3089–3095
+  doi        : https://doi.org/10.1098/rspb.2011.0060
+  materials  : https://github.com/babeheim/polynesian-canoe-analysis
+  publisher  : The Royal Society Publishing
+
+- authors    : Monique Borgerhoff Mulder, Bret A Beheim
+  title      : Understanding the nature of wealth and its effects on human fitness
+  year       : 2011
+  journal    : "Philosophical Transactions of the Royal Society B: Biological Sciences"
+  doi        : https://doi.org/10.1098/rstb.2010.0231
+  volume     : 366, pp. 344–356
+  materials  : https://github.com/babeheim/wealth-mortality-pimbwe
+  publisher  : The Royal Society Publishing
+
+- authors    : Monique Borgerhoff Mulder, Samuel Bowles, Tom Hertz, Adrian Bell, Jan Beise, Greg Clark, Ila Fazzio, Michael Gurven, Kim Hill, Paul L. Hooper, William Irons, Hillard Kaplan, Donna Leonetti, Bobbi Low, Frank Marlowe, Richard McElreath, Suresh Naidu, David Nolin, Patrizio Piraino, Rob Quinlan, Eric Schniter, Rebecca Sear, Mary Shenk, Eric Alden Smith, Christopher von Rueden, Polly Wiessner
+  title      : "Intergenerational wealth transmission and the dynamics of inequality in small-scale societies"
+  year       : 2009
+  journal    : Science
+  volume     : 326(5953), pp. 682–688
+  publisher  : American Association for the Advancement of Science
+  doi        : https://doi.org/10.1126/science.1178336
+  materials  : https://github.com/babeheim/wealth-transmission
+  role       : data analysis
+
+theses supervised:
+- author  : Leonie Ette
+  title   : "An ecological and postcolonial approach to multilingualism"
+  degree  : Master of Arts, Leipzig University Institute of Romance Studies, Department of Spanish Linguistics
+  date    : 2020-04-23
+- author  : Anja Becker
+  title   : "Evaluation of the Spanish language knowledge among an indigenous Amazonian horticulturalist group"
+  degree  : Bachelor of Arts, Leipzig University Institute of Romance Studies, Department of Spanish Linguistics
+  date    : 2018-09-25
+- author  : Anja Becker
+  title   : "Lactase non-persistence among populations outside of Europe without traditional dairying practices: Modelling hydrogen breath test data"
+  degree  : Master of Science, Leipzig University, Faculty of Chemistry and Mineralogy
+  date    : 2020-11-03
+
+grants, fellowships, awards:
+- THLHP Co-Investigator, 2012–present
+- MPI-EVA Senior Researcher Funding Line. €50,000 startup, €50,000 annual budget, 2016–2021; extended through 2028
+- “The Human Life Course and the Biodemography of Aging,” Co-Investigator, National Institutes of Health / National Institute on Aging. $590,659. 2015
+- Administrative Supplement to “The Human Life Course and the Biodemography of Aging,” Co-Investigator, National Institutes of Health / National Institute on Aging. $15,000. 2014
+- “Surviving the Flood: Vulnerability, Risk Management, and Resilience among Tsimane Forager-Farmers of Bolivia,” Co-Investigator, National Science Foundation. $126,000. 2014
+- Graduate Fellowship Block Grant, The University of California. $10,800. 2009
+- Graduate Scholars Fellowship in Ecology, The University of California. $34,022. 2007
+- Phi Beta Kappa Honors Society. 2004
+
+presentations:
+- 'Does culture evolve “one funeral at a time”?, Oleg Sobchuk, Jean Barré, Marijn Koolen, Harin Lee, and Bret Beheim, Computational Humanities Research 2025 (submitted)'
+- 'Tübingen talk, June 2025'
+- 'The Problem of Missingness in Historical and Evolutionary Datasets, Japan talk, November 2024'
+- 'SFI talk, May 2025'
+- 'Durham CES talk on cultural diversity 2024 and on decomposition'
+- 'talk at john''s height workshop'
+- 'talk to the RDM group on unit tests'
+- 'invited talk in Brno, Czechia'
+- 'invited talk in Rabat'
+- 'talk at oleg''s workshop'
+
+- '"Strategic Social Learning in the Era of Superhuman Artificial Intelligence: A Large-Scale, Longitudinal Case Study using the Game of Go", Cultural Evolution Society Meeting, 2022-09-28'
+- 'The Adaptive Logic of False Beliefs, Human Behavior and Evolution Society Meeting, 2019-04-26'
+- 'Improving Reproducibility in Evolutionary Anthropology, Santa Fe Institute ENDOW workshop, 2020-02-06'
+- 'Open Science in the Field, Open Science and Reproducibility workshop, Interacting Minds Centre, Aarhus University, 2019-03-13'
+- 'Milk consumption is globally widespread and increasing - Time to rewrite the textbooks? Cultural Evolution Society Meeting, 2018'
+- 'Japanese Milk Consumption - Asymptomatic Lactose Intolerance Following a Recent Cultural Diffusion. Human Behavior and Evolution Society Meeting, 2018'
+- 'Atherosclerosis as a Culturally-Transmitted Disease among Acculturating Horticulturalists. European Human Behavior and Evolution Association Meeting, 2018-04-07'
+- 'What evolutionary mechanisms drive cultural change? Poster presented at the European Human Behavior and Evolution Association Meeting, 2017'
+- 'Beyond conformity in cultural diffusion - Knowledge, opportunity and motivation Cultural Evolution Society Meeting. 2017'
+- 'Advances in studying cultural diffusions, Department of Behavioral Sciences, Hokkaido University. 2017'
+- 'Transparency and reproducibility in observational research - lessons from anthropology, Yale''s Day of Data, co-presented with Dr. Melanie Martin, 2016'
+- 'Anthropological Research as Software Development Yale Department of Anthropology, 2016'
+- 'Social diffusion of gasoline motors in the Bolivian Amazon, American Anthropological Association Conference, 2016'
+- 'Estimating Heritability of Reaction Norms Dynamics of Wealth Inequality and Family Structure, Santa Fe Institute, 2015'
+- 'Cultural Evolution in Games of Chess and Go. American Anthropological Association Meeting. 2015'
+- 'Left Ventricular Systolic and Diastolic Dysfunction is an Uncommon Finding in a Pre-Industrial Society with High Inflammation and Low Atherosclerotic Risk Factors. American Heart Association Meeting. 2015'
+- 'What evolutionary processes drive cultural change?, Evolutionary Demography Society Meeting. 2014'
+- 'Slow cardiovascular aging and rare infarcts among Tsimane forager-horticulturalists. American Association of Physical Anthropologists Meeting. 2014'
+- 'Evolutionary dynamics in the Game of Go. Institute for Pure and Applied Mathematics, University of California at Los Angeles. 2013'
+- 'Strategic Social Learning and Evolutionary Arms Races in the Game of Go Santa Fe Institute, Santa Fe, New Mexico, 2012'
+- 'Inferring General Mechanisms of Cultural Evolution in Observational Settings Dissertation Exit Seminar, UC Davis, Davis, California, 2012'
+- 'Evolutionary Decomposition and the Dynamics of Inequality. Santa Fe Institute, Santa Fe, New Mexico, 2012'
+- 'Developing Measures of Cultural Variation and Dynamics in Hokkaido, Japan. Radcliffe Institute, Harvard University, Cambridge, Massachusetts, 2011'
+- 'Inheritance and Ecology - Canoe Evolution in Fiji and Polynesia. 3UC Evolutionary Anthropology Conference. 2009'
+- 'Japan’s Cultural Inoculation, The Radiation and Retreat of Firearms and Christianity. Human Behavior and Evolution Society Meeting. 2008'
+
+fieldwork:
+- San Borja, Bolivia (4 weeks, 2019)
+- Tsimane' Near-river Communities, Bolivia (6 weeks, 2019)
+- Tsimane' Near-river Communities, Bolivia (6 weeks, 2018)
+- Tsimane' Near-river Communities, Bolivia (5 weeks, 2017)
+- Hokkaido Dairy Communities, Japan (11 weeks, 2017)
+- Tsimane' Near-river Communities, Bolivia (7 weeks, 2014)
+- Tsimane' Upriver Communities, Bolivia (8 weeks, 2013)
+
+teaching:
+- as primary instructor:
+  - Scientific Computing in Evolutionary Anthropology, taught annually 2019–2026.
+  - The Human Life Course (ANTH 160), taught 2013, 2014, 2015
+  - Human Behavioral Ecology (ANTH 360), taught 2014
+  - Research Computing in Evolutionary Anthropology (ANTH 560), taught 2014
+  - Workshop on Statistical Rethinking, taught in 2016
+  - Evolution and Human Nature (ANT 50), taught 2011
+  - Applied Research Methods (ESP 178), taught 2011, 2012
+  - Cultural Ecology (ANT 102), taught 2010
+- as teaching assistant:
+  - Ecology and Evolution (BIS 2B), taught 2010, 2011, 2012
+  - Physical Anthropology (ANT 1), taught 2011
+  - Ecology and Politics (ANT 131), taught 2009
+  - Current Issues in the Environment (ESP 10), taught 2009
+
+supervision, training, mentorship:
+- postdoctoral:
+  - Daniel Redhead, Ph.D., September 2018 to August 2020, MPI-EVA
+- doctoral:
+  - Han Tran, October 2018 to February 2022, University of Leipzig / MPI-EVA
+  - Natalia Fedorova, August 2017 to November 2024, University of Leipzig / MPI-EVA
+  - Riana Minocher, January 2018 to November 2022, University of Leipzig / MPI-EVA
+- master's and bachelor's:
+  - Anja Becker, Bachelor's & Master's Theses, 2018 and 2020, University of Leipzig
+  - Leonie Ette, Master's Thesis, 2020, University of Leipzig
+
+service positions:
+- Program Committee, Cultural Evolution Society 2026, Rabat
+- Data Director, Tsimane Health and Life History Project, 2012–present
+- Group Leader, Department of Human Behavior, Ecology, and Culture, MPI-EVA
+- MPI-EVA Workers' Council ('Betriebsrat') reserve member, 2018–2019
+- MPI-EVA Seminar Selection Committee
+- Webmaster, Evolutionary Anthropology Society, evanthsoc.org
+
+open source software:
+- yamltools — a suite of tools for parsing interview-like data streams
+- longformer
+- kolam package (https://github.com/nhtran93/kolam)
+- kernelgon
+- kaya
+- chessparse — R package for parsing and analyzing Chess games in .pgn format
+- journaltools
+
+public essays, white papers and tutorials:
+- Beheim, B. (2019) Missing data, moralizing gods, and the siren song of Aeiea, http://babeheim.com/2019/09/19/song-of-aeiea.html
+- Beheim, B. (2017) Text Mining the Human Behavioral Ecology Bibliography, http://babeheim.com/2017/06/15/text-mining-the-HBEB.html
+- Beheim, B. (2017) Generating Ties to Explore Social Network Connectivity, http://babeheim.com/2017/06/02/modeling-network-tie-counts.html
+- Lubell, M., Beheim, B., Hillis, V., Handy, S. (2009) Achieving Sustainability in California’s Central Valley. UC Davis Sustainable Transportation Center
+- Beheim, B., Reis, M. (2003) A Theory of Social Formalism, The Four Horsemen and the New Deal. *Law and Society Review at the University of California, Santa Barbara* II, pp. 85–94.
+
+article reviews:
+- Evolutionary Human Sciences
+- Royal Society Open Science
+- Science Advances
+- PLOS ONE
+- Current Anthropology
+- Journal of Theoretical Biology
+- Advances in Complex Systems
+- Human Nature
+- Cliodynamics
+- Evolution and Human Behavior
+
+grant reviewing:
+- NSF Cultural Anthropology
+- Grant reviewer, CES ACE Award Program, 2025
+
+professional memberships past and present:
+- Software Carpentry / Data Carpentry certification, December 2018
+- American Anthropological Association, last renewed 2018
+- Human Behavior and Evolution Society, last renewed 2026
+- European Human Behavior and Evolution Association, last renewed 2026
+- American Association of Biological Anthropologists, last renewed 2026
+- California Undergraduate Anthropology Conference (Principal Organizer), May 2004
+- Anthropology Student Union President, UC Santa Barbara (2003–2004)
+
+recent collaborators:
+- Brian Wood (UCLA)
+- Jeremy Koster (University of Cincinnati/MPI-EVA)
+- Masanori Takezawa (Hokudai)
+- Cody Ross (MPI-EVA)
+- Daniel Redhead (MPI-EVA)
+- Tom Kraft (UCSB)
+- Paul Hooper (SFI)
+- Herman Pontzer (Duke)
+- Michael Gurven (UCSB)
+- Adrian Jaeggi (University of Zürich)
+- Aaron Blackwell (UW Pullman)
+- Anne Pisor (UW Pullman)
+- Sam Bowles (SFI)
+- Paul Smaldino (UC Merced)
+- Ryan Baldini (Seagate Technology)
+- Eric Schniter (Chapman)
+- Jonathan Stieglitz (IAST-Toulouse)
+- Richard McElreath (MPI-EVA)
+- Ben Trumble (ASU)
+- Siobhán Mattison (UNM)
+- Melissa Emery Thompson (UNM)
+- Chris Rowan (UNMH Cardiology)
+- Monique Borgerhoff Mulder (UCD)
+
+language and technical proficiency:
+- Japanese, intermediate
+- Spanish, intermediate
+- German, intermediate, B1 certified
+- Tsimane', basic
+- Markup languages: TeX, HTML, Markdown, JSON, YAML
+- Computing environments: R, ArcGIS, Stata, MATLAB, UNIX shell
+- Mathematics through Calculus and Linear Algebra
+
+avocations:
+- Go (weiqi): 5 kyu on Kiseido Go Server
+- Rowing, 101,000 meters rowed
+- Raspberry Pi programming
+- Cycling to work
+- Rock collecting
+- Music: saxophone, piano, soprano recorder
+
+professional references:
+- who         : Dr. Richard McElreath
+  title       : Director
+  department  : Department of Human Behavior, Ecology, and Culture
+  institution : Max Planck Institute for Evolutionary Anthropology
+  email       : richard_mcelreath@eva.mpg.de
+  relationship: Dissertation committee member, collaborator, director of home department at MPI
+
+- who         : Dr. Monique Borgerhoff Mulder
+  title       : Professor Emeritus
+  department  : Department of Anthropology
+  institution : University of California at Davis
+  email       : mborgerhoffmulder@gmail.com
+  relationship: Dissertation committee member, collaborator, organizer of Santa Fe Institute projects
+
+- who         : Dr. Peter J. Richerson
+  title       : Professor
+  department  : Department of Environmental Sciences
+  institution : University of California at Davis
+  email       : pjricherson@ucdavis.edu
+  relationship: Dissertation supervisor
+
+- who         : Dr. Silke Atmaca
+  title       : Research Coordinator
+  department  : Department of Human Behavior, Ecology, and Culture
+  institution : Max Planck Institute for Evolutionary Anthropology
+  email       : silke_atmaca@eva.mpg.de
+  relationship: Collaborator
+
+- who         : Dr. Siobhán M. Mattison
+  title       : Associate Professor
+  department  : Department of Anthropology
+  institution : University of New Mexico
+  email       : smattison@unm.edu
+  relationship: Postdoctoral mentor
+
+- who         : Dr. Hillard Kaplan
+  title       : Research Professor
+  department  : Economics
+  institution : Chapman University
+  email       : hillard.kaplan@gmail.com
+  relationship: Postdoctoral supervisor, collaborator, co-director of Tsimane Health and Life History Project
+
+- who         : Dr. Michael Gurven
+  title       : Professor
+  department  : Anthropology
+  institution : University of California at Santa Barbara
+  email       : gurven@gmail.com
+  relationship: Collaborator, co-director of Tsimane Health and Life History Project

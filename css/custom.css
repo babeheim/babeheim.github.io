@@ -1,151 +1,697 @@
+/*
+ * Custom styling
+ *
+ * A restrained academic design:
+ *   - serif typography for reading
+ *   - sans-serif navigation and metadata
+ *   - narrow readable measure
+ *   - strong typographic hierarchy
+ *   - minimal ornament
+ *
+ * All presentation rules live in this file. Hugo partials contain
+ * structure and behavior only.
+ */
 
-  /* Minimal base usage so pages look correct even without your main CSS updated yet */
-  body { background: var(--bg); color: var(--fg); }
-  a { color: var(--link); }
-  hr { border-color: var(--border); }
-  .card { background: var(--card); }
 
-  .twitter-tweet-rendered {
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-  }
-  .inline-svg {
-    display: inline-block;
-    height: 1.0rem;
-    width: 1.0rem;
-    top: 0.15rem;
-    position: relative;
-    fill: var(--muted);
-  }
-  .inline-svg:hover {
-    fill: var(--fg);
-    height: 1.0rem;
-    width: 1.0rem;
-  }
-  .inline-svg#pdf {
-    fill: #de2d26;
-  }
-  .inline-svg#pdf:hover {
-    fill: #fc9272;
-  }
-  .inline-svg#data {
-    fill: #1c9099;
-  }
-  .inline-svg#data:hover {
-    fill: #a6bddb;
-  }
-  
-/* ---- Typography (keep your Times stack) ---- */
+/* ------------------------------------------------------------
+   Theme and design variables
+   ------------------------------------------------------------ */
+
 :root {
-  --content-width: 85ch;     /* wider but still readable */
+  --content-width: 72ch;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #666666;
+  --link: #0b5fff;
+  --card: #f6f7f9;
+  --border: #e6e8eb;
+  --link-visited: #5a8cff;
+  --code-bg: #f5f3ff;
+  --code-fg: #222222;
 }
 
-.post-image { max-width: 100%; height: auto; display: block; margin: 1rem auto; }
+html[data-theme="dark"] {
+  --bg: #0e1113;
+  --fg: #e6e6e6;
+  --muted: #a0a0a0;
+  --link: #8ab4ff;
+  --card: #171a20;
+  --border: #2a2f3a;
+  --link-visited: #a3c2ff;
+  --code-bg: #1c1a28;
+  --code-fg: #e6e6e6;
+}
 
-  /* body { margin:0; padding:2rem 1rem; background:#fff; color:#111;
-         font:16px/1.55 Georgia, "Times New Roman", serif; } */
-html, body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji","Segoe UI Emoji";
-  /* font-family: Georgia, "Times New Roman", Times, serif; */ /* 2000s's HTML style */ 
-  /* font-family: serif; */ /* 1990's HTML style */ 
+/* No-JS/system fallback when no explicit data-theme is present. */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --bg: #0e0f12;
+    --fg: #e6e6e6;
+    --muted: #a0a0a0;
+    --link: #8ab4ff;
+    --card: #171a20;
+    --border: #2a2f3a;
+    --link-visited: #a3c2ff;
+    --code-bg: #1c1a28;
+    --code-fg: #e6e6e6;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   Page geometry and base elements
+   ------------------------------------------------------------ */
+
+html {
   font-size: 100%;
-  line-height: 1.5;
-  color: var(--fg);
+  scroll-behavior: smooth;
 }
 
-/* Headings & basic elements */
-h1, h2, h3, h4, h5, h6, p {
-  font-family: inherit;
-}
-
-h1 {
-  font-size: 1.5em;   /* instead of ~2.5em default */
-  margin-top: 1.2em;
-  margin-bottom: 0.6em;
-}
-
-h2 { font-size: 1.25em; }
-h3 { font-size: 1.1em; }
-
-/* Paragraphs & lists (unified) */
-p, .sidebar, ol, ul, dl, content {
-  line-height: 1.6;
-  font-size: 1.05em;
-  margin-bottom: 1.0em;
-}
-
-/* Body layout */
 body {
-  margin: 0 auto;
-  padding: 20px;
+  box-sizing: border-box;
   max-width: var(--content-width);
-  text-align: left;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+
   background: var(--bg);
   color: var(--fg);
+
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1rem;
+  line-height: 1.68;
+
+  text-align: left;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
-/* Emphasis */
-h1,h2,h3,h4,h5,h6,strong,b { color: var(--fg); }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-/* Links */
-a { color: var(--link); text-decoration: none; }
-a:hover { color: var(--link); text-decoration: underline; }
-/* optional visited nuance */
-ul.blog-posts li a:visited { color: var(--link-visited); }
+.card {
+  background: var(--card);
+}
 
-/* Title links */
-.title { font-size: 1.15em; border: 0; }
-.title:hover { text-decoration: none; }
-.title span { font-weight: 400; }
+hr {
+  margin: 2.5rem 0;
 
-/* Nav spacing */
-nav a { margin-right: 10px; }
+  border: 0;
+  border-top: 1px solid var(--border);
+}
 
-/* Form controls */
-textarea, input { width: 100%; font-size: 16px; }
 
-/* Tables/images/code */
-table { width: 100%; }
-img { max-width: 100%; height: auto; }
+/* ------------------------------------------------------------
+   Sticky site header and navigation
+   ------------------------------------------------------------ */
+
+body > header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.site-title-link,
+.title {
+  flex: 0 0 auto;
+
+  border: 0;
+  color: var(--fg);
+
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-title-link:hover,
+.title:hover {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.site-title {
+  color: var(--fg);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.title span {
+  font-weight: 400;
+}
+
+nav,
+.site-nav {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: 0.86rem;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  min-width: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.nav-links a,
+nav a {
+  display: inline-block;
+  margin-right: 0;
+
+  color: var(--muted);
+
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+nav a:hover {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.nav-toggle {
+  flex: 0 0 auto;
+  margin-left: 1.5rem;
+}
+
+main h2,
+main h3 {
+  scroll-margin-top: 5.5rem;
+}
+
+.footer-links {
+  margin-bottom: 0.35rem;
+}
+
+
+/* ------------------------------------------------------------
+   Theme toggle
+   ------------------------------------------------------------ */
+
+.switch {
+  position: relative;
+  display: inline-block;
+
+  width: 46px;
+  height: 24px;
+
+  vertical-align: middle;
+}
+
+.switch input {
+  width: 0;
+  height: 0;
+  margin: 0;
+
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+
+  cursor: pointer;
+
+  background-color: #242424;
+  transition: background-color 0.25s ease;
+}
+
+.slider::before {
+  content: "";
+
+  position: absolute;
+  left: 3px;
+  bottom: 3px;
+
+  width: 18px;
+  height: 18px;
+
+  background-color: #e3e3e3;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+#theme-toggle:checked + .slider {
+  background-color: #e3e3e3;
+}
+
+#theme-toggle:checked + .slider::before {
+  background-color: #242424;
+  transform: translateX(22px);
+}
+
+#theme-toggle:focus-visible + .slider {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+
+/* ------------------------------------------------------------
+   Typography
+   ------------------------------------------------------------ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--fg);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h1 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  padding-top: 1.2rem;
+
+  border-top: 1px solid var(--border);
+
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.65rem;
+
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
+h4,
+h5,
+h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p,
+ol,
+ul,
+dl,
+.sidebar,
+content {
+  margin-top: 0;
+  margin-bottom: 1.15rem;
+
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+strong,
+b {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+
+/* ------------------------------------------------------------
+   Links
+   ------------------------------------------------------------ */
+
+a {
+  color: var(--link);
+
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  color: var(--link);
+  text-decoration-thickness: 0.1em;
+}
+
+
+/* ------------------------------------------------------------
+   Images
+   ------------------------------------------------------------ */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  margin: 2rem auto;
+}
+
+
+/* ------------------------------------------------------------
+   Inline SVG icons
+   ------------------------------------------------------------ */
+
+.inline-svg {
+  position: relative;
+  top: 0.12rem;
+
+  display: inline-block;
+
+  width: 0.95rem;
+  height: 0.95rem;
+
+  fill: var(--muted);
+}
+
+.inline-svg:hover,
+.inline-svg#pdf:hover,
+.inline-svg#data:hover {
+  fill: var(--fg);
+}
+
+.inline-svg#pdf,
+.inline-svg#data {
+  fill: var(--muted);
+}
+
+
+/* ------------------------------------------------------------
+   Tables
+   ------------------------------------------------------------ */
+
+table {
+  width: 100%;
+  margin: 1.5rem 0;
+
+  border-collapse: collapse;
+
+  font-size: 0.94rem;
+}
+
+th,
+td {
+  padding: 0.45rem 0.6rem;
+
+  border-bottom: 1px solid var(--border);
+
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600;
+}
+
+
+/* ------------------------------------------------------------
+   Code
+   ------------------------------------------------------------ */
 
 code {
-  padding: 2px 5px;
-  background: var(--code-bg); 
+  padding: 0.1rem 0.3rem;
+
+  background: var(--code-bg);
   color: var(--code-fg);
+
+  font-size: 0.9em;
+}
+
+pre {
+  margin: 1.5rem 0;
+  overflow-x: auto;
 }
 
 pre code {
-  color: var(--code-fg);
   display: block;
-  padding: 20px;
-  white-space: pre-wrap;
-  font-size: 14px;
-  overflow-x: auto;           /* prevent layout blowouts */
+
+  padding: 1rem 1.2rem;
+
+  color: var(--code-fg);
+
+  font-size: 0.875rem;
+  line-height: 1.5;
+
+  white-space: pre;
+  overflow-x: auto;
 }
 
-/* Blockquotes */
+
+/* ------------------------------------------------------------
+   Blockquotes
+   ------------------------------------------------------------ */
+
 blockquote {
-  border-left: 1px solid var(--border);
-  color: var(--fg);
-  padding-left: 20px;
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+
+  border-left: 2px solid var(--border);
+
+  color: var(--muted);
+
   font-style: italic;
 }
 
-/* Footer & helpers */
-footer { padding: 25px; text-align: center; }
-.helptext { color: var(--muted); font-size: small; }
-.errorlist { color: #eba613; font-size: small; }
 
-/* Blog list */
-ul.blog-posts { list-style-type: none; padding: 0; }
-ul.blog-posts li { display: flex; }
-ul.blog-posts li span { flex: 0 0 130px; }
-ul.blog-posts li a:visited { color: #8b6fcb; }
+/* ------------------------------------------------------------
+   Embedded posts
+   ------------------------------------------------------------ */
 
-/* Optional: widen slightly on very large screens */
-@media (min-width: 1280px) {
-  :root { --content-width: 95ch; }
+.twitter-tweet-rendered {
+  display: block;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+/* ------------------------------------------------------------
+   Forms
+   ------------------------------------------------------------ */
+
+textarea,
+input {
+  width: 100%;
+
+  font: inherit;
+}
+
+
+/* ------------------------------------------------------------
+   Blog / archive lists
+   ------------------------------------------------------------ */
+
+ul.blog-posts {
+  margin-left: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+ul.blog-posts li {
+  display: flex;
+
+  margin-bottom: 0.5rem;
+}
+
+ul.blog-posts li span {
+  flex: 0 0 8rem;
+
+  color: var(--muted);
+
+  font-variant-numeric: tabular-nums;
+}
+
+ul.blog-posts li a:visited {
+  color: var(--link-visited);
+}
+
+
+/* ------------------------------------------------------------
+   Footer and secondary information
+   ------------------------------------------------------------ */
+
+footer {
+  margin-top: 4rem;
+  padding: 1.5rem 0;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--muted);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.helptext {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.errorlist {
+  color: #8c5d00;
+  font-size: 0.875rem;
+}
+
+
+/* ------------------------------------------------------------
+   Research gallery
+   ------------------------------------------------------------ */
+
+figure {
+  margin: 3.5rem 0 4.5rem;
+}
+
+figure img {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
+
+  margin: 0 auto;
+}
+
+figcaption {
+  max-width: 62ch;
+
+  margin: 0.9rem auto 0;
+
+  color: var(--muted);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: 0.86rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+figcaption p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+/* ------------------------------------------------------------
+   Responsive layout
+   ------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+  .site-title-link {
+    display: none;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    flex: 1 1 auto;
+    gap: 1rem;
+
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-toggle {
+    flex: 0 0 auto;
+    margin-left: 1rem;
+  }
+
+  main h2,
+  main h3 {
+    scroll-margin-top: 4.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1.5rem 1.1rem 3rem;
+  }
+
+  h1 {
+    font-size: 1.85rem;
+  }
+
+  h2 {
+    margin-top: 3rem;
+    font-size: 1.35rem;
+  }
+
+  ul.blog-posts li {
+    display: block;
+  }
+
+  ul.blog-posts li span {
+    display: block;
+    margin-bottom: 0.1rem;
+  }
 }
