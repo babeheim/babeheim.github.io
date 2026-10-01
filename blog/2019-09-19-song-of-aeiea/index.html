@@ -14,36 +14,36 @@ Missing data is probably the most under-trained topic in data analysis. Methods 
 
 
 <meta property="og:url" content="/blog/2019-09-19-song-of-aeiea/">
-  <meta property="og:site_name" content="Bret Alexander Beheim">
-  <meta property="og:title" content="Missing data, moralizing gods, and the siren song of Aeiea">
-  <meta property="og:description" content="Update 2021-07-07: I’ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
+	<meta property="og:site_name" content="Bret Alexander Beheim">
+	<meta property="og:title" content="Missing data, moralizing gods, and the siren song of Aeiea">
+	<meta property="og:description" content="Update 2021-07-07: I’ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
 Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2019-09-19T00:00:00+00:00">
-    <meta property="article:modified_time" content="2019-09-19T00:00:00+00:00">
-    <meta property="og:image" content="https://babeheim.com/assets/venus.jpg">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="blog">
+		<meta property="article:published_time" content="2019-09-19T00:00:00+00:00">
+		<meta property="article:modified_time" content="2019-09-19T00:00:00+00:00">
+		<meta property="og:image" content="https://babeheim.com/images/blog/venus.jpg">
 
 
 
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://babeheim.com/assets/venus.jpg">
-  <meta name="twitter:title" content="Missing data, moralizing gods, and the siren song of Aeiea">
-  <meta name="twitter:description" content="Update 2021-07-07: I’ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://babeheim.com/images/blog/venus.jpg">
+	<meta name="twitter:title" content="Missing data, moralizing gods, and the siren song of Aeiea">
+	<meta name="twitter:description" content="Update 2021-07-07: I’ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
 Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.">
 
 
 
 
-  <meta itemprop="name" content="Missing data, moralizing gods, and the siren song of Aeiea">
-  <meta itemprop="description" content="Update 2021-07-07: I’ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
+	<meta itemprop="name" content="Missing data, moralizing gods, and the siren song of Aeiea">
+	<meta itemprop="description" content="Update 2021-07-07: I’ve revised some sections of this piece based on developments since it was originally published. In particular, the original paper has been retracted by the authors.
 Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.">
-  <meta itemprop="datePublished" content="2019-09-19T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2019-09-19T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1838">
-  <meta itemprop="image" content="https://babeheim.com/assets/venus.jpg">
+	<meta itemprop="datePublished" content="2019-09-19T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2019-09-19T00:00:00+00:00">
+	<meta itemprop="wordCount" content="1838">
+	<meta itemprop="image" content="https://babeheim.com/images/blog/venus.jpg">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <link rel="stylesheet" href="/css/custom.css"><script>
@@ -73,7 +73,7 @@ Missing data is probably the most under-trained topic in data analysis. Methods 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-4PXGB1H7X2"></script>
       <script>
         var doNotTrack = false;
-        if ( false ) {
+        if ( true ) {
           var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
           var doNotTrack = (dnt == "1" || dnt == "yes");
         }
@@ -151,14 +151,15 @@ Missing data is probably the most under-trained topic in data analysis. Methods 
 <p>Missing data is probably the most under-trained topic in data analysis. Methods courses prepare students for performing all kinds of robustness checks on data they have, but what to do when some of your data is missing is relegated as special topics, or left for higher-level courses.</p>
 <p>This is a mistake, I think, because missingness is a ubiquitous problem, as are <em>ad hoc</em> solutions like the following entirely hypothetical methods section:</p>
 <blockquote>
-<p>Our study has presence/absence data for some phenomenon, but some of the data points are missing. Since we are really just interested in whether the phenomenon is present, we redefine both &ldquo;phenomenon absent&rdquo; and &ldquo;data unknown&rdquo; to &ldquo;phenomenon <em>not known</em> to be present&rdquo;, solving the missing data problem.</p></blockquote>
+<p>Our study has presence/absence data for some phenomenon, but some of the data points are missing. Since we are really just interested in whether the phenomenon is present, we redefine both &ldquo;phenomenon absent&rdquo; and &ldquo;data unknown&rdquo; to &ldquo;phenomenon <em>not known</em> to be present&rdquo;, solving the missing data problem.</p>
+</blockquote>
 <p>This error appears so often it&rsquo;s proverbial: the mistake of assuming absence of evidence is evidence of absence, or AEIEA.</p>
 <p>This is on my mind because of a high-profile paper this year on <a href="https://www.nature.com/articles/s41586-019-1043-4">the first appearance of morality in world religion</a> by the <a href="http://seshatdatabank.info/">Seshat historical research team</a>. The authors, led by Oxford anthropologist Harvey Whitehouse, argue that moral concepts like karma or the supernatural punishment of cheaters appear very recently in history, and mostly in societies larger than a million people.</p>
-<img src="/assets/venus.jpg" alt=""><p><em>Figure 1. A statue of Aeiea, goddess of missing data (at least, pending evidence to the contrary)</em></p>
+<img src="/images/blog/venus.jpg" alt=""><p><em>Figure 1. A statue of Aeiea, goddess of missing data (at least, pending evidence to the contrary)</em></p>
 <p>If true, this would be a big result. Looking carefully at <a href="https://github.com/babeheim/moralizing-gods-reanalysis">the authors&rsquo; raw data</a>, however, we find an massive problem - nearly 2/3rds of their &ldquo;moralizing gods&rdquo; measure (61%) are actually missing values.</p>
-<img src="/assets/missing.png" alt=""><p><em>Figure 2. Reanalysis of Seshat data from Beheim, et al. (2019); visualization with Richard McElreath</em></p>
+<img src="/images/blog/missing.png" alt=""><p><em>Figure 2. Reanalysis of Seshat data from Beheim, et al. (2019); visualization with Richard McElreath</em></p>
 <p>So much data is missing about supernatural morality across time because such beliefs naturally require <em>written evidence</em>. This is probably an insurmountable problem, but in an analysis they describe as <a href="http://seshatdatabank.info/nature-paper-on-moralizing-gods/">&ldquo;far beyond the state of the art&rdquo;</a>, the Seshat team developed a workaround: assume AEIEA, and recode all missing values to &ldquo;not known present&rdquo;.</p>
-<img src="/assets/missing_to_0.png" alt=""><p><em>Figure 3. The &lsquo;moralizing gods&rsquo; outcome variable as it was used in the statistical analyses of Whitehouse, et al. (2019)</em></p>
+<img src="/images/blog/missing_to_0.png" alt=""><p><em>Figure 3. The &lsquo;moralizing gods&rsquo; outcome variable as it was used in the statistical analyses of Whitehouse, et al. (2019)</em></p>
 <p>Voila! The missing values have been reasoned into data points. This fateful assumption was never described in the published manuscript, and since most of the <em>actual</em> data comes from large, literate populations, and moralizing gods are present everywhere in this sample, their key findings immediately result from applying AEIEA.</p>
 <p>This seems like statistical malpractice, but is it really that bad? Data imputation, e.g. using the <code>mice</code> package in R, also fills in missing values. And, the coding &ldquo;not known to be present&rdquo; really does cover both &ldquo;unknown&rdquo; and &ldquo;known to be absent&rdquo; logically. So what&rsquo;s wrong?</p>
 <p>To see the AEIEA fallacy, imagine that each data point in Figure 2 represents a pill that is either deadly poison, 🔴, or life-saving medicine, ⭕. You were only able to test 39% of the pills in the sample, finding almost all poison 🔴, while the remainder are untested, $\times$. I don&rsquo;t think anyone - including the authors of the moralizing gods paper - would be happy to relabel the untested pills &ldquo;not known to be poison&rdquo; and eat them.</p>
@@ -187,11 +188,12 @@ $$</p>
 <p>We have proven something that, at least to me, was not immediately obvious: assuming AEIEA also assumes that if the phenomenon is actually present, it <em>must</em> have been recorded as such in our dataset. Or, equivalently, it <em>cannot</em> become missing data.</p>
 <p>Thus, AEIEA is an extreme assumption about the relationship between $x$ and $d$ because it requires strong claims about the nature of missingness.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> If even a few poison pills are in the untested group in the example above, assuming AEIEA would be deadly.</p>
 <p>This is not to say that AEIEA is always wrong, however. AEIEA really does work when, for example, the study system only has a finite number of &ldquo;hits&rdquo;, and you&rsquo;ve already found them all. This is true in simple games like Minesweeper, Blackjack or Battleship. Here, we have a clear theory (the game rules) about the relationship between $x$ and $d$ which explains why the data cannot ever become missing when the phenomenon is present.</p>
-<img src="/assets/battleship.jpg" alt=""><p><em>Figure 4. In Battleship, if you know where all the enemy ships are, absence of data on a cell is equivalent to knowing it is empty - AEIEA is valid.</em></p>
+<img src="/images/blog/battleship.jpg" alt=""><p><em>Figure 4. In Battleship, if you know where all the enemy ships are, absence of data on a cell is equivalent to knowing it is empty - AEIEA is valid.</em></p>
 <p>Determining the validity of AEIEA is thus a scientific problem, not a statistical one, and the probabilistic conditions above help us understand what the scientific theory has to show. In the case of the unknown moralizing gods data all becoming absences, we&rsquo;d need relatively fantastical theories about data preservation for AEIEA to work. If a <a href="http://seshatdatabank.info/data/polities/tairona-CoTairo">South American jaguar figurine</a> or <a href="http://seshatdatabank.info/data/polities/big-island-of-hawaii-Hawaii2">Hawaiian ancestral family god</a> was ever imbued with moralistic authority, then we must explain how those events <em>have to</em> survive into the historical records of today in order to conclude a lack of evidence actually means it never happened. Since such theories are not forthcoming in real datasets of religion, AEIEA is a fallacy.</p>
 <p>This all may seem obvious, but the siren song of AEIEA is powerful and can easily lure unwary, but otherwise meticulous, researchers. For this reason, the astronomer and science popularizer Carl Sagan included AEIEA as part of his &ldquo;<a href="http://www.inf.fu-berlin.de/lehre/pmo/eng/Sagan-Baloney.pdf">baloney detection kit</a>&rdquo; of the common tools charlatans and cranks use to promote pseudoscience. Sagan even satirized AEIEA&rsquo;s misuse in the study of human morality extended to a galactic scale, writing,</p>
 <blockquote>
-<p>There may be seventy kazillion other worlds, but not one is known to have the moral advancement of the Earth, so we&rsquo;re still central to the Universe.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p></blockquote>
+<p>There may be seventy kazillion other worlds, but not one is known to have the moral advancement of the Earth, so we&rsquo;re still central to the Universe.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+</blockquote>
 <p>References:</p>
 <ul>
 <li>
@@ -205,7 +207,7 @@ $$</p>
 </li>
 </ul>
 <p>R scripts for Figures 2 and 3:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>library(rethinking)
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>library(rethinking)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#008000"># data from step 06_prep_regression_data</span>
 </span></span><span style="display:flex;"><span><span style="color:#008000"># at https://github.com/babeheim/moralizing-gods-reanalysis</span>

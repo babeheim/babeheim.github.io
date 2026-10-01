@@ -695,3 +695,37 @@ figcaption p {
     margin-bottom: 0.1rem;
   }
 }
+
+
+/* ------------------------------------------------------------
+   Gallery variables
+   ------------------------------------------------------------ */
+
+.gallery-item {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  box-sizing: border-box;
+}
+
+.gallery-item figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery-item img {
+  display: block;
+  max-width: 100%;
+  max-height: 80svh;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.gallery-item figcaption {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
