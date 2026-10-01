@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<title>y = 1 − e^(−βx)</title>
+<style>
+  :root {
+    --bg:#F4F6F8; --surface:#fff; --ink:#23272E; --muted:#6B7480;
+    --grid:#D3DAE2; --axis:#8A93A0; --curve:#38507A; --diag:#B3701F;
+    --star:#C1355A;
+  }
+  body {
+    margin:0; padding:40px 24px 56px; background:var(--bg); color:var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    display:flex; justify-content:center;
+  }
+  .wrap { width:min(560px,100%); }
+  h1 { font-size:22px; margin:0 0 4px; font-weight:600; }
+  .eq { font-family: ui-monospace, Menlo, Consolas, monospace; color:var(--muted); font-size:14px; margin:0 0 22px; }
+  .control { display:flex; align-items:center; gap:12px; margin-bottom:14px; font-size:14px; }
+  .control label { font-family: ui-monospace, Menlo, Consolas, monospace; }
+  input[type=range] { flex:1; accent-color:var(--curve); }
+  input[type=number] {
+    font:inherit; font-family: ui-monospace, Menlo, Consolas, monospace;
+    width:80px; padding:5px 8px; border:1px solid var(--grid); border-radius:6px;
+    background:var(--surface); color:var(--ink);
+  }
+  input[type=number]:focus-visible { outline:2px solid var(--curve); outline-offset:1px; }
+  .val { font-family: ui-monospace, Menlo, Consolas, monospace; min-width:64px; text-align:right; }
+  .card { background:var(--surface); border:1px solid var(--grid); border-radius:12px; padding:12px; }
+  canvas { display:block; width:100%; height:auto; }
+  .status {
+    font-family: ui-monospace, Menlo, Consolas, monospace; font-size:14px;
+    margin:14px 2px 0; color:var(--ink);
+  }
+  .status b { color:var(--star); }
+  .status .note { color:var(--muted); }
+</style>
+
+<div class="wrap">
+  <h1>Exponential saturation</h1>
+  <p class="eq">y = 1 − e<sup>−βx</sup>&nbsp;&nbsp;·&nbsp;&nbsp;dotted line is y = x</p>
+
+  <div class="control">
+    <label for="betaMax">β max</label>
+    <input type="number" id="betaMax" min="0.1" step="0.1" value="2">
+  </div>
+
+  <div class="control">
+    <label for="beta">β</label>
+    <input type="range" id="beta" min="0" max="2" step="0.01" value="1">
+    <span class="val" id="betaVal">1.00</span>
+  </div>
+
+  <div class="card">
+    <canvas id="plot" width="536" height="420"></canvas>
+  </div>
+
+  <p class="status" id="status">x* = …</p>
+</div>
+
+<script>
+// --- immediate-mode canvas, redrawn on every slider input (survival-file style) ---
+const canvas = document.getElementById("plot");
+const ctx = canvas.getContext("2d");
+const slider = document.getElementById("beta");
+const readout = document.getElementById("betaVal");
+const maxField = document.getElementById("betaMax");
+const status = document.getElementById("status");
+
+// Solve 1 - e^(-beta x) = x for the NON-TRIVIAL root.
+// x = 0 is always a solution. A second root in (0,1) exists only when beta > 1:
+// there f'(0) = beta - 1 > 0 so the curve leaves the origin above the diagonal,
+// then must dip back below it (it ends at 1 - e^-beta < 1), crossing once.
+// For beta <= 1 the curve stays below the diagonal and the origin is the only hit.
+// Bisection on g(x) = 1 - e^(-beta x) - x, bracket [~0, 1] where g(0+)>0, g(1)<0.
+function solveXStar(beta) {
+  if (beta <= 1) return 0;
+  const g = x => 1 - Math.exp(-beta * x) - x;
+  let lo = 1e-9, hi = 1;
+  if (g(lo) <= 0) return 0;              // guard: no sign change ⇒ no positive root
+  for (let i = 0; i < 80; i++) {
+    const mid = 0.5 * (lo + hi);
+    if (g(mid) > 0) lo = mid; else hi = mid;
+  }
+  return 0.5 * (lo + hi);
+}
+
+// Logical drawing size (CSS pixels). We scale the backing store by devicePixelRatio
+// so the lines stay crisp on high-DPI screens, then work in logical units after.
+const Wl = 536, Hl = 420;
+function canvasPrep() {
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = Wl * dpr;
+  canvas.height = Hl * dpr;
+  canvas.style.height = Hl + "px";
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+// Plot rectangle inside the canvas.
+const M = { top: 18, right: 16, bottom: 40, left: 46 };
+const plotW = Wl - M.left - M.right;
+const plotH = Hl - M.top - M.bottom;
+
+// Data→pixel maps. Both x and y run 0..1, y inverted because canvas y grows downward.
+const xOf = x => M.left + x * plotW;
+const yOf = y => M.top + (1 - y) * plotH;
+
+function draw() {
+  const beta = +slider.value;
+  readout.textContent = beta.toFixed(2);
+
+  canvasPrep();
+  ctx.clearRect(0, 0, Wl, Hl);
+
+  // --- gridlines + ticks at 0, 0.5, 1 on both axes ---
+  ctx.strokeStyle = "var(--grid)"; ctx.fillStyle = "#6B7480";
+  ctx.lineWidth = 1; ctx.font = "12px ui-monospace, Menlo, monospace";
+  ctx.textAlign = "center"; ctx.textBaseline = "top";
+  for (const t of [0, 0.5, 1]) {                       // vertical grid + x labels
+    ctx.beginPath(); ctx.moveTo(xOf(t), yOf(0)); ctx.lineTo(xOf(t), yOf(1)); ctx.stroke();
+    ctx.fillText(t.toFixed(1), xOf(t), yOf(0) + 8);
+  }
+  ctx.textAlign = "right"; ctx.textBaseline = "middle";
+  for (const t of [0, 0.5, 1]) {                       // horizontal grid + y labels
+    ctx.beginPath(); ctx.moveTo(xOf(0), yOf(t)); ctx.lineTo(xOf(1), yOf(t)); ctx.stroke();
+    ctx.fillText(t.toFixed(1), xOf(0) - 8, yOf(t));
+  }
+
+  // --- axes (solid, darker) ---
+  ctx.strokeStyle = "var(--axis)"; ctx.lineWidth = 1.25;
+  ctx.beginPath();
+  ctx.moveTo(xOf(0), yOf(1)); ctx.lineTo(xOf(0), yOf(0)); ctx.lineTo(xOf(1), yOf(0));
+  ctx.stroke();
+
+  // --- dotted 45-degree reference line y = x ---
+  ctx.save();
+  ctx.strokeStyle = "var(--diag)"; ctx.lineWidth = 1.5; ctx.setLineDash([4, 4]);
+  ctx.beginPath(); ctx.moveTo(xOf(0), yOf(0)); ctx.lineTo(xOf(1), yOf(1)); ctx.stroke();
+  ctx.restore();
+
+  // --- the curve y = 1 - e^(-beta x), sampled across x in [0, 1] ---
+  ctx.strokeStyle = "var(--curve)"; ctx.lineWidth = 2.5;
+  ctx.lineJoin = "round";
+  ctx.beginPath();
+  const N = 240;
+  for (let i = 0; i <= N; i++) {
+    const x = i / N;
+    const y = 1 - Math.exp(-beta * x);
+    if (i === 0) ctx.moveTo(xOf(x), yOf(y));
+    else ctx.lineTo(xOf(x), yOf(y));
+  }
+  ctx.stroke();
+
+  // --- intersection point x* where the curve meets y = x ---
+  const xstar = solveXStar(beta);
+  if (xstar > 0) {
+    const px = xOf(xstar), py = yOf(xstar);
+    // faint dashed guides dropping to each axis
+    ctx.save();
+    ctx.strokeStyle = "var(--star)"; ctx.globalAlpha = 0.35;
+    ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
+    ctx.beginPath();
+    ctx.moveTo(px, yOf(0)); ctx.lineTo(px, py);   // down to x-axis
+    ctx.moveTo(xOf(0), py); ctx.lineTo(px, py);   // left to y-axis
+    ctx.stroke();
+    ctx.restore();
+    // the marker itself (filled dot with white ring), drawn on top
+    ctx.beginPath(); ctx.arc(px, py, 5, 0, 2 * Math.PI);
+    ctx.fillStyle = "var(--star)"; ctx.fill();
+    ctx.lineWidth = 1.5; ctx.strokeStyle = "#fff"; ctx.stroke();
+    // in-plot label, nudged up-left so it clears the diagonal
+    ctx.fillStyle = "var(--star)"; ctx.font = "12px ui-monospace, Menlo, monospace";
+    ctx.textAlign = "right"; ctx.textBaseline = "bottom";
+    ctx.fillText("x* = " + xstar.toFixed(3), px - 8, py - 6);
+    status.innerHTML = "x* = <b>" + xstar.toFixed(4) + "</b> "
+      + '<span class="note">(non-trivial crossing; x = 0 is always a solution too)</span>';
+  } else {
+    // beta <= 1: only the origin. Mark it with a small hollow ring.
+    ctx.beginPath(); ctx.arc(xOf(0), yOf(0), 4.5, 0, 2 * Math.PI);
+    ctx.lineWidth = 1.5; ctx.strokeStyle = "var(--star)"; ctx.stroke();
+    status.innerHTML = "x* = <b>0</b> "
+      + '<span class="note">(curve stays below the diagonal; a positive crossing appears only when β &gt; 1)</span>';
+  }
+
+  // --- axis titles ---
+  ctx.fillStyle = "#23272E"; ctx.font = "13px ui-sans-serif, system-ui, sans-serif";
+  ctx.textAlign = "center"; ctx.textBaseline = "top";
+  ctx.fillText("x", xOf(0.5), yOf(0) + 22);
+  ctx.save();
+  ctx.translate(xOf(0) - 30, yOf(0.5)); ctx.rotate(-Math.PI / 2);
+  ctx.textBaseline = "bottom"; ctx.fillText("y", 0, 0);
+  ctx.restore();
+}
+
+// The max field sets the slider's upper bound. Ignore empty/invalid entries
+// (e.g. mid-typing); only apply a finite value above the slider's min.
+function applyMax() {
+  const m = parseFloat(maxField.value);
+  if (!Number.isFinite(m) || m <= +slider.min) return;
+  slider.max = m;
+  if (+slider.value > m) slider.value = m;   // clamp β if it now exceeds the ceiling
+  draw();
+}
+
+// Triggers: nothing redraws until the slider moves or the ceiling changes.
+slider.addEventListener("input", draw);
+maxField.addEventListener("input", applyMax);
+draw();   // initial paint
+</script>
+</html>
