@@ -704,9 +704,9 @@ figcaption p {
 .gallery-item {
   min-height: 100svh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 4rem 0;
+  padding: 2rem 0;
   box-sizing: border-box;
 }
 
